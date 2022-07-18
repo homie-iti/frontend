@@ -10,6 +10,12 @@ import { InfoCenterComponentComponent } from './info-center-component/info-cente
 import { FindHomieComponentComponent } from './find-homie-component/find-homie-component.component';
 import { AboutUsComponentComponent } from './about-us-component/about-us-component.component';
 import { FooterComponentComponent } from './footer-component/footer-component.component';
+import { LoginComonentsComponent } from './login-comonents/login-comonents.component';
+import { SignUpComponentComponent } from './sign-up-component/sign-up-component.component';
+import { UnitFilterComponentComponent } from './unit-filter-component/unit-filter-component.component';
+import { UnitSortComponentComponent } from './unit-sort-component/unit-sort-component.component';
+import { UnitCardComponentComponent } from './unit-card-component/unit-card-component.component';
+import { UnitPaginationComponentComponent } from './unit-pagination-component/unit-pagination-component.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,13 @@ import { FooterComponentComponent } from './footer-component/footer-component.co
     InfoCenterComponentComponent,
     FindHomieComponentComponent,
     AboutUsComponentComponent,
-    FooterComponentComponent
+    FooterComponentComponent,
+    LoginComonentsComponent,
+    SignUpComponentComponent,
+    UnitFilterComponentComponent,
+    UnitSortComponentComponent,
+    UnitCardComponentComponent,
+    UnitPaginationComponentComponent
   ],
   imports: [
     BrowserModule,

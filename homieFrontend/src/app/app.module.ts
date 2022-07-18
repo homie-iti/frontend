@@ -16,6 +16,12 @@ import { UnitFilterComponentComponent } from './unit-filter-component/unit-filte
 import { UnitSortComponentComponent } from './unit-sort-component/unit-sort-component.component';
 import { UnitCardComponentComponent } from './unit-card-component/unit-card-component.component';
 import { UnitPaginationComponentComponent } from './unit-pagination-component/unit-pagination-component.component';
+import { UnitGallaryComponent } from './unit-gallary/unit-gallary.component';
+import { UnitInfoComponent } from './unit-info/unit-info.component';
+import { UnitReservationComponent } from './unit-reservation/unit-reservation.component';
+import { UnitFeedbackComponent } from './unit-feedback/unit-feedback.component';
+import { ProfileInformationCardComponent } from './profile-information-card/profile-information-card.component';
+import { ProfileUserAboutComponent } from './profile-user-about/profile-user-about.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +38,13 @@ import { UnitPaginationComponentComponent } from './unit-pagination-component/un
     UnitFilterComponentComponent,
     UnitSortComponentComponent,
     UnitCardComponentComponent,
-    UnitPaginationComponentComponent
+    UnitPaginationComponentComponent,
+    UnitGallaryComponent,
+    UnitInfoComponent,
+    UnitReservationComponent,
+    UnitFeedbackComponent,
+    ProfileInformationCardComponent,
+    ProfileUserAboutComponent
   ],
   imports: [
     BrowserModule,

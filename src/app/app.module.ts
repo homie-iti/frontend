@@ -22,6 +22,8 @@ import { UnitReservationComponent } from './unit-reservation/unit-reservation.co
 import { UnitFeedbackComponent } from './unit-feedback/unit-feedback.component';
 import { ProfileInformationCardComponent } from './profile-information-card/profile-information-card.component';
 import { ProfileUserAboutComponent } from './profile-user-about/profile-user-about.component';
+import { ProfileUserListingsComponent } from './profile-user-listings/profile-user-listings.component';
+import { UnitPaymentComponent } from './unit-payment/unit-payment.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { ProfileUserAboutComponent } from './profile-user-about/profile-user-abo
     UnitReservationComponent,
     UnitFeedbackComponent,
     ProfileInformationCardComponent,
-    ProfileUserAboutComponent
+    ProfileUserAboutComponent,
+    ProfileUserListingsComponent,
+    UnitPaymentComponent
   ],
   imports: [
     BrowserModule,

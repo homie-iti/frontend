@@ -18,6 +18,13 @@ import { HomieInfoComponent } from './homie-info/homie-info.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AboutUsComponent,
+    CityCardsComponent,
+    HomieCoverComponent,
+    HomieSearchComponent,
+    HomieInfoComponent
   ]
 })
 export class HomepageModule { }

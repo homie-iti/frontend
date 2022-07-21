@@ -26,6 +26,17 @@ import { UnitReviewComponent } from './unit-review/unit-review.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    UnitFilterComponent,
+    UnitSortingComponent,
+    UnitCardComponent,
+    UnitPaginationComponent,
+    UnitGalleryComponent,
+    UnitDescriptionComponent,
+    UnitInfoComponent,
+    UnitListingComponent,
+    UnitReviewComponent
   ]
 })
 export class UnitsModule { }

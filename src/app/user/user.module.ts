@@ -11,17 +11,25 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
- 
-  
+
+
     UserCardComponent,
-         UserAboutComponent,
-         UserUnitListingComponent,
-         LoginComponent,
-         SignUpComponent,
-         UserProfileComponent
+    UserAboutComponent,
+    UserUnitListingComponent,
+    LoginComponent,
+    SignUpComponent,
+    UserProfileComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    UserCardComponent,
+    UserAboutComponent,
+    UserUnitListingComponent,
+    LoginComponent,
+    SignUpComponent,
+    UserProfileComponent
   ]
 })
 export class UserModule { }

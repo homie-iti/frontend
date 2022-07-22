@@ -1,0 +1,9 @@
+.card-border{
+  border-radius: 10%;
+}
+
+.card-display{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

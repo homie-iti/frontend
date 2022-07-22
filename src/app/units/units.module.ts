@@ -10,6 +10,7 @@ import { UnitInfoComponent } from './unit-info/unit-info.component';
 import { UnitListingComponent } from './unit-listing/unit-listing.component';
 import { UnitReviewComponent } from './unit-review/unit-review.component';
 import { UnitsComponent } from './units.page';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -27,7 +28,8 @@ import { UnitsComponent } from './units.page';
     UnitsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FontAwesomeModule
   ],
   exports: [
     UnitFilterComponent,

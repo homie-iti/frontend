@@ -6,6 +6,7 @@ import { UserUnitListingComponent } from './user-unit-listing/user-unit-listing.
 import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserComponent } from './user.page';
 
 
 
@@ -18,7 +19,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     UserUnitListingComponent,
     LoginComponent,
     SignUpComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    UserComponent
   ],
   imports: [
     CommonModule

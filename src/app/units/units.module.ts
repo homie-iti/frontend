@@ -9,6 +9,7 @@ import { UnitDescriptionComponent } from './unit-description/unit-description.co
 import { UnitInfoComponent } from './unit-info/unit-info.component';
 import { UnitListingComponent } from './unit-listing/unit-listing.component';
 import { UnitReviewComponent } from './unit-review/unit-review.component';
+import { UnitsComponent } from './units.page';
 
 
 
@@ -22,7 +23,8 @@ import { UnitReviewComponent } from './unit-review/unit-review.component';
     UnitDescriptionComponent,
     UnitInfoComponent,
     UnitListingComponent,
-    UnitReviewComponent
+    UnitReviewComponent,
+    UnitsComponent
   ],
   imports: [
     CommonModule

@@ -1,0 +1,10 @@
+.alerbtn{
+  width: 15em;
+  border:2px solid indigo;
+}
+
+.input{
+  border: none;
+  width:150px;
+  border-bottom: 1px solid black
+}

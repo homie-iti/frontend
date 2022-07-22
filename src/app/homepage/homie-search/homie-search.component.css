@@ -1,0 +1,26 @@
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    background-color: #FA8BFF;
+    background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.searchBar {
+    width: 50%;
+    margin: auto;
+    margin-top: 100px;
+    height: 50px;
+
+}
+
+
+.btnSpan {
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+
+}

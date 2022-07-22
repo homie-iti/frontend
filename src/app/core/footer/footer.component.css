@@ -1,19 +1,20 @@
 .site-footer {
-    background-color: #26272b;
+    background-color: #8699e6;
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 24px;
-    color: #737373;
+    color: white;
 }
 
 .site-footer hr {
-    border-top-color: #bbb;
+    border-top-color: white;
     opacity: 0.5
 }
 
+/* 
 .site-footer hr.small {
     margin: 20px 0
-}
+} */
 
 .site-footer h6 {
     color: #fff;
@@ -24,7 +25,7 @@
 }
 
 .site-footer a {
-    color: #737373;
+    color: white;
 }
 
 .site-footer a:hover {
@@ -42,7 +43,7 @@
 }
 
 .footer-links a {
-    color: #737373
+    color: white;
 }
 
 .footer-links a:active,
@@ -67,14 +68,14 @@
     margin-left: 6px;
     margin-right: 0;
     border-radius: 100%;
-    background-color: #33353d
+    background-color: white
 }
 
 .copyright-text {
     margin: 0
 }
 
-@media (max-width:991px) {
+/* @media (max-width:991px) {
     .site-footer [class^=col-] {
         margin-bottom: 30px
     }
@@ -89,7 +90,7 @@
     .site-footer .social-icons {
         text-align: center
     }
-}
+} */
 
 .social-icons {
     padding-left: 0;
@@ -112,7 +113,7 @@
 
 .social-icons a {
     background-color: #eceeef;
-    color: #818a91;
+    color: #8699e6;
     font-size: 16px;
     display: inline-block;
     line-height: 44px;
@@ -148,18 +149,15 @@
     background-color: #00aced
 }
 
-.social-icons a.linkedin:hover {
-    background-color: #007bb6
-}
 
-.social-icons a.dribbble:hover {
+.social-icons a.instagram:hover {
     background-color: #ea4c89
 }
 
-@media (max-width:767px) {
+/* @media (max-width:767px) {
     .social-icons li.title {
         display: block;
         margin-right: 0;
         font-weight: 600
     }
-}
+} */

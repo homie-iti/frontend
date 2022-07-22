@@ -18,9 +18,13 @@
         aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
           <div class="py-2">
-            <h2></h2>
-            <fa-icon [icon]="faSearchengin"></fa-icon>
-            <input type="text" placeholder="Search" />
+            <div class="input-group">
+              <div class="input-group-text">
+                <fa-icon [icon]="faSearchengin"></fa-icon>
+              </div>
+              <input type="text" placeholder="Search" class="input-group" class="form-control"
+                id="autoSizingInputGroup" />
+            </div>
           </div>
           <div class="d-flex">
             <input type="checkbox" name="" id="">

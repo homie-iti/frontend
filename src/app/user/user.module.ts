@@ -7,31 +7,26 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { UserComponent } from './user.page';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-
-
     UserCardComponent,
     UserAboutComponent,
     UserUnitListingComponent,
     LoginComponent,
     SignUpComponent,
     UserProfileComponent,
-    UserComponent
+    UserComponent,
   ],
-  imports: [
-    CommonModule
-  ],
+  imports: [CommonModule],
   exports: [
     UserCardComponent,
     UserAboutComponent,
     UserUnitListingComponent,
     LoginComponent,
     SignUpComponent,
-    UserProfileComponent
-  ]
+    UserProfileComponent,
+  ],
 })
-export class UserModule { }
+export class UserModule {}

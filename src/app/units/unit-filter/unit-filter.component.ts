@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faSearchengin } from '@fortawesome/free-brands-svg-icons';
+import {faBell} from "@fortawesome/free-solid-svg-icons"
 
 @Component({
   selector: 'app-unit-filter',
@@ -7,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitFilterComponent implements OnInit {
 
+  faSearchengin=faSearchengin;
+  faBell=faBell;
   constructor() { }
 
   ngOnInit(): void {

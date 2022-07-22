@@ -1,0 +1,14 @@
+#testimonials img {
+  width: 65px;
+  height: 65px;
+  border-radius: 100px;
+  transition: all 0.4s ease;
+}
+
+#testimonials .nav-pills .nav-link.active {
+  background-color: transparent;
+}
+
+#testimonials .nav-pills .nav-link.active img {
+  transform: scale(1.3);
+}

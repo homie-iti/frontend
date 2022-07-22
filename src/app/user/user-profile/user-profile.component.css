@@ -1,0 +1,48 @@
+.content {
+  padding: 7rem 0;
+}
+.user-image a {
+  text-decoration: underline;
+}
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+  background: none;
+}
+.form-control:active,
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px solid rgb(69, 193, 189);
+}
+
+.form-label {
+  color: #000;
+  font-size: 13px;
+}
+
+.btn,
+.form-control {
+  height: 45px;
+}
+
+.btn.btn-primary {
+  background: rgb(44, 164, 150);
+  color: #fff;
+  padding: 15px 20px;
+}
+
+.form-outline {
+  box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+}
+.form-outline .form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #b0abb3;
+  margin: 0 0 10px 0;
+  display: inline-block;
+  padding: 0;
+}

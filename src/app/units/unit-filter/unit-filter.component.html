@@ -105,7 +105,14 @@
         aria-labelledby="panelsStayOpen-headingThree"
       >
         <div class="accordion-body">
-          <div class="d-flex">
+          <input
+            type="text"
+            placeholder="enter specified period"
+            ngxDaterangepickerMd
+            [(ngModel)]="selected"
+            class="form-control"
+          />
+          <!-- <div class="d-flex">
             <div>
               <label for="date"> Move-in</label>
               <input type="date" placeholder="select" class="input">
@@ -114,7 +121,7 @@
               <label for="date"> Move-out</label>
               <input type="date" placeholder="select" class="input">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

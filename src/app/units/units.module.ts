@@ -12,8 +12,8 @@ import { UnitReviewComponent } from './unit-review/unit-review.component';
 import { UnitsComponent } from './units.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UnitPageComponent } from './unit.page/unit.page';
-
-
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,9 @@ import { UnitPageComponent } from './unit.page/unit.page';
   ],
   imports: [
     CommonModule,
-    FontAwesomeModule
+    FormsModule,
+    FontAwesomeModule,
+    NgxDaterangepickerMd.forRoot(),
   ],
   exports: [
     UnitFilterComponent,

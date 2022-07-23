@@ -11,6 +11,7 @@ import { UnitListingComponent } from './unit-listing/unit-listing.component';
 import { UnitReviewComponent } from './unit-review/unit-review.component';
 import { UnitsComponent } from './units.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UnitPageComponent } from './unit.page/unit.page';
 
 
 
@@ -25,7 +26,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     UnitInfoComponent,
     UnitListingComponent,
     UnitReviewComponent,
-    UnitsComponent
+    UnitsComponent,
+    UnitPageComponent,
   ],
   imports: [
     CommonModule,
@@ -40,7 +42,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     UnitDescriptionComponent,
     UnitInfoComponent,
     UnitListingComponent,
-    UnitReviewComponent
-  ]
+    UnitReviewComponent,
+  ],
 })
-export class UnitsModule { }
+export class UnitsModule {}

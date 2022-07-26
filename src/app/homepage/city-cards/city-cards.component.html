@@ -1,2 +1,65 @@
-<p>city-cards works!</p>
-<app-navbar></app-navbar>
+<section class="cityCard text-center">
+
+    <h2 >Explore our most popular cities</h2>
+       <p class="text-muted"> See what these cities have to offer and rent the perfect place</p>
+       <div class="container">
+        <div class="row">
+            <owl-carousel-o [options]="customOptions">
+                
+                <ng-template carouselSlide>
+            <div class="col-md-3">
+                 
+                <div class="card" style="width: 18rem; height: 25rem;">
+               <img src="../../../assets/Images/cityCardImages/city1.jpg"  class="card-img-top" alt="cityCard">
+               <div class="card-body">
+                 <h5 class="card-title">Cairo</h5>
+                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                 <a href="#" class="btn ">Go somewhere</a>
+               </div>
+             </div>    
+               </div> 
+                </ng-template>
+                <ng-template carouselSlide>
+            <div class="col-md-3">
+              
+                   <div class="card" style="width: 18rem; height: 25rem;">
+                  <img src="../../../assets/Images/cityCardImages/city2.jpg"   class="card-img-top" alt="cityCard">
+                  <div class="card-body">
+                    <h5 class="card-title">Mandola</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn ">Go somewhere</a>
+                  </div>
+                </div>    
+                  </div> 
+                  </ng-template>
+                  <ng-template carouselSlide>
+                   <div class="col-md-3">
+              
+                    <div class="card" style="width: 18rem; height: 25rem;">
+                   <img src="../../../assets/Images/cityCardImages/city3.jpg"  class="card-img-top" alt="cityCard">
+                   <div class="card-body">
+                     <h5 class="card-title">America</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="btn ">Go somewhere</a>
+                   </div>
+                 </div>    
+                   </div>
+                 </ng-template>
+                   <ng-template carouselSlide>
+                   <div class="col-md-3">
+              
+                    <div class="card" style="width: 18rem; height: 25rem;">
+                   <img src="../../../assets/Images/cityCardImages/city4.jpg"  class="card-img-top" alt="cityCard">
+                   <div class="card-body">
+                     <h5 class="card-title">China</h5>
+                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                     <a href="#" class="btn ">Go somewhere</a>
+                   </div>
+                 </div>    
+                   </div> 
+                   </ng-template> 
+            </owl-carousel-o>
+        </div>
+      </div>
+ 
+</section>

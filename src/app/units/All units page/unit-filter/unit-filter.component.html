@@ -1,4 +1,4 @@
-<div class="container col-sm-12 col-lg-12" style="min-width: 400px">
+<div class="container col-sm-2 col-lg-12">
   <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <div class="py-3 text-center">
@@ -9,35 +9,21 @@
         </button>
       </div>
       <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button
-          class="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseOne"
-          aria-expanded="true"
-          aria-controls="panelsStayOpen-collapseOne"
-        >
+        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
           <p class="h5 fw-normal">Location</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseOne"
-        class="accordion-collapse collapse show"
-        aria-labelledby="panelsStayOpen-headingOne"
-      >
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+        aria-labelledby="panelsStayOpen-headingOne">
         <div class="accordion-body">
           <div class="py-2">
             <div class="input-group">
               <div class="input-group-text">
                 <fa-icon [icon]="faSearchengin"></fa-icon>
               </div>
-              <input
-                type="text"
-                placeholder="Search"
-                class="input-group"
-                class="form-control"
-                id="autoSizingInputGroup"
-              />
+              <input type="text" placeholder="Search" class="input-group" class="form-control"
+                id="autoSizingInputGroup" />
             </div>
           </div>
           <div class="d-flex">
@@ -49,22 +35,13 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseTwo"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseTwo"
-        >
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
           <p class="h5 fw-normal">Price</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseTwo"
-        class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingTwo"
-      >
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
           <div>
             <input type="range" style="width: 21vw; padding-left: 1em" />
@@ -88,30 +65,17 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseThree"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseThree"
-        >
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThree">
           <p class="h5 fw-normal">Date</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseThree"
-        class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingThree"
-      >
+      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingThree">
         <div class="accordion-body">
-          <input
-            type="text"
-            placeholder="enter specified period"
-            ngxDaterangepickerMd
-            [(ngModel)]="selected"
-            class="form-control"
-          />
+          <input type="text" placeholder="enter specified period" ngxDaterangepickerMd [(ngModel)]="selected"
+            class="form-control" />
           <!-- <div class="d-flex">
             <div>
               <label for="date"> Move-in</label>
@@ -127,22 +91,14 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFour"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFour"
-        >
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour">
           <p class="h5 fw-normal">Allowed Gender</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseFour"
-        class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFour"
-      >
+      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFour">
         <div class="accordion-body">
           <div class="d-flex">
             <div class="d-flex">
@@ -164,22 +120,14 @@
 
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFive"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFive"
-        >
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive">
           <p class="h5 fw-normal">Are Pets Allowed</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseFive"
-        class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFive"
-      >
+      <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive">
         <div class="accordion-body">
           <div class="d-flex">
             <div class="d-flex">
@@ -197,22 +145,13 @@
 
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-        <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseSix"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseSix"
-        >
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
           <p class="h5 fw-normal">Type</p>
         </button>
       </h2>
-      <div
-        id="panelsStayOpen-collapseSix"
-        class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingSix"
-      >
+      <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSix">
         <div class="accordion-body">
           <div class="type">
             <div class="d-flex">

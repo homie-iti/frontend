@@ -1,10 +1,35 @@
-.alerbtn{
+.alerbtn {
   width: 15em;
-  border:2px solid indigo;
+  border: 2px solid indigo;
 }
 
-.input{
-  border: none;
-  width:150px;
-  border-bottom: 1px solid black
+@media (min-width: 501px) {
+  .input {
+    border: none;
+    width: 150px;
+    border-bottom: 1px solid black;
+  }
+
+  .filter {
+    width: 20em;
+    position: sticky;
+    top: 50px;
+  }
+}
+@media (max-width: 500px) {
+  .filter {
+    width: 15em;
+    position: sticky;
+    top: 50px;
+  }
+
+  .filterflex {
+    width: 15em;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .width {
+    width: 15em;
+  }
 }

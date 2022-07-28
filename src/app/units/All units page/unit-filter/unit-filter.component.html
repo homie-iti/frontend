@@ -1,9 +1,9 @@
-<div class="container col-sm-2 col-lg-12">
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+<div class="container filter">
+  <div class="accordion col-sm-9 col-lg-12 col-md-12" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <div class="py-3 text-center">
         <h2>Filters</h2>
-        <button class="btn btn-outline-primary my-2 w-50">
+        <button class="btn btn-outline-primary my-1 w-75">
           <!-- <i class="fab-solid fa-bell-exclamation">CREATE ALERT</i> -->
           <fa-icon [icon]="faBell"></fa-icon> &nbsp;CREATE ALERT
         </button>
@@ -44,14 +44,14 @@
         aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
           <div>
-            <input type="range" style="width: 21vw; padding-left: 1em" />
+            <input type="range" style="padding-left: 1em" />
           </div>
-          <div class="d-flex justify-content-between my-2">
-            <div class="col-5">
+          <div class="filterflex justify-content-between my-2">
+            <div class="col-5 width">
               <label for="min">Minimum Price</label>
               <input type="text" placeholder="0$" class="input" />
             </div>
-            <div class="col-5">
+            <div class="col-5 width">
               <label for=" max">Maximum Price</label>
               <input type="text" placeholder="1000$" class="input" />
             </div>
@@ -100,7 +100,7 @@
       <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-headingFour">
         <div class="accordion-body">
-          <div class="d-flex">
+          <div class="d-flex flex-wrap">
             <div class="d-flex">
               <input type="checkbox" placeholder="select" style="width: 20px" />
               <p class="px-2 my-1">Mail</p>

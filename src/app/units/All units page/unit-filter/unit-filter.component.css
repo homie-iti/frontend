@@ -4,12 +4,6 @@
 }
 
 @media (min-width: 501px) {
-  .input {
-    border: none;
-    width: 150px;
-    border-bottom: 1px solid black;
-  }
-
   .filter {
     width: 20em;
     position: sticky;

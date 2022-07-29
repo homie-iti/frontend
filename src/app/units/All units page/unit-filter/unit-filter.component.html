@@ -43,16 +43,16 @@
         aria-labelledby="panelsStayOpen-headingTwo">
         <div class="accordion-body">
           <div>
-            <input type="range" style="width: 100%;" />
+            <input type="range" class="form-range" style="width: 100%;" />
           </div>
-          <div class="filterflex justify-content-between my-2">
-            <div class="col-12 ">
-              <label for="min">Minimum Price</label>
-              <input type="text" placeholder="0$" class="input" />
+          <div class="d-flex flex-wrap justify-content-center py-2">
+            <div class="col col-9 col-lg-6">
+              <label for=" min">Minimum Price</label>
+              <input type="text" class="form-control" placeholder="0$" style="width: 90%;" />
             </div>
-            <div class="col-12 ">
+            <div class="col col-9 col-lg-6">
               <label for=" max">Maximum Price</label>
-              <input type="text" placeholder="1000$" class="input" />
+              <input type="text" class="form-control" placeholder="1000$" style="width: 90%;" />
             </div>
           </div>
           <div class="d-flex">
@@ -75,16 +75,6 @@
         <div class="accordion-body">
           <input type="text" placeholder="enter specified period" ngxDaterangepickerMd [(ngModel)]="selected"
             class="form-control" />
-          <!-- <div class="d-flex">
-            <div>
-              <label for="date"> Move-in</label>
-              <input type="date" placeholder="select" class="input">
-            </div>
-            <div class="mx-2">
-              <label for="date"> Move-out</label>
-              <input type="date" placeholder="select" class="input">
-            </div>
-          </div> -->
         </div>
       </div>
     </div>

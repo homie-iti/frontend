@@ -7,6 +7,7 @@ import { LoginComponent } from './user/user registration page/login/login.compon
 import { UserProfileComponent } from './user/user account/user-profile/user-profile.component';
 // import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserComponent } from './user/user.page';
+import { SignUpComponent } from './user/user registration page/sign-up/sign-up.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'user-settings-example',
     component: UserProfileComponent,
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent,
   },
   {
     path: '**',

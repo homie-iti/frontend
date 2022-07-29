@@ -1,2 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import  */
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Condensed&family=Cairo:wght@500&display=swap");
+* {
+  font-family: "Cabin Condensed", sans-serif;
+}

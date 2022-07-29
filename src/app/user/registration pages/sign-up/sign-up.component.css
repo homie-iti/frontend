@@ -9,7 +9,7 @@ button {
 
 img {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
 }
 
 .formContainer {
@@ -33,4 +33,17 @@ label {
 
 .imgContainer {
     padding-left: 0;
+    padding-right: 0;
+
 }
+
+@media (max-width:1000px) {
+    img{
+        height: 60vh;
+    }
+    .imgContainer{
+        height: 50%;
+    }
+    
+} 
+

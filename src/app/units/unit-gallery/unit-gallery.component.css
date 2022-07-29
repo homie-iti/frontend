@@ -1,9 +1,0 @@
-img{
-  border-radius: 10%;
-  }
-
-  img:hover
-  {
-    transition: all 1s;
-  transform: scale(1.1);
-  }

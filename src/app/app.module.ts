@@ -9,6 +9,8 @@ import { UnitsModule } from '../app/units/units.module';
 import { SharedModule } from './shared/shared.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { CoreModule } from './core/core.module';
+import{ HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,7 @@ import { CoreModule } from './core/core.module';
     UnitsModule,
     UserModule,
     BrowserAnimationsModule,
+    HttpClientModule  
   ],
   providers: [],
   bootstrap: [AppComponent],

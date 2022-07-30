@@ -1,3 +1,4 @@
+import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.page';
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'user-settings-example',
     component: UserProfileComponent,
+  },
+  {
+    path: 'user-wish-list',
+    component: UserWishListComponent,
   },
   {
     path: 'signup',

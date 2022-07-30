@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UnitPageComponent } from './unit page/unit.page/unit.page';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     FontAwesomeModule,
+    AppRoutingModule,
     NgxDaterangepickerMd.forRoot(),
   ],
   exports: [

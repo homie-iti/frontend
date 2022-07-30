@@ -7,8 +7,8 @@ import { City } from '../_models/city';
 })
 export class CityService {
 
-  getCityByName(cityName: string) {
-    return this.http.get<City[]>(`https://homie-iti.herokuapp.com/cities`)
+  getCityByName() {
+    return this.http.get<City[]>(`http://localhost:8080/cities`)
   }
   constructor(public http: HttpClient) { }
 }

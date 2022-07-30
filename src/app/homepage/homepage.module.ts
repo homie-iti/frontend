@@ -10,6 +10,7 @@ import { HomieSearchComponent } from './homie-search/homie-search.component';
 import { HomieInfoComponent } from './homie-info/homie-info.component';
 import { HomepageComponent } from './homepage.page';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -28,7 +29,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     BrowserModule,
     BrowserAnimationsModule,
     CommonModule,
-    CarouselModule 
+    CarouselModule ,
+    RouterModule
   ],
   exports: [
     AboutUsComponent,

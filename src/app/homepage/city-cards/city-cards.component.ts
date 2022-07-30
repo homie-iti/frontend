@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { CityService } from 'src/app/services/city.service';
+import { City } from 'src/app/_models/city';
 
 @Component({
   selector: 'app-city-cards',
@@ -7,11 +9,24 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./city-cards.component.css']
 })
 export class CityCardsComponent implements OnInit {
+  // @Input() item: City;
+  @Input('cityname') cityname: any;
+  @Input('citycover') citycover:any
+  @Input('cityid') cityid:any
 
-  constructor() { }
+
+  city: City[]=[]
+
+  constructor(private searchservice : CityService) { }
 
   ngOnInit(): void {
+    this.searchservice.getCityByName().subscribe((res:any)=>{
+      this.city=res
+      console.log(this.city)
+  })
   }
+
+  
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
@@ -35,5 +50,10 @@ export class CityCardsComponent implements OnInit {
       }
     },
     nav: true
+
+
+    
   }
+
+ 
 }

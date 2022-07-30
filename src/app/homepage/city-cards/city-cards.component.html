@@ -15,7 +15,9 @@
                 <p class="card-text">
                   Some quick example text to build on the card
                 </p>
-                <a href="#" class="btn">Go somewhere</a>
+                <a routerLink="/units/{{ item._id }}" class="btn"
+                  >Go somewhere</a
+                >
               </div>
             </div>
           </div>
@@ -31,7 +33,7 @@
         <div class="card-body">
           <h5 class="card-title">{{ cityname }}</h5>
           <p class="card-text">Some quick example text to build on the card</p>
-          <a href="#" class="btn">Go somewhere</a>
+          <a class="btn" routerLink="/units/{{ cityid }}">Go somewhere</a>
         </div>
       </div>
     </div>

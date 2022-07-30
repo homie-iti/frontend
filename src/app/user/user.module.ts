@@ -8,6 +8,7 @@ import { SignUpComponent } from './registration pages/sign-up/sign-up.component'
 import { UserProfileComponent } from './user account/user-profile/user-profile.component';
 import { UserComponent } from './user.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UserWishListComponent } from './user-wish-list/user-wish-list.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SignUpComponent,
     UserProfileComponent,
     UserComponent,
+    UserWishListComponent,
   ],
   imports: [CommonModule],
   exports: [

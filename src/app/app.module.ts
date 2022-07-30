@@ -9,7 +9,8 @@ import { UnitsModule } from '../app/units/units.module';
 import { SharedModule } from './shared/shared.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http';
+import{ HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,7 @@ import { HttpClientModule } from '@angular/common/http';
     UnitsModule,
     UserModule,
     BrowserAnimationsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

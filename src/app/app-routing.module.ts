@@ -40,6 +40,11 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
+    path: 'units/:id',
+    component: UnitsComponent,
+  },
+
+  {
     path: '**',
     redirectTo: '',
   },

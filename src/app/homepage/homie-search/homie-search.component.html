@@ -11,14 +11,22 @@
     >
       <div class="input-group mb-3 searchBar">
         <input
-          type="text"
           class="form-control"
-          placeholder="Search City"
-          aria-label="Recipient's username"
-          aria-describedby="basic-addon2"
+          list="datalistOptions"
+          id="exampleDataList"
+          placeholder="Enter City..."
+          (change)="namevalue($any($event.target).value)"
         />
-        <span class="input-group-text btnSpan" id="basic-addon2"> Search</span>
+        <datalist id="datalistOptions">
+          <option *ngFor="let item of city" [value]="item.name"></option>
+        </datalist>
       </div>
     </div>
   </div>
 </div>
+
+<app-city-cards
+  [cityname]="cityname"
+  [citycover]="citycover"
+  [cityid]="cityid"
+></app-city-cards>

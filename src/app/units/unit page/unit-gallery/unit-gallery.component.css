@@ -1,6 +1,7 @@
 img {
   border-radius: 10%;
-  width: 100%;
+  /* width: 100%; */
+  border: 3px solid;
 }
 
 img:hover {

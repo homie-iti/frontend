@@ -1,0 +1,44 @@
+
+
+
+.navbar-dark .navbar-nav .nav-link {
+    color:rgb(216, 188, 153);
+    transition: .2s .1s ease-in;
+}
+.navbar-dark .navbar-nav .nav-link:hover{
+    color: #746337 !important;
+    
+}
+.navbar-toggler{
+    background-color:  rgb(143, 117, 84) !important;
+    color: rgb(216, 188, 153);
+}
+.navbar{
+ border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar .navbar-nav li a{
+   
+    letter-spacing: .5px;
+    font-size: 18px;
+    font-weight:400;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: transparent !important;
+}
+.navbar .navbar-nav li{
+    margin-right: 6.5px;
+
+}
+.btnStyle{
+    color: rgb(216, 188, 153);
+    border: solid 2px rgb(216, 188, 153); 
+   
+}
+.btnStyle:hover{
+    background-color: #746337;
+    
+}
+.btnStyle:focus{
+    box-shadow: 2px 1px 5px 3px #b79c59 ;
+}

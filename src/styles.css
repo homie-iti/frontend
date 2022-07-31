@@ -18,7 +18,8 @@
 
 }
 body{
-    background-color: var(--main-background-color);
+    background-image: url("assets/Images/location_bg.jpg");
+    /* background-color: var(--main-background-color); */
  }
 
 

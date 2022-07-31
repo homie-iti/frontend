@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GetdataService } from 'src/app/service/getdata.service';
+import { Unitdetails } from 'src/app/_models/unitdetails';
 
 @Component({
   selector: 'app-unit-gallery',
@@ -6,16 +9,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unit-gallery.component.css'],
 })
 export class UnitGalleryComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private activate: ActivatedRoute,
+    private unitser: GetdataService
+  ) {}
 
-  coverSrc = '../../../assets/Images/UnitImages/1.jpg';
-
-  ngOnInit(): void {}
+  coverSrc = '';
 
   updateCoverSrc(event: any) {
     console.log(event.target); //image
-    const clickedImageSrc =event.target.src
-    event.target.src = this.coverSrc
-    this.coverSrc = clickedImageSrc
+    const clickedImageSrc = event.target.src;
+    event.target.src = this.coverSrc;
+    this.coverSrc = clickedImageSrc;
+  }
+
+  id: any = this.activate.snapshot.params['id'];
+  unitDetails: Unitdetails[] = [];
+  // unitCover: string | undefined;
+
+  ngOnInit(): void {
+    this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
+      this.unitDetails = a.images;
+      this.coverSrc = a.cover;
+      console.log(this.unitDetails);
+      console.log(this.coverSrc);
+    });
   }
 }

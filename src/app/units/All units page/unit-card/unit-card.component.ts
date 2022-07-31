@@ -20,7 +20,7 @@ export class UnitCardComponent implements OnInit {
   units: Units[] = [];
 
   ngOnInit(): void {
-    this.unitser.getAllUnits(`/cities/${this.id}`).subscribe((a) => {
+    this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
       console.log(a);
     });

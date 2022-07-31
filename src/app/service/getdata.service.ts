@@ -14,11 +14,11 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
 
-  getAllUnits(endpoint: string) {
+  getAllCityUnits(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
 
-  getAllUnitDetails(endpoint: string) {
+  getUnitDetails(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
 

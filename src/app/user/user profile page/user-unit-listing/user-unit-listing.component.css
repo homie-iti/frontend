@@ -1,0 +1,12 @@
+
+.hStyle{
+    color:var(--main-font-color) ;
+    font-weight: bold;
+  }
+  .hStyle:hover{
+    color:var(--hover-font-color) ;
+    font-weight: bold;
+  }
+  .fontSize{
+    font-size: 15px;
+  }

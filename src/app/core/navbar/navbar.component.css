@@ -1,17 +1,20 @@
 
-
+.navbar-dark{
+    background-color: #ada189d6;
+}
 
 .navbar-dark .navbar-nav .nav-link {
-    color:rgb(216, 188, 153);
+    color:rgb(116, 104, 62);
     transition: .2s .1s ease-in;
 }
 .navbar-dark .navbar-nav .nav-link:hover{
-    color: #746337 !important;
+    color: #514424 !important;
     
 }
 .navbar-toggler{
     background-color:  rgb(143, 117, 84) !important;
     color: rgb(216, 188, 153);
+  
 }
 .navbar{
  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -30,6 +33,19 @@
     margin-right: 6.5px;
 
 }
+
+.logoStyle{
+    font-size: 25px;
+    font-weight: bold;
+    color: #2f2610;
+    transition: all 0.3s 0.2s ease-in-out;
+
+}
+.logoStyle:hover{
+    color: #988042;
+    transform: scale(1.1);
+}
+
 .btnStyle{
     color: rgb(216, 188, 153);
     border: solid 2px rgb(216, 188, 153); 

@@ -1,0 +1,6 @@
+/* *{
+    background-color: var(--main-background-color);
+} */
+.colorContetnt{
+    color:var(--hover-font-color)
+  }

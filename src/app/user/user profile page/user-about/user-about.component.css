@@ -2,5 +2,18 @@
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
   /* height: 12rem; */
 }
+/* .userAbout{
+  height: 30vh;
+} */
 
-
+.hStyle{
+  color:var(--main-font-color) ;
+  font-weight: bold;
+}
+.hStyle:hover{
+  color:var(--hover-font-color) ;
+  font-weight: bold;
+}
+.bold{
+  font-weight: bold;
+}

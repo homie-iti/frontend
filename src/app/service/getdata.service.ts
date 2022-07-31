@@ -6,10 +6,20 @@ import { Units } from '../_models/units';
   providedIn: 'root',
 })
 export class GetdataService {
-  getAllUnits() {
-    return this.http.get<any>(
-      'https://homie-iti.herokuapp.com/cities/984ef4ae21ff6071cfb30fb0'
-    );
+  private url: string = 'https://homie-iti.herokuapp.com';
+  getAll() {
+    return this.http.get<any>(this.url);
+  }
+  getAllCities(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
+
+  getAllUnits(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
+
+  getAllUnitDetails(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
   }
 
   constructor(private http: HttpClient) {}

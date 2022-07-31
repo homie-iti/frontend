@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { GetdataService } from 'src/app/service/getdata.service';
+import { Units } from 'src/app/_models/units';
 
 @Component({
   selector: 'app-unit',
@@ -6,7 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./unit.page.css'],
 })
 export class UnitPageComponent implements OnInit {
-  constructor() {}
+  constructor(
+    private activate: ActivatedRoute,
+    private unitser: GetdataService
+  ) {}
+  id: any = this.activate.snapshot.params['id'];
 
-  ngOnInit(): void {}
+  units: Units[] = [];
+
+  ngOnInit(): void {
+    this.unitser.getAllUnitDetails(`/units/${this.id}`).subscribe((a) => {
+      this.units = a.units;
+      console.log(a);
+    });
+  }
 }

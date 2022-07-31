@@ -15,20 +15,14 @@
                 <p class="card-text">
                   Some quick example text to build on the card
                 </p>
-                <a routerLink="/units/{{ item._id }}" class="btn"
-                  >Go somewhere</a
-                >
+                <a routerLink="/units/{{ item._id }}" class="btn">Go somewhere</a>
               </div>
             </div>
           </div>
         </ng-template>
       </owl-carousel-o>
 
-      <div
-        class="card oneCity"
-        style="width: 18rem; height: 25rem"
-        *ngIf="cityname"
-      >
+      <div class="card oneCity" style="width: 18rem; height: 25rem" *ngIf="cityname">
         <img src="{{ citycover }}" class="card-img-top" alt="cityCard" />
         <div class="card-body">
           <h5 class="card-title">{{ cityname }}</h5>

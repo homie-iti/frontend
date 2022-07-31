@@ -1,5 +1,6 @@
 export class Units {
   constructor(
+    public _id: string,
     public landlordId: string,
     public agentId: string,
     public cityId: string,
@@ -13,6 +14,6 @@ export class Units {
     public numberOfResidents: number,
     public unitInfo: string,
     public allowedGender: string,
-    public geoLocation: string,
+    public geoLocation: string
   ) {}
 }

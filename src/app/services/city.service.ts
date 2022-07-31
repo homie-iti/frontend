@@ -3,12 +3,11 @@ import { Injectable } from '@angular/core';
 import { City } from '../_models/city';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CityService {
-
   getCityByName() {
-    return this.http.get<City[]>(`http://localhost:8080/cities`)
+    return this.http.get<City[]>(`https://homie-iti.herokuapp.com/cities`);
   }
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient) {}
 }

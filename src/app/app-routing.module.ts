@@ -21,11 +21,7 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'city-example',
-    component: UnitsComponent,
-  },
-  {
-    path: 'unit-example',
+    path: 'unit/:id',
     component: UnitPageComponent,
   },
   {

@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="card-body d-flex justify-content-between">
-      <a [routerLink]="['/unit-example']" routerLinkActive="router-link-active">
+      <a routerLink='/unit/{{ item._id }}' routerLinkActive="router-link-active">
         {{item.estateType}}
       </a>
       <h5>{{item.dailyPrice}}$</h5>

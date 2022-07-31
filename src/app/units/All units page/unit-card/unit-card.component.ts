@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-unit-card',
@@ -10,13 +11,18 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 })
 export class UnitCardComponent implements OnInit {
   faHeart = faHeart;
-  constructor(private unitser: GetdataService) {}
+  constructor(
+    private activate: ActivatedRoute,
+    private unitser: GetdataService
+  ) {}
+  id: any = this.activate.snapshot.params['id'];
 
   units: Units[] = [];
+
   ngOnInit(): void {
-    this.unitser.getAllUnits().subscribe((a) => {
+    this.unitser.getAllUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
-      console.log(this.units);
+      console.log(a);
     });
   }
 }

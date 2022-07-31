@@ -1,0 +1,6 @@
+*{
+    background-color: rgba(244, 232, 217, 0.68)
+}
+.colorContetnt{
+    color:var(--hover-font-color)
+  }

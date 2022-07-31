@@ -3,6 +3,8 @@
 :root{
     --bg-lightGray:#fafafa;
     --btn-color:rgb(34, 56, 63);
+    --main-font-color: #2f2610;
+    --hover-font-color: #988042;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 * {
@@ -10,4 +12,5 @@
     box-sizing: border-box;
 
 }
+
 

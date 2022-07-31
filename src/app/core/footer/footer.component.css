@@ -1,9 +1,9 @@
 .site-footer {
-    background-color: #8699e6;
+    background-color: #221c0c;
     padding: 45px 0 20px;
     font-size: 15px;
     line-height: 24px;
-    color: white;
+    color: rgb(240, 221, 175);
 }
 
 .site-footer hr {

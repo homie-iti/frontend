@@ -1,16 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 /* @import  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 :root{
-    --bg-lightGray:#fafafa;
+    --bg-lightGray:#cfc2b3;
     --btn-color:rgb(34, 56, 63);
     --main-font-color: #2f2610;
     --hover-font-color: #988042;
+    --main-background-color: rgba(244, 232, 217, 0.68);
+    --addresses-color:rgb(155, 134, 109);
+    --color-search:rgb(225, 216, 205);
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 * {
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 
 }
+body{
+    background-color: var(--main-background-color);
+ }
 
 

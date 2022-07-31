@@ -8,8 +8,11 @@
   font-family: "Poppins";
 }
 
-:host {
-  background: #f4f4f4;
+.teams{
+  
+  background-image: url("../../../assets/Images/homeCover/Coimbatore-home-architecture-interiors-photo.webp");
+  background-attachment: fixed; 
+ background-position: 100% 100%;
 }
 
 .container {

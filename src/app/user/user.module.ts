@@ -9,6 +9,7 @@ import { UserProfileComponent } from './user account/user-profile/user-profile.c
 import { UserComponent } from './user.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserWishListComponent } from './user-wish-list/user-wish-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { UserWishListComponent } from './user-wish-list/user-wish-list.component
     UserComponent,
     UserWishListComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule ,FormsModule, ReactiveFormsModule],
   exports: [
     UserCardComponent,
     UserAboutComponent,

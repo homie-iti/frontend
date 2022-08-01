@@ -9,6 +9,7 @@ export class Unitdetails {
     public dailyPrice: number,
     public cover: string,
     public address: string,
-    public geoLocation: string
+    public geoLocation: string,
+    public allowedGender: string
   ) {}
 }

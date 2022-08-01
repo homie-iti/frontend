@@ -20,7 +20,7 @@ export class UnitPageComponent implements OnInit {
   ngOnInit(): void {
     this.unitser.getAllCityUnits(`/units/${this.id}`).subscribe((a) => {
       this.units = a.units;
-      // console.log(a);
+      console.log(a);
     });
   }
 }

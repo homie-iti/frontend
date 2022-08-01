@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { GetdataService } from 'src/app/service/getdata.service';
-import { CityService } from 'src/app/services/city.service';
 import { City } from 'src/app/_models/city';
 
 @Component({

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
-import { CityService } from 'src/app/services/city.service';
 import { City } from 'src/app/_models/city';
 
 @Component({

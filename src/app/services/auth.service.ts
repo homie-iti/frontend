@@ -1,13 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { User } from '../_models/user';
+import { AuthInfo } from '../_models/auth';
 import { Router } from '@angular/router';
-
-interface AuthInfo {
-  isLoggedIn: boolean;
-  token?: string;
-  user?: User;
-}
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +10,7 @@ interface AuthInfo {
 export class AuthService {
   private authInfo: AuthInfo = { isLoggedIn: false };
 
-  private url: string = 'https://homie-iti.herokuapp.com';
+  private url: string = 'http://localhost:8080';
 
   login(email: string, password: string) {
     return this.http.post<{
@@ -31,20 +26,23 @@ export class AuthService {
   setAuthInfo(authInfo: AuthInfo) {
     this.authInfo = authInfo;
   }
-
-  getUser() {
-    return this.authInfo.user;
+  getAuthInfo() {
+    return this.authInfo;
   }
+
   setUser(user: User) {
     this.authInfo.user = user;
   }
-
-  getToken() {
+  getUser() {
     return this.authInfo.user;
   }
+
   setToken(token: string) {
     this.authInfo.token = token;
     localStorage.setItem('token', token);
+  }
+  getToken() {
+    return this.authInfo.user;
   }
 
   isLoggedIn() {

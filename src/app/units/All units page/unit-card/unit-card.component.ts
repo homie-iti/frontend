@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./unit-card.component.css'],
 })
 export class UnitCardComponent implements OnInit {
+  page: number = 1;
   faHeart = faHeart;
   constructor(
     private activate: ActivatedRoute,

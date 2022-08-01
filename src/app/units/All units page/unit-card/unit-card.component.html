@@ -1,6 +1,7 @@
 <div class="d-flex flex-wrap">
-  <div class="card m-3 col-2 col-sm-9 col-lg-4 col-md-5" *ngFor="let item of units">
-    <div id="carousel" class="carousel slide" data-ride="carousel">
+  <div class="card m-3 col-2 col-sm-9 col-lg-4 col-md-5"
+    *ngFor="let item of units | paginate: { itemsPerPage: 24, currentPage: page }">
+    <div id=" carousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" *ngFor="let i of item.images">
           <img src="{{i}}" class="d-block card-img-top card-border" id="opImg" alt="..." style="position:relative ;">
@@ -17,3 +18,4 @@
     </div>
   </div>
 </div>
+<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>

@@ -35,8 +35,8 @@ export class UnitGalleryComponent implements OnInit {
       this.coverSrc = a.cover;
       this.dailyPrice = a.dailyPrice;
 
-      console.log(this.unitDetails);
-      console.log(this.coverSrc);
+      // console.log(this.unitDetails);
+      // console.log(this.coverSrc);
     });
   }
 }

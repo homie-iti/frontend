@@ -15,7 +15,8 @@ import { UnitPageComponent } from './unit page/unit.page/unit.page';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
-import { LandlorddetailsComponent } from './unit page/landlorddetails/landlorddetails.component';
+import { LandlorddetailsComponent } from '../unitpage/landlorddetails/landlorddetails.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LandlorddetailsComponent } from './unit page/landlorddetails/landlordde
     FormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    NgxPaginationModule,
     NgxDaterangepickerMd.forRoot(),
   ],
   exports: [

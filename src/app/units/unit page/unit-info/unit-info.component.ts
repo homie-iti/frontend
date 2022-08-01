@@ -49,11 +49,11 @@ export class UnitInfoComponent implements OnInit {
       this.estateType = a.estateType;
       this.unitdetails = a.unitInfo;
 
-      console.log(this.unitAddress);
-      console.log(this.isAvailable);
-      console.log(this.isPetsAllowed);
-      console.log(this.estateType);
-      console.log(this.unitdetails);
+      // console.log(this.unitAddress);
+      // console.log(this.isAvailable);
+      // console.log(this.isPetsAllowed);
+      // console.log(this.estateType);
+      // console.log(this.unitdetails);
     });
   }
 }

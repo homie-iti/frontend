@@ -1,26 +1,3 @@
-<!-- <div class="container d-flex">
-  <div style="width:150px ;">
-    <h3>
-      address
-    </h3>
-    <div>
-      <p>{{unitAddress.city}} </p>
-      <p>city: </p>
-      <p>street Name :</p>
-    </div>
-  </div>
-  <div style="width:150px ;">
-    <h3>
-      land lord
-    </h3>
-    <div>
-      <img src="" alt="">
-      <p>{{isAvailable?"yes":"no"}}</p>
-      <p>phone number :</p>
-    </div>
-  </div>
-</div> -->
-
 <div>
   <div class="container my-4">
     <h2>Address </h2>
@@ -50,6 +27,38 @@
       </div>
     </div>
   </div>
+
+
+  <div class="container my-4">
+    <h2>Unit Details</h2>
+  </div>
+  <div class="d-flex flex-wrap justify-content-evenly">
+
+    <div class="d-flex">
+      <fa-icon [icon]="faFlorinSign" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Floor Number : {{unitdetails.floor}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faBath" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Bathroom : {{unitdetails.bathrooms}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faPersonBooth" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Rooms : {{unitdetails.rooms}}
+      </div>
+    </div>
+  </div>
+
   <div class="container my-4">
     <h2>Amenities</h2>
   </div>

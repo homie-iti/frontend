@@ -1,26 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
-import { Unitdetails } from 'src/app/_models/unitdetails';
 
 @Component({
-  selector: 'app-unit-description',
-  templateUrl: './unit-description.component.html',
-  styleUrls: ['./unit-description.component.css'],
+  selector: 'app-landlorddetails',
+  templateUrl: './landlorddetails.component.html',
+  styleUrls: ['./landlorddetails.component.css'],
 })
-export class UnitDescriptionComponent implements OnInit {
+export class LandlorddetailsComponent implements OnInit {
   constructor(
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
   id: any = this.activate.snapshot.params['id'];
-  unitDetails: string | undefined;
+  unitLandlord: any = '';
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
-      this.unitDetails = a.unitInfo.description;
+      this.unitLandlord = a.landlordId;
 
-      console.log(this.unitDetails);
+
+      console.log(this.unitLandlord);
+
     });
   }
 }

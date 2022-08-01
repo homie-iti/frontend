@@ -25,12 +25,16 @@ export class UnitGalleryComponent implements OnInit {
 
   id: any = this.activate.snapshot.params['id'];
   unitDetails: Unitdetails[] = [];
+  dailyPrice: number | undefined;
+
   // unitCover: string | undefined;
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitDetails = a.images;
       this.coverSrc = a.cover;
+      this.dailyPrice = a.dailyPrice;
+
       console.log(this.unitDetails);
       console.log(this.coverSrc);
     });

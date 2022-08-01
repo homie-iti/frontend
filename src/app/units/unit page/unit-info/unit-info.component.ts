@@ -7,8 +7,12 @@ import {
   faHouseCircleExclamation,
   faHouse,
   faPaw,
+  faPersonBooth,
+  faBath,
+  faFlorinSign,
 } from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { Unitdetails } from 'src/app/_models/unitdetails';
 
 @Component({
   selector: 'app-unit-info',
@@ -17,6 +21,9 @@ import { GetdataService } from 'src/app/service/getdata.service';
 })
 export class UnitInfoComponent implements OnInit {
   faCity = faCity;
+  faBath = faBath;
+  faFlorinSign = faFlorinSign;
+  faPersonBooth = faPersonBooth;
   faBuilding = faBuilding;
   faRoad = faRoad;
   faHouseCircleExclamation = faHouseCircleExclamation;
@@ -29,24 +36,24 @@ export class UnitInfoComponent implements OnInit {
 
   id: any = this.activate.snapshot.params['id'];
   unitAddress: any = '';
-  unitLandlord: any = '';
   isAvailable: boolean | undefined;
   isPetsAllowed: boolean | undefined;
   estateType: string | undefined;
+  unitdetails: any = '';
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitAddress = a.address;
-      this.unitLandlord = a.landlordId;
       this.isAvailable = a.isAvailable;
       this.isPetsAllowed = a.isPetsAllowed;
       this.estateType = a.estateType;
+      this.unitdetails = a.unitInfo;
 
       console.log(this.unitAddress);
-      console.log(this.unitLandlord);
       console.log(this.isAvailable);
       console.log(this.isPetsAllowed);
       console.log(this.estateType);
+      console.log(this.unitdetails);
     });
   }
 }

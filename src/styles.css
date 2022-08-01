@@ -4,7 +4,7 @@
 :root{
     --bg-lightGray:#cfc2b3;
     --btn-color:rgb(34, 56, 63);
-    --main-font-color: #2f2610;
+    --main-font-color: #28210c;
     --hover-font-color: #988042;
     --main-background-color: rgba(234, 209, 179, 0.265);
     --addresses-color:rgb(155, 134, 109);
@@ -18,7 +18,7 @@
 
 }
 body{
-    background-image: url("assets/Images/location_bg.jpg");
+    background-image: url("../src/assets/Images/location_bg.jpg");
     /* background-color: var(--main-background-color); */
  }
 

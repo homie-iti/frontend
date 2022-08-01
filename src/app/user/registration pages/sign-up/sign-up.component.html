@@ -9,7 +9,7 @@
         id="firstName"
         aria-describedby="firstNameHelp"
         placeholder="First Name"
-        [(ngModel)]="user.firstname"
+        [(ngModel)]="user.firstName"
         #firstname="ngModel"
         [ngModelOptions]="{ standalone: true }"
         required
@@ -35,7 +35,7 @@
         id="middleName"
         aria-describedby="middleNameHelp"
         placeholder="Middle Name"
-        [(ngModel)]="user.middlename"
+        [(ngModel)]="user.middleName"
         #middlename="ngModel"
         [ngModelOptions]="{ standalone: true }"
         required
@@ -63,7 +63,7 @@
         id="LastName"
         aria-describedby="LastNameHelp"
         placeholder="Last Name"
-        [(ngModel)]="user.lastname"
+        [(ngModel)]="user.lastName"
         #lastname="ngModel"
         [ngModelOptions]="{ standalone: true }"
         required
@@ -144,7 +144,7 @@
         type="password"
         class="form-control"
         id="Confirmpassword"
-        [(ngModel)]="confirmPassword"
+        [(ngModel)]="user.confirmPassword"
         #confirmpassword="ngModel"
         [ngModelOptions]="{ standalone: true }"
         aria-describedby="confirmpasswordHelp"

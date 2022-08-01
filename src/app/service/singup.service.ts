@@ -19,9 +19,6 @@ export class SingupService {
   checkAvailableEmail( checkAvailable: Checkmail) {
       return this.http.post<any>(this.url, checkAvailable);
 
-    
-    
-    
   }
   
   checkAvailableNationlId( checkAvailable:ChecknationalId) {

@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class AuthService {
   private authInfo: AuthInfo = { isLoggedIn: false };
 
-  private url: string = 'http://localhost:8080';
+  // private url: string = 'http://localhost:8080';
+  private url: string = 'https://homie-iti.herokuapp.com';
 
   login(email: string, password: string) {
     return this.http.post<{

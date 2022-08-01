@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { UserCardComponent } from './user profile page/user-card/user-card.component';
 import { UserAboutComponent } from './user profile page/user-about/user-about.component';
 import { UserUnitListingComponent } from './user profile page/user-unit-listing/user-unit-listing.component';
@@ -22,7 +23,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserComponent,
     UserWishListComponent,
   ],
-  imports: [CommonModule ,FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
     UserCardComponent,
     UserAboutComponent,

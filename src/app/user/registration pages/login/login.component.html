@@ -13,7 +13,13 @@
       <div class="row mb-3">
         <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
         <div class="col-sm-10">
-          <input type="email" class="form-control" id="inputEmail3" />
+          <input
+            type="email"
+            name="email"
+            [(ngModel)]="loginForm.email"
+            class="form-control"
+            id="inputEmail3"
+          />
         </div>
       </div>
       <div class="row mb-3">
@@ -21,10 +27,22 @@
           >Password</label
         >
         <div class="col-sm-10">
-          <input type="password" class="form-control" id="inputPassword3" />
+          <input
+            type="password"
+            name="password"
+            [(ngModel)]="loginForm.password"
+            class="form-control"
+            id="inputPassword3"
+          />
         </div>
       </div>
-      <button class="btn">Login</button>
+      <button (click)="login()" class="btn">Login</button>
+      <p
+        class="text-danger form-text"
+        [ngClass]="{ 'opacity-0': !doesLoginHasError }"
+      >
+        Email or password is incorrect, try again.
+      </p>
     </form>
   </div>
 </div>

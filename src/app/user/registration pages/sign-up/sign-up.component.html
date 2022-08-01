@@ -258,7 +258,8 @@
       <input
         class="form-check-input"
         type="radio"
-        name="flexRadioDefault"
+        name="Female"
+        value="female"
         id="flexRadioDefault1"
         [(ngModel)]="user.gender"
         [ngModelOptions]="{ standalone: true }"
@@ -266,17 +267,18 @@
       <label class="form-check-label" for="flexRadioDefault1"> Female </label>
     </div>
     <div class="form-check">
-      <label>Gender</label>
       <input
         class="form-check-input"
         type="radio"
-        name="flexRadioDefault"
+        name="male"
+        value="male"
         id="flexRadioDefault2"
         [(ngModel)]="user.gender"
         [ngModelOptions]="{ standalone: true }"
       />
       <label class="form-check-label" for="flexRadioDefault2"> Male </label>
     </div>
+    <button (click)="save()" class="btn">Sign Up</button>
   </form>
 </div>
 <!-- </div> -->

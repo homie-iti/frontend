@@ -20,7 +20,7 @@ export class SignUpComponent implements OnInit {
   CheckMail: Checkmail=new Checkmail("");
   CheckNationalId: ChecknationalId=new ChecknationalId(0);
   CheckPhone: Checkphone=new Checkphone(0);
-  user:SignUpData=new SignUpData("","","",this.CheckMail.email,"",this.CheckNationalId.nationalId,this.CheckPhone.phone,Gender.female,23)
+  user:SignUpData=new SignUpData("","","","","",0,0,Gender.female,23)
   AvalibleMail:boolean = true;
   AvalibleNationalId:boolean = true;
   AvaliblePhone:boolean = true;
@@ -36,6 +36,7 @@ export class SignUpComponent implements OnInit {
 
   isMail(){
     console.log(this.CheckMail);
+    this.user.email=this.CheckMail.email
     this.signUpService.checkAvailableEmail(this.CheckMail).subscribe(a=>{
       console.log(a);
       if (a.isAvailable== false){
@@ -46,6 +47,8 @@ export class SignUpComponent implements OnInit {
     })
   }
   isNationalId(){
+    this.user.nationalId=this.CheckNationalId.nationalId
+
     console.log(this.CheckNationalId);
     this.signUpService.checkAvailableNationlId(this.CheckNationalId).subscribe(a=>{
       console.log(a);
@@ -57,6 +60,8 @@ export class SignUpComponent implements OnInit {
   }
 
   isPhone(){
+    this.user.phone=this.CheckPhone.phone
+
     console.log(this.CheckPhone);
     this.signUpService.checkAvailablephone(this.CheckPhone).subscribe(a=>{
       console.log(a);
@@ -67,6 +72,10 @@ export class SignUpComponent implements OnInit {
     })
   }
 
+
+  save(){
+    console.log(this.user)
+  }
 
   sendUser(){
     console.log(this.user);

@@ -12,7 +12,7 @@ export class SignUpData {
         public email:string,
         public password:string,
         public nationalId:number,
-        public phone:string,
+        public phone:number,
         public gender:Gender,
         public age:number
 

@@ -1,103 +1,92 @@
-<div class="container">
-  <h2>Description</h2>
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque odit mollitia minima error, itaque dolorum earum,
-    totam alias et temporibus ducimus a repudiandae? Dolor, molestiae recusandae libero minima labore quia. Lorem ipsum
-    dolor sit amet consectetur, adipisicing elit. Asperiores repellendus quas et aliquam quae dolorum ab alias rem
-    natus? Aperiam vitae illum aut veniam libero, perferendis quibusdam assumenda reiciendis. Repellat? Lorem ipsum
-    dolor sit amet consectetur adipisicing elit. Aliquid, quibusdam. Tempora minima doloremque reiciendis eaque. Vel
-    excepturi impedit hic nemo. Incidunt ullam fuga similique quas soluta, fugit saepe totam temporibus.</p>
-</div>
+<div>
+  <div class="container my-4">
+    <h2>Address </h2>
+  </div>
+  <div class="d-flex flex-wrap justify-content-evenly">
+    <div class="d-flex">
+      <fa-icon [icon]="faBuilding" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Building Number : {{unitAddress.buildingNumber}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faRoad" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Street Name : {{unitAddress.streetName}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faCity" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        City : {{unitAddress.city}}
+      </div>
+    </div>
+  </div>
 
 
+  <div class="container my-4">
+    <h2>Unit Details</h2>
+  </div>
+  <div class="d-flex flex-wrap justify-content-evenly">
 
-<div class="text-center my-5" id="Service">
-  <h2>Facilities</h2>
-  <hr class="my-5" style="width: 20%; margin-left: 40%;">
-</div>
+    <div class="d-flex">
+      <fa-icon [icon]="faFlorinSign" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Floor Number : {{unitdetails.floor}}
+      </div>
+    </div>
 
-<div class="d-flex flex-wrap justify-content-around">
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faToilet" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Shared toilet</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faKitchenSet" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Shared kitchen</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faShower" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Unisex bathroom</p>
-  </div>
+    <div class="d-flex">
+      <fa-icon [icon]="faBath" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Bathroom : {{unitdetails.bathrooms}}
+      </div>
+    </div>
 
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faParking" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">No Parking</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faCouch" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">No living room</p>
-  </div>
-
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faTemperatureArrowUp" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
-    </fa-icon>
-    <p class="text-center my-5 mx-3">Central heating</p>
-  </div>
-</div>
-
-<div class="text-center my-5" id="Service">
-  <h2>Amenities</h2>
-  <hr class="my-5" style="width: 20%; margin-left: 40%;">
-</div>
-
-<div class="d-flex flex-wrap justify-content-around">
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faWifi" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">WiFi</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faBed" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Bed</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faTv" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">No TV</p>
+    <div class="d-flex">
+      <fa-icon [icon]="faPersonBooth" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Rooms : {{unitdetails.rooms}}
+      </div>
+    </div>
   </div>
 
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faHouseLock" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">No bedroom lock</p>
+  <div class="container my-4">
+    <h2>Amenities</h2>
   </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faElevator" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">No Elevator</p>
+  <div class="d-flex flex-wrap justify-content-evenly">
+
+    <div class="d-flex">
+      <fa-icon [icon]="faHouse" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Estate Type : {{estateType}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faHouseCircleExclamation" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Available : {{isAvailable?"Yes":"No"}}
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <fa-icon [icon]="faPaw" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      </fa-icon>
+      <div class="my-5 mx-3">
+        Pet Allow : {{isPetsAllowed?"Yes":"No"}}
+      </div>
+    </div>
   </div>
 
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faWheelchair" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
-    </fa-icon>
-    <p class="text-center my-5 mx-3">Not access friendly</p>
-  </div>
-</div>
-
-
-<div class="text-center my-5" id="Service">
-  <h2>House rules</h2>
-  <hr class="my-5" style="width: 20%; margin-left: 40%;">
-</div>
-
-
-<div class="d-flex flex-wrap justify-content-around">
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faMusic" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Playing musical instruments negotiable</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faSmoking" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Smoking allowed only outside</p>
-  </div>
-  <div class="d-flex col-12 col-md-5 col-lg-4 justify-content-center align-content-center">
-    <fa-icon [icon]="faPaw" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);"></fa-icon>
-    <p class="text-center my-5 mx-3">Pets not allowed</p>
-  </div>
 </div>

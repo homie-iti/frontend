@@ -8,8 +8,11 @@
   font-family: "Poppins";
 }
 
-:host {
-  background: #f4f4f4;
+.teams{
+  
+  background-image: url("../../../assets/Images/homeCover/pexels-sebastian-sørensen-731082.jpg");
+  background-attachment: fixed; 
+ background-position: 100% 100%;
 }
 
 .container {

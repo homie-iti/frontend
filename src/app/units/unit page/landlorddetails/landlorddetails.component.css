@@ -1,0 +1,11 @@
+.card-outline {
+  box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.colorContetnt {
+  color: var(--main-font-color);
+  width: 25em;
+}
+.colorCon2 {
+  color: var(--hover-font-color);
+}

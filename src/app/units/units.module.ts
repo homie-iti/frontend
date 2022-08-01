@@ -15,6 +15,7 @@ import { UnitPageComponent } from './unit page/unit.page/unit.page';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
+import { LandlorddetailsComponent } from './unit page/landlorddetails/landlorddetails.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { AppRoutingModule } from '../app-routing.module';
     UnitReviewComponent,
     UnitsComponent,
     UnitPageComponent,
+    LandlorddetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -47,6 +49,7 @@ import { AppRoutingModule } from '../app-routing.module';
     UnitInfoComponent,
     UnitListingComponent,
     UnitReviewComponent,
+    LandlorddetailsComponent,
   ],
 })
 export class UnitsModule {}

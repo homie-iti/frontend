@@ -4,6 +4,12 @@ img {
   border: 3px solid;
 }
 
+.divWidth {
+  width: fit-content;
+  height: fit-content;
+  text-align: center;
+}
+
 img:hover {
   transition: all 1s;
   transform: scale(1.1);

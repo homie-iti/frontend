@@ -10,12 +10,12 @@ import { UnitInfoComponent } from './unit page/unit-info/unit-info.component';
 import { UnitListingComponent } from './unit-listing/unit-listing.component';
 import { UnitReviewComponent } from './unit page/unit-review/unit-review.component';
 import { UnitsComponent } from './units.page';
+import { LandlorddetailsComponent } from './unit page/landlorddetails/landlorddetails.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UnitPageComponent } from './unit page/unit.page/unit.page';
 import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
-import { LandlorddetailsComponent } from '../unitpage/landlorddetails/landlorddetails.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({

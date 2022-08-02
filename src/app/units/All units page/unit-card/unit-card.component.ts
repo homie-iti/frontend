@@ -2,14 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-<<<<<<< HEAD
 import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
-=======
-import { ActivatedRoute } from '@angular/router';
-import { NgxSpinnerService } from 'ngx-spinner';
->>>>>>> da8f03539677cbb0ac70ebd9d61179128f80d4a4
 
 @Component({
   selector: 'app-unit-card',

@@ -23,6 +23,12 @@
     color:rgb(234, 206, 177)
 
 }
+.home h3{
+    color:var(--color-search)
+}
+
+
+
 img{
     width:90%;
  

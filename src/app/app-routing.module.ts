@@ -1,3 +1,4 @@
+import { AboutUsComponent } from './about-us/about-us.page';
 import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'user-wish-list',
     component: UserWishListComponent,
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
   },
   {
     path: 'signup',

@@ -145,14 +145,13 @@
         <div class="accordion-body">
           <div class="d-flex flex-wrap">
             <div class="d-flex">
-              <a routerLink="/units/{{ id }}/gender"
-                ><input
-                  type="checkbox"
-                  placeholder="select"
-                  style="width: 20px"
-                  (click)="save($any($event.target).value)"
-                  value="male"
-              /></a>
+              ><input
+                type="checkbox"
+                placeholder="select"
+                style="width: 20px"
+                (click)="save($any($event.target).value)"
+                value="male"
+              />
               <p class="px-2 my-1">Mail</p>
             </div>
             <div class="d-flex">

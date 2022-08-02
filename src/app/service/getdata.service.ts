@@ -6,6 +6,9 @@ import { Units } from '../_models/units';
   providedIn: 'root',
 })
 export class GetdataService {
+  GetdataService(): any {
+    throw new Error('Method not implemented.');
+  }
   private url: string = 'https://homie-iti.herokuapp.com';
   getAll() {
     return this.http.get<any>(this.url);

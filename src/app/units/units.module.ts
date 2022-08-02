@@ -17,6 +17,7 @@ import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FontAwesomeModule,
     AppRoutingModule,
     NgxPaginationModule,
+    NgxSpinnerModule,
     NgxDaterangepickerMd.forRoot(),
   ],
   exports: [

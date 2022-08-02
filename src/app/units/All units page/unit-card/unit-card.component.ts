@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+<<<<<<< HEAD
 import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
+=======
+import { ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+>>>>>>> da8f03539677cbb0ac70ebd9d61179128f80d4a4
 
 @Component({
   selector: 'app-unit-card',
@@ -13,10 +18,12 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 export class UnitCardComponent implements OnInit {
   page: number = 1;
   faHeart = faHeart;
+  emp: any;
   constructor(
     private activate: ActivatedRoute,
     private unitser: GetdataService,
     private transfer:TransferDataService
+    private SpinnerService: NgxSpinnerService
   ) {}
   id: any = this.activate.snapshot.params['id'];
 
@@ -25,9 +32,11 @@ export class UnitCardComponent implements OnInit {
   unitsFilter=this.transfer.filteredUnits
 
   ngOnInit(): void {
+    this.SpinnerService.show();
     this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
       console.log(a);
+      this.SpinnerService.hide();
     });
   
 

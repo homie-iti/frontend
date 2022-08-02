@@ -18,11 +18,10 @@
 .container {
   margin: auto;
   margin-top: 50px;
+  
 }
 
-img {
-  border-radius: 50%;
-}
+
 .container .team {
   width: auto;
   display: flex;
@@ -30,8 +29,33 @@ img {
   text-align: center;
   flex-wrap: wrap;
 }
+h2{
+    
+  font-size: 3rem;
+  font-weight: 900;
 
-.container .team .member {
+  color:var(  --color-search);
+
+  text-align: center;
+  margin-top: 30px;
+}
+
+.card{
+  margin:30px;
+  border:1px solid var(  --main-background-color);
+  background-color: var( --color-search);
+  overflow: auto;
+  transition: all 0.5s 0.2s ease-in-out;
+}
+img{
+  height: 30vh;
+
+}
+.card:hover{
+  transform: scale(1.1);
+  box-shadow: 10px 10px 5px var( --section-color);
+}
+/* .container .team .member {
   width: 325px;
   margin: 10px;
   background: #fff;
@@ -59,4 +83,4 @@ img {
   color: #999;
   font-size: 15px;
   text-align: justify;
-}
+} */

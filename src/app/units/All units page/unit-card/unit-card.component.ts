@@ -3,6 +3,7 @@ import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-unit-card',
@@ -12,18 +13,22 @@ import { ActivatedRoute } from '@angular/router';
 export class UnitCardComponent implements OnInit {
   page: number = 1;
   faHeart = faHeart;
+  emp: any;
   constructor(
     private activate: ActivatedRoute,
-    private unitser: GetdataService
+    private unitser: GetdataService,
+    private SpinnerService: NgxSpinnerService
   ) {}
   id: any = this.activate.snapshot.params['id'];
 
   units: Units[] = [];
 
   ngOnInit(): void {
+    this.SpinnerService.show();
     this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
       console.log(a);
+      this.SpinnerService.hide();
     });
   }
 }

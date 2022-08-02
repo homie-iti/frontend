@@ -25,7 +25,7 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
 
-  filterGender(endpoint: string) {
+  filter(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
   

@@ -6,15 +6,16 @@ export enum Gender{
 
 export class SignUpData {
     constructor(
-        public firstname:string,
-        public middlename:string,
-        public lastname:string,
+        public firstName:string,
+        public middleName:string,
+        public lastName:string,
         public email:string,
         public password:string,
         public nationalId:number,
-        public phone:string,
+        public phone:number,
         public gender:Gender,
-        public age:number
+        public age:number,
+        public confirmPassword:string
 
         
     ){}

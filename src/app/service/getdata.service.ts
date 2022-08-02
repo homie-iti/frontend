@@ -22,5 +22,11 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
 
+  filterGender(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
+  
+
+
   constructor(private http: HttpClient) {}
 }

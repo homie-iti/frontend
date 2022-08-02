@@ -1,5 +1,5 @@
 export class Checkphone {
-    constructor( public phone :string
+    constructor( public phone :number
         ){
 
    }

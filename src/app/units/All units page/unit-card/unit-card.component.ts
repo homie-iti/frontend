@@ -5,6 +5,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons';
 <<<<<<< HEAD
 import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
+import { NgxSpinnerService } from 'ngx-spinner';
 =======
 import { ActivatedRoute } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -22,7 +23,7 @@ export class UnitCardComponent implements OnInit {
   constructor(
     private activate: ActivatedRoute,
     private unitser: GetdataService,
-    private transfer:TransferDataService
+    private transfer:TransferDataService,
     private SpinnerService: NgxSpinnerService
   ) {}
   id: any = this.activate.snapshot.params['id'];

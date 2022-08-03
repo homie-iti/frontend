@@ -56,37 +56,62 @@ export class UnitFilterComponent implements OnInit {
     }
   }
 
-  checkEstateType(estate: any) {
-    this.transfer.estateType = estate;
-    if (this.transfer.estateType) {
-      this.unitser
-        .filter(
-          `/Homie/${this.id}/filter?estateType=${this.transfer.estateType}`
-        )
-        .subscribe((a) => {
-          this.transfer.filteredUnits = a.units;
-          console.log(this.transfer.filteredUnits);
-        });
-    }
-  }
+
+
+  arrayOfChecked:any[]=[];
 
   onChange(event: any) {
     if (event.target.checked) {
       console.log(event.target.checked);
-      this.transfer.estateType = event.target.value;
-      if (this.transfer.estateType) {
+      this.arrayOfChecked.push(event.target.value) ;
+      console.log(this.arrayOfChecked)}
+
+      else {
+        console.log(event.target.value)
+        this.arrayOfChecked = this.arrayOfChecked.filter(item => item !== event.target.value)
+                console.log(this.arrayOfChecked)
+  
+        }
+
+
+
+        if (this.arrayOfChecked.length==0) {
+              this.transfer.filteredUnits = [];
+              console.log(this.transfer.filteredUnits);
+            
+        } 
+
+      if (this.arrayOfChecked.length==1) {
         this.unit = this.unitser
           .filter(
-            `/Homie/${this.id}/filter?estateType=${this.transfer.estateType}`
+            `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}`
           )
           .subscribe((a) => {
             this.transfer.filteredUnits = a.units;
             console.log(this.transfer.filteredUnits);
           });
-      }
-    } else {
-      this.transfer.filteredUnits=[]
-    }
+      } 
+
+       if(this.arrayOfChecked.length ==2){
+        this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}`).subscribe((a) => {
+          this.transfer.filteredUnits= a.units;
+          console.log(this.transfer.filteredUnits);
+        }); }
+
+        if(this.arrayOfChecked.length ==3){
+          this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[1]}`).subscribe((a) => {
+            this.transfer.filteredUnits= a.units;
+            console.log(this.transfer.filteredUnits);
+          }); }
+
+          if(this.arrayOfChecked.length ==4){
+            this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[3]}`).subscribe((a) => {
+              this.transfer.filteredUnits= a.units;
+              console.log(this.transfer.filteredUnits);
+            }); }
+
+          
+                   
   }
 
   checkMinPrice(price: any) {

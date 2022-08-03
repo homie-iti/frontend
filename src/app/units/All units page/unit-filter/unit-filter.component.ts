@@ -85,6 +85,7 @@ export class UnitFilterComponent implements OnInit {
           });
       }
     } else {
+      this.transfer.filteredUnits=[]
     }
   }
 

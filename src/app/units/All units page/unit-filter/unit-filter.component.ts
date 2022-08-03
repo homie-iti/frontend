@@ -22,6 +22,7 @@ export class UnitFilterComponent implements OnInit {
   faBell = faBell;
   maxPrice: number = 0;
   minPrice: number = 0;
+  filter:string=""
 
   id: any = this.ac.snapshot.params['id'];
   unitArray = [];
@@ -56,62 +57,67 @@ export class UnitFilterComponent implements OnInit {
     }
   }
 
-
-
-  arrayOfChecked:any[]=[];
+  arrayOfChecked: any[] = [];
 
   onChange(event: any) {
     if (event.target.checked) {
       console.log(event.target.checked);
-      this.arrayOfChecked.push(event.target.value) ;
-      console.log(this.arrayOfChecked)}
+      this.arrayOfChecked.push(event.target.value);
+      console.log(this.arrayOfChecked);
+    } else {
+      console.log(event.target.value);
+      this.arrayOfChecked = this.arrayOfChecked.filter(
+        (item) => item !== event.target.value
+      );
+      console.log(this.arrayOfChecked);
+    }
 
-      else {
-        console.log(event.target.value)
-        this.arrayOfChecked = this.arrayOfChecked.filter(item => item !== event.target.value)
-                console.log(this.arrayOfChecked)
-  
-        }
+    if (this.arrayOfChecked.length == 0) {
+      this.transfer.filteredUnits = [];
+      console.log(this.transfer.filteredUnits);
+    }
 
-
-
-        if (this.arrayOfChecked.length==0) {
-              this.transfer.filteredUnits = [];
-              console.log(this.transfer.filteredUnits);
-            
-        } 
-
-      if (this.arrayOfChecked.length==1) {
-        this.unit = this.unitser
-          .filter(
-            `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}`
-          )
-          .subscribe((a) => {
-            this.transfer.filteredUnits = a.units;
-            console.log(this.transfer.filteredUnits);
-          });
-      } 
-
-       if(this.arrayOfChecked.length ==2){
-        this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}`).subscribe((a) => {
-          this.transfer.filteredUnits= a.units;
+    if (this.arrayOfChecked.length == 1) {
+      this.unit = this.unitser
+        .filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}`)
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
           console.log(this.transfer.filteredUnits);
-        }); }
+        });
+    }
 
-        if(this.arrayOfChecked.length ==3){
-          this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[1]}`).subscribe((a) => {
-            this.transfer.filteredUnits= a.units;
-            console.log(this.transfer.filteredUnits);
-          }); }
+    if (this.arrayOfChecked.length == 2) {
+      this.unitser
+        .filter(
+          `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}`
+        )
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
 
-          if(this.arrayOfChecked.length ==4){
-            this.unitser.filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[3]}`).subscribe((a) => {
-              this.transfer.filteredUnits= a.units;
-              console.log(this.transfer.filteredUnits);
-            }); }
+    if (this.arrayOfChecked.length == 3) {
+      this.unitser
+        .filter(
+          `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[1]}`
+        )
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
 
-          
-                   
+    if (this.arrayOfChecked.length == 4) {
+      this.unitser
+        .filter(
+          `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[3]}`
+        )
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
   }
 
   checkMinPrice(price: any) {
@@ -130,6 +136,19 @@ export class UnitFilterComponent implements OnInit {
     console.log(this.maxPrice);
     this.unitser
       .filter(`/Homie/${this.id}/filter?maxPrice=${this.maxPrice}`)
+      .subscribe((a) => {
+        this.transfer.filteredUnits = a.units;
+        console.log(this.transfer.filteredUnits);
+      });
+  }
+
+  
+
+  Range() {
+    this.unitser
+      .filter(
+        `/Homie/${this.id}/filter?minPrice=${this.minPrice}&maxPrice=${this.maxPrice}`
+      )
       .subscribe((a) => {
         this.transfer.filteredUnits = a.units;
         console.log(this.transfer.filteredUnits);

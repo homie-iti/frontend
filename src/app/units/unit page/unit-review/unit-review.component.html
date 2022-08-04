@@ -1,31 +1,20 @@
 <section id="testimonials" class="text-center m-5 p-5">
   <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12" *ngFor="let item of unitComment">
 
-        <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist">
+        <ul class="nav nav-pills justify-content-center mb-3" id="pills-tab" role="tablist" >
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
               type="button" role="tab" aria-controls="pills-home" aria-selected="true">
               <img src="../../../assets/Images/ReviwImages/team-3-800x800.jpg" alt="">
             </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-              type="button" role="tab" aria-controls="pills-profile" aria-selected="false">
-              <img src="../../../assets/Images/ReviwImages/team-4-800x800.jpg" alt="">
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-              type="button" role="tab" aria-controls="pills-contact" aria-selected="false">
-              <img src="../../../assets/Images/ReviwImages/team-6-800x800.jpg" alt="">
-            </button>
+            <h5 class="title-sm mb-0"></h5>
           </li>
         </ul>
 
-        <div class="tab-content" id="pills-tabContent" *ngFor="let item of unitComment">
-          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" >
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="review">
               <!-- <div class="stars">
                 <fa-icon [icon]="faStar"></fa-icon>
@@ -34,9 +23,7 @@
                 <fa-icon [icon]="faStar"></fa-icon>
                 <fa-icon [icon]="faStar"></fa-icon>
               </div> -->
-              <p class="lead">{{item.comment}}</p>
-              <h5 class="title-sm mb-0">John Doe</h5>
-              <small>Web Developer</small>
+              <p class="lead">Comment : {{item.comment}}</p>
             </div>
           </div>
         </div>

@@ -16,6 +16,7 @@ export class UnitReviewComponent implements OnInit {
   ) {}
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
+  agentData: any;
 
   agentdetails:any
 
@@ -40,5 +41,8 @@ export class UnitReviewComponent implements OnInit {
         console.log(this.agentdetails.image)
         // console.log(this.unitComment);
       }});
+        // this.agentData = a.reviews.reviews[0].agentId;
+        // console.log(this.agentData);
+      // });
   }
 }

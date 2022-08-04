@@ -2,51 +2,35 @@ h1 {
     color: white;
 }
 
-button {
-    background-color: rgb(29, 4, 247);
-    color: white;
-}
 
-img {
-    width: 100%;
-    height: 90vh;
-}
 
-.form {
-    margin: auto;
 
-}
-
-.container {
+/* .container {
     font-family: 'Courier New', Courier, monospace;
     background-color:rgb(149, 128, 103)
 
 
 
-}
+} */
 
 button{
-    background-color:rgb(116, 82, 42)
+    background-color:var(--addresses-color)
 
 }
 
 label {
-    color: white;
+    color: rgb(249, 242, 223);
 }
 
-.imgContainer {
-    padding-left: 0;
-    padding-right: 0;
-
+.sign{
+  margin: 5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color: var(--section-color);
 }
 
 @media (max-width:1000px) {
-    img{
-        height: 60vh;
-    }
-    .imgContainer{
-        height: 50%;
-    }
+   
     
 } 
 

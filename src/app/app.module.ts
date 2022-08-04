@@ -1,3 +1,5 @@
+import { ContactUsModule } from './contact-us/contact-us.module';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsModule } from './about-us/about-us.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,7 +31,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AboutUsModule
+    AboutUsModule,
+    ContactUsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

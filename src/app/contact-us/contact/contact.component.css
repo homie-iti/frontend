@@ -1,0 +1,94 @@
+h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+   
+    color:rgb(155, 134, 109);
+
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+@media screen and (min-width: 48em) {
+    .boxed-container .column:first-child {
+        padding-right: 1rem;
+    }
+
+    .boxed-container .column:last-child {
+        padding-left: 1rem;
+    }
+
+    #chat-section .column {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #chat-section .column a.icon-button.full-width {
+        max-width: 48%;
+    }
+
+    .icon-button-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 755px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    .boxed-container .column:first-child {
+        padding-right: 2rem;
+    }
+
+    .boxed-container .column:last-child {
+        padding-left: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+}
+#homie-loans-section img.logo {
+    margin-bottom: 2rem;
+    max-width: 260px;
+}
+
+p.footnote {
+    font-size: 12px;
+    line-height: 18px;
+    color: #424E5A;
+    max-width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.equal-housing-line {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+    .equal-housing-line img {
+        margin-bottom: 0;
+        width: 22px;
+        margin-right: 1rem;
+    }
+
+    .equal-housing-line p {
+        font-size: 12px;
+        line-height: 18px;
+        color: #424E5A;
+    }
+
+@media screen and (min-width: 75em) {
+    p.footnote {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .equal-housing-line p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+}

@@ -7,6 +7,7 @@
     </div>
 
     <form
+      [formGroup]="loginForm"
       class="col-md-6 col-xl-5 col-lg-6 col-sm-12 formContainer text-center"
     >
       <h1>Login</h1>
@@ -16,7 +17,7 @@
           <input
             type="email"
             name="email"
-            [(ngModel)]="loginForm.email"
+            formControlName="email"
             class="form-control"
             id="inputEmail3"
           />
@@ -30,7 +31,7 @@
           <input
             type="password"
             name="password"
-            [(ngModel)]="loginForm.password"
+            formControlName="password"
             class="form-control"
             id="inputPassword3"
           />

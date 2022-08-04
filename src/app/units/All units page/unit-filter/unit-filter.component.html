@@ -90,10 +90,7 @@
               />
             </div>
           </div>
-          <div class="d-flex">
-            <input type="checkbox" name="" id="" />
-            <p class="my-2 px-2">Bills included</p>
-          </div>
+          <button class="btn btn-primary" (click)="Range()">Range Price</button>
         </div>
       </div>
     </div>
@@ -249,46 +246,43 @@
                 <div class="d-flex">
                   <input
                     type="checkbox"
-                    name=""
-                    id=""
+                    class="form-check-input"
                     style="width: 20px"
                     value="studio"
-                    (change)="checkEstateType($any($event.target).value)"
+                    (change)="onChange($event)"
                   />
-                  <p class="my-2 px-2">Studio</p>
+                  <p class="px-2">Studio</p>
                 </div>
                 <div class="d-flex">
                   <input
                     type="checkbox"
-                    name=""
-                    id=""
+                    class="form-check-input"
+                    class="form-check-input"
                     style="width: 20px"
                     value="apartment"
-                    (change)="checkEstateType($any($event.target).value)"
+                    (change)="onChange($event)"
                   />
-                  <p class="my-2 px-2">Apartment</p>
+                  <p class="px-2">Apartment</p>
                 </div>
                 <div class="d-flex">
                   <input
                     type="checkbox"
-                    name=""
-                    id=""
+                    class="form-check-input"
                     style="width: 20px"
                     value="single-room"
-                    (change)="checkEstateType($any($event.target).value)"
+                    (change)="onChange($event)"
                   />
-                  <p class="my-2 px-2">Private Room</p>
+                  <p class="px-2">Private Room</p>
                 </div>
                 <div class="d-flex">
                   <input
                     type="checkbox"
-                    name=""
-                    id=""
+                    class="form-check-input"
                     style="width: 20px"
                     value="shared-room"
-                    (change)="checkEstateType($any($event.target).value)"
+                    (change)="onChange($event)"
                   />
-                  <p class="my-2 px-2">Shared Room</p>
+                  <p class="px-2">Shared Room</p>
                 </div>
               </div>
             </div>

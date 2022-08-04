@@ -1,4 +1,4 @@
-<!-- <section id="testimonials" class="text-center m-5 p-5">
+<section id="testimonials" class="text-center m-5 p-5">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -24,59 +24,17 @@
           </li>
         </ul>
 
-        <div class="tab-content" id="pills-tabContent">
-          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
+        <div class="tab-content" id="pills-tabContent" *ngFor="let item of unitComment">
+          <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" >
             <div class="review">
-              <div class="stars">
+              <!-- <div class="stars">
                 <fa-icon [icon]="faStar"></fa-icon>
                 <fa-icon [icon]="faStar"></fa-icon>
                 <fa-icon [icon]="faStar"></fa-icon>
                 <fa-icon [icon]="faStar"></fa-icon>
                 <fa-icon [icon]="faStar"></fa-icon>
-              </div>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-                ea explicabo nisi quia blanditiis assumenda quos veritatis sit deleniti porro
-                nulla temporibus deserunt, iure in labore incidunt quis eos. Accusamus sed
-                excepturi architecto.</p>
-              <h5 class="title-sm mb-0">John Doe</h5>
-              <small>Web Developer</small>
-            </div>
-
-
-          </div>
-          <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-            <div class="review">
-              <div class="stars">
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-
-              </div>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-                ea explicabo nisi quia blanditiis assumenda quos veritatis sit deleniti porro
-                nulla temporibus deserunt, iure in labore incidunt quis eos. Accusamus sed
-                excepturi architecto.</p>
-              <h5 class="title-sm mb-0">John Doe</h5>
-              <small>Web Developer</small>
-            </div>
-          </div>
-          <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-            <div class="review">
-              <div class="stars">
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-                <fa-icon [icon]="faStar"></fa-icon>
-
-              </div>
-              <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-                ea explicabo nisi quia blanditiis assumenda quos veritatis sit deleniti porro
-                nulla temporibus deserunt, iure in labore incidunt quis eos. Accusamus sed
-                excepturi architecto.</p>
+              </div> -->
+              <p class="lead">{{item.comment}}</p>
               <h5 class="title-sm mb-0">John Doe</h5>
               <small>Web Developer</small>
             </div>
@@ -85,4 +43,4 @@
       </div>
     </div>
   </div>
-</section> -->
+</section>

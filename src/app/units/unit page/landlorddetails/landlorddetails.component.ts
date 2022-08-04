@@ -20,7 +20,7 @@ export class LandlorddetailsComponent implements OnInit {
       this.unitLandlord = a.landlordId;
 
 
-      console.log(this.unitLandlord);
+      // console.log(this.unitLandlord);
 
     });
   }

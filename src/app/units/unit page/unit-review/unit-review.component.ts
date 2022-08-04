@@ -16,13 +16,15 @@ export class UnitReviewComponent implements OnInit {
   ) {}
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
+  agentData: any;
 
   ngOnInit(): void {
     this.unitser
       .getUnitDetails(`/units/dc2eeacdf1dd3f9551fcbb3a`)
       .subscribe((a) => {
         this.unitComment = a.reviews.reviews;
-        console.log(this.unitComment);
+        this.agentData = a.reviews.reviews[0].agentId;
+        console.log(this.agentData);
       });
   }
 }

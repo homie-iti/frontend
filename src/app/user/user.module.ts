@@ -11,6 +11,8 @@ import { UserComponent } from './user.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserWishListComponent } from './user-wish-list/user-wish-list.component';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ForgetpasswordComponent } from './registration pages/forgetpassword/forgetpassword.component';
+import { NewpasswordComponent } from './registration pages/newpassword/newpassword.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserProfileComponent,
     UserComponent,
     UserWishListComponent,
+    ForgetpasswordComponent,
+    NewpasswordComponent,
   ],
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [

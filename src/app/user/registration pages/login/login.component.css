@@ -2,10 +2,10 @@ h1 {
     color: white;
 }
 
-button {
+/* button {
     background-color: rgb(194, 122, 194);
     color: white;
-}
+} */
 
 img {
     width: 100%;
@@ -15,21 +15,72 @@ img {
 .formContainer {
     margin: auto;
 }
+.login{
+    margin: 5rem;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    background-color: var(--section-color);
+}
 
-.container {
+a{
+    color:var( --main-font-color);
+    font-size: 1.2rem;
+
+}
+
+.form-control:focus{
+    border: solid 2px var( --color-search);
+    box-shadow: 0 0 0 0.25rem rgba(91, 82, 25, 0.25);
+    border-color: var(--main-background-color);
+}
+
+a:hover{
+    color:var(  --hover-font-color);
+}
+.btnStyle{
+   
+    font-size: 20px;
+    font-weight: bold;
+    padding-left: 2rem ;
+    padding-right:2rem;
+    background-color:var(--addresses-color)
+}
+.btnStyle:hover{
+    color:rgb(249, 242, 223); 
+    color:var(--main-font-color);
+    background-color: var(--main-background-color);
+
+}
+/* .container {
     font-family: 'Courier New', Courier, monospace;
     background-color: #A9C9FF;
     background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+} */
+
+
+label ,h1 {
+    color: rgb(249, 242, 223);
 }
-
-
-label {
-    color: white;
+.hStyle{
+    font-size: 3rem;
+    font-weight: bolder;
 }
 
 .imgContainer {
     padding-left: 0;
     padding-right: 0;
+    border-radius: 1.5rem;
+}
+
+img{
+    
+
+transition: all  1s 0.5s ease-in-out;
+}
+
+img:hover{
+   
+    transform:scale(1.1);
 }
 
 

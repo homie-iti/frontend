@@ -1,3 +1,4 @@
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.page';
 import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
 import { NgModule } from '@angular/core';
@@ -40,6 +41,10 @@ const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
+  },
+  {
+    path: 'contact-us',
+    component: ContactUsComponent,
   },
   {
     path: 'signup',

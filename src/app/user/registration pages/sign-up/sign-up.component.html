@@ -1,284 +1,330 @@
-<div class="container">
+<div class="d-felx justify-content-center align-items-center">
+<div class="container sign d-felx justify-content-center align-items-center">
   <!-- <div class="row row col-xl col-lg col-md col-sm"> -->
-  <form class="offset-xl-3 offset-md-3 col-md-6 col-xl-5 col-lg-6 col-sm-12">
-    <div class="form-group">
-      <label for="firstName">First Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="firstName"
-        aria-describedby="firstNameHelp"
-        placeholder="First Name"
-        [(ngModel)]="user.firstName"
-        #firstname="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        required
-        pattern="[a-zA-Z ]*"
-      />
-      <div
-        id="firstNameHelp"
-        class="form-text text-danger"
-        *ngIf="firstname.touched && !firstname.valid"
-      >
-        <div *ngIf="firstname.errors?.['required']">First Name is Required</div>
-        <div *ngIf="firstname.errors?.['pattern']">
-          First Name should be String
-        </div>
-      </div>
-    </div>
+    
+  <form class="offset-md-1 offset-lg-1 col-md-10  col-lg-10 col-sm-12">
 
-    <div class="form-group">
-      <label for="middleName">Middle Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="middleName"
-        aria-describedby="middleNameHelp"
-        placeholder="Middle Name"
-        [(ngModel)]="user.middleName"
-        #middlename="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        required
-        pattern="[a-zA-Z ]*"
-      />
-      <div
-        id="middleNameHelp"
-        class="form-text text-danger"
-        *ngIf="middlename.touched && !middlename.valid"
-      >
-        <div *ngIf="middlename.errors?.['required']">
-          Middle Name is Required
-        </div>
-        <div *ngIf="middlename.errors?.['pattern']">
-          Middle Name should be String
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="LastName">Last Name</label>
-      <input
-        type="text"
-        class="form-control"
-        id="LastName"
-        aria-describedby="LastNameHelp"
-        placeholder="Last Name"
-        [(ngModel)]="user.lastName"
-        #lastname="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        required
-        pattern="[a-zA-Z ]*"
-      />
-      <div
-        id="LastNameHelp"
-        class="form-text text-danger"
-        *ngIf="lastname.touched && !lastname.valid"
-      >
-        <div *ngIf="lastname.errors?.['required']">Last Name is Required</div>
-        <div *ngIf="lastname.errors?.['pattern']">
-          Last Name should be String
+    <div class="contanier">
+      <div class="row py-2 my-2">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              aria-describedby="firstNameHelp"
+              placeholder="First Name"
+              [(ngModel)]="user.firstName"
+              #firstname="ngModel"
+              [ngModelOptions]="{ standalone: true }"
+              required
+              pattern="[a-zA-Z ]*"
+            />
+            <div
+              id="firstNameHelp"
+              class="form-text text-danger"
+              *ngIf="firstname.touched && !firstname.valid"
+            >
+              <div *ngIf="firstname.errors?.['required']">First Name is Required</div>
+              <div *ngIf="firstname.errors?.['pattern']">
+                First Name should be String
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="middleName">Middle Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="middleName"
+              aria-describedby="middleNameHelp"
+              placeholder="Middle Name"
+              [(ngModel)]="user.middleName"
+              #middlename="ngModel"
+              [ngModelOptions]="{ standalone: true }"
+              required
+              pattern="[a-zA-Z ]*"
+            />
+            <div
+              id="middleNameHelp"
+              class="form-text text-danger"
+              *ngIf="middlename.touched && !middlename.valid"
+            >
+              <div *ngIf="middlename.errors?.['required']">
+                Middle Name is Required
+              </div>
+              <div *ngIf="middlename.errors?.['pattern']">
+                Middle Name should be String
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="row py-2 my-2">
+<div class="col-lg-4"> <div class="form-group">
+  <label for="LastName">Last Name</label>
+  <input
+    type="text"
+    class="form-control"
+    id="LastName"
+    aria-describedby="LastNameHelp"
+    placeholder="Last Name"
+    [(ngModel)]="user.lastName"
+    #lastname="ngModel"
+    [ngModelOptions]="{ standalone: true }"
+    required
+    pattern="[a-zA-Z ]*"
+  />
+  <div
+    id="LastNameHelp"
+    class="form-text text-danger"
+    *ngIf="lastname.touched && !lastname.valid"
+  >
+    <div *ngIf="lastname.errors?.['required']">Last Name is Required</div>
+    <div *ngIf="lastname.errors?.['pattern']">
+      Last Name should be String
     </div>
+  </div>
+</div></div>
+<div class="col-lg-8"> <div class="form-group">
+  <label for="exampleInputEmail1">Email address</label>
+  <input
+    type="email"
+    class="form-control"
+    id="exampleInputEmail1"
+    aria-describedby="emailHelp"
+    placeholder="Enter your email"
+    [(ngModel)]="CheckMail.email"
+    #emailAddress="ngModel"
+    [ngModelOptions]="{ standalone: true }"
+    (blur)="isMail()"
+    required
+    pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+  />
+  <div class="form-text text-danger" *ngIf="!AvalibleMail">
+    This Email already exists
+  </div>
+  <div
+    id="emailHelp"
+    class="form-text text-danger"
+    *ngIf="emailAddress.touched && !emailAddress.valid"
+  >
+    <div *ngIf="emailAddress.errors?.['required']">Email is Required</div>
+    <div *ngIf="emailAddress.errors?.['pattern']">
+      This Email is not Valid
+    </div>
+  </div>
+</div></div>
+      </div>
+      <div class="row py-2 my-2">
+        <div class="col-lg-6">    <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            aria-describedby="passwordHelp"
+            placeholder="Password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+            [ngModelOptions]="{ standalone: true }"
+            required
+            minlength="5"
+            maxlength="10"
+          />
+          <div
+            id="passwordHelp"
+            class="form-text text-danger"
+            *ngIf="password.touched && !password.valid"
+          >
+            <div *ngIf="password.errors?.['required']">Password is Required</div>
+            <div *ngIf="password.errors?.['minlength']">
+              Password Shouldn't be less than 5 numbers
+            </div>
+          </div>
+        </div></div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="Confirmpassword">Confirm Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="Confirmpassword"
+              [(ngModel)]="user.confirmPassword"
+              #confirmpassword="ngModel"
+              [ngModelOptions]="{ standalone: true }"
+              aria-describedby="confirmpasswordHelp"
+              placeholder="Confrim Password"
+              pattern="{{ user.password }}"
+              required
+            />
+            <div
+              id="confirmpasswordHelp"
+              class="form-text text-danger"
+              *ngIf="confirmpassword.touched && !confirmpassword.valid"
+            >
+              <div *ngIf="confirmpassword.errors?.['required']">
+                Password is Required
+              </div>
+              <div *ngIf="confirmpassword.errors?.['pattern']">
+                Password isn't matched
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input
-        type="email"
-        class="form-control"
-        id="exampleInputEmail1"
-        aria-describedby="emailHelp"
-        placeholder="Enter your email"
-        [(ngModel)]="CheckMail.email"
-        #emailAddress="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        (blur)="isMail()"
-        required
-        pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-      />
-      <div class="form-text text-danger" *ngIf="!AvalibleMail">
-        This Email already exists
-      </div>
-      <div
-        id="emailHelp"
-        class="form-text text-danger"
-        *ngIf="emailAddress.touched && !emailAddress.valid"
-      >
-        <div *ngIf="emailAddress.errors?.['required']">Email is Required</div>
-        <div *ngIf="emailAddress.errors?.['pattern']">
-          This Email is not Valid
+      <div class="row py-2 my-2">
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="phoneNumber">phoneNumber</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              #phone="ngModel"
+              aria-describedby="phoneHelp"
+              placeholder="Enteryou phone Number"
+              [(ngModel)]="CheckPhone.phone"
+              [ngModelOptions]="{ standalone: true }"
+              (blur)="isPhone()"
+              required
+              minlength="11"
+            />
+            <div id="phoneHelp" class="form-text text-danger" *ngIf="!AvaliblePhone">
+              This phone Number already exists
+            </div>
+            <div
+              id="phonevalidation"
+              class="form-text text-danger"
+              *ngIf="phone.touched && !phone.valid"
+            >
+              <div *ngIf="phone.errors?.['required']">Phone is Required</div>
+              <div *ngIf="phone.errors?.['minlength']">
+                phone number shouldn't be less than 11
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label for="nationalId">National Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nationalId"
+              aria-describedby="nationalIdHelp"
+              placeholder="Enter your national Id"
+              [(ngModel)]="CheckNationalId.nationalId"
+              #nationalId="ngModel"
+              [ngModelOptions]="{ standalone: true }"
+              (blur)="isNationalId()"
+              required
+              minlength="14"
+            />
+            <div
+              id="nationalIdHelp"
+              class="form-text text-danger"
+              *ngIf="!AvalibleNationalId"
+            >
+              Nation Id already exists
+            </div>
+            <div
+              id="phonevalidation"
+              class="form-text text-danger"
+              *ngIf="nationalId.touched && !nationalId.valid"
+            >
+              <div *ngIf="nationalId.errors?.['required']">
+                National Id is Required
+              </div>
+              <div *ngIf="nationalId.errors?.['minlength']">
+                National Id shouldn't be less than 14
+              </div>
+            </div>
+          </div>
+        </div> </div>
+        <div class="row py-2 my-2">
+          <div class="col-lg-6  col-sm-12 col-md-12">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input
+                type="text"
+                class="form-control"
+                id="age"
+                aria-describedby="ageHelp"
+                placeholder="Enter your age"
+                [(ngModel)]="user.age"
+                #age="ngModel"
+                [ngModelOptions]="{ standalone: true }"
+                required
+              />
+              <div
+                id="ageHelp"
+                class="form-text text-danger"
+                *ngIf="age.touched && !age.valid"
+              >
+                <div *ngIf="age.errors?.['required']">Age is Required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+<div class="row ms-3 py-2 my-2">
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="Female"
+      value="female"
+      id="flexRadioDefault1"
+      [(ngModel)]="user.gender"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <label class="form-check-label" for="flexRadioDefault1"> Female </label>
+  </div>
+  <div class="form-check">
+    <input
+      class="form-check-input"
+      type="radio"
+      name="male"
+      value="male"
+      id="flexRadioDefault2"
+      [(ngModel)]="user.gender"
+      [ngModelOptions]="{ standalone: true }"
+    />
+    <label class="form-check-label" for="flexRadioDefault2"> Male </label>
+  </div>
+</div>
+     <div class="row py-2 my-2">
+      
+    <button (click)="save()" class="btn btnStyle">Sign Up</button>
+     </div>
     </div>
+  
 
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="password"
-        aria-describedby="passwordHelp"
-        placeholder="Password"
-        [(ngModel)]="user.password"
-        #password="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        required
-        minlength="5"
-        maxlength="10"
-      />
-      <div
-        id="passwordHelp"
-        class="form-text text-danger"
-        *ngIf="password.touched && !password.valid"
-      >
-        <div *ngIf="password.errors?.['required']">Password is Required</div>
-        <div *ngIf="password.errors?.['minlength']">
-          Password Shouldn't be less than 5 numbers
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="form-group">
-      <label for="Confirmpassword">Confirm Password</label>
-      <input
-        type="password"
-        class="form-control"
-        id="Confirmpassword"
-        [(ngModel)]="user.confirmPassword"
-        #confirmpassword="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        aria-describedby="confirmpasswordHelp"
-        placeholder="Confrim Password"
-        pattern="{{ user.password }}"
-        required
-      />
-      <div
-        id="confirmpasswordHelp"
-        class="form-text text-danger"
-        *ngIf="confirmpassword.touched && !confirmpassword.valid"
-      >
-        <div *ngIf="confirmpassword.errors?.['required']">
-          Password is Required
-        </div>
-        <div *ngIf="confirmpassword.errors?.['pattern']">
-          Password isn't matched
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="phoneNumber">phoneNumber</label>
-      <input
-        type="text"
-        class="form-control"
-        id="phoneNumber"
-        #phone="ngModel"
-        aria-describedby="phoneHelp"
-        placeholder="Enteryou phone Number"
-        [(ngModel)]="CheckPhone.phone"
-        [ngModelOptions]="{ standalone: true }"
-        (blur)="isPhone()"
-        required
-        minlength="11"
-      />
-      <div id="phoneHelp" class="form-text text-danger" *ngIf="!AvaliblePhone">
-        This phone Number already exists
-      </div>
-      <div
-        id="phonevalidation"
-        class="form-text text-danger"
-        *ngIf="phone.touched && !phone.valid"
-      >
-        <div *ngIf="phone.errors?.['required']">Phone is Required</div>
-        <div *ngIf="phone.errors?.['minlength']">
-          phone number shouldn't be less than 11
-        </div>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <label for="nationalId">National Id</label>
-      <input
-        type="text"
-        class="form-control"
-        id="nationalId"
-        aria-describedby="nationalIdHelp"
-        placeholder="Enter your national Id"
-        [(ngModel)]="CheckNationalId.nationalId"
-        #nationalId="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        (blur)="isNationalId()"
-        required
-        minlength="14"
-      />
-      <div
-        id="nationalIdHelp"
-        class="form-text text-danger"
-        *ngIf="!AvalibleNationalId"
-      >
-        Nation Id already exists
-      </div>
-      <div
-        id="phonevalidation"
-        class="form-text text-danger"
-        *ngIf="nationalId.touched && !nationalId.valid"
-      >
-        <div *ngIf="nationalId.errors?.['required']">
-          National Id is Required
-        </div>
-        <div *ngIf="nationalId.errors?.['minlength']">
-          National Id shouldn't be less than 14
-        </div>
-      </div>
-    </div>
+   
 
-    <div class="form-group">
-      <label for="age">Age</label>
-      <input
-        type="text"
-        class="form-control"
-        id="age"
-        aria-describedby="ageHelp"
-        placeholder="Enter your age"
-        [(ngModel)]="user.age"
-        #age="ngModel"
-        [ngModelOptions]="{ standalone: true }"
-        required
-      />
-      <div
-        id="ageHelp"
-        class="form-text text-danger"
-        *ngIf="age.touched && !age.valid"
-      >
-        <div *ngIf="age.errors?.['required']">Age is Required</div>
-      </div>
-    </div>
+   
 
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="Female"
-        value="female"
-        id="flexRadioDefault1"
-        [(ngModel)]="user.gender"
-        [ngModelOptions]="{ standalone: true }"
-      />
-      <label class="form-check-label" for="flexRadioDefault1"> Female </label>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="male"
-        value="male"
-        id="flexRadioDefault2"
-        [(ngModel)]="user.gender"
-        [ngModelOptions]="{ standalone: true }"
-      />
-      <label class="form-check-label" for="flexRadioDefault2"> Male </label>
-    </div>
-    <button (click)="save()" class="btn">Sign Up</button>
+
+
+  
+ 
+
+   
+
+ 
+
+ 
   </form>
+</div>
 </div>
 <!-- </div> -->

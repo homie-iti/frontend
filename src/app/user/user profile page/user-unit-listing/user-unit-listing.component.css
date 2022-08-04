@@ -10,3 +10,7 @@
   .fontSize{
     font-size: 15px;
   }
+  .card-outline {
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+  
+  }

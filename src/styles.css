@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 :root{
     --bg-lightGray:#cfc2b3;
-    --btn-color:rgb(34, 56, 63);
     --main-font-color: #28210c;
     --hover-font-color: #988042;
     --main-background-color: rgba(234, 209, 179, 0.265);

@@ -10,8 +10,14 @@
       </div>
 
       <form
+        novalidate
         [formGroup]="loginForm"
-        class="col-md-6 col-xl-5 col-lg-6 col-sm-12 formContainer text-center"
+        [ngClass]="{
+          'was-validated':
+            !loginForm.get('password')?.invalid &&
+            !loginForm.get('email')?.invalid
+        }"
+        class="col-md-6 col-xl-5 col-lg-6 col-sm-12 formContainer text-center has-validation"
       >
         <h1 class="my-3 hStyle">Login</h1>
         <div class="row mb-3">
@@ -23,8 +29,11 @@
               formControlName="email"
               class="form-control"
               id="inputEmail3"
+              (blur)="checkFormValidation()"
             />
+            <!-- <div class="valid-feedback">Looks good!</div> -->
           </div>
+          <!-- <div class="invalid-feedback">Looks good!</div> -->
         </div>
         <div class="row mb-3">
           <label for="inputPassword3" class="col-sm-2 col-form-label"
@@ -37,18 +46,82 @@
               formControlName="password"
               class="form-control"
               id="inputPassword3"
+              (blur)="checkFormValidation()"
             />
           </div>
         </div>
         <div class="row mb-3">
           <a href="#">Forget password?</a>
         </div>
-        <button (click)="login()" class="btn btnStyle">Login</button>
+        <button
+          [disabled]="
+            loginForm.get('password')?.invalid ||
+            loginForm.get('email')?.invalid
+          "
+          (click)="login()"
+          class="btn btnStyle"
+        >
+          Login
+        </button>
         <p
           class="text-danger form-text"
-          [ngClass]="{ 'opacity-0': !doesLoginHasError }"
+          [ngClass]="{
+            'opacity-0': !doesLoginHasError && !doesFormHasInvalidData
+          }"
         >
-          Email or password is incorrect, try again.
+          {{
+            doesLoginHasError
+              ? "Email or password is incorrect, try again."
+              : ""
+          }}
+          <br *ngIf="doesLoginHasError" />
+
+          {{
+            loginForm.get("email")?.touched &&
+            doesFormHasInvalidData.email?.required
+              ? "Email is required."
+              : ""
+          }}
+          <br
+            *ngIf="
+              loginForm.get('email')?.touched &&
+              doesFormHasInvalidData.email?.required
+            "
+          />
+
+          {{
+            loginForm.get("email")?.touched &&
+            doesFormHasInvalidData.email?.email
+              ? "Email isn't written in a right form."
+              : ""
+          }}
+          <br
+            *ngIf="
+              loginForm.get('email')?.touched &&
+              doesFormHasInvalidData.email?.email
+            "
+          />
+
+          {{
+            loginForm.get("password")?.touched &&
+            doesFormHasInvalidData.password?.required
+              ? "Password is required."
+              : ""
+          }}
+          <br
+            *ngIf="
+              loginForm.get('password')?.touched &&
+              doesFormHasInvalidData.password?.required
+            "
+          />
+
+          {{
+            loginForm.get("password")?.touched &&
+            doesFormHasInvalidData.password?.pattern
+              ? "Password isn't written in a right
+          form."
+              : ""
+          }}
         </p>
       </form>
     </div>

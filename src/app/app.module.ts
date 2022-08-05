@@ -1,3 +1,4 @@
+import { HelpQuestionsModule } from './help-questions/help-questions.module';
 import { ContactUsModule } from './contact-us/contact-us.module';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsModule } from './about-us/about-us.module';
@@ -32,7 +33,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AboutUsModule,
-    ContactUsModule
+    ContactUsModule,
+    HelpQuestionsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

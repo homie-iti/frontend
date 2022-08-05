@@ -1,3 +1,4 @@
+import { HelpQuestionsComponent } from './help-questions/help-questions.page';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.page';
 import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
@@ -54,7 +55,10 @@ const routes: Routes = [
     path: 'units/:id',
     component: UnitsComponent,
   },
-
+  {
+    path: 'help-center',
+    component:HelpQuestionsComponent ,
+  },
   {
     path: '**',
     redirectTo: '',

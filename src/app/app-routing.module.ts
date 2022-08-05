@@ -55,10 +55,7 @@ const routes: Routes = [
     path: 'units/:id',
     component: UnitsComponent,
   },
-  {
-    path: 'addCity',
-    component: AddcityComponent,
-  },
+ 
   {
     path: '**',
     redirectTo: '',

@@ -12,7 +12,6 @@ import { UserProfileComponent } from './user/user account/user-profile/user-prof
 // import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
-import { AddcityComponent } from './landlord/addcity/addcity.component';
 
 const routes: Routes = [
   {
@@ -56,12 +55,16 @@ const routes: Routes = [
     path: 'units/:id',
     component: UnitsComponent,
   },
+<<<<<<< HEAD
   {
 
     path: 'help-center',
     component: HelpQuestionsComponent,
   },
 
+=======
+ 
+>>>>>>> c3f08bdd87b5a32f213d008950e3ba434f3ec494
   {
     path: '**',
     redirectTo: '',

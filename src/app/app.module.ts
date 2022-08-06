@@ -33,8 +33,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AboutUsModule,
-    ContactUsModule,
-    HelpQuestionsModule
+    ContactUsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

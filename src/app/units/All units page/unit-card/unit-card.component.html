@@ -13,7 +13,7 @@
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
         {{ item.estateType }}
       </a>
-      <p>Daily Price : {{ item.dailyPrice }}$ <br> Allowed Gender : {{ item.allowedGender?"Female":"Male" }} <br> pets
+      <p>Daily Price : {{ item.dailyPrice }}$ <br> Allowed Gender : {{ item.allowedGender }} <br> pets
         Allowed : {{
         item.isPetsAllowed?"Yes":"No" }}</p>
     </div>
@@ -40,7 +40,7 @@
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
         {{ item.estateType }}
       </a>
-      <p>Daily Price : {{ item.dailyPrice }}$ <br> Allowed Gender : {{ item.allowedGender?"Yes":"No" }} <br> pets
+      <p>Daily Price : {{ item.dailyPrice }}$ <br> Allowed Gender : {{ item.allowedGender }} <br> pets
         Allowed : {{
         item.isPetsAllowed?"Yes":"No" }}</p>
     </div>

@@ -57,14 +57,11 @@ const routes: Routes = [
     component: UnitsComponent,
   },
   {
-<<<<<<< HEAD
+
     path: 'help-center',
-    component:HelpQuestionsComponent ,
-=======
-    path: 'addCity',
-    component: AddcityComponent,
->>>>>>> 7b029b33d16aa6a4401dff2121c409ab4241595d
+    component: HelpQuestionsComponent,
   },
+
   {
     path: '**',
     redirectTo: '',

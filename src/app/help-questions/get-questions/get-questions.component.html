@@ -1,1 +1,39 @@
 
+<div class="help">
+       <h1>Frequently Asked Questions</h1>
+       <div class="contanier">
+           <div class="row  ">
+                  <div class="col-lg-10 col-md-10 col-sm-10">
+                            
+                    <div class="accordion" id="accordionExample" *ngFor="let items of questions">
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              {{items.question}}
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                 {{items.answer}} {{items.userId}}
+                                 
+                            </div>
+                             <div>
+                                {{items.userId.fullName}}
+                                <img src={{items.userId.image}}>
+                            </div>
+                          </div>
+                        </div>
+                  
+                      </div>
+                  </div>
+
+
+           </div>
+       </div>
+
+</div>
+
+
+<!-- <div *ngFor=" let items of questions">
+    <p> {{items.userId.fullName}}</p>
+</div> -->

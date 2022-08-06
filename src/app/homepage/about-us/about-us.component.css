@@ -17,7 +17,16 @@
    .history-info{
      color: var( --hover-font-color);
   }
-  
+  .one{
+    overflow: hidden;
+  }
+  img{
+    transition: all 0.5s 0.2s ease-in-out;
+
+  }
+  img:hover{
+    transform: scale(1.1);
+  }
   
   .we-are-block {
     display: flex;

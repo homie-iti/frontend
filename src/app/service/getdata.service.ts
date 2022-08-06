@@ -29,6 +29,10 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
   
+  gethelpQuestions(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
+  
 
 
   constructor(private http: HttpClient) {}

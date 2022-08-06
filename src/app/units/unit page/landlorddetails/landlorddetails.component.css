@@ -4,7 +4,7 @@
 
 .colorContetnt {
   color: var(--main-font-color);
-  width: 25em;
+  width: fit-content;
 }
 .colorCon2 {
   color: var(--hover-font-color);

@@ -2,3 +2,13 @@
   border-radius: 10px;
   background-color: rgba(81, 50, 50, 0.514);
 }
+
+.agentReview {
+  background-color: white;
+  border-radius: 5px;
+}
+
+.agentReview:hover {
+  box-shadow: 3px 3px 3px white;
+  transition: all 1s;
+}

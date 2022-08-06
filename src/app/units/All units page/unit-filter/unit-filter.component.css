@@ -7,18 +7,8 @@
 }
 @media (max-width: 500px) {
   .filter {
-    width: 10em;
+    width: 12em;
     position: sticky;
     top: 50px;
-  }
-
-  .filterflex {
-    width: 15em;
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .width {
-    width: 15em;
   }
 }

@@ -1,16 +1,14 @@
 <div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits.length < 1">
-  <div class="card m-3 col-2 col-sm-9 col-lg-4 col-md-5" *ngFor="
+  <div class="card m-3 col-6 col-sm-9 col-lg-4 col-md-5" *ngFor="
       let item of units | paginate: { itemsPerPage: 24, currentPage: page }
     ">
-    <div id=" carousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" *ngFor="let i of item.images">
-          <img src="{{ i }}" class="d-block card-img-top card-border" id="opImg" alt="..." style="position: relative" />
-          <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
-          <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
-        </div>
-      </div>
+
+    <div>
+      <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
+        style="position: relative" />
+      <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
     </div>
+
     <div class="card-body">
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
         {{ item.estateType }}
@@ -24,14 +22,15 @@
 <pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
 
 <div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits">
-  <div class="card m-3 col-2 col-sm-9 col-lg-4 col-md-5" *ngFor="
+  <div class="card m-3 col-6 col-sm-9 col-lg-4 col-md-5" *ngFor="
       let item of this.transfer.filteredUnits
         | paginate: { itemsPerPage: 24, currentPage: page }
     ">
     <div id=" carousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active" *ngFor="let i of item.images">
-          <img src="{{ i }}" class="d-block card-img-top card-border" id="opImg" alt="..." style="position: relative" />
+          <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
+            style="position: relative" />
           <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
           <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
         </div>

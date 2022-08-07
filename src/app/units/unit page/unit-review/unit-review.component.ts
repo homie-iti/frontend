@@ -34,11 +34,11 @@ export class UnitReviewComponent implements OnInit {
   addComment() {
     console.log(this.comment.unitId);
 
-    this.unitser.addComment(`/${this.comment.unitId}`).subscribe((a) => {
-      this.unitid = a.unitId;
-      this.agentId = a.agentId;
-      console.log(this.unitid);
-    });
+    // this.unitser.addComment(``).subscribe((a) => {
+    //   this.unitid = a.unitId;
+    //   this.agentId = a.agentId;
+    //   console.log(this.unitid);
+    // });
 
     // this.unitid = this.comment.unitId;
     // this.agentId = this.comment.agentId;

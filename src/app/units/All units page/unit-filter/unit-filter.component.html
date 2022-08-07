@@ -10,24 +10,43 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseTwo"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseTwo"
+        >
           <p class="h5 fw-normal">Price</p>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingTwo">
+      <div
+        id="panelsStayOpen-collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingTwo"
+      >
         <div class="accordion-body">
           <div class="d-flex flex-wrap justify-content-center py-2">
             <div class="col col-9 col-lg-6">
               <label for=" min">Minimum Price</label>
-              <input type="text" class="form-control my-1" placeholder="0$" style="width: 90%"
-                (blur)="checkMinPrice($any($event.target).value)" />
+              <input
+                type="text"
+                class="form-control my-1"
+                placeholder="0$"
+                style="width: 90%"
+                (blur)="checkMinPrice($any($event.target).value)"
+              />
             </div>
             <div class="col col-9 col-lg-6">
               <label for=" max">Maximum Price</label>
-              <input type="text" class="form-control my-1" placeholder="1000$" style="width: 90%"
-                (blur)="checkMaxPrice($any($event.target).value)" />
+              <input
+                type="text"
+                class="form-control my-1"
+                placeholder="1000$"
+                style="width: 90%"
+                (blur)="checkMaxPrice($any($event.target).value)"
+              />
             </div>
           </div>
           <button class="btn btn-primary" (click)="Range()">Range Price</button>
@@ -36,45 +55,85 @@
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseThree">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseThree"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseThree"
+        >
           <p class="h5 fw-normal">Date</p>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingThree">
+      <div
+        id="panelsStayOpen-collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingThree"
+      >
         <div class="accordion-body">
-          <input type="text" placeholder="enter specified period" ngxDaterangepickerMd [(ngModel)]="selected"
-            class="form-control" />
+          <input
+            type="text"
+            placeholder="enter specified period"
+            ngxDaterangepickerMd
+            [(ngModel)]="selected"
+            class="form-control"
+          />
         </div>
       </div>
     </div>
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFour">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFour"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFour"
+        >
           <p class="h5 fw-normal">Allowed Gender</p>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFour">
+      <div
+        id="panelsStayOpen-collapseFour"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFour"
+      >
         <div class="accordion-body">
           <div class="d-flex flex-wrap">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="male"
-                (click)="checkGender($any($event.target).value)" />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Male
-              </label>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="male"
+                (change)="checkGender($event)"
+              />
+              <p class="px-2">Male</p>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="female"
-                (click)="checkGender($any($event.target).value)" />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Female
-              </label>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="female"
+                (change)="checkGender($event)"
+              />
+              <p class="px-2">Female</p>
+            </div>
+
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="any"
+                (change)="checkGender($event)"
+              />
+              <p class="px-2">Any</p>
             </div>
           </div>
         </div>
@@ -83,29 +142,44 @@
 
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false"
-          aria-controls="panelsStayOpen-collapseFive">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive"
+        >
           <p class="h5 fw-normal">Are Pets Allowed</p>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingFive">
+      <div
+        id="panelsStayOpen-collapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive"
+      >
         <div class="accordion-body">
           <div class="d-flex flex-wrap">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="true"
-                (click)="checkPetsAllowed($any($event.target).value)" />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Allowed
-              </label>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="true"
+                (change)="checkPetsAllowed($event)"
+              />
+              <p class="px-2">Pets Allowed</p>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="false"
-                (click)="checkPetsAllowed($any($event.target).value)" />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Not Allowed
-              </label>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="false"
+                (change)="checkPetsAllowed($event)"
+              />
+              <p class="px-2">Pets Not Allowed</p>
             </div>
           </div>
         </div>
@@ -114,33 +188,63 @@
 
     <div class="accordion-item">
       <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSix"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSix"
+        >
           <p class="h5 fw-normal">Type</p>
         </button>
       </h2>
-      <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse"
-        aria-labelledby="panelsStayOpen-headingSix">
+      <div
+        id="panelsStayOpen-collapseSix"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSix"
+      >
         <div class="accordion-body">
           <div class="type">
             <div class="d-flex">
-              <input type="checkbox" class="form-check-input" style="width: 20px" value="studio"
-                (change)="onChange($event)" />
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="studio"
+                (change)="onChange($event)"
+              />
               <p class="px-2">Studio</p>
             </div>
             <div class="d-flex">
-              <input type="checkbox" class="form-check-input" class="form-check-input" style="width: 20px"
-                value="apartment" (change)="onChange($event)" />
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="apartment"
+                (change)="onChange($event)"
+              />
               <p class="px-2">Apartment</p>
             </div>
             <div class="d-flex">
-              <input type="checkbox" class="form-check-input" style="width: 20px" value="single-room"
-                (change)="onChange($event)" />
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="single-room"
+                (change)="onChange($event)"
+              />
               <p class="px-2">Private Room</p>
             </div>
             <div class="d-flex">
-              <input type="checkbox" class="form-check-input" style="width: 20px" value="shared-room"
-                (change)="onChange($event)" />
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="shared-room"
+                (change)="onChange($event)"
+              />
               <p class="px-2">Shared Room</p>
             </div>
           </div>

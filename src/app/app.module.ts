@@ -15,6 +15,7 @@ import { HomepageModule } from './homepage/homepage.module';
 import { CoreModule } from './core/core.module';
 import{ HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UnitscrudModule } from './unitscrud/unitscrud.module';
 
 
 
@@ -33,7 +34,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     AboutUsModule,
-    ContactUsModule
+    ContactUsModule,
+    UnitscrudModule
+
+  
+    
   ],
   providers: [],
   bootstrap: [AppComponent],

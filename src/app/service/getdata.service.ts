@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Units } from '../_models/units';
+import { Unitscrud } from '../_models/unitscrud';
 
 @Injectable({
   providedIn: 'root',
@@ -29,6 +30,11 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
   
+
+  addUnit(unit:any){
+    return this.http.post<any>(this.url+"/units" ,unit);
+
+  }
 
 
   constructor(private http: HttpClient) {}

@@ -11,6 +11,7 @@ import { UserProfileComponent } from './user/user account/user-profile/user-prof
 // import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
+import { AddunitComponent } from './unitscrud/addunit/addunit.component';
 
 const routes: Routes = [
   {
@@ -53,8 +54,12 @@ const routes: Routes = [
   {
     path: 'units/:id',
     component: UnitsComponent,
+  },{
+   path:"addCity",
+     component:AddunitComponent
+   
   },
-
+ 
   {
     path: '**',
     redirectTo: '',

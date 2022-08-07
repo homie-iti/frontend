@@ -1,52 +1,11 @@
 <div class="container filter">
-  <div
-    class="accordion col-sm-9 col-lg-12 col-md-12"
-    id="accordionPanelsStayOpenExample"
-  >
+  <div class="accordion" id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <div class="py-3 text-center">
         <h2>Filters</h2>
         <button class="btn btn-outline-primary my-1 w-75">
           <fa-icon [icon]="faBell"></fa-icon> &nbsp;CREATE ALERT
         </button>
-      </div>
-      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-        <button
-          class="accordion-button"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapseOne"
-          aria-expanded="true"
-          aria-controls="panelsStayOpen-collapseOne"
-        >
-          <p class="h5 fw-normal">Location</p>
-        </button>
-      </h2>
-      <div
-        id="panelsStayOpen-collapseOne"
-        class="accordion-collapse collapse show"
-        aria-labelledby="panelsStayOpen-headingOne"
-      >
-        <div class="accordion-body">
-          <div class="py-2">
-            <div class="input-group">
-              <div class="input-group-text">
-                <fa-icon [icon]="faSearchengin"></fa-icon>
-              </div>
-              <input
-                type="text"
-                placeholder="Search"
-                class="input-group"
-                class="form-control"
-                id="autoSizingInputGroup"
-              />
-            </div>
-          </div>
-          <div class="d-flex">
-            <input type="checkbox" name="" id="" />
-            <p class="my-2 px-2">Use map as search area</p>
-          </div>
-        </div>
       </div>
     </div>
     <div class="accordion-item">
@@ -143,148 +102,150 @@
       >
         <div class="accordion-body">
           <div class="d-flex flex-wrap">
-            <div class="form-check">
+            <div class="d-flex">
               <input
+                type="checkbox"
                 class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
+                style="width: 20px"
                 value="male"
-                (click)="checkGender($any($event.target).value)"
+                (change)="checkGender($event)"
               />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Male
-              </label>
+              <p class="px-2">Male</p>
             </div>
-            <div class="form-check">
+            <div class="d-flex">
               <input
+                type="checkbox"
                 class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault2"
+                class="form-check-input"
+                style="width: 20px"
                 value="female"
-                (click)="checkGender($any($event.target).value)"
+                (change)="checkGender($event)"
               />
-              <label class="form-check-label" for="flexRadioDefault2">
-                Female
-              </label>
+              <p class="px-2">Female</p>
+            </div>
+
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="any"
+                (change)="checkGender($event)"
+              />
+              <p class="px-2">Any</p>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-          <button
-            class="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#panelsStayOpen-collapseFive"
-            aria-expanded="false"
-            aria-controls="panelsStayOpen-collapseFive"
-          >
-            <p class="h5 fw-normal">Are Pets Allowed</p>
-          </button>
-        </h2>
-        <div
-          id="panelsStayOpen-collapseFive"
-          class="accordion-collapse collapse"
-          aria-labelledby="panelsStayOpen-headingFive"
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingFive">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseFive"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseFive"
         >
-          <div class="accordion-body">
-            <div class="d-flex flex-wrap">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault1"
-                  value="true"
-                  (click)="checkPetsAllowed($any($event.target).value)"
-                />
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Allowed
-                </label>
-              </div>
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="radio"
-                  name="flexRadioDefault"
-                  id="flexRadioDefault2"
-                  value="false"
-                  (click)="checkPetsAllowed($any($event.target).value)"
-                />
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Not Allowed
-                </label>
-              </div>
+          <p class="h5 fw-normal">Are Pets Allowed</p>
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingFive"
+      >
+        <div class="accordion-body">
+          <div class="d-flex flex-wrap">
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="true"
+                (change)="checkPetsAllowed($event)"
+              />
+              <p class="px-2">Pets Allowed</p>
+            </div>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="false"
+                (change)="checkPetsAllowed($event)"
+              />
+              <p class="px-2">Pets Not Allowed</p>
             </div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingSix">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapseSix"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapseSix"
-            >
-              <p class="h5 fw-normal">Type</p>
-            </button>
-          </h2>
-          <div
-            id="panelsStayOpen-collapseSix"
-            class="accordion-collapse collapse"
-            aria-labelledby="panelsStayOpen-headingSix"
-          >
-            <div class="accordion-body">
-              <div class="type">
-                <div class="d-flex">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    style="width: 20px"
-                    value="studio"
-                    (change)="onChange($event)"
-                  />
-                  <p class="px-2">Studio</p>
-                </div>
-                <div class="d-flex">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    class="form-check-input"
-                    style="width: 20px"
-                    value="apartment"
-                    (change)="onChange($event)"
-                  />
-                  <p class="px-2">Apartment</p>
-                </div>
-                <div class="d-flex">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    style="width: 20px"
-                    value="single-room"
-                    (change)="onChange($event)"
-                  />
-                  <p class="px-2">Private Room</p>
-                </div>
-                <div class="d-flex">
-                  <input
-                    type="checkbox"
-                    class="form-check-input"
-                    style="width: 20px"
-                    value="shared-room"
-                    (change)="onChange($event)"
-                  />
-                  <p class="px-2">Shared Room</p>
-                </div>
-              </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingSix">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapseSix"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapseSix"
+        >
+          <p class="h5 fw-normal">Type</p>
+        </button>
+      </h2>
+      <div
+        id="panelsStayOpen-collapseSix"
+        class="accordion-collapse collapse"
+        aria-labelledby="panelsStayOpen-headingSix"
+      >
+        <div class="accordion-body">
+          <div class="type">
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="studio"
+                (change)="onChange($event)"
+              />
+              <p class="px-2">Studio</p>
+            </div>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                class="form-check-input"
+                style="width: 20px"
+                value="apartment"
+                (change)="onChange($event)"
+              />
+              <p class="px-2">Apartment</p>
+            </div>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="single-room"
+                (change)="onChange($event)"
+              />
+              <p class="px-2">Private Room</p>
+            </div>
+            <div class="d-flex">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                style="width: 20px"
+                value="shared-room"
+                (change)="onChange($event)"
+              />
+              <p class="px-2">Shared Room</p>
             </div>
           </div>
         </div>

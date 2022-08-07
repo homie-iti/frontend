@@ -35,18 +35,23 @@ export class UnitCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.SpinnerService.show();
-    this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
-      this.units = a.units;
-      console.log(a.units[0].allowedGender);
+    this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe(
+      (a) => {
+        this.units = a.units;
+        console.log(a.units[0].allowedGender);
 
-      // for( let i =0; i<this.units.length ;i++){
-      //   if(this.units[i].allowedGender=="male"){
-      //     this.filterdArray.push(this.units[i])
-      //   }
-      //  }
-      //  console.log(this.filterdArray)
+        // for( let i =0; i<this.units.length ;i++){
+        //   if(this.units[i].allowedGender=="male"){
+        //     this.filterdArray.push(this.units[i])
+        //   }
+        //  }
+        //  console.log(this.filterdArray)
 
-      this.SpinnerService.hide();
-    });
+        this.SpinnerService.hide();
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }

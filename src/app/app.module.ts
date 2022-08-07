@@ -15,6 +15,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
+import { UnitscrudModule } from './unitscrud/unitscrud.module';
 
 export function tokenGetter() {
   return localStorage.getItem('token');
@@ -41,6 +42,7 @@ export function tokenGetter() {
     ReactiveFormsModule,
     AboutUsModule,
     ContactUsModule,
+    UnitscrudModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

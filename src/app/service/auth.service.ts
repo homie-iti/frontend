@@ -3,6 +3,12 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { User } from '../_models/user';
 import { AuthInfo } from '../_models/auth';
 import { Router } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+import { Checkmail } from '../_models/signUp/checkmail';
+import { ChecknationalId } from '../_models/signUp/checknational-id';
+import { Checkphone } from '../_models/signUp/checkphone';
+import { SignUpData } from '../_models/signUp/sign-up-data';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +28,30 @@ export class AuthService {
       email,
       password,
     });
+  }
+
+  checkAvailableEmail(checkAvailable: Checkmail) {
+    return this.http.post<any>(
+      this.url + '/signup/check-availability',
+      checkAvailable
+    );
+  }
+
+  checkAvailableNationalId(checkAvailable: ChecknationalId) {
+    return this.http.post<any>(
+      this.url + '/signup/check-availability',
+      checkAvailable
+    );
+  }
+  checkAvailablePhone(checkAvailable: Checkphone) {
+    return this.http.post<any>(
+      this.url + '/signup/check-availability',
+      checkAvailable
+    );
+  }
+
+  addUser(signUp: SignUpData) {
+    return this.http.post<any>(this.url + '/signup', signUp);
   }
 
   setAuthInfo(authInfo: AuthInfo) {
@@ -53,5 +83,14 @@ export class AuthService {
     this.authInfo.isLoggedIn = isLoggedIn;
   }
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private jwtHelper: JwtHelperService
+  ) {
+    console.log(
+      'token',
+      this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter())
+    );
+  }
 }

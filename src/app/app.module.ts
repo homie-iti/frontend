@@ -12,10 +12,14 @@ import { UnitsModule } from '../app/units/units.module';
 import { SharedModule } from './shared/shared.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { CoreModule } from './core/core.module';
-import{ HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { JwtModule } from '@auth0/angular-jwt';
+import { UnitscrudModule } from './unitscrud/unitscrud.module';
 
-
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,10 +33,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+      },
+    }),
     FormsModule,
     ReactiveFormsModule,
     AboutUsModule,
-    ContactUsModule
+    ContactUsModule,
+    UnitscrudModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

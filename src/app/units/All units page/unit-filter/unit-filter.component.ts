@@ -28,13 +28,51 @@ export class UnitFilterComponent implements OnInit {
   unitArray = [];
   unit: any;
 
-  checkGender(gender: any) {
-    this.transfer.genderToTransfer = gender;
 
-    if (this.transfer.genderToTransfer) {
+  //********* */ Gender filter/********* */
+  genderArray:any[]=[]
+  checkGender(event: any) {
+    if (event.target.checked) {
+      console.log(event.target.checked);
+      this.genderArray.push(event.target.value);
+      console.log(this.genderArray);
+    } else {
+      console.log(event.target.value);
+      this.genderArray = this.genderArray.filter(
+        (item) => item !== event.target.value
+      );
+      console.log(this.genderArray);
+    }
+
+    if (this.genderArray.length == 0) {
+      this.transfer.filteredUnits = [];
+      console.log(this.transfer.filteredUnits);
+    }
+
+    if (this.genderArray.length == 1) {
+       this.unitser
+        .filter(`/Homie/${this.id}/filter?gender=${this.genderArray[0]}`)
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
+
+    if (this.genderArray.length == 2) {
       this.unitser
         .filter(
-          `/Homie/${this.id}/filter?gender=${this.transfer.genderToTransfer}`
+          `/Homie/${this.id}/filter?gender=${this.genderArray[0]}&gender=${this.genderArray[1]}`
+        )
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
+
+    if (this.genderArray.length == 3) {
+      this.unitser
+        .filter(
+          `/Homie/${this.id}/filter?gender=${this.genderArray[0]}&gender=${this.genderArray[1]}&gender=${this.genderArray[2]}`
         )
         .subscribe((a) => {
           this.transfer.filteredUnits = a.units;
@@ -43,19 +81,62 @@ export class UnitFilterComponent implements OnInit {
     }
   }
 
-  checkPetsAllowed(pet: any) {
-    this.transfer.petsToTransfer = pet;
-    if (this.transfer.petsToTransfer) {
+
+
+
+
+
+
+
+   //********* */ pets filter/********* */
+ 
+  petsArray:any[]=[]
+  checkPetsAllowed(event: any) {
+    if (event.target.checked) {
+      console.log(event.target.checked);
+      this.petsArray.push(event.target.value);
+      console.log(this.petsArray);
+    } else {
+      console.log(event.target.value);
+      this.petsArray = this.petsArray.filter(
+        (item) => item !== event.target.value
+      );
+      console.log(this.petsArray);
+    }
+
+    if (this.petsArray.length == 0) {
+      this.transfer.filteredUnits = [];
+      console.log(this.transfer.filteredUnits);
+    }
+
+    if (this.petsArray.length == 1) {
+       this.unitser
+        .filter(`/Homie/${this.id}/filter?petAllowed=${this.petsArray[0]}`)
+        .subscribe((a) => {
+          this.transfer.filteredUnits = a.units;
+          console.log(this.transfer.filteredUnits);
+        });
+    }
+
+    if (this.petsArray.length == 2) {
       this.unitser
         .filter(
-          `/Homie/${this.id}/filter?petAllowed=${this.transfer.petsToTransfer}`
+          `/Homie/${this.id}/filter?petAllowed=${this.petsArray[0]}&petAllowed=${this.petsArray[1]}`
         )
         .subscribe((a) => {
           this.transfer.filteredUnits = a.units;
           console.log(this.transfer.filteredUnits);
         });
     }
+
+   
   }
+
+
+
+
+    //********* */ estate Type filter/********* */
+
 
   arrayOfChecked: any[] = [];
 
@@ -78,7 +159,7 @@ export class UnitFilterComponent implements OnInit {
     }
 
     if (this.arrayOfChecked.length == 1) {
-      this.unit = this.unitser
+       this.unitser
         .filter(`/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}`)
         .subscribe((a) => {
           this.transfer.filteredUnits = a.units;
@@ -100,7 +181,7 @@ export class UnitFilterComponent implements OnInit {
     if (this.arrayOfChecked.length == 3) {
       this.unitser
         .filter(
-          `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}&estateType=${this.arrayOfChecked[1]}`
+          `/Homie/${this.id}/filter?estateType=${this.arrayOfChecked[0]}&estateType=${this.arrayOfChecked[1]}&estateType=${this.arrayOfChecked[2]}`
         )
         .subscribe((a) => {
           this.transfer.filteredUnits = a.units;

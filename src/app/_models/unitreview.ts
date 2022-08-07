@@ -1,8 +1,9 @@
 export class Unitreviews {
   constructor(
+    public id: string,
     public agentId: string,
-    public comment: string,
-    public unitId: string
-  ) // public rate: number,
-  {}
+    public unitId: string,
+    public rate: number,
+    public comment: string
+  ) {}
 }

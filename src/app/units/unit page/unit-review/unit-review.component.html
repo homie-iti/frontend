@@ -2,8 +2,8 @@
   <div class="d-flex flex-column col-md-8">
     <div class="review p-2 px-4" *ngFor="let item of unitComment">
       <div class="d-flex flex-row mt-4 mb-4">
-        <input type="text" class="form-control mr-3" placeholder="Add comment">
-        <button class="btn btn-primary" type="button">Comment</button>
+        <input type="text" class="form-control mr-3" [(ngModel)]="comment.comment" placeholder="Add comment">
+        <button class="btn btn-primary" type="button" (click)="addComment()">Comment</button>
       </div>
       <div class="mt-2">
         <div class="agentReview d-flex flex-row align-items-center ">

@@ -30,6 +30,11 @@ export class GetdataService {
   }
   
 
+  addUnit(unit:any){
+    return this.http.post<any>(this.url+"/units" ,unit);
+
+  }
+
 
   constructor(private http: HttpClient) {}
 }

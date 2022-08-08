@@ -110,7 +110,7 @@
                 required
                 pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
               />
-              <div class="form-text text-danger" *ngIf="!AvailableMail">
+              <div class="form-text text-danger" *ngIf="!AvalibleMail">
                 This Email already exists
               </div>
               <div
@@ -195,7 +195,7 @@
             <div class="form-group">
               <label for="phoneNumber">phoneNumber</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="phoneNumber"
                 #phone="ngModel"
@@ -210,7 +210,7 @@
               <div
                 id="phoneHelp"
                 class="form-text text-danger"
-                *ngIf="!AvailablePhone"
+                *ngIf="!AvaliblePhone"
               >
                 This phone Number already exists
               </div>
@@ -230,7 +230,7 @@
             <div class="form-group">
               <label for="nationalId">National Id</label>
               <input
-                type="text"
+                type="number"
                 class="form-control"
                 id="nationalId"
                 aria-describedby="nationalIdHelp"
@@ -245,7 +245,7 @@
               <div
                 id="nationalIdHelp"
                 class="form-text text-danger"
-                *ngIf="!AvailableNationalId"
+                *ngIf="!AvalibleNationalId"
               >
                 Nation Id already exists
               </div>

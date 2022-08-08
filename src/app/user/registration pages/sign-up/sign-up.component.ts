@@ -28,49 +28,73 @@ export class SignUpComponent implements OnInit {
     23,
     ''
   );
-  AvailableMail: boolean = true;
-  AvailableNationalId: boolean = true;
-  AvailablePhone: boolean = true;
+  
 
-  confirmPassword: string = '';
 
-  isMail() {
+  AvalibleMail:boolean = true;
+  AvalibleNationalId:boolean = true;
+  AvaliblePhone:boolean = true;
+
+
+
+   
+  confirmPassword:string=""
+
+  
+
+ 
+
+  isMail(){
     console.log(this.CheckMail);
-    this.user.email = this.CheckMail.email;
-    this.authService.checkAvailableEmail(this.CheckMail).subscribe((a) => {
+
+    if(this.CheckMail.email === ""){
+      throw console.error(" object is empty");
+    } else{
+    this.user.email=this.CheckMail.email
+    this.authService.checkAvailableEmail(this.CheckMail).subscribe(a=>{
       console.log(a);
-      if (a.isAvailable == false) {
-        this.AvailableMail = false;
-        console.log(this.AvailableMail);
+      if (a.isAvailable== false){
+        this.AvalibleMail=false
+        console.log(this.AvalibleMail)
+      }else {
+        this.AvalibleMail=true
       }
-    });
+     
+    })}
   }
-  isNationalId() {
-    this.user.nationalId = Number(this.CheckNationalId.nationalId);
-
+  isNationalId(){
+    this.user.nationalId=Number(this.CheckNationalId.nationalId)
+    if(this.CheckNationalId.nationalId === null){
+      throw console.error(" object is empty");
+    } else{
     console.log(this.CheckNationalId);
-    this.authService
-      .checkAvailableNationalId(this.CheckNationalId)
-      .subscribe((a) => {
-        console.log(a);
-        if (a.isAvailable == false) {
-          this.AvailableNationalId = false;
-          console.log(this.AvailableNationalId);
-        }
-      });
-  }
+    this.authService.checkAvailableNationalId(this.CheckNationalId).subscribe(a=>{
+      console.log(a);
+      if (a.isAvailable== false){
+        this.AvalibleNationalId=false
+        console.log(this.AvalibleNationalId)
+      }else {
+        this.AvalibleNationalId=true
+      }
+    })}}
+  
 
-  isPhone() {
-    this.user.phone = Number(this.CheckPhone.phone);
+  isPhone(){
+    this.user.phone=Number(this.CheckPhone.phone)
+    if(this.CheckPhone.phone=== null){
+      throw console.error(" object is empty");
+    } else{
 
     console.log(this.CheckPhone);
     this.authService.checkAvailablePhone(this.CheckPhone).subscribe((a) => {
       console.log(a);
-      if (a.isAvailable == false) {
-        this.AvailablePhone = false;
-        console.log(this.AvailablePhone);
+      if (a.isAvailable== false){
+        this.AvaliblePhone=false
+        console.log(this.AvaliblePhone)
+      }else {
+        this.AvaliblePhone=true
       }
-    });
+    })}
   }
 
   // save(){

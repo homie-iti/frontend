@@ -7,7 +7,7 @@
 }
 @media (max-width: 500px) {
   .filter {
-    width: 14em;
+    width: 12em;
     position: sticky;
     top: 50px;
   }

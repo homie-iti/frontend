@@ -19,7 +19,7 @@ export class CityCardsComponent implements OnInit {
   constructor(private searchservice: GetdataService) {}
 
   ngOnInit(): void {
-    this.searchservice.getAllCities(`/cities`).subscribe((res: any) => {
+    this.searchservice.getAllCities(`/recommendations?citiesNumber=10`).subscribe((res: any) => {
       this.city = res;
       console.log(this.city);
     });

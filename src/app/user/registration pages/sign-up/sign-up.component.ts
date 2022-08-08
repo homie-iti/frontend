@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
   CheckMail: Checkmail=new Checkmail("");
   CheckNationalId: ChecknationalId=new ChecknationalId(0);
   CheckPhone: Checkphone=new Checkphone(0);
-  user:SignUpData=new SignUpData("","","","","",0,0,Gender.female,23,"")
+  user:SignUpData=new SignUpData("","","","","",0,0,Gender.female,0,"")
   AvalibleMail:boolean = true;
   AvalibleNationalId:boolean = true;
   AvaliblePhone:boolean = true;
@@ -37,18 +37,30 @@ export class SignUpComponent implements OnInit {
  
 
   isMail(){
-    console.log(this.CheckMail);
-    this.user.email=this.CheckMail.email
-    this.signUpService.checkAvailableEmail(this.CheckMail).subscribe(a=>{
-      console.log(a);
-      if (a.isAvailable== false){
-        this.AvalibleMail=false
-        console.log(this.AvalibleMail)
-      }
-     
-    })
+    if(this.CheckMail.email === ""){
+      throw console.error(" object is empty");
+    } else{
+
+      console.log(this.CheckMail);
+      this.user.email=this.CheckMail.email
+      this.signUpService.checkAvailableEmail(this.CheckMail).subscribe(a=>{
+        console.log(a);
+        if (a.isAvailable== false){
+          this.AvalibleMail=false
+          console.log(this.AvalibleMail)
+        }else {
+          this.AvalibleMail=true
+        }
+       
+      })
+    }
+   
   }
+
   isNationalId(){
+    if(this.CheckNationalId.nationalId === null){
+      throw console.error(" object is empty");
+    } else{
     this.user.nationalId=Number(this.CheckNationalId.nationalId)
 
     console.log(this.CheckNationalId);
@@ -57,11 +69,17 @@ export class SignUpComponent implements OnInit {
       if (a.isAvailable== false){
         this.AvalibleNationalId=false
         console.log(this.AvalibleNationalId)
+      }else {
+        this.AvalibleNationalId=true
       }
-    })
+    })}
   }
 
   isPhone(){
+
+    if(this.CheckPhone.phone=== null){
+      throw console.error(" object is empty");
+    } else{
     this.user.phone=Number(this.CheckPhone.phone)
 
     console.log(this.CheckPhone);
@@ -70,8 +88,10 @@ export class SignUpComponent implements OnInit {
       if (a.isAvailable== false){
         this.AvaliblePhone=false
         console.log(this.AvaliblePhone)
+      } else {
+        this.AvaliblePhone=true
       }
-    })
+    })}
   }
 
 

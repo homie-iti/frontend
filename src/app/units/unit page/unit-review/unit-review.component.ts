@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faStar, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { Unitreviews } from 'src/app/_models/unitreview';
 
 @Component({
   selector: 'app-unit-review',
@@ -10,34 +11,44 @@ import { GetdataService } from 'src/app/service/getdata.service';
 })
 export class UnitReviewComponent implements OnInit {
   faStar = faStar;
+  unitid: any;
+  agentId: any;
+  rate: any;
+  unitrev: any;
+
   constructor(
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
-  agentData: any;
-
   agentdetails: any;
+  unitreview: Unitreviews[] = [];
+  comment: Unitreviews = new Unitreviews(
+    'b6fd2b6c4d37aaddcb4abe2e',
+    this.id,
+    3,
+    ''
+  );
+
+  addComment(review: any) {
+    console.log(review.value);
+    this.comment.comment = review.value;
+
+    this.unitrev = this.comment.comment;
+    this.unitid = this.id;
+    this.agentId = this.comment.agentId;
+    this.rate = this.comment.rating;
+
+    this.unitser.addComment(this.comment).subscribe((a) => {
+      console.log(a);
+    });
+  }
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitComment = a.reviews.reviews;
-      for (let item in this.unitComment) {
-        if (typeof this.unitComment[item] === 'object') {
-          for (const nestedKey in this.unitComment[item]) {
-            if (typeof this.unitComment[item][nestedKey] === 'object') {
-              for (const nestedKey2 in this.unitComment[item][nestedKey]) {
-                this.agentdetails =
-                  this.unitComment[item][nestedKey][nestedKey2];
-              }
-            }
-          }
-        }
-        console.log(this.agentdetails.fullName);
-        console.log(this.agentdetails.image);
-        // console.log(this.unitComment);
-      }
+      console.log(this.unitComment);
     });
   }
 }

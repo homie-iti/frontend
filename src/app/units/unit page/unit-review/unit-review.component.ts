@@ -14,7 +14,7 @@ export class UnitReviewComponent implements OnInit {
   unitid: any;
   agentId: any;
   rate: any;
-  review: any;
+  unitrev: any;
 
   constructor(
     private activate: ActivatedRoute,
@@ -23,52 +23,32 @@ export class UnitReviewComponent implements OnInit {
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
   agentdetails: any;
+  unitreview: Unitreviews[] = [];
   comment: Unitreviews = new Unitreviews(
-    '',
-    '446c9cdde5b59bcfd75bbe44',
-    'bf1a9d32ab752f9ccf16bf9b',
+    'b6fd2b6c4d37aaddcb4abe2e',
+    this.id,
     3,
     ''
   );
 
-  addComment() {
-    console.log(this.comment.unitId);
+  addComment(review: any) {
+    console.log(review.value);
+    this.comment.comment = review.value;
 
-    // this.unitser.addComment(``).subscribe((a) => {
-    //   this.unitid = a.unitId;
-    //   this.agentId = a.agentId;
-    //   console.log(this.unitid);
-    // });
+    this.unitrev = this.comment.comment;
+    this.unitid = this.id;
+    this.agentId = this.comment.agentId;
+    this.rate = this.comment.rating;
 
-    // this.unitid = this.comment.unitId;
-    // this.agentId = this.comment.agentId;
-    // this.rate = this.comment.rate;
-    // this.review = this.comment.comment;
-
-    // console.log(this.unitid);
-    // console.log(this.agentId);
-    // console.log(this.rate);
-    // console.log(this.review);
+    this.unitser.addComment(this.comment).subscribe((a) => {
+      console.log(a);
+    });
   }
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitComment = a.reviews.reviews;
-      for (let item in this.unitComment) {
-        if (typeof this.unitComment[item] === 'object') {
-          for (const nestedKey in this.unitComment[item]) {
-            if (typeof this.unitComment[item][nestedKey] === 'object') {
-              for (const nestedKey2 in this.unitComment[item][nestedKey]) {
-                this.agentdetails =
-                  this.unitComment[item][nestedKey][nestedKey2];
-              }
-            }
-          }
-        }
-        console.log(this.agentdetails.fullName);
-        console.log(this.agentdetails.image);
-        // console.log(this.unitComment);
-      }
+      console.log(this.unitComment);
     });
   }
 }

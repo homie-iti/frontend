@@ -35,7 +35,7 @@ fa-icon {
 @media (max-width: 500px) {
   .card {
     /* font-size: 10px; */
-    width: 15rem;
+    width: 12rem;
     border: none;
   }
 }

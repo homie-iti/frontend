@@ -1,8 +1,11 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { City } from 'src/app/_models/city';
+
+
 
 @Component({
   selector: 'app-addunit',
@@ -16,26 +19,40 @@ export class AddunitComponent implements OnInit {
 
   myform=new FormGroup({
     unit:new FormGroup({
-      landlordId : new FormControl( 'r '),
+      landlordId : new FormControl( ' '),
       cityId:new FormControl(' '),
-      estateType:new FormControl(""),
-      numberOfResidents: new FormControl(0),
-      allowedGender:new FormControl(""),
-      dailyPrice:new FormControl(0),
-      isAvailable:new FormControl(false),
-      isPetsAllowed:new FormControl(false),
+      estateType:new FormControl("",Validators.required),
+      numberOfResidents: new FormControl(0,Validators.required),
+      allowedGender:new FormControl("", Validators.required),
+      dailyPrice:new FormControl(0,Validators.required),
+      isAvailable:new FormControl(false,Validators.required),
+      isPetsAllowed:new FormControl(false,Validators.required),
 
       unitInfo:new FormGroup({
-        description: new FormControl(""),
-        rooms: new FormControl(0),
-         bathrooms: new FormControl(0),
-        floor: new FormControl(0),   
+        description: new FormControl("", { validators:[
+          Validators.required, 
+          Validators.pattern("[a-zA-Z ]*")
+        ]}),
+        rooms: new FormControl(0,{ validators:[
+          Validators.required, 
+        ]}),
+         bathrooms: new FormControl(0,{ validators:[
+          Validators.required, 
+        ]}),
+        floor: new FormControl(0,{ validators:[
+          Validators.required, 
+        ]}),   
       }),
 
       address:new FormGroup({
         city: new FormControl(""),
-        buildingNumber: new FormControl(0),
-       streetName: new FormControl(""),      
+        buildingNumber: new FormControl(0,{validators:[
+          Validators.required, 
+        ]}),
+       streetName: new FormControl("",{validators:[
+        Validators.required,
+        Validators.pattern("^[a-z0-9\s]+") 
+      ]}),      
       })
 
 
@@ -44,6 +61,8 @@ export class AddunitComponent implements OnInit {
 
   cityName:string=""
   cityId:any
+
+  
 
   getCityId(name:any){
     this.cityName=name.label
@@ -57,17 +76,22 @@ export class AddunitComponent implements OnInit {
 
    }
    console.log(this.cityId)
-
   }
 
+ 
+
   save(){
+        
+
     this.myform.controls.unit.value.cityId=this.cityId,
-    this.myform.controls.unit.value.landlordId="5f7e442cace85aeadd06442d"
+    this.myform.controls.unit.value.landlordId="41da0b86ae0fef497d2326cd"
+  
 
     console.log(this.myform.controls.unit.value)
-    // this.data.addUnit(this.myform.controls.unit.value).subscribe(a=>{
-    //   console.log(a);
-    // })
+    this.data.addUnit(this.myform.controls.unit.value).subscribe(a=>{
+      console.log(a);
+    })
+
   }
 
   cityArray: City[]=[]

@@ -47,11 +47,10 @@ export class UnitReviewComponent implements OnInit {
   }
 
   deleteComment(item: any) {
-    // this.commentdetails = review.target.value;
-    console.log(this.commentdetails);
     this.unitser
-      .deleteComment(`/unit/${this.id}/reviews/${item.id}`)
+      .deleteComment(`/units/${this.id}/reviews/${item}`)
       .subscribe((a) => {
+        this.getAllComments();
         console.log(a);
       });
   }

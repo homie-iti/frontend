@@ -11,10 +11,10 @@
     >
       <div class="input-group mb-3 searchBar">
         <a routerLink="/units/{{ cityid }}"
-          ><span class="input-group-text btn" id="basic-addon1 "
-            >Search</span
-          ></a
-        >
+          ><span class="input-group-text btn" id="basic-addon1 ">
+            <fa-icon [icon]="faMagnifyingGlassLocation"></fa-icon>&nbsp; Search</span
+          ></a>
+
         <input
           class="fromStyle form-control"
           list="datalistOptions"
@@ -33,6 +33,7 @@
 <br />
 
 <br />
+
 <!-- 
 <app-city-cards
   [cityname]="cityname"

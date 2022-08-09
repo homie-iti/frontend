@@ -18,15 +18,40 @@ h2{
     }
     
 
-.card a{
-    background-color: #FFDEE9;
-    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-}
 .card img{
     height: 30vh;
 }
 
-
 .oneCity{
     margin: auto;
 }
+
+.cardStyle{
+  
+    background-color: rgba(155, 134, 109, 0.4);
+}
+
+h5{
+    color: rgb(243, 233, 220);
+    padding: 5px;
+    font-size: 25px;
+}
+.btnStyle{
+    margin-bottom: 0;
+     background-color:var(--addresses-color);
+     color:var(  --main-font-color) ;
+   
+}
+.btnStyle:hover{
+    color:rgb(243, 233, 220);
+}
+img{
+    
+
+    transition: all  1s 0.5s ease-in-out;
+    }
+    
+    img:hover{
+       
+        transform:scale(1.1);
+    }

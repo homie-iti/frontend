@@ -38,5 +38,12 @@ export class GetdataService {
     return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
   }
 
+  addUnit(unit:{} ) {
+    return this.http.post<any> ("https://homie-iti.herokuapp.com/units",unit);
+  }
+
+
+
+
   constructor(private http: HttpClient) {}
 }

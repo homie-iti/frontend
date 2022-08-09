@@ -40,7 +40,18 @@ h5{
     margin-bottom: 0;
      background-color:var(--addresses-color);
      color:var(  --main-font-color) ;
+   
 }
 .btnStyle:hover{
     color:rgb(243, 233, 220);
 }
+img{
+    
+
+    transition: all  1s 0.5s ease-in-out;
+    }
+    
+    img:hover{
+       
+        transform:scale(1.1);
+    }

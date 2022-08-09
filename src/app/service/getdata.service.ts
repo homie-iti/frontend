@@ -47,5 +47,12 @@ export class GetdataService {
   //   );
   // }
 
+  addUnit(unit:{} ) {
+    return this.http.post<any> ("https://homie-iti.herokuapp.com/units",unit);
+  }
+
+
+
+
   constructor(private http: HttpClient) {}
 }

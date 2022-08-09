@@ -6,10 +6,7 @@
     <div>
       <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
         style="position: relative" />
-      <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
-      <button (click)="onClick(item._id)">
-        <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
-      </button>
+      <fa-icon [icon]="faHeart" class="faIcon" (click)="onClick(item._id)"> </fa-icon>
     </div>
     <div class="card-body">
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
@@ -30,9 +27,7 @@
     <div>
       <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
         style="position: relative" />
-      <button (click)="onClick(item._id)">
-        <fa-icon [icon]="faHeart" class="faIcon"> </fa-icon>
-      </button>
+      <fa-icon [icon]="faHeart" class="faIcon" [class.active]="isActive" (click)="onClick(item._id)"> </fa-icon>
     </div>
 
     <div class="card-body">

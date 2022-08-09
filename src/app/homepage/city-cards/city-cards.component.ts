@@ -29,7 +29,7 @@ export class CityCardsComponent implements OnInit {
     loop: true,
     mouseDrag: true,
     touchDrag: true,
-    pullDrag: true,
+    pullDrag: false,
     dots: true,
     navSpeed: 700,
     navText: [
@@ -50,6 +50,6 @@ export class CityCardsComponent implements OnInit {
         items: 4,
       },
     },
-    nav: true,
+    nav: false,
   };
 }

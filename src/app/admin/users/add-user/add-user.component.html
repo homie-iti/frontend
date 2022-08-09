@@ -1,0 +1,287 @@
+<div
+  class="container mt-5 col-4"
+  [formGroup]="userForm"
+  (ngSubmit)="addUser(userForm.value)"
+>
+  <form>
+    <div class="mb-3">
+      <label for="name" class="form-label">FullName*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter your name"
+        formControlName="fullName"
+        (change)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['fullName'].touched && userValues['fullName'].invalid"
+      >
+        <div *ngIf="userValues['fullName'].errors?.['required']">
+          fullName is required
+        </div>
+        <div *ngIf="userValues['fullName'].errors?.['minlength']">
+          fullName minlength is
+          {{userValues['fullName'].errors?.['minlength'].requiredLength}}... you
+          entered {{userValues['fullName'].errors?.['minlength'].actualLength}}
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email*</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        formControlName="email"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['email'].touched && userValues['email'].invalid"
+      >
+        <div *ngIf="userValues['email'].errors?.['required']">
+          email is required
+        </div>
+        <div *ngIf="userValues['email'].errors?.['email']">
+          Please enter a valid email
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password*</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Enter strong password"
+        (blur)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['password'].touched && userValues['password'].invalid"
+      >
+        <div *ngIf="userValues['password'].errors?.['required']">
+          password is required
+        </div>
+        <div *ngIf="userValues['password'].errors?.['minlength']">
+          password minlength is
+          {{userValues['password'].errors?.['minlength'].requiredLength}}... you
+          entered {{userValues['password'].errors?.['minlength'].actualLength}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">Age*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        placeholder="Enter your age"
+        formControlName="age"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['age'].touched && userValues['age'].invalid"
+      >
+        <div *ngIf="userValues['age'].errors?.['required']">
+          age is required
+        </div>
+        <div *ngIf="userValues['age'].errors?.['min']">
+          minimum age is
+          {{userValues['age'].errors?.['min'].min}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Enter your phone number"
+        formControlName="phone"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['phone'].touched && userValues['phone'].invalid"
+      >
+        <div *ngIf="userValues['phone'].errors?.['required']">
+          Phone Number is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="nationalId" class="form-label">nationalId*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="nationalId"
+        placeholder="Enter your nationalId number"
+        formControlName="national_id"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          userValues['national_id'].touched && userValues['national_id'].invalid
+        "
+      >
+        <div *ngIf="userValues['national_id'].errors?.['required']">
+          NationalId Number is required
+        </div>
+      </div>
+    </div>
+    <div class="row" formGroupName="address">
+      <label for="name" class="form-label">Address*</label>
+      <div class="row">
+        <div class="col-md-4 form-group mb-3">
+          <label for="city" class="form-label">City*</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            id="city"
+            placeholder="City"
+            formControlName="city"
+            (blur)="log()"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              userValues.address.controls['city'].touched &&
+              userValues.address.controls['city'].invalid
+            "
+          >
+            <div
+              *ngIf="userValues.address.controls['city'].errors?.['required']"
+            >
+              City is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 form-group mb-3">
+          <label for="street" class="form-label">Street Name*</label>
+          <input
+            type="text"
+            class="form-control"
+            name="street"
+            id="street"
+            placeholder="Street Name"
+            formControlName="streetName"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              userValues.address.controls['streetName'].touched &&
+              userValues.address.controls['streetName'].invalid
+            "
+          >
+            <div
+              *ngIf="userValues.address.controls['streetName'].errors?.['required']"
+            >
+              StreetName is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 form-group mb-3">
+          <label for="building" class="form-label">Building*</label>
+          <input
+            type="number"
+            class="form-control"
+            name="building"
+            id="building"
+            placeholder="Building Number"
+            formControlName="buildingNumber"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              userValues.address.controls['buildingNumber'].touched &&
+              userValues.address.controls['buildingNumber'].invalid
+            "
+          >
+            <div
+              *ngIf="userValues.address.controls['buildingNumber'].errors?.['required']"
+            >
+              BuildingNumber is required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="balnace" class="form-label">Balance*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="balnace"
+        placeholder="Enter your balance"
+        formControlName="balance"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="userValues['balance'].touched && userValues['balance'].invalid"
+      >
+        <div *ngIf="userValues['balance'].errors?.['required']">
+          Balance is required
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="gender" class="form-label">Gender*</label><br />
+      <div class="mb-3 pe-5 form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="male"
+          value="male"
+          formControlName="gender"
+        />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="mb-3 form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="female"
+          value="female"
+          formControlName="gender"
+        />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+    </div>
+
+    <div class="mb-3 pe-3 form-check-inline">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isagent"
+        formControlName="isAgent"
+      />
+      <label class="form-check-label" for="isagent">&nbsp;isAgent</label>
+    </div>
+    <div class="mb-3 form-check-inline">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="islandlord"
+        formControlName="isLandlord"
+      />
+      <label class="form-check-label" for="isLandlord">&nbsp;isLandlord</label>
+    </div>
+    <div class="mb-3">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="userForm.invalid"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</div>

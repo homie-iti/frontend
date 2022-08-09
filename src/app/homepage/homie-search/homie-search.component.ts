@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { City } from 'src/app/_models/city';
-
+import { faMagnifyingGlassLocation } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-homie-search',
   templateUrl: './homie-search.component.html',
@@ -11,7 +11,7 @@ export class HomieSearchComponent implements OnInit {
   cityname: any;
   citycover: any;
   cityid: any;
-
+  faMagnifyingGlassLocation = faMagnifyingGlassLocation;
   namevalue(name: any) {
     this.cityname = name;
 

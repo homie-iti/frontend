@@ -38,6 +38,10 @@ export class GetdataService {
     return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
   }
 
+  addUnit(unit: {}) {
+    return this.http.post<any>('https://homie-iti.herokuapp.com/units', unit);
+  }
+
   postFavorite(favorite: any) {
     return this.http.post<any>(
       'https://homie-iti.herokuapp.com/users/b6fd2b6c4d37aaddcb4abe2e/favorites',

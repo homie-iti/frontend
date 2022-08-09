@@ -13,7 +13,16 @@
     font-size: 12pt;
     font-weight: 400;
   }
-  
+  img{
+    
+
+    transition: all  1s 0.5s ease-in-out;
+    }
+    
+    img:hover{
+       
+        transform:scale(1.1);
+    }
    .history-info{
      color: var( --hover-font-color);
   }

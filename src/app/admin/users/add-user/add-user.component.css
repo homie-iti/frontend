@@ -1,0 +1,15 @@
+.errors {
+    color: red;
+  }
+  
+  .form-control.ng-invalid.ng-touched {
+    border: 2px solid red;
+    box-shadow: 0;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  

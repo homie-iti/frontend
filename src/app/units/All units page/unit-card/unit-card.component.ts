@@ -16,12 +16,13 @@ import { Observable, Subscription } from 'rxjs';
   selector: 'app-unit-card',
   templateUrl: './unit-card.component.html',
   styleUrls: ['./unit-card.component.css'],
-  // changeDetection:ChangeDetectionStrategy.OnPush
 })
+
 export class UnitCardComponent implements OnInit {
-  page: number = 1;
   faHeart = faHeart;
+  page: number = 1;
   emp: any;
+  favoriteUnit: any;
 
   constructor(
     private activate: ActivatedRoute,
@@ -29,29 +30,35 @@ export class UnitCardComponent implements OnInit {
     public transfer: TransferDataService,
     private SpinnerService: NgxSpinnerService
   ) {}
+
   id: any = this.activate.snapshot.params['id'];
 
   units: Units[] = [];
+
+  onClick(item: any) {
+    console.log(item);
+  }
 
   ngOnInit(): void {
     this.SpinnerService.show();
     this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe(
       (a) => {
         this.units = a.units;
+        console.log(a);
+
         console.log(a.units[0].allowedGender);
-
-        // for( let i =0; i<this.units.length ;i++){
-        //   if(this.units[i].allowedGender=="male"){
-        //     this.filterdArray.push(this.units[i])
-        //   }
-        //  }
-        //  console.log(this.filterdArray)
-
         this.SpinnerService.hide();
       },
       (error) => {
         console.log(error);
       }
     );
+
+    this.unitser
+      .getAllCityUnits(`/users/b6fd2b6c4d37aaddcb4abe2e/favorites`)
+      .subscribe((a) => {
+        this.favoriteUnit = a;
+        console.log(this.favoriteUnit);
+      });
   }
 }

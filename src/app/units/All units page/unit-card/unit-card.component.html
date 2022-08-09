@@ -27,7 +27,7 @@
     <div>
       <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
         style="position: relative" />
-      <fa-icon [icon]="faHeart" class="faIcon" [class.active]="isActive" (click)="onClick(item._id)"> </fa-icon>
+      <fa-icon [icon]="faHeart" class="faIcon" [class.active]="checkId(item._id)" (click)="onClick(item._id)"> </fa-icon>
     </div>
 
     <div class="card-body">

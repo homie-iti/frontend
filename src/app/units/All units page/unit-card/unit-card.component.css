@@ -21,9 +21,6 @@ fa-icon {
   display: none;
 }
 
-fa-icon.active {
-  color: red;
-}
 
 .card:hover fa-icon {
   display: block;

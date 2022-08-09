@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
@@ -9,7 +9,7 @@ import { favoriteUnits } from 'src/app/_models/favoriteunits';
   templateUrl: './user-wish-list.component.html',
   styleUrls: ['./user-wish-list.component.css'],
 })
-export class UserWishListComponent implements OnInit {
+export class UserWishListComponent implements OnInit, OnChanges {
   faHeart = faHeart;
   favunit: favoriteUnits | undefined;
 
@@ -39,6 +39,10 @@ export class UserWishListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getAllFavourite();
+  }
+
+  ngOnChanges() {
     this.getAllFavourite();
   }
 }

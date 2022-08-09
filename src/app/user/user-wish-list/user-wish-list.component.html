@@ -4,7 +4,7 @@
       <div>
         <img src="{{i.cover}}" class="d-block card-img-top card-border" id="opImg" alt="..."
           style="position: relative" />
-        <fa-icon [icon]="faHeart" class="faIcon" (click)="onClick(i._id)"> </fa-icon>
+        <fa-icon [icon]="faHeart" class="faIcon" style="color: red;" (click)="onClick(i._id)"> </fa-icon>
       </div>
       <div class="card-body">
         <a routerLink="/unit/{{ i._id }}" routerLinkActive="router-link-active">

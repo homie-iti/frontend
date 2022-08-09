@@ -22,8 +22,8 @@ export class UnitReviewComponent implements OnInit {
   ) {}
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
-  agentdetails: any;
-  unitreview: Unitreviews[] = [];
+  commentdetails: any;
+
   comment: Unitreviews = new Unitreviews(
     'b6fd2b6c4d37aaddcb4abe2e',
     this.id,
@@ -34,21 +34,36 @@ export class UnitReviewComponent implements OnInit {
   addComment(review: any) {
     console.log(review.value);
     this.comment.comment = review.value;
-
     this.unitrev = this.comment.comment;
     this.unitid = this.id;
-    this.agentId = this.comment.agentId;
-    this.rate = this.comment.rating;
+
+    // this.agentId = this.comment.agentId;
+    // this.rate = this.comment.rating;
 
     this.unitser.addComment(this.comment).subscribe((a) => {
+      this.getAllComments();
       console.log(a);
     });
   }
 
-  ngOnInit(): void {
+  deleteComment(item: any) {
+    // this.commentdetails = review.target.value;
+    console.log(this.commentdetails);
+    this.unitser
+      .deleteComment(`/unit/${this.id}/reviews/${item.id}`)
+      .subscribe((a) => {
+        console.log(a);
+      });
+  }
+
+  getAllComments() {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitComment = a.reviews.reviews;
       console.log(this.unitComment);
     });
+  }
+
+  ngOnInit(): void {
+    this.getAllComments();
   }
 }

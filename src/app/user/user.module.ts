@@ -10,9 +10,10 @@ import { UserProfileComponent } from './user account/user-profile/user-profile.c
 import { UserComponent } from './user.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { UserWishListComponent } from './user-wish-list/user-wish-list.component';
-import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './registration pages/forgetpassword/forgetpassword.component';
 import { NewpasswordComponent } from './registration pages/newpassword/newpassword.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,13 @@ import { NewpasswordComponent } from './registration pages/newpassword/newpasswo
     ForgetpasswordComponent,
     NewpasswordComponent,
   ],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    FontAwesomeModule,
+    AppRoutingModule,
+  ],
   exports: [
     UserCardComponent,
     UserAboutComponent,

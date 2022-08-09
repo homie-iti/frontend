@@ -1,0 +1,44 @@
+.container {
+  min-height: 40em;
+}
+@media (min-width: 501px) {
+  .card {
+    width: 15rem;
+    border: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+
+fa-icon {
+  font-size: 30px;
+  color: lightgray;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.card:hover fa-icon {
+  display: block;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: all 3s;
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+@media (max-width: 500px) {
+  .card {
+    /* font-size: 10px; */
+    width: 10rem;
+    border: none;
+  }
+}

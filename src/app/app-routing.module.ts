@@ -1,4 +1,4 @@
-import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.page';
 import { AboutUsComponent } from './about-us/about-us.page';
 import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
 import { NgModule } from '@angular/core';

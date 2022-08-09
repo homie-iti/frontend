@@ -1,0 +1,49 @@
+h1 {
+    font-size: 4.5rem;
+    font-weight: 900;
+   
+    color:rgb(155, 134, 109);
+
+    text-align: center;
+    margin-top: 30px;
+}
+.card-outline {
+    margin:2rem auto;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.441);
+    /* height: 12rem; */
+    border-radius: 10px ;
+  }
+h3{
+    font-size: 3rem;
+    color:var(--main-font-color);
+    font-weight: bolder;
+}
+p{
+    color:var(--addresses-color);
+   
+}
+img{
+    width:40px;
+  margin: 10px 15px;
+}
+a{
+    text-decoration: none;
+   
+}
+.numberStyle{
+    display: flex;
+    
+   align-items: flex-start;
+   flex-wrap: nowrap;
+
+}
+.outStyle:hover{
+    background-color: var(--section-color);
+}
+.outStyle{
+    background-color: var(--main-background-color);
+    border-radius: 10px  ;
+    box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+  
+}

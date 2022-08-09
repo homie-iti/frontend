@@ -1,0 +1,27 @@
+<div class="text-center m-auto col-4 my-5 border border-3">
+  <h1 class="p-4">User Details</h1>
+  <img src="{{ user.image }}" class="col-4" />
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item fs-4 lead">
+      <span class="text-danger fw-bold fs-4">fullName:&nbsp;</span>
+      {{ user.fullName }}
+    </li>
+    <li class="list-group-item fs-4 lead">
+      <span class="text-danger fw-bold fs-4">Email:&nbsp;</span>
+      {{ user.email }}
+    </li>
+    <li class="list-group-item fs-4 lead">
+      <span class="text-danger fw-bold fs-4">PhoneNumber:&nbsp;</span>
+      {{ user.phone }}
+    </li>
+    <li class="list-group-item fs-4 lead">
+      <span class="text-danger fw-bold fs-4">Gender:&nbsp;</span>
+      {{ user.gender }}
+    </li>
+
+    <li class="list-group-item fs-4 lead">
+      <span class="text-danger fw-bold fs-4">City:&nbsp;</span>
+      {{ user.address["city"] }}
+    </li>
+  </ul>
+</div>

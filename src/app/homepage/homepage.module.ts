@@ -10,6 +10,7 @@ import { HomieSearchComponent } from './homie-search/homie-search.component';
 import { HomieInfoComponent } from './homie-info/homie-info.component';
 import { HomepageComponent } from './homepage.page';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 
 
@@ -23,6 +24,7 @@ import { RouterModule } from '@angular/router';
     HomieInfoComponent,
     HomepageComponent,
     
+    
   
   ],
   imports: [
@@ -30,7 +32,7 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     CommonModule,
     CarouselModule ,
-    RouterModule
+    RouterModule,FontAwesomeModule
   ],
   exports: [
     AboutUsComponent,

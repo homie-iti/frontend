@@ -7,16 +7,14 @@
     <div class="row">
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let item of city">
-          <div class="col-md-3">
-            <div class="card" style="width: 18rem; height: 25rem">
+          <div class="col-md-3  col-lg-3 col-sm-12 ">
+            <div class=" card cardStyle " style="width: 18rem; height: 20rem">
               <img src="{{ item.cover }}" class="card-img-top" alt="cityCard" />
               <div class="card-body">
                 <h5 class="card-title">{{ item.name }}</h5>
-                <p class="card-text">
-                  I haven't been everywhere, but it's on my list.
-                </p>
-                <a routerLink="/units/{{ item._id }}" class="btn"
-                  >Go somewhere</a
+            
+                <a routerLink="/units/{{ item._id }}" class="btn btnStyle"
+                  >see more</a
                 >
               </div>
             </div>

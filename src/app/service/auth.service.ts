@@ -76,6 +76,10 @@ export class AuthService {
     return this.authInfo.user;
   }
 
+  removeToken() {
+    return localStorage.removeItem('token');
+  }
+
   isLoggedIn() {
     return this.authInfo.isLoggedIn;
   }

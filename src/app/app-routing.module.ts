@@ -12,6 +12,7 @@ import { UserProfileComponent } from './user/user account/user-profile/user-prof
 import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
 import { AddunitComponent } from './unitscrud/addunit/addunit.component';
+import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 
 const routes: Routes = [
   {
@@ -58,7 +59,12 @@ const routes: Routes = [
    path:"addCity",
      component:AddunitComponent
    
-  },
+  }
+  ,{
+    path:"editUnit",
+      component:EditunitComponent
+    
+   },
  
   {
     path: '**',

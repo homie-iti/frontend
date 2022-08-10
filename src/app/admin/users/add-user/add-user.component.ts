@@ -49,7 +49,7 @@ export class AddUserComponent implements OnInit {
 
   users: User[] = [];
   addUser(user: any) {
-    this.adminService.addUser(user).subscribe({
+    this.adminService.addUser('users', user).subscribe({
       next: (res: any) => {
         console.log(res);
         this.users.splice(0, 0, user);

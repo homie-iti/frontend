@@ -10,13 +10,13 @@ import { User } from 'src/app/_models/user';
 export class GetAllUsersComponent implements OnInit {
   users: User[] = [];
   constructor(private adminService: AdminService) {}
-  deleteUser(id: string|undefined, x: number) {
-    this.adminService.deleteUser(id).subscribe(() => {
+  deleteUser(id: string | undefined, x: number) {
+    this.adminService.deleteUser('users/', id).subscribe(() => {
       this.users.splice(x, 1);
     });
   }
   ngOnInit(): void {
-    this.adminService.getAllUsers().subscribe((usersData) => {
+    this.adminService.getAll('users').subscribe((usersData) => {
       console.log(usersData);
       this.users = usersData.results;
       console.log(this.users);

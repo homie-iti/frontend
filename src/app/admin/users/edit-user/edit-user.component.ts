@@ -28,13 +28,15 @@ export class EditUserComponent implements OnInit {
   }
 
   updateUser(data: any) {
-    this.adminService.updateUserData(this.id, data).subscribe((data) => {
-      console.log(data);
-      this.router.navigateByUrl('admin/all-users');
-    });
+    this.adminService
+      .updateUserData('users/', this.id, data)
+      .subscribe((data) => {
+        console.log(data);
+        this.router.navigateByUrl('admin/all-users');
+      });
   }
   ngOnInit(): void {
-    this.adminService.getUserById(this.id).subscribe((userData) => {
+    this.adminService.getUserById('users/', this.id).subscribe((userData) => {
       console.log(userData);
       this.user = userData;
       this.updateUserForm = new FormGroup({

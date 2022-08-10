@@ -19,7 +19,7 @@ export class GetSingleUserComponent implements OnInit {
   user: User = {};
 
   ngOnInit(): void {
-    this.adminService.getUserById(this.id).subscribe((userData) => {
+    this.adminService.getUserById('users/', this.id).subscribe((userData) => {
       this.user = userData;
       console.log(userData);
     });

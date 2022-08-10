@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
+import { GetdataService } from '../../../service/getdata.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
 import { faChainSlash } from '@fortawesome/free-solid-svg-icons';
@@ -11,13 +12,19 @@ import { faChainSlash } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private getdataService: GetdataService
+  ) {}
 
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.pattern(`^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$`),
+      Validators.pattern(
+        `^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$`
+      ),
     ]),
   });
 
@@ -69,23 +76,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    // console.log(
-    //   this.loginForm.get('password')?.invalid &&
-    //     this.loginForm.get('email')?.invalid
-    // );
-
-    // console.log(this.loginForm.get('email')?.errors);
-    // console.log(this.loginForm.get('password')?.errors);
-    // console.log(this.loginForm.errors);
-
-    // console.log(
-    //   this.loginForm.get('email')?.value as string,
-    //   this.loginForm.get('password')?.value as string
-    // );
-    // console.log(
-    //   this.loginForm.get('email')?.invalid,
-    //   this.loginForm.get('password')?.invalid
-    // );
     this.authService
       .login(
         this.loginForm.get('email')?.value as string,
@@ -95,13 +85,21 @@ export class LoginComponent implements OnInit {
         next: (loginInfo) => {
           this.authService.setLoggedIn(true);
           this.authService.setToken(loginInfo.token as string);
-          this.router.navigateByUrl('/home');
-          this.doesLoginHasError = false;
+          this.retrieveLoggedUserInfo(this.authService.getDecodedToken().id);
         },
         error: (error) => {
           console.log(error);
           this.doesLoginHasError = true;
         },
       });
+  }
+
+  retrieveLoggedUserInfo(id: string) {
+    this.getdataService.getUserDetails(id).subscribe((user) => {
+      console.log(user);
+      this.authService.setUser(user);
+      this.router.navigateByUrl('/home');
+      this.doesLoginHasError = false;
+    });
   }
 }

@@ -54,9 +54,9 @@ export class AuthService {
     return this.http.post<any>(this.url + '/signup', signUp);
   }
 
-  setAuthInfo(authInfo: AuthInfo) {
-    this.authInfo = authInfo;
-  }
+  // setAuthInfo(authInfo: AuthInfo) {
+  //   this.authInfo = authInfo;
+  // }
   getAuthInfo() {
     return this.authInfo;
   }
@@ -73,24 +73,30 @@ export class AuthService {
     localStorage.setItem('token', token);
   }
   getToken() {
-    return this.authInfo.user;
+    return this.authInfo.token;
+  }
+  getDecodedToken(): { id: string; role: string; exp: number; iat: number } {
+    return this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter());
+  }
+
+  removeToken() {
+    return localStorage.removeItem('token');
   }
 
   isLoggedIn() {
     return this.authInfo.isLoggedIn;
   }
+
   setLoggedIn(isLoggedIn: boolean) {
     this.authInfo.isLoggedIn = isLoggedIn;
+    if (isLoggedIn) return;
+    this.authInfo.token = undefined;
+    this.authInfo.user = undefined;
   }
 
   constructor(
     private http: HttpClient,
     private router: Router,
     private jwtHelper: JwtHelperService
-  ) {
-    console.log(
-      'token',
-      this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter())
-    );
-  }
+  ) {}
 }

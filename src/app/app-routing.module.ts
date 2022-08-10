@@ -12,11 +12,8 @@ import { UserProfileComponent } from './user/user account/user-profile/user-prof
 import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
 import { AddunitComponent } from './unitscrud/addunit/addunit.component';
-import { AdminComponent } from './admin/admin.component';
-import { GetAllUsersComponent } from './admin/users/get-all-users/get-all-users.component';
-import { GetSingleUserComponent } from './admin/users/get-single-user/get-single-user.component';
-import { AddUserComponent } from './admin/users/add-user/add-user.component';
-import { EditUserComponent } from './admin/users/edit-user/edit-user.component';
+import { EditunitComponent } from './unitscrud/editunit/editunit.component';
+import { LogoutComponent } from './user/registration pages/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -57,6 +54,10 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: 'units/:id',
     component: UnitsComponent,
   },
@@ -65,24 +66,8 @@ const routes: Routes = [
     component: AddunitComponent,
   },
   {
-    path: 'admin',
-    component: AdminComponent,
-  },
-  {
-    path: 'all-users',
-    component: GetAllUsersComponent,
-  },
-  {
-    path: 'users/:id',
-    component: GetSingleUserComponent,
-  },
-  {
-    path: 'add-user',
-    component: AddUserComponent,
-  },
-  {
-    path: 'edit-user/:id',
-    component: EditUserComponent,
+    path: 'editUnit',
+    component: EditunitComponent,
   },
 
   {

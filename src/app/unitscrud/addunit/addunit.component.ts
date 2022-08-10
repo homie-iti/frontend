@@ -80,8 +80,10 @@ export class AddunitComponent implements OnInit {
 
  
 
+
   save(){
         
+
 
     this.myform.controls.unit.value.cityId=this.cityId,
     this.myform.controls.unit.value.landlordId="41da0b86ae0fef497d2326cd"
@@ -90,7 +92,15 @@ export class AddunitComponent implements OnInit {
     console.log(this.myform.controls.unit.value)
     this.data.addUnit(this.myform.controls.unit.value).subscribe(a=>{
       console.log(a);
+    
+
+      
+      
     })
+
+
+    
+
 
   }
 

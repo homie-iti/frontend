@@ -26,6 +26,10 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
 
+  getUserDetails(id: string) {
+    return this.http.get<any>(this.url + `/users/` + id);
+  }
+
   filter(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
@@ -55,5 +59,9 @@ export class GetdataService {
     );
   }
 
+  updateUnit(unit:{}){
+    return this.http.put<any> ("https://homie-iti.herokuapp.com/units/c0ecfa717176997fb6b52e9c",unit);
+
+  }
   constructor(private http: HttpClient) {}
 }

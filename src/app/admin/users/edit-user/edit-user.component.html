@@ -5,20 +5,16 @@
 >
   <form>
     <div class="mb-3">
-      <label for="name" class="form-label">FullName*</label>
+      <label for="name" class="form-label">FullName</label>
       <input
         type="text"
         class="form-control"
         id="name"
-        value="{{ user.fullName }}"
         placeholder="Enter your name"
         formControlName="fullName"
         (change)="log()"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['fullName'].touched && userValues['fullName'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['fullName'].invalid">
         <div *ngIf="userValues['fullName'].errors?.['required']">
           fullName is required
         </div>
@@ -31,19 +27,15 @@
     </div>
 
     <div class="mb-3">
-      <label for="email" class="form-label">Email*</label>
+      <label for="email" class="form-label">Email</label>
       <input
         type="email"
         class="form-control"
         id="email"
-        value="{{ user.email }}"
         placeholder="Enter your email"
         formControlName="email"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['email'].touched && userValues['email'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['email'].invalid">
         <div *ngIf="userValues['email'].errors?.['required']">
           email is required
         </div>
@@ -54,19 +46,15 @@
     </div>
 
     <div class="mb-3">
-      <label for="age" class="form-label">Age*</label>
+      <label for="age" class="form-label">Age</label>
       <input
         type="number"
         class="form-control"
         id="age"
-        value="{{ user.age }}"
         placeholder="Enter your age"
         formControlName="age"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['age'].touched && userValues['age'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['age'].invalid">
         <div *ngIf="userValues['age'].errors?.['required']">
           age is required
         </div>
@@ -77,44 +65,36 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="phone" class="form-label">Phone*</label>
+      <label for="phone" class="form-label">Phone</label>
       <input
         type="text"
         class="form-control"
         id="phone"
-        value="{{ user.phone }}"
         placeholder="Enter your phone number"
         formControlName="phone"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['phone'].touched && userValues['phone'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['phone'].invalid">
         <div *ngIf="userValues['phone'].errors?.['required']">
           Phone Number is required
         </div>
       </div>
     </div>
     <!-- <div class="row" formGroupName="address">
-      <label for="name" class="form-label">Address*</label>
+      <label for="name" class="form-label">Address</label>
       <div class="row">
         <div class="col-md-4 form-group mb-3">
-          <label for="city" class="form-label">City*</label>
+          <label for="city" class="form-label">City</label>
           <input
             type="text"
             class="form-control"
             name="city"
             id="city"
             placeholder="City"
-            value="{{ user['address']['city'] }}"
             formControlName="city"
           />
           <div
             class="errors d-flex"
-            *ngIf="
-              userValues.address.controls['city'].touched &&
-              userValues.address.controls['city'].invalid
-            "
+            *ngIf="userValues.address.controls['city'].invalid"
           >
             <div
               *ngIf="userValues.address.controls['city'].errors?.['required']"
@@ -124,22 +104,18 @@
           </div>
         </div>
         <div class="col-md-4 form-group mb-3">
-          <label for="street" class="form-label">Street Name*</label>
+          <label for="street" class="form-label">Street Name</label>
           <input
             type="text"
             class="form-control"
             name="street"
             id="street"
-            value="{{ user.address['streetName'] }}"
             placeholder="Street Name"
             formControlName="streetName"
           />
           <div
             class="errors d-flex"
-            *ngIf="
-              userValues.address.controls['streetName'].touched &&
-              userValues.address.controls['streetName'].invalid
-            "
+            *ngIf="userValues.address.controls['streetName'].invalid"
           >
             <div
               *ngIf="userValues.address.controls['streetName'].errors?.['required']"
@@ -155,16 +131,12 @@
             class="form-control"
             name="building"
             id="building"
-            value="{{ user.address['buildingNumber'] }}"
             placeholder="Building Number"
             formControlName="buildingNumber"
           />
           <div
             class="errors d-flex"
-            *ngIf="
-              userValues.address.controls['buildingNumber'].touched &&
-              userValues.address.controls['buildingNumber'].invalid
-            "
+            *ngIf="userValues.address.controls['buildingNumber'].invalid"
           >
             <div
               *ngIf="userValues.address.controls['buildingNumber'].errors?.['required']"
@@ -177,19 +149,15 @@
     </div> -->
 
     <div class="mb-3">
-      <label for="balnace" class="form-label">Balance*</label>
+      <label for="balnace" class="form-label">Balance</label>
       <input
         type="number"
         class="form-control"
         id="balnace"
-        value="{{ user.balance }}"
         placeholder="Enter your balance"
         formControlName="balance"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['balance'].touched && userValues['balance'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['balance'].invalid">
         <div *ngIf="userValues['balance'].errors?.['required']">
           Balance is required
         </div>
@@ -201,31 +169,26 @@
         type="text"
         class="form-control"
         id="gender"
-        value="{{ user.gender }}"
         placeholder="Enter your gender"
         formControlName="gender"
       />
-      <div
-        class="errors d-flex"
-        *ngIf="userValues['gender'].touched && userValues['gender'].invalid"
-      >
+      <div class="errors d-flex" *ngIf="userValues['gender'].invalid">
         <div *ngIf="userValues['gender'].errors?.['required']">
           gender is required
         </div>
       </div>
     </div>
 
-    <div class="mb-3 pe-3 form-check-inline" *ngIf="user.isAgent === true">
+    <div class="mb-3 pe-3 form-check-inline">
       <input
         type="checkbox"
         class="form-check-input"
         id="isagent"
-        value="{{ user.isAgent }}"
         formControlName="isAgent"
       />
       <label class="form-check-label" for="isagent">&nbsp;isAgent</label>
     </div>
-    <div class="mb-3 form-check-inline" *ngIf="user.isLandlord === true">
+    <div class="mb-3 form-check-inline">
       <input
         type="checkbox"
         class="form-check-input"

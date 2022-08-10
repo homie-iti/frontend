@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin.service';
-import { Users } from 'src/app/_models/users';
+import { User } from 'src/app/_models/user';
 
 @Component({
   selector: 'app-add-user',
@@ -47,7 +47,7 @@ export class AddUserComponent implements OnInit {
     return this.userForm.controls;
   }
 
-  users: Users[] = [];
+  users: User[] = [];
   addUser(user: any) {
     this.adminService.addUser(user).subscribe({
       next: (res: any) => {

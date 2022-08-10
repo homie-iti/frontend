@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from 'src/app/service/admin.service';
-import { Users } from 'src/app/_models/users';
+import { User } from 'src/app/_models/user';
 
 @Component({
   selector: 'app-get-all-users',
@@ -8,9 +8,9 @@ import { Users } from 'src/app/_models/users';
   styleUrls: ['./get-all-users.component.css'],
 })
 export class GetAllUsersComponent implements OnInit {
-  users: Users[] = [];
+  users: User[] = [];
   constructor(private adminService: AdminService) {}
-  deleteUser(id: any, x: number) {
+  deleteUser(id: string|undefined, x: number) {
     this.adminService.deleteUser(id).subscribe(() => {
       this.users.splice(x, 1);
     });

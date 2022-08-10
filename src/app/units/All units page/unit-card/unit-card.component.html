@@ -1,5 +1,5 @@
 <div class="d-flex flex-wrap " *ngIf="this.transfer.filteredUnits">
-  <div class=" card  m-3 col-6 col-sm-9 col-lg-4 col-md-5" *ngFor="
+  <div class=" card  m-3 col-6 col-sm-9 col-lg-3 col-md-5" *ngFor="
       let item of this.transfer.filteredUnits
         | paginate: { itemsPerPage: 24, currentPage: page }
     ">
@@ -23,7 +23,7 @@
   </div>
 </div>
 <div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits.length < 1">
-  <div class="card overflow-hidden position-relative m-3 col-9 col-sm-9 col-lg-4 col-md-5" *ngFor="
+  <div class="card overflow-hidden position-relative m-3 col-9 col-sm-9 col-lg-3 col-md-5" *ngFor="
       let item of units | paginate: { itemsPerPage: 24, currentPage: page }
     ">
     <div>

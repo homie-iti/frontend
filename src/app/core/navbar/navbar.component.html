@@ -53,8 +53,7 @@
             ACCOUNT</a>
         </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
-          <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/logout']">
-            Log out</a>
+          <app-logout></app-logout>
         </li>
       </ul>
       <!-- <button class="btn btnStyle btn-outline-success" type="submit">EN</button> -->

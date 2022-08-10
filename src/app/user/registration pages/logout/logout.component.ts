@@ -14,6 +14,7 @@ export class LogoutComponent implements OnInit {
     event.preventDefault();
     this.router.navigateByUrl('/login');
     this.authService.removeToken();
+    this.authService.setLoggedIn(false);
   }
 
   ngOnInit(): void {}

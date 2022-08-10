@@ -18,7 +18,7 @@ export class RatingComponent implements OnInit {
 
   constructor(
     private activate: ActivatedRoute,
-    private unitser: GetdataService
+    private unitSer: GetdataService
   ) {}
 
   id: any = this.activate.snapshot.params['id'];
@@ -33,8 +33,8 @@ export class RatingComponent implements OnInit {
     console.log(this.average);
   }
 
-  getrating() {
-    this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
+  getRating() {
+    this.unitSer.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.rate = a.reviews.ratings;
       this.getAvr();
       console.log(this.average);
@@ -42,6 +42,6 @@ export class RatingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getrating();
+    this.getRating();
   }
 }

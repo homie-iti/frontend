@@ -85,11 +85,11 @@ a:hover {
   right: 5px;
   font-size: 30px;
   cursor: pointer;
-  color: lightgray;
+  color: rgba(243, 237, 237, 0.811);
 }
 
 fa-icon.active {
-  color: red;
+  color: rgb(179, 38, 38);
 }
 
 img {
@@ -98,3 +98,4 @@ img {
 .stylSpan {
   color: var(--hover-font-color);
 }
+

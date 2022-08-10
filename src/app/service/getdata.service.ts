@@ -38,19 +38,22 @@ export class GetdataService {
     return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
   }
 
-  // updateComment(comment: Unitreviews) {
-  //   return this.http.put(
-  //     'https://homie-iti.herokuapp.com/reviews/bf1a9d32ab752f9ccf16bf9b' + comment.id,
-  //     comment
-  //   );
-  // }
-
-  addUnit(unit:{} ) {
-    return this.http.post<any> ("https://homie-iti.herokuapp.com/units",unit);
+  addUnit(unit: {}) {
+    return this.http.post<any>('https://homie-iti.herokuapp.com/units', unit);
   }
 
-
-
+  postFavorite(favorite: any) {
+    return this.http.post<any>(
+      'https://homie-iti.herokuapp.com/users/b6fd2b6c4d37aaddcb4abe2e/favorites',
+      favorite
+    );
+  }
+  deleteFavorite(id: any) {
+    return this.http.delete<any>(
+      'https://homie-iti.herokuapp.com/users/b6fd2b6c4d37aaddcb4abe2e/favorites/' +
+        id
+    );
+  }
 
   constructor(private http: HttpClient) {}
 }

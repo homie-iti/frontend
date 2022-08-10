@@ -5,8 +5,8 @@ import { GetAllUsersComponent } from './users/get-all-users/get-all-users.compon
 import { AddUserComponent } from './users/add-user/add-user.component';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
 import { GetSingleUserComponent } from './users/get-single-user/get-single-user.component';
-import { AppRoutingModule } from '../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AdminRoutingModule } from './admin-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditUserComponent,
     GetSingleUserComponent,
   ],
-  imports: [CommonModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, AdminRoutingModule],
   exports: [
     AdminComponent,
     GetAllUsersComponent,

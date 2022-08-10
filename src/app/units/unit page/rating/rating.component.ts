@@ -22,7 +22,7 @@ export class RatingComponent implements OnInit {
     length = this.rate.length;
 
     this.sum = this.rate.forEach((num) => {
-      return this.rate + num;
+      this.rate + num;
     });
 
     let average = this.sum / length;
@@ -33,6 +33,7 @@ export class RatingComponent implements OnInit {
   getrating() {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.rate = a.reviews.ratings;
+      this.getrating();
       console.log(this.rate);
     });
   }

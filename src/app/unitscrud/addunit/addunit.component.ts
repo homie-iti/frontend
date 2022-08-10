@@ -93,6 +93,8 @@ export class AddunitComponent implements OnInit {
     this.data.addUnit(this.myform.controls.unit.value).subscribe(a=>{
       console.log(a);
     
+
+      
       
     })
 

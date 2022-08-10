@@ -1,0 +1,232 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="myform" *ngIf="this.myform">
+      <div formGroupName="unit">
+        <!-- <div class="col-xl-6">
+            <label for="landlordid" class="form-label">LandLord Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="landlordid"
+              aria-describedby="landlordHelp"
+              formControlName="landlordId"
+            />
+          </div>
+  
+          <div class="col-xl-6">
+            <label for="cityid" class="form-label">city Id</label>
+            <input
+              type="text"
+              class="form-control"
+              id="cityid"
+              aria-describedby="cityidHelp"
+              formControlName="cityId"
+            />
+          </div> -->
+
+        <div formGroupName="unitInfo">
+          <div class="col-xl-6">
+            <label for="description" class="form-label">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              aria-describedby="descriptionHelp"
+              formControlName="description"
+            />
+          </div>
+
+          <div class="col-xl-6">
+            <label for="rooms" class="form-label">Rooms</label>
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              id="rooms"
+              aria-describedby="roomsHelp"
+              formControlName="rooms"
+            />
+          </div>
+
+          <div class="col-xl-6">
+            <label for="bathrooms" class="form-label">Bathrooms</label>
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              id="bathrooms"
+              aria-describedby="bathroomsHelp"
+              formControlName="bathrooms"
+            />
+          </div>
+
+          <div class="col-xl-6">
+            <label for="floor" class="form-label">Floor</label>
+            <input
+              type="number"
+              min="0"
+              class="form-control"
+              id="floor"
+              aria-describedby="floorHelp"
+              formControlName="floor"
+            />
+          </div>
+        </div>
+
+        <div formGroupName="address">
+          <div>
+            <label for="city" class="form-label">city Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              aria-describedby="cityHelp"
+              formControlName="city"
+            />
+          </div>
+
+          <div>
+            <label for="buildingNumber" class="form-label"
+              >Building Number</label
+            >
+            <input
+              type="number"
+              class="form-control"
+              id="buildingNumber"
+              aria-describedby="buildingNumberHelp"
+              formControlName="buildingNumber"
+            />
+          </div>
+
+          <div class="col-xl-6">
+            <label for="streetName" class="form-label">street Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="streetName"
+              aria-describedby="streetNameHelp"
+              formControlName="streetName"
+            />
+          </div>
+        </div>
+
+        <div class="col-xl-6">
+          <label for="dailyPrice" class="form-label"> Daily Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="dailyPrice"
+            aria-describedby="dailyPriceHelp"
+            formControlName="dailyPrice"
+          />
+        </div>
+
+        <div class="col-xl-6">
+          <label for="Residents" class="form-label">Number Of Residents</label>
+          <input
+            type="number"
+            class="form-control"
+            id="Residents"
+            aria-describedby="ResidentsHelp"
+            formControlName="numberOfResidents"
+          />
+        </div>
+
+        <!-- <p>Allowed Gender</p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="male"
+            value="male"
+            formControlName="allowedGender"
+          />
+          <label class="form-check-label" for="male"> male </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="female"
+            value="female"
+            formControlName="allowedGender"
+          />
+          <label class="form-check-label" for="female"> Female </label>
+        </div> -->
+
+        <p>check Availablity</p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+            formControlName="isAvailable"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            is Available ?
+          </label>
+        </div>
+
+        <p>check pets allowence</p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+            formControlName="isPetsAllowed"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            is Pets Allowed?
+          </label>
+        </div>
+        >
+
+        <p>estate Type</p>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="stuido"
+            value="studio"
+            formControlName="estateType"
+          />
+          <label class="form-check-label" for="studio"> studio </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="sharedroom"
+            value="shared-room"
+            formControlName="estateType"
+          />
+          <label class="form-check-label" for="sharedroom"> shared room</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="singleroom"
+            value="single-room"
+            formControlName="estateType"
+          />
+          <label class="form-check-label" for="singleroom"> single room</label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            id="apartment"
+            value="apartment"
+            formControlName="estateType"
+          />
+          <label class="form-check-label" for="apartment">Apartment </label>
+        </div>
+
+        <button class="btn btn-primary" (click)="save()">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -90,10 +90,37 @@
                 >Users</a
               >
             </li>
-            <li><a class="dropdown-item pb-1">Units</a></li>
-            <li><a class="dropdown-item pb-1">Cities</a></li>
-            <li><a class="dropdown-item pb-1">Contracts</a></li>
-            <li><a class="dropdown-item pb-1">Reviews</a></li>
+            <li>
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-units']"
+                >Units</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-cities']"
+                >Cities</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-contracts']"
+                >Contracts</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-helpQuestions']"
+                >Help Questions</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-reviews']"
+                >Reviews</a
+              >
+            </li>
           </ul>
         </li>
       </ul>

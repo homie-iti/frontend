@@ -13,7 +13,6 @@ export class UnitReviewComponent implements OnInit {
   faStar = faStar;
   unitid: any;
   agentId: any;
-  rate: any;
   unitrev: any;
 
   constructor(
@@ -27,7 +26,7 @@ export class UnitReviewComponent implements OnInit {
   comment: Unitreviews = new Unitreviews(
     'b6fd2b6c4d37aaddcb4abe2e',
     this.id,
-    3,
+    0,
     ''
   );
 

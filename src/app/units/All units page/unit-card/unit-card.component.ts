@@ -6,7 +6,12 @@ import {
 } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
-import { faHeart  ,faDollarSign,faUser,faPaw} from '@fortawesome/free-solid-svg-icons';
+import {
+  faHeart,
+  faDollarSign,
+  faUser,
+  faPaw,
+} from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';

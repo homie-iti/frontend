@@ -70,3 +70,25 @@ a:hover{
   width: 50%;
   color: var( --main-font-color);
 }
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  background-color: rgba(20, 20, 20, 0.228);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 23.22vh;
+  margin: 0 auto;
+  border-radius: 3px;
+  text-align: center;
+  transition: all .2s .1s ease-in;
+  opacity: 0;
+}
+img{
+  height: 20vh;
+}
+.stylSpan{
+  color: var(  --hover-font-color);
+}

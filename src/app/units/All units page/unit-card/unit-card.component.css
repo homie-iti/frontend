@@ -23,6 +23,7 @@ fa-icon {
   display: none;
 }
 
+
 .card:hover fa-icon {
   display: block;
 }

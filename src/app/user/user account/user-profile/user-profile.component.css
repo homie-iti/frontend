@@ -1,6 +1,4 @@
-.content {
-  padding: 7rem 0;
-}
+
 .user-image a {
   text-decoration: underline;
 }
@@ -16,12 +14,12 @@
 .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-bottom: 2px solid rgb(69, 193, 189);
+  border-bottom: 2px solid rgba(97, 87, 57, 0.897);
 }
 
 .form-label {
-  color: #000;
-  font-size: 13px;
+  color: rgb(75, 69, 56);
+  font-size: 18px;
 }
 
 .btn,
@@ -39,10 +37,50 @@
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
 }
 .form-outline .form-label {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #b0abb3;
   margin: 0 0 10px 0;
   display: inline-block;
   padding: 0;
+}
+
+
+
+.sign{
+  margin: 5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color:var(--section-color);
+}
+
+h3{
+   color: var( --main-font-color);
+   font-weight: bolder;
+
+}
+a{
+  font-size: 20px;
+}
+
+.style{
+  border: solid 2px rgb(44, 33, 9);
+  border-radius: 4px;
+  text-align: center;
+  width: 20%;
+}
+.form-check-input:checked{
+       background-color: var( --main-font-color); 
+    border-color: var( --main-font-color); 
+}
+.form-check-input:focus{
+  box-shadow: 0 0 0 0.25rem rgba(71, 57, 5, 0.25);
+}
+
+.btnStyle{
+ color: var( --main-font-color);
+ background-color: #c1b39e;
+}
+.btnStyle:focus{
+  box-shadow: 0 0 0 0.25rem rgba(71, 57, 5, 0.25);
 }

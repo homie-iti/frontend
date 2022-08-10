@@ -9,7 +9,7 @@
     --main-background-color: rgba(234, 209, 179, 0.265);
     --addresses-color:rgb(155, 134, 109);
     --color-search:rgb(225, 216, 205);
-    --section-color:rgba(198, 183, 165, 0.765);
+    --section-color:rgba(177, 163, 145, 0.459);
 }
 
 * {
@@ -18,7 +18,7 @@
 
 }
 body{
-    background-image: url("https://i.ibb.co/fGwnsbG/location-bg.jpg"  )
+    background-image: url("https://i.ibb.co/fGwnsbG/location-bg.jpg")
     /* background-color: var(--main-background-color); */
  }
 

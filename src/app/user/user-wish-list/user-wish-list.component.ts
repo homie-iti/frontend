@@ -1,6 +1,11 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDollarSign,
+  faHeart,
+  faPaw,
+  faUser,
+} from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
 
@@ -11,6 +16,10 @@ import { favoriteUnits } from 'src/app/_models/favoriteunits';
 })
 export class UserWishListComponent implements OnInit, OnChanges {
   faHeart = faHeart;
+  faDollarSign = faDollarSign;
+  faUser = faUser;
+  faPaw = faPaw;
+
   favunit: favoriteUnits | undefined;
 
   constructor(

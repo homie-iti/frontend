@@ -1,4 +1,4 @@
-/* 
+/*
 
 @media (min-width: 501px) {
   .card {
@@ -15,11 +15,11 @@ a {
 
 fa-icon {
   font-size: 30px;
-  color: lightgray;
   position: absolute;
   top: 5px;
   right: 5px;
   cursor: pointer;
+  color: lightgray;
   display: none;
 }
 
@@ -33,25 +33,24 @@ fa-icon {
   transition: all 3s;
   background-color: lightgray;
   border: 1px solid black;
-} 
+}
 
 @media (max-width: 500px) {
   .card {
-    /* font-size: 10px; 
+    /* font-size: 10px;
     width: 10rem;
     border: none;
   }
-} 
+}
 */
 
-.card{
-
+.card {
   width: 15rem;
-  
-    background-color: rgba(155, 134, 109, 0.4);
-    transition: all 0.5s 0.3s ease-in-out;
+
+  background-color: rgba(155, 134, 109, 0.4);
+  transition: all 0.5s 0.3s ease-in-out;
 }
-.card:hover{
+.card:hover {
   box-shadow: 4px 4px 5px 5px rgba(25, 25, 25, 0.2);
   background-color: rgba(255, 255, 255, 0.379);
 }
@@ -59,37 +58,43 @@ a {
   text-decoration: none;
   text-transform: capitalize;
   font-size: 20px;
-  color: var( --main-font-color);
+  color: var(--main-font-color);
 }
-a:hover{
-  color: var( --hover-font-color);
+a:hover {
+  color: var(--hover-font-color);
 }
 
-.line{
+.line {
   text-align: center;
   height: 2px;
   width: 50%;
-  color: var( --main-font-color);
+  color: var(--main-font-color);
 }
 .card:hover .overlay {
   opacity: 1;
 }
 
 .overlay {
-  background-color: rgba(20, 20, 20, 0.228);
-  top: 0;
-  left: 0;
-  right: 0;
+  /* background-color: rgba(20, 20, 20, 0.228); */
+  /* text-align: center; */
+  /* transition: all 0.2s 0.1s ease-in; */
   bottom: 23.22vh;
-  margin: 0 auto;
   border-radius: 3px;
-  text-align: center;
-  transition: all .2s .1s ease-in;
   opacity: 0;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  color: lightgray;
 }
-img{
+
+fa-icon.active {
+  color: red;
+}
+
+img {
   height: 20vh;
 }
-.stylSpan{
-  color: var( --hover-font-color);
+.stylSpan {
+  color: var(--hover-font-color);
 }

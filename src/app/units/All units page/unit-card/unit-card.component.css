@@ -91,5 +91,5 @@ img{
   height: 20vh;
 }
 .stylSpan{
-  color: var(  --hover-font-color);
+  color: var( --hover-font-color);
 }

@@ -18,6 +18,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
 import { AdminModule } from './admin/admin.module';
 
+
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -44,7 +45,7 @@ export function tokenGetter() {
     ReactiveFormsModule,
     AboutUsModule,
     ContactUsModule,
-    UnitscrudModule,
+    UnitscrudModule
   ],
   providers: [],
   bootstrap: [AppComponent],

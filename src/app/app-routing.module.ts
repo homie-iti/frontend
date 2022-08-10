@@ -12,7 +12,8 @@ import { UserProfileComponent } from './user/user account/user-profile/user-prof
 import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
 import { AddunitComponent } from './unitscrud/addunit/addunit.component';
-import { AdminComponent } from './admin/admin.component';
+import { LogoutComponent } from './user/registration pages/logout/logout.component';
+import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: 'units/:id',
     component: UnitsComponent,
   },
@@ -61,11 +66,15 @@ const routes: Routes = [
     component: AddunitComponent,
   },
   {
+    path: 'editUnit',
+    component: EditunitComponent,
+  },
+
+  {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
-
   {
     path: '**',
     redirectTo: '',

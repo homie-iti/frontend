@@ -1,4 +1,4 @@
-.container {
+/* .container {
   min-height: 40em;
 }
 @media (min-width: 501px) {
@@ -37,8 +37,64 @@ fa-icon {
 
 @media (max-width: 500px) {
   .card {
-    /* font-size: 10px; */
+    /* font-size: 10px; 
     width: 10rem;
     border: none;
   }
+} */
+
+.card {
+  width: 15rem;
+
+  background-color: rgba(155, 134, 109, 0.4);
+  transition: all 0.5s 0.3s ease-in-out;
 }
+.card:hover {
+  box-shadow: 4px 4px 5px 5px rgba(25, 25, 25, 0.2);
+  background-color: rgba(255, 255, 255, 0.379);
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var(--main-font-color);
+}
+a:hover {
+  color: var(--hover-font-color);
+}
+
+.line {
+  text-align: center;
+  height: 2px;
+  width: 50%;
+  color: var(--main-font-color);
+}
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlay {
+  /* background-color: rgba(20, 20, 20, 0.228); */
+  /* text-align: center; */
+  /* transition: all 0.2s 0.1s ease-in; */
+  bottom: 23.22vh;
+  border-radius: 3px;
+  opacity: 0;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgba(243, 237, 237, 0.811);
+}
+
+fa-icon.active {
+  color: rgb(179, 38, 38);
+}
+
+img {
+  height: 20vh;
+}
+.stylSpan {
+  color: var(--hover-font-color);
+}
+

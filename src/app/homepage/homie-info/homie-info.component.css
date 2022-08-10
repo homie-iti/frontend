@@ -10,7 +10,9 @@
 
 .teams{
   
-  background-image: url("../../../assets/Images/homeCover/pexels-sebastian-sørensen-731082.jpg");
+  background-image: url("https://i.ibb.co/3RxnSh1/pexels-sebastian-s-rensen-731082.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed; 
  background-position: 100% 100%;
 }

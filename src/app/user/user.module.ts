@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetpasswordComponent } from './registration pages/forgetpassword/forgetpassword.component';
 import { NewpasswordComponent } from './registration pages/newpassword/newpassword.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { LogoutComponent } from './registration pages/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AppRoutingModule } from '../app-routing.module';
     UserWishListComponent,
     ForgetpasswordComponent,
     NewpasswordComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +44,7 @@ import { AppRoutingModule } from '../app-routing.module';
     LoginComponent,
     SignUpComponent,
     UserProfileComponent,
+    LogoutComponent,
   ],
 })
 export class UserModule {}

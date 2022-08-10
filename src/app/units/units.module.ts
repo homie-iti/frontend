@@ -6,7 +6,6 @@ import { UnitCardComponent } from './All units page/unit-card/unit-card.componen
 
 // import { UnitPaginationComponent } from './All units page/unit-pagination/unit-pagination.component';
 
-
 import { UnitGalleryComponent } from './unit page/unit-gallery/unit-gallery.component';
 import { UnitDescriptionComponent } from './unit page/unit-description/unit-description.component';
 import { UnitInfoComponent } from './unit page/unit-info/unit-info.component';
@@ -21,6 +20,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { PaymentInfoComponent } from './unit page/landlorddetails/payment-info/payment-info.component';
+import { RatingComponent } from './unit page/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,6 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
     // UnitPaginationComponent,
 
-
     UnitGalleryComponent,
     UnitDescriptionComponent,
     UnitInfoComponent,
@@ -39,6 +39,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     UnitsComponent,
     UnitPageComponent,
     LandlorddetailsComponent,
+    PaymentInfoComponent,
+    RatingComponent,
   ],
   imports: [
     CommonModule,
@@ -56,13 +58,13 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
     // UnitPaginationComponent,
 
-
     UnitGalleryComponent,
     UnitDescriptionComponent,
     UnitInfoComponent,
     UnitListingComponent,
     UnitReviewComponent,
     LandlorddetailsComponent,
+    RatingComponent,
   ],
 })
 export class UnitsModule {}

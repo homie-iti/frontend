@@ -1,9 +1,9 @@
 <div class="container filter">
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class=" accordion " id="accordionPanelsStayOpenExample">
     <div class="accordion-item">
       <div class="py-3 text-center">
         <h2>Filters</h2>
-        <button class="btn btn-outline-primary my-1 w-75">
+        <button class="btn btnStyle1 btn-outline-primary my-1 w-75">
           <fa-icon [icon]="faBell"></fa-icon> &nbsp;CREATE ALERT
         </button>
       </div>
@@ -20,17 +20,17 @@
         <div class="accordion-body">
           <div class="d-flex flex-wrap justify-content-center py-2">
             <div class="col col-9 col-lg-6">
-              <label for=" min">Minimum Price</label>
-              <input type="text" class="form-control my-1" placeholder="0$" style="width: 90%"
+              <label for=" min" class="text-muted">Minimum Price</label>
+              <input type="text" class="shadow form-control  my-1" placeholder="0$" style="width: 90%"
                 (blur)="checkMinPrice($any($event.target).value)" />
             </div>
             <div class="col col-9 col-lg-6">
-              <label for=" max">Maximum Price</label>
-              <input type="text" class="form-control my-1" placeholder="1000$" style="width: 90%"
+              <label for=" max" class="text-muted">Maximum Price</label>
+              <input type="text" class="shadow form-control my-1" placeholder="1000$" style="width: 90%"
                 (blur)="checkMaxPrice($any($event.target).value)" />
             </div>
           </div>
-          <button class="btn btn-primary" (click)="Range()">Range Price</button>
+          <button class="btn btnStyle2" (click)="Range()">Range Price</button>
         </div>
       </div>
     </div>
@@ -44,9 +44,9 @@
       </h2>
       <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
         aria-labelledby="panelsStayOpen-headingThree">
-        <div class="accordion-body">
-          <input type="text" placeholder="enter specified period" ngxDaterangepickerMd [(ngModel)]="selected"
-            class="form-control" />
+        <div class=" accordion-body">
+          <input type="text"  placeholder="enter specified period" ngxDaterangepickerMd [(ngModel)]="selected"
+            class="shadow form-control" />
         </div>
       </div>
     </div>

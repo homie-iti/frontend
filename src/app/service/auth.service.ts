@@ -79,6 +79,10 @@ export class AuthService {
     return this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter());
   }
 
+  removeToken() {
+    return localStorage.removeItem('token');
+  }
+
   isLoggedIn() {
     return this.authInfo.isLoggedIn;
   }

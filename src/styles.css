@@ -30,3 +30,8 @@ body{
     /* height: 12rem; */
     border-radius: 10px ;
   }
+  .ngx-pagination .current{
+    background: var(--main-font-color) !important;
+ 
+    
+  }

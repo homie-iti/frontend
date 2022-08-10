@@ -21,6 +21,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PaymentInfoComponent } from './unit page/landlorddetails/payment-info/payment-info.component';
+import { RatingComponent } from './unit page/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PaymentInfoComponent } from './unit page/landlorddetails/payment-info/p
     UnitPageComponent,
     LandlorddetailsComponent,
     PaymentInfoComponent,
+    RatingComponent,
   ],
   imports: [
     CommonModule,
@@ -62,6 +64,7 @@ import { PaymentInfoComponent } from './unit page/landlorddetails/payment-info/p
     UnitListingComponent,
     UnitReviewComponent,
     LandlorddetailsComponent,
+    RatingComponent,
   ],
 })
 export class UnitsModule {}

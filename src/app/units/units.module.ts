@@ -21,6 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from '../app-routing.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { RatingComponent } from './unit page/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     UnitsComponent,
     UnitPageComponent,
     LandlorddetailsComponent,
+    RatingComponent,
   ],
   imports: [
     CommonModule,

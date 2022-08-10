@@ -82,7 +82,7 @@ export class UnitCardComponent implements OnInit {
     this.SpinnerService.show();
     this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
-      console.log(a);
+      console.log(this.units);
       this.SpinnerService.hide();
     });
 

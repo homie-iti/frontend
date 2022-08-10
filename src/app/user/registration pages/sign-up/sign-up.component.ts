@@ -28,79 +28,76 @@ export class SignUpComponent implements OnInit {
     23,
     ''
   );
-  
 
+  AvalibleMail: boolean = true;
+  AvalibleNationalId: boolean = true;
+  AvaliblePhone: boolean = true;
 
-  AvalibleMail:boolean = true;
-  AvalibleNationalId:boolean = true;
-  AvaliblePhone:boolean = true;
+  confirmPassword: string = '';
 
+  regexMail = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');
 
-
-   
-  confirmPassword:string=""
-
-  
-
- 
-
-  isMail(){
+  isMail() {
     console.log(this.CheckMail);
 
-    if(this.CheckMail.email === ""){
-      throw console.error(" object is empty");
-    } else{
-    this.user.email=this.CheckMail.email
-    this.authService.checkAvailableEmail(this.CheckMail).subscribe(a=>{
-      console.log(a);
-      if (a.isAvailable== false){
-        this.AvalibleMail=false
-        console.log(this.AvalibleMail)
-      }else {
-        this.AvalibleMail=true
-      }
-     
-    })}
+    if (this.regexMail.test(this.CheckMail.email) === false) {
+      throw console.error(' email is not valid');
+    }
+
+    if (this.CheckMail.email === '') {
+      throw console.error(' object is empty');
+    } else {
+      this.user.email = this.CheckMail.email;
+      this.authService.checkAvailableEmail(this.CheckMail).subscribe((a) => {
+        console.log(a);
+        if (a.isAvailable == false) {
+          this.AvalibleMail = false;
+          console.log(this.AvalibleMail);
+        } else {
+          this.AvalibleMail = true;
+        }
+      });
+    }
   }
-  isNationalId(){
-    this.user.nationalId=Number(this.CheckNationalId.nationalId)
-    if(this.CheckNationalId.nationalId === null){
-      throw console.error(" object is empty");
-    } else{
-    console.log(this.CheckNationalId);
-    this.authService.checkAvailableNationalId(this.CheckNationalId).subscribe(a=>{
-      console.log(a);
-      if (a.isAvailable== false){
-        this.AvalibleNationalId=false
-        console.log(this.AvalibleNationalId)
-      }else {
-        this.AvalibleNationalId=true
-      }
-    })}}
+  isNationalId() {
+    this.user.nationalId = Number(this.CheckNationalId.nationalId);
+    if (this.CheckNationalId.nationalId === null) {
+      throw console.error(' object is empty');
+    } else {
+      console.log(this.CheckNationalId);
+      this.authService
+        .checkAvailableNationalId(this.CheckNationalId)
+        .subscribe((a) => {
+          console.log(a);
+          if (a.isAvailable == false) {
+            this.AvalibleNationalId = false;
+            console.log(this.AvalibleNationalId);
+          } else {
+            this.AvalibleNationalId = true;
+          }
+        });
+    }
+  }
+
+  isPhone() {
+    this.user.phone = Number(this.CheckPhone.phone);
+    if (this.CheckPhone.phone === null) {
+      throw console.error(' object is empty');
+    } else {
+      console.log(this.CheckPhone);
+      this.authService.checkAvailablePhone(this.CheckPhone).subscribe((a) => {
+        console.log(a);
+        if (a.isAvailable == false) {
+          this.AvaliblePhone = false;
+          console.log(this.AvaliblePhone);
+        } else {
+          this.AvaliblePhone = true;
+        }
+      });
+    }
+  }
+
   
-
-  isPhone(){
-    this.user.phone=Number(this.CheckPhone.phone)
-    if(this.CheckPhone.phone=== null){
-      throw console.error(" object is empty");
-    } else{
-
-    console.log(this.CheckPhone);
-    this.authService.checkAvailablePhone(this.CheckPhone).subscribe((a) => {
-      console.log(a);
-      if (a.isAvailable== false){
-        this.AvaliblePhone=false
-        console.log(this.AvaliblePhone)
-      }else {
-        this.AvaliblePhone=true
-      }
-    })}
-  }
-
-  // save(){
-  //   console.log(JSON.stringify(this.user))
-  // }
-
   save() {
     console.log(this.user);
     this.authService.addUser(this.user).subscribe((a) => {

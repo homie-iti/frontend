@@ -6,7 +6,7 @@ import {
 } from '@angular/core';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { Units } from 'src/app/_models/units';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart  ,faDollarSign} from '@fortawesome/free-solid-svg-icons';
 import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -20,6 +20,7 @@ import { Observable, Subscription } from 'rxjs';
 
 export class UnitCardComponent implements OnInit {
   faHeart = faHeart;
+  faDollarSign = faDollarSign;
   page: number = 1;
   emp: any;
   favoriteUnit: any;

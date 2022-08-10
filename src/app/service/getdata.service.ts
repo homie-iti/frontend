@@ -55,5 +55,9 @@ export class GetdataService {
     );
   }
 
+  updateUnit(unit:{}){
+    return this.http.put<any> ("https://homie-iti.herokuapp.com/units/c0ecfa717176997fb6b52e9c",unit);
+
+  }
   constructor(private http: HttpClient) {}
 }

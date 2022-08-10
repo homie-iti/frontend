@@ -51,6 +51,11 @@ export class GetdataService {
     return this.http.post<any> ("https://homie-iti.herokuapp.com/units",unit);
   }
 
+  updateUnit(unit:{}){
+    return this.http.put<any> ("https://homie-iti.herokuapp.com/units/c0ecfa717176997fb6b52e9c",unit);
+
+  }
+
   
   
   

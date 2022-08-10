@@ -1,0 +1,84 @@
+<div class="container">
+  <!-- <button
+      class="btn btn-lg btn-outline-secondary m-3"
+      routerLink="/admin/add-u"
+    >
+      Add Unit
+    </button> -->
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Landlord</th>
+        <th scope="col">Agent</th>
+        <th scope="col">Start</th>
+        <th scope="col">End</th>
+        <th scope="col">Method</th>
+        <th scope="col">Total Amount</th>
+        <th scope="col">State</th>
+
+        <!-- <th scope="col">Update</th>
+          <th scope="col">Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contract of contracts; let x = index">
+        <th scope="row">{{ x + 1 }}</th>
+        <td>
+          {{ contract.landlordId._id.fullName }}
+        </td>
+        <td>
+          {{ contract.agentId._id.fullName }}
+        </td>
+        <td>{{ (contract.rentalStart )| date }}</td>
+        <td>{{ contract.rentalEnd | date}}</td>
+        <td>{{ contract.paymentMethod }}</td>
+        <td>{{ contract.totalAmount }}</td>
+        <td>{{ contract.state }}</td>
+
+        <!-- <td>
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              routerLink="/admin/users/{{ user._id }}"
+            >
+              View
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-sm btn-outline-success"
+              routerLink="/admin/edit-user/{{ user._id }}"
+            >
+              Update
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-sm btn-outline-danger"
+              (click)="deleteUser(user._id, x)"
+            >
+              Delete
+            </button>
+          </td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav> -->
+</div>

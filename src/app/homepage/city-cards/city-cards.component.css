@@ -51,7 +51,7 @@ img{
     transition: all  1s 0.5s ease-in-out;
     }
     
-    img:hover{
+img:hover{
        
         transform:scale(1.1);
     }

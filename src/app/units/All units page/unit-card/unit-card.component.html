@@ -1,5 +1,5 @@
-<div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits">
-  <div class="card m-3 col-6 col-sm-9 col-lg-4 col-md-5" *ngFor="
+<div class="d-flex flex-wrap " *ngIf="this.transfer.filteredUnits">
+  <div class=" card  m-3 col-6 col-sm-9 col-lg-4 col-md-5" *ngFor="
       let item of this.transfer.filteredUnits
         | paginate: { itemsPerPage: 24, currentPage: page }
     ">
@@ -8,10 +8,11 @@
         style="position: relative" />
       <fa-icon [icon]="faHeart" class="faIcon" (click)="onClick(item._id)"> </fa-icon>
     </div>
-    <div class="card-body">
+    <div class="card-body ">
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
         {{ item.estateType }}
       </a>
+      <div class="line"></div>
       <p>
         Daily Price : {{ item.dailyPrice }}$ <br />
         Gender : {{ item.allowedGender }} <br />
@@ -38,7 +39,7 @@
       <p>
         Daily Price : {{ item.dailyPrice }}$ <br />
         Gender : {{ item.allowedGender }} <br />
-        pets : {{ item.isPetsAllowed ? "Yes" : "No" }}
+        pets : {{ item.isPetsAllowed ? "Allowed" : "Not Allowed" }}
       </p>
     </div>
   </div>

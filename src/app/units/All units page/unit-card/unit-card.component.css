@@ -1,3 +1,5 @@
+/* 
+
 @media (min-width: 501px) {
   .card {
     width: 15rem;
@@ -26,17 +28,45 @@ fa-icon {
   display: block;
 }
 
-.card:hover {
+/* .card:hover {
   transform: scale(1.1);
   transition: all 3s;
   background-color: lightgray;
   border: 1px solid black;
-}
+} 
 
 @media (max-width: 500px) {
   .card {
-    /* font-size: 10px; */
+    /* font-size: 10px; 
     width: 10rem;
     border: none;
   }
+} 
+*/
+
+.card{
+
+  width: 15rem;
+  
+    background-color: rgba(155, 134, 109, 0.4);
+    transition: all 0.5s 0.3s ease-in-out;
+}
+.card:hover{
+  box-shadow: 4px 4px 5px 5px rgba(25, 25, 25, 0.2);
+}
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 20px;
+  color: var( --main-font-color);
+}
+a:hover{
+  color: var( --hover-font-color);
+}
+
+.line{
+  text-align: center;
+  height: 2px;
+  width: 50%;
+  color: var( --main-font-color);
 }

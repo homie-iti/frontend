@@ -26,6 +26,10 @@ export class GetdataService {
     return this.http.get<any>(this.url + endpoint);
   }
 
+  getUserDetails(id: string) {
+    return this.http.get<any>(this.url + `/users/` + id);
+  }
+
   filter(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }

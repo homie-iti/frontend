@@ -13,6 +13,7 @@ import { UserComponent } from './user/user.page';
 import { SignUpComponent } from './user/registration pages/sign-up/sign-up.component';
 import { AddunitComponent } from './unitscrud/addunit/addunit.component';
 import { EditunitComponent } from './unitscrud/editunit/editunit.component';
+import { LogoutComponent } from './user/registration pages/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -53,19 +54,22 @@ const routes: Routes = [
     component: SignUpComponent,
   },
   {
+    path: 'logout',
+    component: LogoutComponent,
+  },
+  {
     path: 'units/:id',
     component: UnitsComponent,
-  },{
-   path:"addCity",
-     component:AddunitComponent
-   
-  }
-  ,{
-    path:"editUnit",
-      component:EditunitComponent
-    
-   },
- 
+  },
+  {
+    path: 'addCity',
+    component: AddunitComponent,
+  },
+  {
+    path: 'editUnit',
+    component: EditunitComponent,
+  },
+
   {
     path: '**',
     redirectTo: '',

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-rating',
@@ -8,8 +9,12 @@ import { GetdataService } from 'src/app/service/getdata.service';
   styleUrls: ['./rating.component.css'],
 })
 export class RatingComponent implements OnInit {
+  faStar = faStar;
+
   rate: [] = [];
   sum: any;
+  result = 0;
+  average: any;
 
   constructor(
     private activate: ActivatedRoute,
@@ -20,21 +25,19 @@ export class RatingComponent implements OnInit {
 
   getAvr() {
     length = this.rate.length;
-
-    this.sum = this.rate.forEach((num) => {
-      this.rate + num;
+    this.sum = this.rate.forEach((i) => {
+      this.result += i;
     });
-
-    let average = this.sum / length;
-
-    console.log(average);
+    console.log(this.result);
+    this.average = this.result / length;
+    console.log(this.average);
   }
 
   getrating() {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.rate = a.reviews.ratings;
-      this.getrating();
-      console.log(this.rate);
+      this.getAvr();
+      console.log(this.average);
     });
   }
 

@@ -6,25 +6,27 @@ import { User } from '../_models/user';
   providedIn: 'root',
 })
 export class AdminService {
-  private url: string = 'https://homie-iti.herokuapp.com/users/';
-  getAllUsers() {
-    return this.http.get<any>(this.url);
+  private url: string = 'https://homie-iti.herokuapp.com/';
+  getAll(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
   }
 
-  getUserById(id: any) {
-    return this.http.get<User>(this.url + id);
+  getUserById(endpoint: string, id: any) {
+    return this.http.get<User>(this.url + endpoint + id);
   }
 
-  addUser(user: User) {
-    return this.http.post<User>(this.url, user);
+  addUser(endpoint: string, user: User) {
+    return this.http.post<User>(this.url + endpoint, user);
   }
 
-  updateUserData(id: string, user: User) {
-    return this.http.put<User>(this.url + id, user);
+  updateUserData(endpoint: string, id: string, user: User) {
+    return this.http.put<User>(this.url + endpoint + id, user);
   }
 
-  deleteUser(id: any) {
-    return this.http.delete<User>(this.url + id);
+  deleteUser(endpoint: string, id: any) {
+    return this.http.delete<User>(this.url + endpoint + id);
   }
+
+  
   constructor(private http: HttpClient) {}
 }

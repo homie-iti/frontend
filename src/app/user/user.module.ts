@@ -15,6 +15,7 @@ import { ForgetpasswordComponent } from './registration pages/forgetpassword/for
 import { NewpasswordComponent } from './registration pages/newpassword/newpassword.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { LogoutComponent } from './registration pages/logout/logout.component';
+import { ActivationPageComponent } from './registration pages/activation-page/activation-page.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LogoutComponent } from './registration pages/logout/logout.component';
     ForgetpasswordComponent,
     NewpasswordComponent,
     LogoutComponent,
+    ActivationPageComponent,
   ],
   imports: [
     CommonModule,

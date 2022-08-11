@@ -71,7 +71,7 @@ const routes: Routes = [
     component: AddunitComponent,
   },
   {
-    path: 'editUnit',
+    path: 'editUnit/:id',
     component: EditunitComponent,
   },
 

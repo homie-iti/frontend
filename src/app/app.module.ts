@@ -15,10 +15,15 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
+// import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
 import { AdminModule } from './admin/admin.module';
+import { AuthService } from './service/auth.service';
 
+// const authService = AuthService()
 
+// let tokenGetter: any;
 export function tokenGetter() {
   return localStorage.getItem('token');
 }
@@ -39,15 +44,21 @@ export function tokenGetter() {
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
+        allowedDomains: ['homie-iti.herokuapp.com'],
+        skipWhenExpired: true,
       },
     }),
     FormsModule,
     ReactiveFormsModule,
     AboutUsModule,
     ContactUsModule,
-    UnitscrudModule
+    UnitscrudModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  // constructor(private authService: AuthService) {
+  //   tokenGetter = this.authService.getToken;
+  // }
+}

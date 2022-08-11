@@ -29,10 +29,13 @@ export class RatingComponent implements OnInit {
     this.sum = this.rate.forEach((i) => {
       this.result += i;
     });
-    console.log(this.result);
-    this.average = this.result / length;
-    this.fixedAverage = this.average.toFixed(1);
-    console.log(this.fixedAverage);
+    if (length === 0) {
+      this.average = 0;
+    } else {
+      this.average = this.result / length;
+      this.fixedAverage = this.average.toFixed(1);
+      console.log(this.fixedAverage);
+    }
   }
 
   getRating() {

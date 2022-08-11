@@ -1,5 +1,6 @@
 .card-outline {
   box-shadow: 0 0px 5px 0 rgba(0, 0, 0, 0.2);
+  background-color: rgba(118, 110, 89, 0.153);
   /* height: 12rem; */
 }
 /* .userAbout{

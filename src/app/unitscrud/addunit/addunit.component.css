@@ -8,3 +8,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+.sign{
+  margin: 5rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  background-color:rgba(148, 142, 124, 0.153);
+}
+h1{
+  color: var( --addresses-color);
+  font-weight: bolder;
+}

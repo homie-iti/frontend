@@ -1,5 +1,8 @@
-<div class="container">
-  <div class="row">
+<!-- <div class="d-felx justify-content-center align-items-center"> -->
+<div class="container sign my-5">
+            <div class="row text-center"><h1>Update Unit</h1> </div>
+  <div class="row my-2">
+    <div class="col-lg-12 col-sm-12">
     <form [formGroup]="myform" *ngIf="this.myform">
       <div formGroupName="unit">
         <!-- <div class="col-xl-6">
@@ -23,20 +26,10 @@
               formControlName="cityId"
             />
           </div> -->
-
-        <div formGroupName="unitInfo">
-          <div class="col-xl-6">
-            <label for="description" class="form-label">Description</label>
-            <input
-              type="text"
-              class="form-control"
-              id="description"
-              aria-describedby="descriptionHelp"
-              formControlName="description"
-            />
-          </div>
-
-          <div class="col-xl-6">
+      <div class="container my-2 ">
+        <div class="row my-2 d-felx justify-content-center align-items-center">
+        <!-- <div formGroupName="unitInfo "> -->
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="rooms" class="form-label">Rooms</label>
             <input
               type="number"
@@ -48,7 +41,7 @@
             />
           </div>
 
-          <div class="col-xl-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="bathrooms" class="form-label">Bathrooms</label>
             <input
               type="number"
@@ -60,7 +53,7 @@
             />
           </div>
 
-          <div class="col-xl-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="floor" class="form-label">Floor</label>
             <input
               type="number"
@@ -72,9 +65,13 @@
             />
           </div>
         </div>
+      <!-- </div> -->
+    
 
-        <div formGroupName="address">
-          <div>
+    
+      <div class="row my-2 d-felx justify-content-center align-items-center">
+        <!-- <div formGroupName="address " > -->
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="city" class="form-label">city Name</label>
             <input
               type="text"
@@ -84,8 +81,9 @@
               formControlName="city"
             />
           </div>
+       
 
-          <div>
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="buildingNumber" class="form-label"
               >Building Number</label
             >
@@ -98,7 +96,7 @@
             />
           </div>
 
-          <div class="col-xl-6">
+          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="streetName" class="form-label">street Name</label>
             <input
               type="text"
@@ -109,8 +107,12 @@
             />
           </div>
         </div>
-
-        <div class="col-xl-6">
+           <!-- </div> -->
+        
+        
+         
+            <div class="row my-2 d-felx justify-content-center align-items-center">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
           <label for="dailyPrice" class="form-label"> Daily Price</label>
           <input
             type="number"
@@ -121,7 +123,7 @@
           />
         </div>
 
-        <div class="col-xl-6">
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
           <label for="Residents" class="form-label">Number Of Residents</label>
           <input
             type="number"
@@ -131,7 +133,21 @@
             formControlName="numberOfResidents"
           />
         </div>
-
+      </div>
+   
+      <div class="row my-2 d-felx justify-content-center align-items-center">
+        <div class="col-xl-12">
+          <label for="description" class="form-label">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            aria-describedby="descriptionHelp"
+            formControlName="description"
+          />
+        </div>
+      </div>
+     
         <!-- <p>Allowed Gender</p>
         <div class="form-check">
           <input
@@ -153,7 +169,9 @@
           />
           <label class="form-check-label" for="female"> Female </label>
         </div> -->
-
+        <hr>
+        <div class="row my-2 d-felx justify-content-center align-items-center">
+  <div class="col-lg-6 col-sm-12">
         <p>check Availablity</p>
         <div class="form-check">
           <input
@@ -167,6 +185,9 @@
             is Available ?
           </label>
         </div>
+      </div>
+        
+      <div class="col-lg-6 col-sm-12">
 
         <p>check pets allowence</p>
         <div class="form-check">
@@ -181,8 +202,11 @@
             is Pets Allowed?
           </label>
         </div>
-        >
-
+        </div>
+        </div>
+      <hr>
+        <div class="row my-2 d-felx justify-content-center align-items-center">
+          <div class="col-lg-12">
         <p>estate Type</p>
         <div class="form-check">
           <input
@@ -224,9 +248,16 @@
           />
           <label class="form-check-label" for="apartment">Apartment </label>
         </div>
+        </div>
 
-        <button class="btn btn-primary" (click)="save()">Update</button>
+    
       </div>
+      <button class="btn my-2 " (click)="save()">Update</button>
+      </div>
+    </div>
     </form>
+ 
   </div>
 </div>
+</div>
+<!-- </div> -->

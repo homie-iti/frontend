@@ -75,6 +75,10 @@ const routes: Routes = [
     path: 'editUnit/:id',
     component: EditunitComponent,
   },
+  {
+    path: 'notFound',
+    component: NotfoundComponent,
+  },
 
   {
     path: 'admin',

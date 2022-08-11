@@ -14,12 +14,17 @@ import { SignUpComponent } from './user/registration pages/sign-up/sign-up.compo
 import { AddunitComponent } from './unitscrud/addunit/addunit.component';
 import { LogoutComponent } from './user/registration pages/logout/logout.component';
 import { EditunitComponent } from './unitscrud/editunit/editunit.component';
+import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     component: HomepageComponent,
+  },
+  {
+    path: 'activation',
+    component: ActivationPageComponent,
   },
   {
     path: 'login',

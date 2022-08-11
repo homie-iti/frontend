@@ -487,15 +487,14 @@
 </div> -->
 <!-- </div> -->
 
-
 <!-- updated add unit   -->
 <div class="container sign my-5">
-  <div class="row text-center"><h1>Add Unit</h1> </div>
-<div class="row my-2">
-<div class="col-lg-12 col-sm-12">
-<form [formGroup]="myform" >
-<div formGroupName="unit">
-<!-- <div class="col-xl-6">
+  <div class="row text-center"><h1>Add Unit</h1></div>
+  <div class="row my-2">
+    <div class="col-lg-12 col-sm-12">
+      <form [formGroup]="myform">
+        <div formGroupName="unit">
+          <!-- <div class="col-xl-6">
   <label for="landlordid" class="form-label">LandLord Id</label>
   <input
     type="text"
@@ -516,260 +515,269 @@
     formControlName="cityId"
   />
 </div> -->
-<div class="container my-2 ">
-  <div formGroupName="unitInfo ">
-<div class="row my-2 d-felx justify-content-center align-items-center">
-
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="rooms" class="form-label">Rooms</label>
-  <input
-    type="number"
-    min="0"
-    class="form-control"
-    id="rooms"
-    aria-describedby="roomsHelp"
-    formControlName="rooms"
-  />
-  <div
-  id="roomsHelp"
-  class="form-text text-danger"
-  *ngIf="
-    myform.controls.unit.controls.unitInfo.controls.rooms.touched &&
-    myform.controls.unit.controls.unitInfo.controls.rooms.invalid
-  "
->
-  <div
-    *ngIf="myform.controls.unit.controls.unitInfo.controls.rooms.errors?.['required']"
-  >
-    Enter Unit rooms Number
-  </div>
-</div>
-</div>
-
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="bathrooms" class="form-label">Bathrooms</label>
-  <input
-    type="number"
-    min="0"
-    class="form-control"
-    id="bathrooms"
-    aria-describedby="bathroomsHelp"
-    formControlName="bathrooms"
-  />
-
-  <div
-  id="bathroomsHelp"
-  class="form-text text-danger"
-  *ngIf="
-    myform.controls.unit.controls.unitInfo.controls.bathrooms
-      .touched &&
-    myform.controls.unit.controls.unitInfo.controls.bathrooms
-      .invalid
-  "
->
-  <div
-    *ngIf="myform.controls.unit.controls.unitInfo.controls.bathrooms.errors?.['required']"
-  >
-    Enter Unit bathrooms Number
-  </div>
-</div>
-</div>
-
-
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="floor" class="form-label">Floor</label>
-  <input
-    type="number"
-    min="0"
-    class="form-control"
-    id="floor"
-    aria-describedby="floorHelp"
-    formControlName="floor"
-  />
-  <div
-                id="floorHelp"
-                class="form-text text-danger"
-                *ngIf="
-                  myform.controls.unit.controls.unitInfo.controls.floor.touched &&
-                  myform.controls.unit.controls.unitInfo.controls.floor.invalid
-                "
+          <div class="container my-2">
+            <div formGroupName="unitInfo">
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
               >
-                <div
-                  *ngIf="myform.controls.unit.controls.unitInfo.controls.floor.errors?.['required']"
-                >
-                  Enter Unit floor Number
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="rooms" class="form-label">Rooms</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="rooms"
+                    aria-describedby="roomsHelp"
+                    formControlName="rooms"
+                  />
+                  <div
+                    id="roomsHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.unitInfo.controls.rooms
+                        .touched &&
+                      myform.controls.unit.controls.unitInfo.controls.rooms
+                        .invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.unitInfo.controls.rooms.errors?.['required']"
+                    >
+                      Enter Unit rooms Number
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="bathrooms" class="form-label">Bathrooms</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="bathrooms"
+                    aria-describedby="bathroomsHelp"
+                    formControlName="bathrooms"
+                  />
+
+                  <div
+                    id="bathroomsHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.unitInfo.controls.bathrooms
+                        .touched &&
+                      myform.controls.unit.controls.unitInfo.controls.bathrooms
+                        .invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.unitInfo.controls.bathrooms.errors?.['required']"
+                    >
+                      Enter Unit bathrooms Number
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="floor" class="form-label">Floor</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="floor"
+                    aria-describedby="floorHelp"
+                    formControlName="floor"
+                  />
+                  <div
+                    id="floorHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.unitInfo.controls.floor
+                        .touched &&
+                      myform.controls.unit.controls.unitInfo.controls.floor
+                        .invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.unitInfo.controls.floor.errors?.['required']"
+                    >
+                      Enter Unit floor Number
+                    </div>
+                  </div>
                 </div>
               </div>
-</div>
-</div>
-<div class="row my-2 d-felx justify-content-center align-items-center">
-  <div class="col-xl-12">
-  <label for="description" class="form-label">Description</label>
-  <input
-    type="text"
-    class="form-control"
-    id="description"
-    aria-describedby="descriptionHelp"
-    formControlName="description"
-  />
-  
-  <div
-                  id="descriptionHelp"
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
+              >
+                <div class="col-xl-12">
+                  <label for="description" class="form-label"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    aria-describedby="descriptionHelp"
+                    formControlName="description"
+                  />
+
+                  <div
+                    id="descriptionHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.unitInfo.controls
+                        .description.touched &&
+                      myform.controls.unit.controls.unitInfo.controls
+                        .description.invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.unitInfo.controls.description.errors?.['required']"
+                    >
+                      unit description is Required
+                    </div>
+                    <div
+                      *ngIf="myform.controls.unit.controls.unitInfo.controls.description.errors?.['pattern']"
+                    >
+                      unit description should be string
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div formGroupName="address">
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
+              >
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="city" class="form-label">city Name</label>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                    formControlName="city"
+                    (click)="getCityId($any($event.target))"
+                  >
+                    <option
+                      *ngFor="let item of cityArray"
+                      [ngValue]="item.name"
+                    >
+                      {{ item.name }}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="buildingNumber" class="form-label"
+                    >Building Number</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="buildingNumber"
+                    aria-describedby="buildingNumberHelp"
+                    formControlName="buildingNumber"
+                  />
+                  <div
+                    id="buildingNumberHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.address.controls
+                        .buildingNumber.touched &&
+                      myform.controls.unit.controls.address.controls
+                        .buildingNumber.invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.address.controls.buildingNumber.errors?.['required']"
+                    >
+                      Enter Unit Building Number
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="streetName" class="form-label">street Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="streetName"
+                    aria-describedby="streetNameHelp"
+                    formControlName="streetName"
+                  />
+                  <div
+                    id="streetNameHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.address.controls.streetName
+                        .touched &&
+                      myform.controls.unit.controls.address.controls.streetName
+                        .invalid
+                    "
+                  >
+                    <div
+                      *ngIf="myform.controls.unit.controls.address.controls.streetName.errors?.['required']"
+                    >
+                      Enter Street Name
+                    </div>
+                    <div
+                      *ngIf="myform.controls.unit.controls.address.controls.streetName.errors?.['pattern']"
+                    >
+                      street Name should containes numbers and characters
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
+            >
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <label for="dailyPrice" class="form-label"> Daily Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="dailyPrice"
+                  aria-describedby="dailyPriceHelp"
+                  formControlName="dailyPrice"
+                />
+                <div
+                  id="dailyPriceHelp"
                   class="form-text text-danger"
                   *ngIf="
-                    myform.controls.unit.controls.unitInfo.controls.description
-                      .touched &&
-                    myform.controls.unit.controls.unitInfo.controls.description
-                      .invalid
+                    myform.controls.unit.controls.dailyPrice.touched &&
+                    myform.controls.unit.controls.dailyPrice.invalid
                   "
                 >
-                  <div
-                    *ngIf="myform.controls.unit.controls.unitInfo.controls.description.errors?.['required']"
-                  >
-                    unit description is Required
-                  </div>
-                  <div
-                    *ngIf="myform.controls.unit.controls.unitInfo.controls.description.errors?.['pattern']"
-                  >
-                    unit description should be string
-                  </div>
-                </div>
-  </div>
-  </div>
-  
-</div>
-
-
-<div formGroupName="address " >
-<div class="row my-2 d-felx justify-content-center align-items-center">
-
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="city" class="form-label">city Name</label>
-  <select
-  class="form-select"
-  aria-label="Default select example"
-  formControlName="city"
-  (click)="getCityId($any($event.target))"
->
-  <option *ngFor="let item of cityArray" [ngValue]="item.name">
-    {{ item.name }}
-  </option>
-</select>
-
-</div>
-
-
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="buildingNumber" class="form-label"
-    >Building Number</label
-  >
-  <input
-    type="number"
-    class="form-control"
-    id="buildingNumber"
-    aria-describedby="buildingNumberHelp"
-    formControlName="buildingNumber"
-  />
-  <div
-                id="buildingNumberHelp"
-                class="form-text text-danger"
-                *ngIf="
-                  myform.controls.unit.controls.address.controls.buildingNumber
-                    .touched &&
-                  myform.controls.unit.controls.address.controls.buildingNumber
-                    .invalid
-                "
-              >
-                <div
-                  *ngIf="myform.controls.unit.controls.address.controls.buildingNumber.errors?.['required']"
-                >
-                  Enter Unit Building Number
+                  Enter DailyPrice
                 </div>
               </div>
-</div>
 
-<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-  <label for="streetName" class="form-label">street Name</label>
-  <input
-    type="text"
-    class="form-control"
-    id="streetName"
-    aria-describedby="streetNameHelp"
-    formControlName="streetName"
-  />
-  <div
-  id="streetNameHelp"
-  class="form-text text-danger"
-  *ngIf="
-    myform.controls.unit.controls.address.controls.streetName
-      .touched &&
-    myform.controls.unit.controls.address.controls.streetName
-      .invalid
-  "
->
-  <div
-    *ngIf="myform.controls.unit.controls.address.controls.streetName.errors?.['required']"
-  >
-    Enter Street Name
-  </div>
-  <div
-    *ngIf="myform.controls.unit.controls.address.controls.streetName.errors?.['pattern']"
-  >
-    street Name should containes numbers and characters
-  </div>
-</div>
-</div>
-</div>
- </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <label for="Residents" class="form-label"
+                  >Number Of Residents</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Residents"
+                  aria-describedby="ResidentsHelp"
+                  formControlName="numberOfResidents"
+                />
+                <div
+                  id="ResidentsHelp"
+                  class="form-text text-danger"
+                  *ngIf="
+                    myform.controls.unit.controls.numberOfResidents.touched &&
+                    myform.controls.unit.controls.numberOfResidents.invalid
+                  "
+                >
+                  Enter number Of Residents
+                </div>
+              </div>
+            </div>
 
-
-
-  <div class="row my-2 d-felx justify-content-center align-items-center">
-<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-<label for="dailyPrice" class="form-label"> Daily Price</label>
-<input
-  type="number"
-  class="form-control"
-  id="dailyPrice"
-  aria-describedby="dailyPriceHelp"
-  formControlName="dailyPrice"
-/>
-<div
-id="dailyPriceHelp"
-class="form-text text-danger"
-*ngIf="
-  myform.controls.unit.controls.dailyPrice.touched &&
-  myform.controls.unit.controls.dailyPrice.invalid
-"
->
-Enter DailyPrice
-</div>
-</div>
-
-<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-<label for="Residents" class="form-label">Number Of Residents</label>
-<input
-  type="number"
-  class="form-control"
-  id="Residents"
-  aria-describedby="ResidentsHelp"
-  formControlName="numberOfResidents"
-/>
-<div
-id="ResidentsHelp"
-class="form-text text-danger"
-*ngIf="
-  myform.controls.unit.controls.numberOfResidents.touched &&
-  myform.controls.unit.controls.numberOfResidents.invalid
-"
->
-Enter number Of Residents
-</div>
-</div>
-</div>
-
-
-<!-- <p>Allowed Gender</p>
+            <!-- <p>Allowed Gender</p>
 <div class="form-check">
 <input
   class="form-check-input"
@@ -790,246 +798,270 @@ Enter number Of Residents
 />
 <label class="form-check-label" for="female"> Female </label>
 </div> -->
-<hr>
-<div class="row my-2 d-felx justify-content-center align-items-center">
-<div class="col-lg-4 col-sm-12">
+            <hr />
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
+            >
+              <div class="col-lg-4 col-sm-12">
+                <p>Is Available ?</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="Available"
+                    value="true"
+                    formControlName="isAvailable"
+                  />
+                  <label class="form-check-label" for="Available">
+                    Available
+                  </label>
+                  <div
+                    id="AvailableHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.isAvailable.touched &&
+                      myform.controls.unit.controls.isAvailable.invalid
+                    "
+                  >
+                    Avaliable is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="notAvailable"
+                    value="false"
+                    formControlName="isAvailable"
+                  />
+                  <label class="form-check-label" for="notAvailable">
+                    Not Available
+                  </label>
+                  <div
+                    id="notAvailableHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.isAvailable.touched &&
+                      myform.controls.unit.controls.isAvailable.invalid
+                    "
+                  >
+                    Avaliable is required
+                  </div>
+                </div>
+              </div>
 
-  <p>Is Available ?</p>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="Available"
-      value="true"
-      formControlName="isAvailable"
-    />
-    <label class="form-check-label" for="Available"> Available </label>
-    <div
-      id="AvailableHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.isAvailable.touched &&
-        myform.controls.unit.controls.isAvailable.invalid
-      "
-    >
-      Avaliable is required
+              <div class="col-lg-4 col-sm-12">
+                <p>Pets Allowed</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="pets"
+                    value="true"
+                    formControlName="isPetsAllowed"
+                  />
+                  <label class="form-check-label" for="pets">
+                    pets Allowed
+                  </label>
+                  <div
+                    id="petsHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.isPetsAllowed.touched &&
+                      myform.controls.unit.controls.isPetsAllowed.invalid
+                    "
+                  >
+                    Pets allowence is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="noPets"
+                    value="false"
+                    formControlName="isPetsAllowed"
+                  />
+                  <label class="form-check-label" for="noPets">
+                    pets not Allowed</label
+                  >
+                  <div
+                    id="noPetsHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.isPetsAllowed.touched &&
+                      myform.controls.unit.controls.isPetsAllowed.invalid
+                    "
+                  >
+                    Pets allowence is required
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-sm-12">
+                <p>Allowed Gender</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="male"
+                    value="male"
+                    formControlName="allowedGender"
+                  />
+                  <label class="form-check-label" for="male"> male </label>
+                  <div
+                    id="maleHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.allowedGender.touched &&
+                      myform.controls.unit.controls.allowedGender.invalid
+                    "
+                  >
+                    Gender is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="female"
+                    value="female"
+                    formControlName="allowedGender"
+                  />
+                  <label class="form-check-label" for="female"> Female </label>
+                  <div
+                    id="femaleHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.allowedGender.touched &&
+                      myform.controls.unit.controls.allowedGender.invalid
+                    "
+                  >
+                    Gender is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="any"
+                    value="any"
+                    formControlName="allowedGender"
+                  />
+                  <label class="form-check-label" for="any"> Any </label>
+                  <div
+                    id="femaleHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.allowedGender.touched &&
+                      myform.controls.unit.controls.allowedGender.invalid
+                    "
+                  >
+                    Gender is required
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
+            >
+              <div class="col-lg-12">
+                <p>estate Type</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="stuido"
+                    value="studio"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="studio"> studio </label>
+                  <div
+                    id="studioHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.estateType.touched &&
+                      myform.controls.unit.controls.estateType.invalid
+                    "
+                  >
+                    Estate Type is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="sharedroom"
+                    value="shared-room"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="sharedroom">
+                    shared room</label
+                  >
+                  <div
+                    id="sharedroomHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.estateType.touched &&
+                      myform.controls.unit.controls.estateType.invalid
+                    "
+                  >
+                    Estate Type is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="singleroom"
+                    value="single-room"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="singleroom">
+                    single room</label
+                  >
+                  <div
+                    id="singleroomHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.estateType.touched &&
+                      myform.controls.unit.controls.estateType.invalid
+                    "
+                  >
+                    Estate Type is required
+                  </div>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="apartment"
+                    value="apartment"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="apartment"
+                    >Apartment
+                  </label>
+                  <div
+                    id="apartmentHelp"
+                    class="form-text text-danger"
+                    *ngIf="
+                      myform.controls.unit.controls.estateType.touched &&
+                      myform.controls.unit.controls.estateType.invalid
+                    "
+                  >
+                    Estate Type is required
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="btn" (click)="save()" [disabled]="!myform.valid">
+              Add Unit
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="notAvailable"
-      value="false"
-      formControlName="isAvailable"
-    />
-    <label class="form-check-label" for="notAvailable">
-      Not Available
-    </label>
-    <div
-      id="notAvailableHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.isAvailable.touched &&
-        myform.controls.unit.controls.isAvailable.invalid
-      "
-    >
-      Avaliable is required
-    </div>
-  </div>
-  </div>
-
-<div class="col-lg-4 col-sm-12">
-
-  <p>Pets Allowed</p>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="pets"
-      value="true"
-      formControlName="isPetsAllowed"
-    />
-    <label class="form-check-label" for="pets"> pets Allowed </label>
-    <div
-      id="petsHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.isPetsAllowed.touched &&
-        myform.controls.unit.controls.isPetsAllowed.invalid
-      "
-    >
-      Pets allowence is required
-    </div>
-  </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="noPets"
-      value="false"
-      formControlName="isPetsAllowed"
-    />
-    <label class="form-check-label" for="noPets"> pets not Allowed</label>
-    <div
-      id="noPetsHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.isPetsAllowed.touched &&
-        myform.controls.unit.controls.isPetsAllowed.invalid
-      "
-    >
-      Pets allowence is required
-    </div>
-  </div>
-
-</div>
-<div class="col-lg-4 col-sm-12">
-
-  <p>Allowed Gender</p>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="male"
-      value="male"
-      formControlName="allowedGender"
-    />
-    <label class="form-check-label" for="male"> male </label>
-    <div
-      id="maleHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.allowedGender.touched &&
-        myform.controls.unit.controls.allowedGender.invalid
-      "
-    >
-      Gender is required
-    </div>
-  </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="female"
-      value="female"
-      formControlName="allowedGender"
-    />
-    <label class="form-check-label" for="female"> Female </label>
-    <div
-      id="femaleHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.allowedGender.touched &&
-        myform.controls.unit.controls.allowedGender.invalid
-      "
-    >
-      Gender is required
-    </div>
-  </div>
-</div>
-</div>
-
-
-<hr>
-<div class="row my-2 d-felx justify-content-center align-items-center">
-<div class="col-lg-12">
-  <p>estate Type</p>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="stuido"
-      value="studio"
-      formControlName="estateType"
-    />
-    <label class="form-check-label" for="studio"> studio </label>
-    <div
-      id="studioHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.estateType.touched &&
-        myform.controls.unit.controls.estateType.invalid
-      "
-    >
-      Estate Type is required
-    </div>
-  </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="sharedroom"
-      value="shared-room"
-      formControlName="estateType"
-    />
-    <label class="form-check-label" for="sharedroom"> shared room</label>
-    <div
-      id="sharedroomHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.estateType.touched &&
-        myform.controls.unit.controls.estateType.invalid
-      "
-    >
-      Estate Type is required
-    </div>
-  </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="singleroom"
-      value="single-room"
-      formControlName="estateType"
-    />
-    <label class="form-check-label" for="singleroom"> single room</label>
-    <div
-      id="singleroomHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.estateType.touched &&
-        myform.controls.unit.controls.estateType.invalid
-      "
-    >
-      Estate Type is required
-    </div>
-  </div>
-  <div class="form-check">
-    <input
-      class="form-check-input"
-      type="radio"
-      id="apartment"
-      value="apartment"
-      formControlName="estateType"
-    />
-    <label class="form-check-label" for="apartment">Apartment </label>
-    <div
-      id="apartmentHelp"
-      class="form-text text-danger"
-      *ngIf="
-        myform.controls.unit.controls.estateType.touched &&
-        myform.controls.unit.controls.estateType.invalid
-      "
-    >
-      Estate Type is required
-    </div>
-  </div>
-</div>
-
-
-</div>
-<button
-class="btn "
-(click)="save()"
-[disabled]="!myform.valid"
->
-Add Unit
-</button>
-</div>
-</div>
-</form>
-
-</div>
-</div>
 </div>

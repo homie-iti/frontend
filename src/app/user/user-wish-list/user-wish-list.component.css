@@ -1,6 +1,4 @@
-/* .container {
-  min-height: 40em;
-}
+/*
 @media (min-width: 501px) {
   .card {
     width: 15rem;
@@ -37,14 +35,18 @@ fa-icon {
 
 @media (max-width: 500px) {
   .card {
-    /* font-size: 10px; 
+    /* font-size: 10px;
     width: 10rem;
     border: none;
   }
 } */
 
+.container {
+  min-height: 40em;
+}
+
 .card {
-  width: 15rem;
+  width: 20rem;
 
   background-color: rgba(155, 134, 109, 0.4);
   transition: all 0.5s 0.3s ease-in-out;
@@ -97,4 +99,3 @@ img {
 .stylSpan {
   color: var(--hover-font-color);
 }
-

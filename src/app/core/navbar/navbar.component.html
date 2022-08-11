@@ -3,123 +3,58 @@
     <a class="navbar-brand logoStyle" href="#">
       <fa-icon class="fontStyle" [icon]="faHouseLaptop"></fa-icon> HOMIE |
     </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/']"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Home</a
-          >
+          <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/']"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/editUnit']"
-            >Edit Unit</a
-          >
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/editUnit']">Edit Unit</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/addCity']"
-            >add unit</a
-          >
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/addCity']">add unit</a>
         </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/profile-example']"
-            >User Profile</a
-          >
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/profile-example']">User Profile</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/user-settings-example']"
-            >User Settings Profile</a
-          >
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/user-settings-example']">User Settings
+            Profile</a>
+        </li>
+        <li class="nav-item" *ngIf="authInfo.isLoggedIn">
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/user-wish-list']"> Wish List</a>
         </li>
         <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/user-wish-list']"
-            > Wish List</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/about-us']"
-            >About Us</a
-          >
+          <a class="nav-link" routerLinkActive="active" [routerLink]="['/about-us']">About Us</a>
         </li>
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             Admin
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li>
-              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-users']"
-                >Users</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-users']">Users</a>
             </li>
             <li>
-              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-units']"
-                >Units</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-units']">Units</a>
             </li>
             <li>
-              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-cities']"
-                >Cities</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-cities']">Cities</a>
             </li>
             <li>
-              <a
-                class="dropdown-item pb-1"
-                [routerLink]="['/admin/all-contracts']"
-                >Contracts</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-contracts']">Contracts</a>
             </li>
             <li>
-              <a
-                class="dropdown-item pb-1"
-                [routerLink]="['/admin/all-helpQuestions']"
-                >Help Questions</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-helpQuestions']">Help Questions</a>
             </li>
             <li>
-              <a
-                class="dropdown-item pb-1"
-                [routerLink]="['/admin/all-reviews']"
-                >Reviews</a
-              >
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-reviews']">Reviews</a>
             </li>
           </ul>
         </li>
@@ -127,35 +62,18 @@
       <!-- <form class="d-flex pt-2" role="search"> -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/login']"
-            >LOGIN &nbsp; &nbsp; |</a
-          >
+          <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/login']">LOGIN &nbsp;
+            &nbsp; |</a>
         </li>
 
         <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/signup']"
-          >
-            SIGNUP</a
-          >
+          <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/signup']">
+            SIGNUP</a>
         </li>
 
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/profile']"
-          >
-            ACCOUNT</a
-          >
+          <a class="nav-link" routerLinkActive="active" aria-current="page" [routerLink]="['/profile']">
+            ACCOUNT</a>
         </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
           <app-logout></app-logout>

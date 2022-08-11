@@ -36,7 +36,7 @@ export class UserWishListComponent implements OnInit, OnChanges {
 
   onClick(item: any) {
     console.log(item);
-    this.unitser.deleteFavorite(item).subscribe((a) => {
+    this.unitser.deleteFavorite(item, this.userId).subscribe((a) => {
       this.getAllFavourite();
       console.log(a);
     });

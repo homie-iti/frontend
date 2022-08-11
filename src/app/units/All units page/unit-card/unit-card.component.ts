@@ -63,16 +63,16 @@ export class UnitCardComponent implements OnInit {
     this.isActive = !this.isActive;
     this.favunit = new favoriteUnits(item);
     console.log(this.favunit);
-
+    this.userId = this.auth.getUser()?._id;
     this.checkId(item);
     if (this.checkId(item) === true) {
-      this.unitSer.deleteFavorite(item).subscribe((a) => {
+      this.unitSer.deleteFavorite(item, this.userId).subscribe((a) => {
         this.getAllFavourite();
         console.log(a);
       });
       console.log(true);
     } else if (this.checkId(item) === false) {
-      this.unitSer.postFavorite(this.favunit).subscribe((a) => {
+      this.unitSer.postFavorite(this.favunit, this.userId).subscribe((a) => {
         console.log(a);
         this.getAllFavourite();
       });

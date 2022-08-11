@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { City } from 'src/app/_models/city';
 // import { AuthService } from '../../service/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addunit',
@@ -12,7 +13,11 @@ import { City } from 'src/app/_models/city';
   styleUrls: ['./addunit.component.css'],
 })
 export class AddunitComponent implements OnInit {
-  constructor(public data: GetdataService, public authService: AuthService) {}
+  constructor(
+    public data: GetdataService,
+    public authService: AuthService,
+    private router: Router
+  ) {}
 
   myform = new FormGroup({
     unit: new FormGroup({
@@ -73,9 +78,12 @@ export class AddunitComponent implements OnInit {
     this.myform.controls.unit.value.landlordId = this.authService.getUser()._id;
 
     console.log(this.myform.controls.unit.value);
-    this.data.addUnit(this.myform.controls.unit.value).subscribe((a) => {
-      console.log(a);
-    });
+    this.data
+      .addUnit(this.myform.controls.unit.value)
+      .subscribe((creationResult) => {
+        console.log(creationResult);
+        this.router.navigateByUrl('/unit/' + creationResult.id);
+      });
   }
 
   cityArray: City[] = [];

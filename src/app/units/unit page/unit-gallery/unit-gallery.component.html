@@ -1,16 +1,41 @@
-<div class="col-lg-8 col-md-10 col-12" style="margin:10px auto ;text-align: center;">
-  <img [src]="coverSrc" alt="" class="col-9" />
-</div>
+<div class="secgallary mt-0">
+<div class="container gallery">
+  <div class="row">
+    <div class="col-lg-7 overflow-hidden">
+    <div class="overflow-hidden m-5">
+    <img [src]="coverSrc" alt="" />
 
-<div class="d-flex flex-wrap justify-content-center align-content-center ">
+   
+  </div>
+  <h3>Awesome family Apartment</h3>
+  </div>
+  <div class="col-lg-5   overflow-hidden">
+         <div class="container">
+          <div class="row">
+            <div class="col-lg-12  flexy ">
+            <div class=" m-5  overflow-hidden" *ngFor="let item of unitDetails">
+              <img (click)="updateCoverSrc($event)" src="{{item}}" alt=""  />
+            </div>
+          </div>
+         </div></div>
+      
+   
 
-  <div class="d-flex flex-wrap justify-content-evenly py-1">
-    <div class="divWidth mx-1" *ngFor="let item of unitDetails">
-      <img (click)="updateCoverSrc($event)" src="{{item}}" alt="" width="75px" height="75px" />
-    </div>
   </div>
 </div>
-<div style="margin:3rem;">
-  <h3>Daily Price : {{dailyPrice}} $</h3>
-  <app-rating></app-rating>
+  <div  class="foot">
+    <div class="contanier">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 text-center">
+          <h4 class="m-2 style ">Daily Price : {{dailyPrice}} $</h4>
+        </div>
+        <div class="col-lg-6 col-sm-12 text-center">
+         
+    <app-rating class="style"></app-rating>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
 </div>

@@ -7,9 +7,12 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./user.page.css'],
 })
 export class UserComponent implements OnInit {
-  constructor(private aut: AuthService) {}
+
+  constructor(private user:AuthService) { }
+     userInfo:any
 
   ngOnInit(): void {
-    console.log(this.aut.getUser()._id);
+    this.userInfo=this.user.getUser()
+    console.log(this.userInfo)
   }
 }

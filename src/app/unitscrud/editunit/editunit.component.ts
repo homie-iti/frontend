@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
 
 @Component({
@@ -8,11 +9,11 @@ import { GetdataService } from 'src/app/service/getdata.service';
   styleUrls: ['./editunit.component.css'],
 })
 export class EditunitComponent implements OnInit {
-  constructor(public data: GetdataService) {}
+  constructor(public data: GetdataService , public activate:ActivatedRoute) {}
 
   save() {
     console.log(this.myform.controls['unit'].value);
-    this.data.updateUnit(this.myform.controls['unit'].value).subscribe((a) => {
+    this.data.updateUnit(this.id,this.myform.controls['unit'].value).subscribe((a) => {
       console.log('upadated', a);
     });
   }
@@ -20,6 +21,8 @@ export class EditunitComponent implements OnInit {
   cityName: string = '';
   cityId: any;
   cityArray: any[] = [];
+  id: any = this.activate.snapshot.params['id'];
+
 
   myform!: FormGroup;
 
@@ -30,7 +33,7 @@ export class EditunitComponent implements OnInit {
     });
 
     this.data
-      .getUnitDetails(`/units/c0ecfa717176997fb6b52e9c`)
+      .getUnitDetails(`/units/${this.id}`)
       .subscribe((a) => {
         console.log(a);
 

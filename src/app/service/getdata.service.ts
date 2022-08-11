@@ -25,7 +25,9 @@ export class GetdataService {
   getUnitDetails(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
-
+  gethelpQuestions(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
   getUserDetails(id: string) {
     return this.http.get<any>(this.url + `/users/` + id);
   }

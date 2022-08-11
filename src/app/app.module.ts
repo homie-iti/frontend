@@ -1,3 +1,4 @@
+import { HelpQuestionsModule } from './help-questions/help-questions.module';
 import { ContactUsModule } from './contact-us/contact-us.module';
 import { ContactUsComponent } from './contact-us/contact-us.page';
 import { AboutUsModule } from './about-us/about-us.module';
@@ -47,7 +48,8 @@ export function tokenGetter() {
     AboutUsModule,
     ContactUsModule,
     UnitscrudModule,
-    NotfoundModule
+    NotfoundModule,
+    HelpQuestionsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

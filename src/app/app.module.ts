@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
 import { AdminModule } from './admin/admin.module';
+import { NotfoundModule } from './notfound/notfound.module';
 
 
 export function tokenGetter() {
@@ -45,7 +46,8 @@ export function tokenGetter() {
     ReactiveFormsModule,
     AboutUsModule,
     ContactUsModule,
-    UnitscrudModule
+    UnitscrudModule,
+    NotfoundModule
   ],
   providers: [],
   bootstrap: [AppComponent],

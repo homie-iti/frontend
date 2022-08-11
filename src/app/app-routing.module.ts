@@ -15,6 +15,7 @@ import { AddunitComponent } from './unitscrud/addunit/addunit.component';
 import { LogoutComponent } from './user/registration pages/logout/logout.component';
 import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
+import { NotfoundComponent } from './notfound/notfound/notfound.component';
 
 const routes: Routes = [
   {
@@ -82,7 +83,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotfoundComponent,
   },
 ];
 

@@ -17,6 +17,7 @@ import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
 import { AuthService } from 'src/app/service/auth.service';
+import { AuthInfo } from 'src/app/_models/auth';
 
 @Component({
   selector: 'app-unit-card',
@@ -33,6 +34,7 @@ export class UnitCardComponent implements OnInit {
   favoriteUnit: any;
   favunit: favoriteUnits | undefined;
   isActive: boolean | undefined;
+  authInfo!: AuthInfo;
 
   constructor(
     private auth: AuthService,
@@ -96,6 +98,8 @@ export class UnitCardComponent implements OnInit {
       console.log(this.units);
       this.SpinnerService.hide();
     });
+
+    this.authInfo = this.auth.getAuthInfo();
 
     this.getAllFavourite();
   }

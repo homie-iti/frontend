@@ -6,9 +6,10 @@
     <div>
       <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
         style="position: relative" />
-        <div class="overlay position-absolute">
-      <fa-icon [icon]="faHeart" class="faIcon" [class.active]="checkId(item._id)" (click)="onClick(item._id)">
-      </fa-icon>
+      <div class="overlay position-absolute">
+        <fa-icon [icon]="faHeart" class="faIcon" *ngIf="authInfo.isLoggedIn" [class.active]="checkId(item._id)"
+          (click)="onClick(item._id)">
+        </fa-icon>
       </div>
     </div>
     <div class="card-body ">
@@ -18,14 +19,14 @@
 
       <hr>
       <p>
-  
+
         <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
         <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
 
       </p>
       <hr>
       <fa-icon [icon]=" faDollarSign" class="faIcon "> </fa-icon> &nbsp; <span class="stylSpan"> {{ item.dailyPrice
-      }}/month</span><br />
+        }}/month</span><br />
     </div>
   </div>
 </div>
@@ -39,7 +40,8 @@
 
     </div>
     <div class="overlay position-absolute">
-      <fa-icon [icon]="faHeart" class="faIcon" [class.active]="checkId(item._id)" (click)="onClick(item._id)">
+      <fa-icon [icon]="faHeart" class="faIcon" *ngIf="authInfo.isLoggedIn" [class.active]="checkId(item._id)"
+        (click)="onClick(item._id)">
       </fa-icon>
     </div>
 
@@ -49,7 +51,7 @@
       </a>
       <hr>
       <p>
-  
+
         <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
         <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
 

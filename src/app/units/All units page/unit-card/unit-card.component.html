@@ -6,19 +6,26 @@
     <div>
       <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
         style="position: relative" />
+        <div class="overlay position-absolute">
       <fa-icon [icon]="faHeart" class="faIcon" [class.active]="checkId(item._id)" (click)="onClick(item._id)">
       </fa-icon>
+      </div>
     </div>
     <div class="card-body ">
       <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
         {{ item.estateType }}
       </a>
-      <div class="line"></div>
+
+      <hr>
       <p>
-        <fa-icon [icon]="faDollarSign"> </fa-icon> {{ item.dailyPrice }}/month <br />
-        Allowed Gender : {{ item.allowedGender }} <br />
-        pets Allowed : {{ item.isPetsAllowed ? "Yes" : "No" }}
+  
+        <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
+        <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
+
       </p>
+      <hr>
+      <fa-icon [icon]=" faDollarSign" class="faIcon "> </fa-icon> &nbsp; <span class="stylSpan"> {{ item.dailyPrice
+      }}/month</span><br />
     </div>
   </div>
 </div>
@@ -42,7 +49,7 @@
       </a>
       <hr>
       <p>
-        <i class="fa-solid fa-user"></i><i class="fa-solid fa-paw"></i>
+  
         <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
         <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
 

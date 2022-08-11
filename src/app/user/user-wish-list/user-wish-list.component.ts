@@ -25,13 +25,13 @@ export class UserWishListComponent implements OnInit, OnChanges {
 
   constructor(
     private auth: AuthService,
-    private activate: ActivatedRoute,
+    // private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
 
   userId = this.auth.getUser()?._id;
 
-  id: any = this.activate.snapshot.params['id'];
+  // id: any = this.activate.snapshot.params['id'];
   favoriteUnit: any;
 
   onClick(item: any) {

@@ -1,0 +1,9 @@
+.style{
+    color:rgb(72, 67, 55);
+}
+.style2{
+     background-color: rgba(62, 60, 56, 0.276);;
+}
+.style2:hover{
+    background-color: rgba(250, 250, 250, 0.466);
+} 

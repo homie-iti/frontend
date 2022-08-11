@@ -1,3 +1,4 @@
+import { HelpQuestionsModule } from './help-questions/help-questions.module';
 import { ContactUsModule } from './contact-us/contact-us.module';
 import { ContactUsComponent } from './contact-us/contact-us.page';
 import { AboutUsModule } from './about-us/about-us.module';
@@ -20,6 +21,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
 import { AdminModule } from './admin/admin.module';
 import { AuthService } from './service/auth.service';
+import { NotfoundModule } from './notfound/notfound.module';
+import { PaymentformModule } from './paymentform/paymentform.module';
 
 // const authService = AuthService()
 
@@ -53,6 +56,9 @@ export function tokenGetter() {
     AboutUsModule,
     ContactUsModule,
     UnitscrudModule,
+    NotfoundModule,
+    HelpQuestionsModule,
+    PaymentformModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

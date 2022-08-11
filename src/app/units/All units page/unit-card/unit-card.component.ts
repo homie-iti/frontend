@@ -12,7 +12,7 @@ import {
   faUser,
   faPaw,
 } from '@fortawesome/free-solid-svg-icons';
-import { ActivatedRoute, provideRoutes } from '@angular/router';
+import { ActivatedRoute, provideRoutes, Router } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
@@ -37,6 +37,7 @@ export class UnitCardComponent implements OnInit {
   authInfo!: AuthInfo;
 
   constructor(
+    private router: Router,
     private auth: AuthService,
     private activate: ActivatedRoute,
     private unitSer: GetdataService,
@@ -93,11 +94,18 @@ export class UnitCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.SpinnerService.show();
-    this.unitSer.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
-      this.units = a.units;
-      console.log(this.units);
-      this.SpinnerService.hide();
-    });
+    this.unitSer.getAllCityUnits(`/cities/${this.id}`).subscribe(
+      (a) => {
+        this.units = a.units;
+        console.log(this.units);
+        this.SpinnerService.hide();
+      },
+      (error: Error) => {
+        if (error) {
+          this.router.navigateByUrl('/notfound');
+        }
+      }
+    );
 
     this.authInfo = this.auth.getAuthInfo();
 

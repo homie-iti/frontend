@@ -1,3 +1,4 @@
+import { HelpQuestionsComponent } from './help-questions/help-questions.page';
 import { ContactUsComponent } from './contact-us/contact-us.page';
 import { AboutUsComponent } from './about-us/about-us.page';
 import { UserWishListComponent } from './user/user-wish-list/user-wish-list.component';
@@ -15,6 +16,8 @@ import { AddunitComponent } from './unitscrud/addunit/addunit.component';
 import { LogoutComponent } from './user/registration pages/logout/logout.component';
 import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
+import { NotfoundComponent } from './notfound/notfound/notfound.component';
+import { PaymentComponent } from './paymentform/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -55,6 +58,10 @@ const routes: Routes = [
     component: ContactUsComponent,
   },
   {
+    path: 'help-question',
+    component: HelpQuestionsComponent,
+  },
+  {
     path: 'signup',
     component: SignUpComponent,
   },
@@ -71,8 +78,16 @@ const routes: Routes = [
     component: AddunitComponent,
   },
   {
-    path: 'editUnit',
+    path: 'editUnit/:id',
     component: EditunitComponent,
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
+  },
+  {
+    path: 'notFound',
+    component: NotfoundComponent,
   },
 
   {
@@ -82,7 +97,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotfoundComponent,
   },
 ];
 

@@ -25,7 +25,9 @@ export class GetdataService {
   getUnitDetails(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
-
+  gethelpQuestions(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
   getUserDetails(id: string) {
     return this.http.get<any>(this.url + `/users/` + id);
   }
@@ -58,9 +60,9 @@ export class GetdataService {
     );
   }
 
-  updateUnit(unit: {}) {
+  updateUnit(id:any,unit: {}) {
     return this.http.put<any>(
-      'https://homie-iti.herokuapp.com/units/c0ecfa717176997fb6b52e9c',
+      `https://homie-iti.herokuapp.com/units/${id}`,
       unit
     );
   }

@@ -93,11 +93,17 @@ export class UnitCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.SpinnerService.show();
-    this.unitSer.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
-      this.units = a.units;
-      console.log(this.units);
-      this.SpinnerService.hide();
-    });
+    this.unitSer.getAllCityUnits(`/cities/${this.id}`).subscribe(
+      (a) => {
+        this.units = a.units;
+        console.log(this.units);
+        this.SpinnerService.hide();
+      },
+      (error: Error) => {
+        if (error) {
+        }
+      }
+    );
 
     this.authInfo = this.auth.getAuthInfo();
 

@@ -42,7 +42,7 @@ export class UnitCardComponent implements OnInit {
     private SpinnerService: NgxSpinnerService
   ) {}
 
-  userId = this.auth.getUser()._id;
+  userId = this.auth.getUser()?._id;
 
   id: any = this.activate.snapshot.params['id'];
 

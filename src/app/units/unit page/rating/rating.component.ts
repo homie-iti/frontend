@@ -15,6 +15,7 @@ export class RatingComponent implements OnInit {
   sum: any;
   result = 0;
   average: any;
+  fixedAverage: any;
 
   constructor(
     private activate: ActivatedRoute,
@@ -30,7 +31,8 @@ export class RatingComponent implements OnInit {
     });
     console.log(this.result);
     this.average = this.result / length;
-    console.log(this.average);
+    this.fixedAverage = this.average.toFixed(1);
+    console.log(this.fixedAverage);
   }
 
   getRating() {

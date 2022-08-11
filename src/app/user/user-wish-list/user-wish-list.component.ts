@@ -28,8 +28,8 @@ export class UserWishListComponent implements OnInit, OnChanges {
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
-  
-  userId = this.auth.getUser()._id;
+
+  userId = this.auth.getUser()?._id;
 
   id: any = this.activate.snapshot.params['id'];
   favoriteUnit: any;
@@ -49,7 +49,7 @@ export class UserWishListComponent implements OnInit, OnChanges {
         console.log(this.userId);
 
         this.favoriteUnit = a;
-        console.log(this.favoriteUnit);
+        console.log(a);
       });
   }
 

@@ -23,16 +23,14 @@ export class UnitReviewComponent implements OnInit {
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
+
+  userId = this.auth.getUser()?._id;
+
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
   commentdetails: any;
 
-  comment: Unitreviews = new Unitreviews(
-    'b6fd2b6c4d37aaddcb4abe2e',
-    this.id,
-    0,
-    ''
-  );
+  comment: Unitreviews = new Unitreviews(this.userId, this.id, 0, '');
 
   addComment(review: any) {
     console.log(review.value);
@@ -66,6 +64,7 @@ export class UnitReviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.userId);
     this.getAllComments();
     this.authInfo = this.auth.getAuthInfo();
   }

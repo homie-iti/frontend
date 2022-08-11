@@ -1,9 +1,9 @@
-<section>
+<section class="ms-5">
   <div class="d-flex flex-column col-md-12 col-lg-9">
     <div class="review p-2 px-4">
       <div class="d-flex flex-row mt-4 mb-4" *ngIf="authInfo.isLoggedIn">
         <textarea class="form-control mx-2" #review placeholder="Add comment"></textarea>
-        <button class="btn btn-primary mx-2" type="button" (click)="addComment(review)">Comment</button>
+        <button class="btn  mx-2" type="button" (click)="addComment(review)">Comment</button>
       </div>
       <div class="mt-2">
         <div class="agentReview d-flex flex-row align-items-center my-2" *ngFor="let item of unitComment">
@@ -16,7 +16,7 @@
               {{ item.comment }}
             </div>
             <div class=" my-5">
-              <button class="btn btn-outline-primary col-2" style="width:75px; height: 3em;"
+              <button class="btn  col-2" style="width:75px; height: 3em;"
                 (click)="deleteComment(item._id)" *ngIf="authInfo.isLoggedIn">
                 Delete </button>
             </div>

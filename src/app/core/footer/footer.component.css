@@ -46,6 +46,11 @@ p>a:hover{
     text-decoration: none;
   
 }
+ul>li> a:focus{
+    color: rgb(110, 103, 88);
+    text-decoration: none;
+  
+}
 
 .footer-links {
     padding-left: 0;

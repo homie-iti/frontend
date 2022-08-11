@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from 'src/app/service/admin.service';
+import { User } from 'src/app/_models/user';
 
 @Component({
   selector: 'app-get-single-user',
@@ -15,10 +16,10 @@ export class GetSingleUserComponent implements OnInit {
   ) {}
 
   id: string = this.ac.snapshot.params['id'];
-  user: any = {};
+  user: User = {};
 
   ngOnInit(): void {
-    this.adminService.getUserById(this.id).subscribe((userData) => {
+    this.adminService.getUserById('users/', this.id).subscribe((userData) => {
       this.user = userData;
       console.log(userData);
     });

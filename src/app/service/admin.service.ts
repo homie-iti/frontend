@@ -1,30 +1,32 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Users } from '../_models/users';
+import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminService {
-  private url: string = 'https://homie-iti.herokuapp.com/users/';
-  getAllUsers() {
-    return this.http.get<any>(this.url);
+  private url: string = 'https://homie-iti.herokuapp.com/';
+  getAll(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
   }
 
-  getUserById(id: any) {
-    return this.http.get<Users>(this.url + id);
+  getUserById(endpoint: string, id: any) {
+    return this.http.get<User>(this.url + endpoint + id);
   }
 
-  addUser(user: Users) {
-    return this.http.post<Users>(this.url, user);
+  addUser(endpoint: string, user: User) {
+    return this.http.post<User>(this.url + endpoint, user);
   }
 
-  updateUserData(id: string, user: Users) {
-    return this.http.put<Users>(this.url + id, user);
+  updateUserData(endpoint: string, id: string, user: User) {
+    return this.http.put<User>(this.url + endpoint + id, user);
   }
 
-  deleteUser(id: any) {
-    return this.http.delete<Users>(this.url + id);
+  deleteUser(endpoint: string, id: any) {
+    return this.http.delete<User>(this.url + endpoint + id);
   }
+
+  
   constructor(private http: HttpClient) {}
 }

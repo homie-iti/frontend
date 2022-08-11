@@ -74,13 +74,54 @@
             >About Us</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/admin']"
-            >Admin</a
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
           >
+            Admin
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-users']"
+                >Users</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-units']"
+                >Units</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item pb-1" [routerLink]="['/admin/all-cities']"
+                >Cities</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-contracts']"
+                >Contracts</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-helpQuestions']"
+                >Help Questions</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item pb-1"
+                [routerLink]="['/admin/all-reviews']"
+                >Reviews</a
+              >
+            </li>
+          </ul>
         </li>
       </ul>
       <!-- <form class="d-flex pt-2" role="search"> -->

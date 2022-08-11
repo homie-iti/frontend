@@ -1,6 +1,11 @@
 <div class="container">
-
-  <table class="table table-hover">
+  <button
+    class="btn btn-lg btn-outline-secondary m-3"
+    routerLink="/admin/add-user"
+  >
+    Add User
+  </button>
+  <table class="table table-hover text-center">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -25,7 +30,7 @@
         <td>
           <button
             class="btn btn-sm btn-outline-secondary"
-            routerLink="/users/{{ user._id }}"
+            routerLink="/admin/users/{{ user._id }}"
           >
             View
           </button>
@@ -33,7 +38,7 @@
         <td>
           <button
             class="btn btn-sm btn-outline-success"
-            routerLink="/edit-user/{{ user._id }}"
+            routerLink="/admin/edit-user/{{ user._id }}"
           >
             Update
           </button>

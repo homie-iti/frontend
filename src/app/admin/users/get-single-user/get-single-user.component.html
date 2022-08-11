@@ -1,7 +1,7 @@
-<div class="text-center m-auto col-4 my-5 border border-3">
-  <h1 class="p-4">User Details</h1>
-  <img src="{{ user.image }}" class="col-4" />
-  <ul class="list-group list-group-flush">
+<div class="text-center m-auto col-4 my-5 border border-3 rounded-5">
+  <h1 class="p-2">User Details</h1>
+  <img src="{{ user.image }}" class="col-4 rounded-3 mb-3" />
+  <ul class="list-group list-group-flush rounded-5">
     <li class="list-group-item fs-4 lead">
       <span class="text-danger fw-bold fs-4">fullName:&nbsp;</span>
       {{ user.fullName }}
@@ -19,9 +19,9 @@
       {{ user.gender }}
     </li>
 
-    <li class="list-group-item fs-4 lead">
+    <!-- <li class="list-group-item fs-4 lead">
       <span class="text-danger fw-bold fs-4">City:&nbsp;</span>
       {{ user.address["city"] }}
-    </li>
+    </li> -->
   </ul>
 </div>

@@ -1,0 +1,82 @@
+<div class="container">
+  <button
+    class="btn btn-lg btn-outline-secondary m-3"
+    routerLink="/admin/add-u"
+  >
+    Add Unit
+  </button>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Estate Type</th>
+        <th scope="col">Daily Price</th>
+        <th scope="col">Availability</th>
+        <th scope="col">City</th>
+        <th scope="col">Residents Number</th>
+        <th scope="col">Gender</th>
+        <th scope="col">LandlordName</th>
+        <th scope="col">LandlordPhone</th>
+
+        <!-- <th scope="col">Update</th>
+        <th scope="col">Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let unit of units; let x = index">
+        <th scope="row">{{ x + 1 }}</th>
+        <td>{{ unit.estateType }}</td>
+        <td>{{ unit.dailyPrice }}</td>
+        <td>{{ unit.isAvailable }}</td>
+        <td>{{ unit.address.city }}</td>
+        <td>{{ unit.numberOfResidents }}</td>
+        <td>{{ unit.allowedGender }}</td>
+        <td>{{ unit.landlordId.fullName }}</td>
+        <td>{{ unit.landlordId.phone }}</td>
+
+        <!-- <td>
+          <button
+            class="btn btn-sm btn-outline-secondary"
+            routerLink="/admin/users/{{ user._id }}"
+          >
+            View
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-outline-success"
+            routerLink="/admin/edit-user/{{ user._id }}"
+          >
+            Update
+          </button>
+        </td>
+        <td>
+          <button
+            class="btn btn-sm btn-outline-danger"
+            (click)="deleteUser(user._id, x)"
+          >
+            Delete
+          </button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav> -->
+</div>

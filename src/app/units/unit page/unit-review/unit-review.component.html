@@ -15,9 +15,9 @@
             <div class="col-9 py-3 my-4">
               {{ item.comment }}
             </div>
-            <div class=" my-5">
-              <button class="btn  col-2" style="width:75px; height: 3em;"
-                (click)="deleteComment(item._id)" *ngIf="authInfo.isLoggedIn">
+            <div class=" my-5" *ngIf="authInfo.isLoggedIn">
+              <button class="btn  col-2" style="width:75px; height: 3em;" (click)="deleteComment(item._id)"
+                >
                 Delete </button>
             </div>
           </div>

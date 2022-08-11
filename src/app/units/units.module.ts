@@ -22,6 +22,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { PaymentInfoComponent } from './unit page/landlorddetails/payment-info/payment-info.component';
 import { RatingComponent } from './unit page/rating/rating.component';
+import { UserModule } from '../user/user.module';
 
 @NgModule({
   declarations: [

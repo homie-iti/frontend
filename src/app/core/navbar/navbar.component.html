@@ -39,7 +39,7 @@
             class="nav-link"
             routerLinkActive="active"
             [routerLink]="['/addCity']"
-            >add City</a
+            >add unit</a
           >
         </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
@@ -63,7 +63,7 @@
             class="nav-link"
             routerLinkActive="active"
             [routerLink]="['/user-wish-list']"
-            >User Wish List</a
+            > Wish List</a
           >
         </li>
         <li class="nav-item">
@@ -158,14 +158,7 @@
           >
         </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/logout']"
-          >
-            Log out</a
-          >
+          <app-logout></app-logout>
         </li>
       </ul>
       <!-- <button class="btn btnStyle btn-outline-success" type="submit">EN</button> -->

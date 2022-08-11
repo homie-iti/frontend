@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/auth.service';
-import { TransferDataService } from '../service/transfer-data.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.page.html',
-  styleUrls: ['./user.page.css']
+  styleUrls: ['./user.page.css'],
 })
 export class UserComponent implements OnInit {
 
@@ -16,5 +14,4 @@ export class UserComponent implements OnInit {
     this.userInfo=this.user.getUser()
     console.log(this.userInfo)
   }
-
 }

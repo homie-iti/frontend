@@ -8,8 +8,9 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
 .sign{
-  margin: 5rem;
+  /* margin-top: auto; */
   padding: 2rem;
   border-radius: 1.5rem;
   background-color:rgba(148, 142, 124, 0.153);
@@ -17,4 +18,27 @@ input[type=number] {
 h1{
   color: var( --addresses-color);
   font-weight: bolder;
+}
+p ,label{
+  padding-left: 10px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgb(96, 88, 69);
+}
+input:focus ,button:focus select:focus{
+  box-shadow: 0 0 0 0.25rem rgba(71, 57, 5, 0.25);
+  border-color: rgb(96, 88, 69);
+}
+
+button{
+  border: solid 1px rgb(96, 88, 69);
+  color: var( --main-font-color);
+}
+button:hover{
+  background-color:rgb(96, 88, 69) ;
+  color: rgb(255, 239, 220);
+}
+.form-check-input:checked {
+  background-color:var(    --main-font-color);
+  border-color: var(    --main-font-color);
 }

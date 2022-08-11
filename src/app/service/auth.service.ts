@@ -64,6 +64,7 @@ export class AuthService {
   setUser(user: User) {
     this.authInfo.user = user;
   }
+  
   getUser() {
     return this.authInfo.user;
   }

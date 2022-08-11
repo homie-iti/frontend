@@ -7,6 +7,7 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
 
 @Component({
@@ -23,16 +24,19 @@ export class UserWishListComponent implements OnInit, OnChanges {
   favunit: favoriteUnits | undefined;
 
   constructor(
-    private activate: ActivatedRoute,
+    private auth: AuthService,
+    // private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
 
-  id: any = this.activate.snapshot.params['id'];
+  userId = this.auth.getUser()?._id;
+
+  // id: any = this.activate.snapshot.params['id'];
   favoriteUnit: any;
 
   onClick(item: any) {
     console.log(item);
-    this.unitser.deleteFavorite(item).subscribe((a) => {
+    this.unitser.deleteFavorite(item, this.userId).subscribe((a) => {
       this.getAllFavourite();
       console.log(a);
     });
@@ -40,15 +44,18 @@ export class UserWishListComponent implements OnInit, OnChanges {
 
   getAllFavourite() {
     this.unitser
-      .getAllCityUnits(`/users/b6fd2b6c4d37aaddcb4abe2e/favorites`)
+      .getAllCityUnits(`/users/${this.userId}/favorites`)
       .subscribe((a) => {
+        console.log(this.userId);
+
         this.favoriteUnit = a;
-        console.log(this.favoriteUnit);
+        console.log(a);
       });
   }
 
   ngOnInit(): void {
     this.getAllFavourite();
+    console.log(this.userId);
   }
 
   ngOnChanges() {

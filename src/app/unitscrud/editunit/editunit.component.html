@@ -27,8 +27,9 @@
             />
           </div> -->
       <div class="container my-2 ">
+                <div formGroupName="unitInfo ">
         <div class="row my-2 d-felx justify-content-center align-items-center">
-        <!-- <div formGroupName="unitInfo "> -->
+
           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="rooms" class="form-label">Rooms</label>
             <input
@@ -65,12 +66,24 @@
             />
           </div>
         </div>
-      <!-- </div> -->
+        <div class="row my-2 d-felx justify-content-center align-items-center">
+          <div class="col-xl-12">
+            <label for="description" class="form-label">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              aria-describedby="descriptionHelp"
+              formControlName="description"
+            />
+          </div>
+        </div>
+      </div>
     
 
-    
+           <div formGroupName="address " >
       <div class="row my-2 d-felx justify-content-center align-items-center">
-        <!-- <div formGroupName="address " > -->
+ 
           <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
             <label for="city" class="form-label">city Name</label>
             <input
@@ -107,7 +120,7 @@
             />
           </div>
         </div>
-           <!-- </div> -->
+           </div>
         
         
          
@@ -135,18 +148,7 @@
         </div>
       </div>
    
-      <div class="row my-2 d-felx justify-content-center align-items-center">
-        <div class="col-xl-12">
-          <label for="description" class="form-label">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="description"
-            aria-describedby="descriptionHelp"
-            formControlName="description"
-          />
-        </div>
-      </div>
+    
      
         <!-- <p>Allowed Gender</p>
         <div class="form-check">

@@ -1,26 +1,40 @@
-<div class="container   pb-5 my-2 ">
-  <h2 class="hStyle">Learn about Eman</h2>
+<div class="container pb-5 my-2">
+  <h2 class="hStyle">Learn about {{ userInfo.fullName }}</h2>
 
-  <div class="card card-outline d-flex justify-content-center align-item-center userAbout colorContetnt ">
-   <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-6 col-sm-12">
-        <div class="card-body">
-          <h5 class="card-title bold">Hello, My Name is Eman</h5>
-          <p class="card-text">Welcome to my page. Have a nice time.</p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut magnam eaque natus. Aliquam sed hic nobis, incidunt eaque consequatur rerum!</p>
+  <div
+    class="card card-outline d-flex justify-content-center align-item-center userAbout colorContetnt"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-6 col-sm-12">
+          <div class="card-body">
+            <h5 class="card-title bold">
+              Hello, My Name is {{ userInfo.fullName }}
+            </h5>
+            <p class="card-text">Welcome to my page. Have a nice time.</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+              magnam eaque natus. Aliquam sed hic nobis, incidunt eaque
+              consequatur rerum!
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 my-4">
+          <div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item list-group-item-warning colorContetnt">
+                Response time :<span>with in an hour</span>
+              </li>
+              <li class="list-group-item list-group-item-warning colorContetnt">
+                Response Rate :<span>90%</span>
+              </li>
+              <li class="list-group-item list-group-item-warning colorContetnt">
+                bookings: <span>15</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="col-lg-4 col-md-4 col-sm-12 my-4 ">
-        <div> <ul class="list-group list-group-flush ">
-          <li class="list-group-item list-group-item-warning colorContetnt">Response time :<span>with in an hour</span> </li>
-          <li class="list-group-item list-group-item-warning colorContetnt">Response Rate :<span>90%</span></li>
-          <li class="list-group-item list-group-item-warning colorContetnt">bookings: <span>15</span></li>
-        </ul></div>
-      </div>
     </div>
-  </div>
-   
- 
   </div>
 </div>

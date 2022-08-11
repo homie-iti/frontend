@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
+import { TransferDataService } from '../service/transfer-data.service';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:AuthService) { }
+     userInfo:any
 
   ngOnInit(): void {
+    this.userInfo=this.user.getUser()
+    console.log(this.userInfo)
   }
 
 }

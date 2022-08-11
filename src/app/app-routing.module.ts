@@ -17,6 +17,7 @@ import { LogoutComponent } from './user/registration pages/logout/logout.compone
 import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
 import { NotfoundComponent } from './notfound/notfound/notfound.component';
+import { PaymentComponent } from './paymentform/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -79,6 +80,10 @@ const routes: Routes = [
   {
     path: 'editUnit/:id',
     component: EditunitComponent,
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent,
   },
   {
     path: 'notFound',

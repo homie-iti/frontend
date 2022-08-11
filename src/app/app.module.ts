@@ -19,6 +19,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
 import { AdminModule } from './admin/admin.module';
 import { NotfoundModule } from './notfound/notfound.module';
+import { PaymentformModule } from './paymentform/paymentform.module';
 
 
 export function tokenGetter() {
@@ -49,7 +50,8 @@ export function tokenGetter() {
     ContactUsModule,
     UnitscrudModule,
     NotfoundModule,
-    HelpQuestionsModule
+    HelpQuestionsModule,
+    PaymentformModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -16,6 +16,7 @@ import { ActivatedRoute, provideRoutes } from '@angular/router';
 import { TransferDataService } from 'src/app/service/transfer-data.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-unit-card',
@@ -34,11 +35,14 @@ export class UnitCardComponent implements OnInit {
   isActive: boolean | undefined;
 
   constructor(
+    private auth: AuthService,
     private activate: ActivatedRoute,
-    private unitser: GetdataService,
+    private unitSer: GetdataService,
     public transfer: TransferDataService,
     private SpinnerService: NgxSpinnerService
   ) {}
+
+  userId = this.auth.getUser()._id;
 
   id: any = this.activate.snapshot.params['id'];
 
@@ -58,25 +62,27 @@ export class UnitCardComponent implements OnInit {
   onClick(item: any) {
     this.isActive = !this.isActive;
     this.favunit = new favoriteUnits(item);
+    console.log(this.favunit);
+
     this.checkId(item);
     if (this.checkId(item) === true) {
-      this.unitser.deleteFavorite(item).subscribe((a) => {
+      this.unitSer.deleteFavorite(item).subscribe((a) => {
         this.getAllFavourite();
         console.log(a);
       });
       console.log(true);
     } else if (this.checkId(item) === false) {
-      this.unitser.postFavorite(this.favunit).subscribe((a) => {
-        this.getAllFavourite();
+      this.unitSer.postFavorite(this.favunit).subscribe((a) => {
         console.log(a);
+        this.getAllFavourite();
       });
       console.log(false);
     }
   }
 
   getAllFavourite() {
-    this.unitser
-      .getAllCityUnits(`/users/b6fd2b6c4d37aaddcb4abe2e/favorites`)
+    this.unitSer
+      .getAllCityUnits(`/users/${this.userId}/favorites`)
       .subscribe((a) => {
         this.favoriteUnit = a;
         console.log(this.favoriteUnit);
@@ -85,7 +91,7 @@ export class UnitCardComponent implements OnInit {
 
   ngOnInit(): void {
     this.SpinnerService.show();
-    this.unitser.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
+    this.unitSer.getAllCityUnits(`/cities/${this.id}`).subscribe((a) => {
       this.units = a.units;
       console.log(this.units);
       this.SpinnerService.hide();

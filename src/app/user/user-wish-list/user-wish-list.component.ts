@@ -7,6 +7,7 @@ import {
   faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { AuthService } from 'src/app/service/auth.service';
 import { favoriteUnits } from 'src/app/_models/favoriteunits';
 
 @Component({
@@ -23,9 +24,12 @@ export class UserWishListComponent implements OnInit, OnChanges {
   favunit: favoriteUnits | undefined;
 
   constructor(
+    private auth: AuthService,
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
+  
+  userId = this.auth.getUser()._id;
 
   id: any = this.activate.snapshot.params['id'];
   favoriteUnit: any;
@@ -40,8 +44,10 @@ export class UserWishListComponent implements OnInit, OnChanges {
 
   getAllFavourite() {
     this.unitser
-      .getAllCityUnits(`/users/b6fd2b6c4d37aaddcb4abe2e/favorites`)
+      .getAllCityUnits(`/users/${this.userId}/favorites`)
       .subscribe((a) => {
+        console.log(this.userId);
+
         this.favoriteUnit = a;
         console.log(this.favoriteUnit);
       });
@@ -49,6 +55,7 @@ export class UserWishListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.getAllFavourite();
+    console.log(this.userId);
   }
 
   ngOnChanges() {

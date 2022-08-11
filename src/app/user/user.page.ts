@@ -10,6 +10,6 @@ export class UserComponent implements OnInit {
   constructor(private aut: AuthService) {}
 
   ngOnInit(): void {
-    console.log(this.aut.getUser());
+    console.log(this.aut.getUser()._id);
   }
 }

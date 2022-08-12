@@ -21,11 +21,20 @@ export class PaymentInfoComponent implements OnInit {
   unitAvailable = false;
   availabilityErrorMessage: undefined | string;
   @Input() isAvailable!: boolean;
+  isLoading = true;
 
   ngOnInit(): void {
-    console.log({
-      userOnInit: this.authService.getUser(),
-    });
+    // console.log({
+    //   userOnInit: this.authService.getUser(),
+    // });
+
+    const interval = setInterval(() => {
+      if (this.isAvailable === false || this.isAvailable === true) {
+        this.isLoading = false;
+        // interval
+        clearInterval(interval);
+      }
+    }, 100);
   }
 
   ngOnChange(): void {

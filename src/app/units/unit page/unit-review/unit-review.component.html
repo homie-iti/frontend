@@ -17,7 +17,7 @@
             </div>
             <div class=" my-5" *ngIf="authInfo.isLoggedIn">
               <button class="btn  col-2" style="width:75px; height: 3em;" (click)="deleteComment(item._id)"
-                >
+                *ngIf="item.agentId._id._id === userId">
                 Delete </button>
             </div>
           </div>

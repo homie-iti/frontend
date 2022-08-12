@@ -1,1 +1,111 @@
-<p>add-contract works!</p>
+<div class="container col-6 mt-5">
+  <form [formGroup]="contractForm">
+    <div class="mb-3">
+      <label for="unitId" class="form-label">unitId*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="unitId"
+        placeholder="Enter unit"
+        formControlName="unitId"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="LandlordId" class="form-label">LandlordId*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="LandlordId"
+        placeholder="Enter landlord"
+        formControlName="landlordId"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="agentId" class="form-label">AgentId*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="agentId"
+        placeholder="Enter agent"
+        formControlName="agentId"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="start" class="form-label">Rental Start*</label>
+      <input
+        type="date"
+        class="form-control"
+        id="start"
+        placeholder="Enter rental start date"
+        formControlName="rentalStart"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="end" class="form-label">Rental End*</label>
+      <input
+        type="date"
+        class="form-control"
+        id="end"
+        placeholder="Enter rental start date"
+        formControlName="rentalEnd"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="Pamount" class="form-label">Payment Amount*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="Pamount"
+        placeholder="Enter Payment Amount"
+        formControlName="paymentAmount"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="Tamount" class="form-label">Total Amount*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="Tamount"
+        placeholder="Enter Payment Amount"
+        formControlName="totalAmount"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="Pmethod" class="form-label">Payment Method*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="Pmethod"
+        placeholder="Enter Payment Method"
+        formControlName="paymentMethod"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="state" class="form-label">Contract State*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="state"
+        placeholder="Enter Contract State"
+        formControlName="state"
+      />
+    </div>
+
+    <div class="mb-3">
+      <button
+        class="btn btn-primary"
+        (click)="save()"
+        [disabled]="contractForm.invalid"
+      >
+        Add Contract
+      </button>
+    </div>
+  </form>
+</div>

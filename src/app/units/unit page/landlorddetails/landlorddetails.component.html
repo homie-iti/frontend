@@ -18,4 +18,9 @@
   </div>
 
   <app-payment-info [isAvailable]="isAvailable"></app-payment-info>
+  <div class="text-center">
+    <button routerLink="/editUnit/{{ id }}" *ngIf="unitLandlord._id === userId">
+      Edit Unit
+    </button>
+  </div>
 </div>

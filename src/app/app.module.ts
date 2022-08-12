@@ -41,7 +41,6 @@ export function tokenGetter() {
     SharedModule,
     UnitsModule,
     UserModule,
-    AdminModule,
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule.forRoot({

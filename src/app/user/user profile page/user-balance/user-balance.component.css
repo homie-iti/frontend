@@ -1,0 +1,39 @@
+.container {
+  min-height: 30em;
+}
+
+.component {
+  width: 40rem;
+  height: 20em;
+  margin: 10em auto;
+  border-radius: 1.5rem;
+  background-color: var(--section-color);
+}
+
+h2 {
+  text-align: center;
+  padding: 20px;
+  margin: 20px;
+}
+
+p {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  font-size: larger;
+}
+
+button {
+  background-color: var(--addresses-color);
+  border-radius: 10px;
+}
+
+.btnStyle {
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnStyle:hover {
+  color: rgb(249, 242, 223);
+  color: var(--main-font-color);
+  background-color: var(--main-background-color);
+}

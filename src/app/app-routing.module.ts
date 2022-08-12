@@ -18,6 +18,9 @@ import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
 import { NotfoundComponent } from './notfound/notfound/notfound.component';
 import { PaymentComponent } from './paymentform/payment/payment.component';
+import { UserBalanceComponent } from './user/user profile page/user-balance/user-balance.component';
+import { ForgetpasswordComponent } from './user/registration pages/forgetpassword/forgetpassword.component';
+import { NewpasswordComponent } from './user/registration pages/newpassword/newpassword.component';
 
 const routes: Routes = [
   {
@@ -58,7 +61,7 @@ const routes: Routes = [
     component: ContactUsComponent,
   },
   {
-    path: 'help-question',
+    path: 'help-questions',
     component: HelpQuestionsComponent,
   },
   {
@@ -89,7 +92,24 @@ const routes: Routes = [
     path: 'notFound',
     component: NotfoundComponent,
   },
+  {
+    path: 'edit-user/:id',
+    component: UserProfileComponent,
+  },
+  {
+    path: 'balance',
+    component: UserBalanceComponent,
+  },
+  {
+    path: 'forgetPassword',
+    component: ForgetpasswordComponent,
+  },
+  {
+    path: 'resetPassword',
+    component: NewpasswordComponent,
+  },
 
+ 
   {
     path: 'admin',
     loadChildren: () =>

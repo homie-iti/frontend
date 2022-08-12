@@ -14,5 +14,28 @@ img{
     border-radius: 50%;
 }
 .accordion{
-    width:50%;
+    width:120%;
+    
 }
+.getHelp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.accordion-button{
+    background-color: rgba(76, 62, 33, 0.283) !important;
+    /* color:var(  --addresses-color) ; */
+    color: rgb(50, 39, 11);
+  }
+  
+  .accordion-button:focus{
+    box-shadow: 0 0 0 0.25rem rgba(71, 57, 5, 0.25);
+    color: var(  --addresses-color) 
+  } 
+  .accordion-item{
+    background-color: rgba(255, 255, 255, 0.235) !important;
+  }
+  .accordion-body{
+    width:777.662px;
+  }
+ 

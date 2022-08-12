@@ -89,6 +89,10 @@ const routes: Routes = [
     path: 'notFound',
     component: NotfoundComponent,
   },
+  {
+    path: 'edit-user/:id',
+    component: UserProfileComponent,
+  },
 
   {
     path: 'admin',

@@ -1,1 +1,380 @@
-<p>add-unit works!</p>
+<div
+  class="container mt-5 col-4"
+  [formGroup]="unitForm"
+  (ngSubmit)="addUnit(unitForm.value)"
+>
+  <form>
+    <div class="mb-3">
+      <label for="landlordId" class="form-label">LandlordId*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="landlordId"
+        placeholder="Enter landlordId"
+        formControlName="landlordId"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          unitValues['landlordId'].touched && unitValues['landlordId'].invalid
+        "
+      >
+        <div *ngIf="unitValues['landlordId'].errors?.['required']">
+          landlordId is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="cityId" class="form-label">cityId*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cityId"
+        placeholder="Enter your name"
+        formControlName="cityId"
+        (change)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="unitValues['cityId'].touched && unitValues['cityId'].invalid"
+      >
+        <div *ngIf="unitValues['cityId'].errors?.['required']">
+          cityId is required
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="residents" class="form-label">Residents Number*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="residents"
+        placeholder="Enter residents number"
+        formControlName="numberOfResidents"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          unitValues['numberOfResidents'].touched &&
+          unitValues['numberOfResidents'].invalid
+        "
+      >
+        <div *ngIf="unitValues['numberOfResidents'].errors?.['required']">
+          numberOfResidents is required
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="estate" class="form-label">EstateType*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="estate"
+        formControlName="estateType"
+        placeholder="Choose stateType"
+        list="datalistOptions"
+      />
+      <datalist id="datalistOptions">
+        <option value="studio"></option>
+        <option value="single-room"></option>
+        <option value="shared-room"></option>
+        <option value="apartment"></option>
+      </datalist>
+
+      <div
+        class="errors d-flex"
+        *ngIf="
+          unitValues['estateType'].touched && unitValues['estateType'].invalid
+        "
+      >
+        <div *ngIf="unitValues['estateType'].errors?.['required']">
+          estateType is required
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="address">
+      <label for="name" class="form-label">Address*</label>
+      <div class="row">
+        <div class="col-md-4 form-group mb-3">
+          <label for="city" class="form-label">City*</label>
+          <input
+            type="text"
+            class="form-control"
+            name="city"
+            id="city"
+            placeholder="City"
+            formControlName="city"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.address.controls['city'].touched &&
+              unitValues.address.controls['city'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.address.controls['city'].errors?.['required']"
+            >
+              City is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 form-group mb-3">
+          <label for="street" class="form-label">Street Name*</label>
+          <input
+            type="text"
+            class="form-control"
+            name="street"
+            id="street"
+            placeholder="Street Name"
+            formControlName="streetName"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.address.controls['streetName'].touched &&
+              unitValues.address.controls['streetName'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.address.controls['streetName'].errors?.['required']"
+            >
+              StreetName is required
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 form-group mb-3">
+          <label for="building" class="form-label">Building*</label>
+          <input
+            type="number"
+            class="form-control"
+            name="building"
+            id="building"
+            placeholder="Building Number"
+            formControlName="buildingNumber"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.address.controls['buildingNumber'].touched &&
+              unitValues.address.controls['buildingNumber'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.address.controls['buildingNumber'].errors?.['required']"
+            >
+              BuildingNumber is required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div formGroupName="unitInfo">
+      <label for="name" class="form-label">UnitInfo*</label>
+      <div class="row">
+        <div class="form-group mb-3">
+          <label for="description" class="form-label">Description*</label>
+          <textarea
+            type="text"
+            class="form-control"
+            name="description"
+            id="description"
+            placeholder="description"
+            formControlName="description"
+          ></textarea>
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.unitInfo.controls['description'].touched &&
+              unitValues.unitInfo.controls['description'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.unitInfo.controls['description'].errors?.['required']"
+            >
+              description is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="rooms" class="form-label">Rooms No*</label>
+          <input
+            type="number"
+            class="form-control"
+            name="rooms"
+            id="rooms"
+            placeholder="rooms number"
+            formControlName="rooms"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.unitInfo.controls['rooms'].touched &&
+              unitValues.unitInfo.controls['rooms'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.unitInfo.controls['rooms'].errors?.['required']"
+            >
+              rooms number is required
+            </div>
+          </div>
+        </div>
+        <div class="col form-group mb-3">
+          <label for="bathrooms" class="form-label">Bathrooms No*</label>
+          <input
+            type="number"
+            class="form-control"
+            name="bathrooms"
+            id="bathrooms"
+            placeholder="bathrooms number"
+            formControlName="bathrooms"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.unitInfo.controls['bathrooms'].touched &&
+              unitValues.unitInfo.controls['bathrooms'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.unitInfo.controls['bathrooms'].errors?.['required']"
+            >
+              bathrooms number is required
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="floor" class="form-label">floor*</label>
+          <input
+            type="number"
+            class="form-control"
+            name="floor"
+            id="floor"
+            placeholder="floor Number"
+            formControlName="floor"
+          />
+          <div
+            class="errors d-flex"
+            *ngIf="
+              unitValues.unitInfo.controls['floor'].touched &&
+              unitValues.unitInfo.controls['floor'].invalid
+            "
+          >
+            <div
+              *ngIf="unitValues.unitInfo.controls['floor'].errors?.['required']"
+            >
+              floor is required
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Daily Price*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="price"
+        placeholder="Enter price per day"
+        formControlName="dailyPrice"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          unitValues['dailyPrice'].touched && unitValues['dailyPrice'].invalid
+        "
+      >
+        <div *ngIf="unitValues['dailyPrice'].errors?.['required']">
+          dailyPrice is required
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="gender" class="form-label">Gender*</label><br />
+      <div class="mb-3 pe-5 form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="male"
+          value="male"
+          formControlName="allowedGender"
+        />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="mb-3 form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="female"
+          value="female"
+          formControlName="allowedGender"
+        />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+      <div class="mb-3 pe-5 form-check form-check-inline">
+        <input
+          type="radio"
+          class="form-check-input"
+          id="any"
+          value="any"
+          formControlName="allowedGender"
+        />
+        <label class="form-check-label" for="male">Any</label>
+      </div>
+    </div>
+
+    <div class="mb-3 pe-3 form-check-inline">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="isavailable"
+        formControlName="isAvailable"
+      />
+      <label class="form-check-label" for="isavailable">&nbsp;Available</label>
+    </div>
+    <div class="mb-3 form-check-inline">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="pets"
+        formControlName="isPetsAllowed"
+      />
+      <label class="form-check-label" for="pets">&nbsp;PetsAllowed</label>
+    </div>
+
+    <div class="mb-3">
+      <label for="cover" class="form-label">Unit Cover</label>
+      <input
+        type="file"
+        class="form-control"
+        id="cover"
+        formControlName="cover"
+        placeholder="Upload cover image"
+        (change)="onFileSelected($event)"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="unitValues['cover'].touched && unitValues['cover'].invalid"
+      >
+        <div *ngIf="unitValues['cover'].errors?.['required']">
+          estateType is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="unitForm.invalid"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</div>

@@ -31,13 +31,14 @@ import { ActivationPageComponent } from './registration pages/activation-page/ac
     NewpasswordComponent,
     LogoutComponent,
     ActivationPageComponent,
+    UserProfileComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   exports: [
     UserCardComponent,

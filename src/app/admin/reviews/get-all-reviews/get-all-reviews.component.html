@@ -1,1 +1,64 @@
-<p>get-all-reviews works!</p>
+<div class="container-fluid col-11">
+  <!-- <button
+          class="btn btn-lg btn-outline-secondary m-3"
+          routerLink="/admin/add-u"
+        >
+          Add Unit
+        </button> -->
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Comment</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Created</th>
+        <th></th>
+        <th scope="col">Updated</th>
+        <!-- <th scope="col">State</th> -->
+
+        <!-- <th scope="col">Update</th> -->
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviews; let x = index">
+        <th scope="row">{{ x + 1 }}</th>
+        <td>
+          {{ review.comment }}
+        </td>
+        <td>
+          {{ review.rating }}
+        </td>
+        <td>{{ review.createdAt | date }}</td>
+        <td></td>
+        <td>{{ review.updatedAt | date }}</td>
+        <!-- <td>{{ question.userId.fullName }}</td> -->
+
+        <!-- <td>
+              <button
+                class="btn btn-sm btn-outline-secondary"
+                routerLink="/admin/users/{{ user._id }}"
+              >
+                View
+              </button>
+            </td>
+            <td>
+              <button
+                class="btn btn-sm btn-outline-success"
+                routerLink="/admin/edit-user/{{ user._id }}"
+              >
+                Update
+              </button>
+            </td> -->
+        <td>
+          <button
+            class="btn btn-sm btn-outline-danger"
+            (click)="deleteReview(review._id,review.unitId, x)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

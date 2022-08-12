@@ -30,7 +30,7 @@ export class UnitReviewComponent implements OnInit {
   unitComment: any;
   commentdetails: any;
 
-  comment: Unitreviews = new Unitreviews(this.userId, this.id, 0, '');
+  comment: Unitreviews = new Unitreviews(this.userId, this.id, 1, '');
 
   addComment(review: any) {
     console.log(review.value);

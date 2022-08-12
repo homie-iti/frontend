@@ -1,5 +1,5 @@
-<!-- 
- <div class="d-felx justify-content-center align-items-center "> 
+<!--
+ <div class="d-felx justify-content-center align-items-center ">
 
 <div class="container sign ">
   <div class="row text-center"><h1>Add  ccccc Unit</h1> </div>
@@ -17,7 +17,7 @@
               formControlName="landlordId"
             />
           </div>
-  
+
           <div class="col-xl-6">
             <label for="cityid" class="form-label">city Id</label>
             <input
@@ -27,8 +27,8 @@
               aria-describedby="cityidHelp"
               formControlName="cityId"
             />
-          </div> 
-  
+          </div>
+
           <div formGroupName="unitInfo">
             <div class="col-xl-6">
               <label for="description" class="form-label">Description</label>
@@ -61,7 +61,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-xl-6">
               <label for="rooms" class="form-label">Rooms</label>
               <input
@@ -87,7 +87,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-xl-6">
               <label for="bathrooms" class="form-label">Bathrooms</label>
               <input
@@ -115,7 +115,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-xl-6">
               <label for="floor" class="form-label">Floor</label>
               <input
@@ -142,7 +142,7 @@
               </div>
             </div>
           </div>
-  
+
           <div formGroupName="address">
             <div class="col-xl-6">
               <p>City Name</p>
@@ -185,7 +185,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="col-xl-6">
               <label for="streetName" class="form-label">street Name</label>
               <input
@@ -218,7 +218,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="col-xl-6">
             <label for="dailyPrice" class="form-label"> Daily Price</label>
             <input
@@ -239,7 +239,7 @@
               Enter DailyPrice
             </div>
           </div>
-  
+
           <div class="col-xl-6">
             <label for="Residents" class="form-label">Number Of Residents</label>
             <input
@@ -260,7 +260,7 @@
               Enter number Of Residents
             </div>
           </div>
-  
+
           <p>Allowed Gender</p>
           <div class="form-check">
             <input
@@ -302,7 +302,7 @@
               Gender is required
             </div>
           </div>
-  
+
           <p>Is Available ?</p>
           <div class="form-check">
             <input
@@ -346,7 +346,7 @@
               Avaliable is required
             </div>
           </div>
-  
+
           <p>Pets Allowed</p>
           <div class="form-check">
             <input
@@ -388,7 +388,7 @@
               Pets allowence is required
             </div>
           </div>
-  
+
           <p>estate Type</p>
           <div class="form-check">
             <input
@@ -470,7 +470,7 @@
               Estate Type is required
             </div>
           </div>
-  
+
           <button
             class="btn btn-primary"
             (click)="save()"
@@ -482,7 +482,7 @@
       </form>
 
     </div>
-    
+
   </div>
 </div> -->
 <!-- </div> -->
@@ -655,12 +655,9 @@
                     class="form-select"
                     aria-label="Default select example"
                     formControlName="city"
-                    (click)="getCityId($any($event.target))"
+                    (click)="getCityId($event)"
                   >
-                    <option
-                      *ngFor="let item of cityArray"
-                      [ngValue]="item.name"
-                    >
+                    <option *ngFor="let item of cityArray" [value]="item.name">
                       {{ item.name }}
                     </option>
                   </select>

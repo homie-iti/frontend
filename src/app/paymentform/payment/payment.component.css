@@ -5,6 +5,26 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.editWidth {
+  width: fit-content;
+}
+
+.main {
+  width: 50%;
+  margin: 10em auto;
+  border-radius: 1.5rem;
+  background-color: var(--section-color);
+  text-transform: capitalize;
+}
+/*
+.main > div > input {
+  margin-left: 3em;
+}
+
+.main > div > label {
+  margin-left: 3em;
+} */

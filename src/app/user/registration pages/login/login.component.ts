@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit {
     this.getdataService.getUserDetails(id).subscribe((user) => {
       console.log(user);
       this.authService.setUser(user);
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/');
       this.doesLoginHasError = false;
     });
   }

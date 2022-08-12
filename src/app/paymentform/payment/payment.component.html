@@ -1,6 +1,6 @@
 <form [formGroup]="myform" class="container main">
   <div class="col-xl-10 col-lg-10 col-md-4 col-sm-12 py-2" style="margin:10px auto ;">
-    <label for="name" class="form-label">name on Card</label>
+    <label for="name" class="form-label mt-2">name on Card</label>
     <input type="text" class="form-control" id="name" aria-describedby="bathroomsHelp" formControlName="nameonCard" />
     <div id="nameHelp" class="form-text text-danger" *ngIf="
         myform.controls.nameonCard.touched && myform.controls.nameonCard.invalid">

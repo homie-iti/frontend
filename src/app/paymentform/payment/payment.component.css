@@ -17,7 +17,7 @@ input[type="number"] {
   width: 50%;
   margin: 5em auto;
   border-radius: 1.5rem;
-  background-color: var(--section-color);
+  background-color:rgba(148, 142, 124, 0.153);
   text-transform: capitalize;
 }
 .form-check-input:checked {
@@ -44,6 +44,9 @@ button {
   color: rgb(249, 242, 223);
   color: var(--main-font-color);
   background-color: var(--main-background-color);
+}
+label{
+  color: rgb(96, 88, 69);
 }
 
 /*

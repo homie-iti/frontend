@@ -10,6 +10,12 @@ import { Units } from 'src/app/_models/units';
 export class GetAllUnitsComponent implements OnInit {
   constructor(private adminService: AdminService) {}
 
+  deleteUnit(unitId: string, x: number) {
+    this.adminService.deleteUnit('units/', unitId).subscribe((res: any) => {
+      console.log(res);
+      this.units.splice(x, 1);
+    });
+  }
   units: any[] = [];
   ngOnInit(): void {
     this.adminService.getAll('units').subscribe((unitData) => {

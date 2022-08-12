@@ -11,6 +11,15 @@ export class GetAllContractsComponent implements OnInit {
   contracts: Contract[] = [];
   constructor(private adminService: AdminService) {}
 
+  deleteContract(contractId: any, unitId: any, x: number) {
+    return this.adminService
+      .deleteContract(contractId, unitId)
+      .subscribe((a) => {
+        console.log(a);
+        this.contracts.splice(x, 1);
+      });
+  }
+
   ngOnInit(): void {
     this.adminService.getAll('contracts').subscribe((contractData) => {
       this.contracts = contractData.results;

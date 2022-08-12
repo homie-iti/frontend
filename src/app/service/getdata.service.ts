@@ -52,7 +52,7 @@ export class GetdataService {
   }
 
   addAgent(endpoint: string, data: any) {
-    return this.http.post<any>(this.url, data);
+    return this.http.post<any>(this.url + endpoint, data);
   }
 
   deleteAgent(endpoint: string, id: any) {
@@ -87,7 +87,7 @@ export class GetdataService {
     );
   }
 
-  updateUnit(id:any,unit: {}) {
+  updateUnit(id: any, unit: {}) {
     return this.http.put<any>(
       `https://homie-iti.herokuapp.com/units/${id}`,
       unit

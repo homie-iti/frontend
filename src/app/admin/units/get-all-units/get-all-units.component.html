@@ -18,8 +18,8 @@
         <th scope="col">LandlordName</th>
         <th scope="col">LandlordPhone</th>
 
-        <!-- <th scope="col">Update</th>
-        <th scope="col">Delete</th> -->
+        <!-- <th scope="col">Update</th> -->
+        <th scope="col">Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -36,28 +36,21 @@
 
         <!-- <td>
           <button
-            class="btn btn-sm btn-outline-secondary"
-            routerLink="/admin/users/{{ user._id }}"
-          >
-            View
-          </button>
-        </td>
-        <td>
-          <button
             class="btn btn-sm btn-outline-success"
-            routerLink="/admin/edit-user/{{ user._id }}"
+            routerLink="/admin/edit-unit/{{ unit._id }}"
           >
             Update
           </button>
-        </td>
+        </td> -->
         <td>
           <button
             class="btn btn-sm btn-outline-danger"
-            (click)="deleteUser(user._id, x)"
+            (click)="deleteUnit(unit._id, x)"
           >
             Delete
           </button>
-        </td> -->
+        </td>
+
       </tr>
     </tbody>
   </table>

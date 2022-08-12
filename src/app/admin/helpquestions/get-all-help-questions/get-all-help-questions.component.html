@@ -1,1 +1,63 @@
-<p>get-all-help-questions works!</p>
+<div class="container">
+  <!-- <button
+        class="btn btn-lg btn-outline-secondary m-3"
+        routerLink="/admin/add-u"
+      >
+        Add Unit
+      </button> -->
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Question</th>
+        <th scope="col">Answer</th>
+        <!-- <th scope="col">Created at</th>
+        <th scope="col">Updated at</th> -->
+        <th scope="col">User asked</th>
+        <!-- <th scope="col">State</th> -->
+
+        <!-- <th scope="col">Update</th> -->
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let question of helpQuestions; let x = index">
+        <th scope="row">{{ x + 1 }}</th>
+        <td>
+          {{ question.question }}
+        </td>
+        <td>
+          {{ question.answer }}
+        </td>
+        <!-- <td>{{ question.createdAt | date }}</td>
+        <td>{{ question.updatedAt | date }}</td> -->
+        <td>{{ question.userId.fullName }}</td>
+
+        <!-- <td>
+            <button
+              class="btn btn-sm btn-outline-secondary"
+              routerLink="/admin/users/{{ user._id }}"
+            >
+              View
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-sm btn-outline-success"
+              routerLink="/admin/edit-user/{{ user._id }}"
+            >
+              Update
+            </button>
+          </td> -->
+        <td>
+            <button
+              class="btn btn-sm btn-outline-danger"
+              (click)="deleteQuestion(question._id, x)"
+            >
+              Delete
+            </button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,1 +1,48 @@
-<p>get-all-cities works!</p>
+<div class="container">
+  <button
+    class="btn btn-lg btn-outline-secondary m-3"
+    routerLink="/admin/add-city"
+  >
+    Add City
+  </button>
+  <table class="table table-hover text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Cover</th>
+        <th scope="col">Name</th>
+        <th scope="col">Units Number</th>
+        <th scope="col">Delete</th>
+            <!-- <th scope="col">Delete</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let city of cities; let x = index">
+        <th scope="row">{{ x + 1 }}</th>
+        <td>
+          <img src=" {{ city.cover }}" style="height: 60px" />
+        </td>
+        <td>
+          {{ city.name }}
+        </td>
+        <td>{{ city.units.length }}</td>
+            <!-- <td>
+              <button
+                class="btn btn-sm btn-outline-success"
+                routerLink="/admin/edit-user/{{ user._id }}"
+              >
+                Update
+              </button>
+            </td> -->
+            <td>
+              <button
+                class="btn btn-sm btn-outline-danger"
+                (click)="deleteCity(city._id, x)"
+              >
+                Delete
+              </button>
+            </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

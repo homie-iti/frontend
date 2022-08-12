@@ -23,9 +23,9 @@ export class EditUserComponent implements OnInit {
     return this.updateUserForm.controls;
   }
 
-  log() {
-    console.log(this.updateUserForm.controls);
-  }
+  // log() {
+  //   console.log(this.updateUserForm.controls);
+  // }
 
   updateUser(data: any) {
     this.adminService

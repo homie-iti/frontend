@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { HomepageModule } from './../homepage/homepage.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +17,7 @@ import { ValuesComponent } from './values/values.component';
     ValuesComponent
   ],
   imports: [
-    CommonModule,RouterModule,AppRoutingModule,HomepageModule
+    CommonModule,RouterModule,AppRoutingModule,HomepageModule,FormsModule
   ], exports: [
     AboutCoverComponent
   ]

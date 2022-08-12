@@ -35,7 +35,7 @@ export class ForgetpasswordComponent implements OnInit {
         error: (error) => {
          if(error){
           console.log(error)
-          this. doesEmailHasError=true
+          this.doesEmailHasError=true
          } 
          
           

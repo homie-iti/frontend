@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HelpQuestions } from '../_models/help-questions';
 import { Unitreviews } from '../_models/unitreview';
 import { Units } from '../_models/units';
 
@@ -44,6 +45,13 @@ export class GetdataService {
     return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
   }
 
+  addQuestion(question: any) {
+    return this.http.post<HelpQuestions>(this.url + '/' + 'help-questions', question);
+  }
+
+  deletQuestion(endpoint: string) {
+    return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
+  }
   addUnit(unit: {}) {
     return this.http.post<any>('https://homie-iti.herokuapp.com/units', unit);
   }

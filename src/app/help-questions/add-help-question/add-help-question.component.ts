@@ -10,6 +10,7 @@ export class AddHelpQuestionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

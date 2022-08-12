@@ -1,93 +1,236 @@
-
-<div class=" d-felx justify-content-center align-items-center">
-
-
-  <div class="container   sign d-felx justify-content-center align-items-center p-5 pb-2">
-    <div class="form h-75">
+<div class="d-felx justify-content-center align-items-center">
+  <div
+    class="container sign d-felx justify-content-center align-items-center p-5 pb-2"
+  >
+    <div class="h-75">
       <h3 class="mb-5 text-dark-50">Personal Information</h3>
-      <form class="mb-5">
+
+      <form
+        class="mb-5"
+        [formGroup]="editUserForm"
+        (ngSubmit)="updateUser(editUserForm.value)"
+      >
         <div class="row">
-          <div class="form-group mb-5">
+          <div class="mb-5">
             <div class="user-image">
-
-              <img
-              src="https://i.ibb.co/VmnhzZv/default-user-icon.png"
-                height="140"
-              />
-
-              <a class="ps-4 text-success">Change Profile Image</a>
+              <img src="{{ user.image }}" height="140" class="rounded-4" />
+              <label>
+                <input
+                  type="file"
+                  (change)="onImageSelected($event)"
+                  name="image"
+                  style="display: none"
+                />
+                <a class="ps-4 text-success">Change Profile Image</a>
+              </label>
             </div>
           </div>
         </div>
         <div class="row col-lg-9">
-          <div class="col-md-6 form-group mb-5">
-            <label for="name" class="form-label">Name*</label>
-            <input type="text" class="form-control" name="name" id="name" placeholder="Enter your full name" />
+          <div class="col-md-6 mb-5">
+            <label for="name" class="form-label">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              formControlName="fullName"
+              placeholder="Enter your full name"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['fullName'].invalid"
+            >
+              <div
+                *ngIf="editUserForm.controls['fullName'].errors?.['required']"
+              >
+                fullName is required
+              </div>
+              <div
+                *ngIf="editUserForm.controls['fullName'].errors?.['minlength']"
+              >
+                fullName minlength is
+                {{editUserForm.controls['fullName'].errors?.['minlength'].requiredLength
+
+
+                }}... you entered
+                {{editUserForm.controls['fullName'].errors?.['minlength'].actualLength}}
+              </div>
+            </div>
           </div>
-          <div class="col-md-6 form-group mb-5">
-            <label for="" class="form-label">Email*</label>
-            <input type="text" class="form-control" name="email" id="email" placeholder="Enter your email" />
+          <div class="col-md-6 mb-5">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              formControlName="email"
+              placeholder="Enter your email"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['email'].invalid"
+            >
+              <div *ngIf="editUserForm.controls['email'].errors?.['required']">
+                email is required
+              </div>
+              <div *ngIf="editUserForm.controls['email'].errors?.['email']">
+                Please enter a valid email
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row col-lg-9">
+          <div class="col-md-6 mb-5">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input
+              type="text"
+              class="form-control"
+              id="phoneNumber"
+              formControlName="phone"
+              placeholder="Enter your phone number"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['phone'].invalid"
+            >
+              <div *ngIf="editUserForm.controls['phone'].errors?.['required']">
+                Phone Number is required
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-5">
+            <label for="age" class="form-label">Age</label>
+            <input
+              type="number"
+              class="form-control"
+              id="age"
+              formControlName="age"
+              placeholder="Enter your age"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['age'].invalid"
+            >
+              <div *ngIf="editUserForm.controls['age'].errors?.['required']">
+                age is required
+              </div>
+              <div *ngIf="editUserForm.controls['age'].errors?.['min']">
+                minimum age is
+                {{editUserForm.controls['age'].errors?.['min'].min}}
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="row col-lg-9">
-          <div class="col-md-6 form-group mb-5">
-            <label for="phoneNumber" class="form-label">Phone Number*</label>
-            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-              placeholder="Enter your phone number" />
-          </div>
-          <div class="col-md-6 form-group mb-5">
-            <label for="age" class="form-label">Age*</label>
-            <input type="text" class="form-control" name="age" id="age" placeholder="Enter your age" />
-          </div>
-        </div>
-
-        <div class="row col-lg-9">
-          <div class="col-md-12 form-group mb-5">
-            <label for="phoneNumber" class="form-label">National ID*</label>
-            <input type="text" class="form-control" name="phoneNumber" id="phoneNumber"
-              placeholder="Enter your national ID number" />
-          </div>
-        </div>
-
-        <div class="row d-felx align-items-center justify-content-center col-lg-9 mb-1 ps-2 ">
-          <label for="name" class=" style form-label ">Address*</label>
-        </div>
-        <div class="row col-lg-9">
-          <div class="col-md-4 form-group mb-5">
-            <label for="city" class="form-label">City*</label>
-            <input type="text" class="form-control" name="city" id="city" placeholder="City" />
-          </div>
-          <div class="col-md-4 form-group mb-5">
-            <label for="street" class="form-label">Street Name*</label>
-            <input type="text" class="form-control" name="street" id="street" placeholder="Street Name" />
-          </div>
-          <div class="col-md-4 form-group mb-5">
-            <label for="building" class="form-label">Building Number*</label>
-            <input type="text" class="form-control" name="building" id="building" placeholder="Building Number" />
+          <div class="col-md-12 mb-5">
+            <label for="balance" class="form-label">Balance</label>
+            <input
+              type="number"
+              class="form-control"
+              id="balance"
+              formControlName="balance"
+              placeholder="Enter your balance"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['balance'].invalid"
+            >
+              <div
+                *ngIf="editUserForm.controls['balance'].errors?.['required']"
+              >
+                Balance Number is required
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="row col-lg-9 mb-3 ps-2">
-          <label class="form-label">Gender*</label>
+        <!-- <div class="row d-felx align-items-center col-lg-9 mb-1">
+          <label for="name" class="form-label">Address</label>
         </div>
+        <div class="row col-lg-9" formGroupName="address">
+          <div class="col-md-4 mb-5">
+            <label for="city" class="form-label">City</label>
+            <input
+              type="text"
+              class="form-control"
+              id="city"
+              formControlName="city"
+              placeholder="City"
+            />
+          </div>
+          <div class="col-md-4 mb-5">
+            <label for="street" class="form-label">Street Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="street"
+              formControlName="streetName"
+              placeholder="Street Name"
+            />
+          </div>
+          <div class="col-md-4 mb-5">
+            <label for="building" class="form-label">Building Number</label>
+            <input
+              type="number"
+              class="form-control"
+              id="building"
+              formControlName="buildingNumber"
+              placeholder="Building Number"
+            />
+          </div>
+        </div> -->
+
         <div class="row col-lg-9">
-          <div class="form-check col-md-3 form-group mb-5">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
-            <label class="form-check-label" for="flexRadioDefault1">
-              Female
-            </label>
-          </div>
-          <div class="form-check col-md-3 form-group mb-5">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-            <label class="form-check-label" for="flexRadioDefault2">
-              Male
-            </label>
+          <div class="col-md-12 mb-5">
+            <label for="gender" class="form-label">Gender</label>
+            <input
+              type="text"
+              class="form-control"
+              id="gender"
+              formControlName="gender"
+              placeholder="Enter your gender"
+            />
+            <div
+              class="errors d-flex"
+              *ngIf="editUserForm.controls['gender'].invalid"
+            >
+              <div *ngIf="editUserForm.controls['gender'].errors?.['required']">
+                Gender is required
+              </div>
+            </div>
           </div>
         </div>
+        <div class="mb-3 pe-3 form-check-inline">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="isagent"
+            formControlName="isAgent"
+            (change)="changeAgent($event)"
+          />
+          <label class="form-check-label" for="isagent">&nbsp;isAgent</label>
+        </div>
+        <div class="mb-3 form-check-inline">
+          <input
+            type="checkbox"
+            class="form-check-input"
+            id="islandlord"
+            formControlName="isLandlord"
+            (change)="changeLandlord($event)"
+          />
+          <label class="form-check-label" for="isLandlord"
+            >&nbsp;isLandlord</label
+          >
+        </div>
+
         <div class="row">
           <div class="col-md-12 p-0 pt-3 form-group">
-            <input type="submit" value="Save Changes" class="btn btnStyle rounded-2 py-2 px-3 border-0" />
+            <input
+              type="submit"
+              value="Save Changes"
+              class="btn btnStyle rounded-2 py-2 px-3 border-0"
+            />
             <a class="text-danger float-end">Delete My Account</a>
           </div>
         </div>

@@ -7,7 +7,7 @@ import { User } from 'src/app/_models/user';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css'],
+  styleUrls: ['../../admin.component.css'],
 })
 export class AddUserComponent implements OnInit {
   constructor(private adminService: AdminService, private router: Router) {}

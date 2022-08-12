@@ -91,6 +91,10 @@ const routes: Routes = [
     component: NotfoundComponent,
   },
   {
+    path: 'edit-user/:id',
+    component: UserProfileComponent,
+  },
+  {
     path: 'balance',
     component: UserBalanceComponent,
   },

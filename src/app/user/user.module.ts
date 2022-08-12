@@ -33,13 +33,14 @@ import { UserBalanceComponent } from './user profile page/user-balance/user-bala
     LogoutComponent,
     ActivationPageComponent,
     UserBalanceComponent,
+    UserProfileComponent,
   ],
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   exports: [
     UserCardComponent,

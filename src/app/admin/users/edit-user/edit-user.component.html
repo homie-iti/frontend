@@ -1,9 +1,8 @@
-<div
-  class="container mt-5 col-4"
-  [formGroup]="updateUserForm"
-  (ngSubmit)="updateUser(updateUserForm.value)"
->
-  <form>
+<div class="container mt-5 col-4">
+  <form
+    [formGroup]="updateUserForm"
+    (ngSubmit)="updateUser(updateUserForm.value)"
+  >
     <div class="mb-3">
       <label for="name" class="form-label">FullName</label>
       <input
@@ -12,7 +11,6 @@
         id="name"
         placeholder="Enter your name"
         formControlName="fullName"
-        (change)="log()"
       />
       <div class="errors d-flex" *ngIf="userValues['fullName'].invalid">
         <div *ngIf="userValues['fullName'].errors?.['required']">

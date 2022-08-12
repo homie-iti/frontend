@@ -54,10 +54,15 @@
     </div>
   </div>
 
-  <div class="d-flex justify-content-evenly py-2">
-    <div>
-      <label for="text" class="form-label">CVV</label>
-      <input type="text" class="form-control" id="text" aria-describedby="textHelp" formControlName="text" />
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <label for="cvv" class="form-label">cvv</label>
+    <input
+      type="text"
+      class="form-control"
+      id="cvv"
+      aria-describedby="cvvHelp"
+      formControlName="cvv"
+    />
 
       <div id="securtiyCodeHelp" class="form-text text-danger"
         *ngIf="myform.controls.text.touched && myform.controls.text.invalid">
@@ -70,15 +75,27 @@
       </div>
     </div>
 
-    <div>
-      <label for="amount" class="form-label">amount</label>
-      <input type="text" class="form-control" id="amount" aria-describedby="amountHelp" formControlName="amount" />
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <label for="amount" class="form-label">amount</label>
+    <input
+      type="text"
+      class="form-control"
+      id="amount"
+      aria-describedby="amountHelp"
+      formControlName="amount"
+    />
 
-      <div id="amountHelp" class="form-text text-danger"
-        *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid">
-        <div *ngIf="myform.controls.amount.errors?.['required']">
-          Enter card text
-        </div>
+    <div
+      id="amountHelp"
+      class="form-text text-danger"
+      *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid"
+    >
+      <div *ngIf="myform.controls.amount.errors?.['required']">
+        Enter card text
+      </div>
+      <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
+        max length is 3
+>>>>>>> 31477e67a5438797248ab482a7d055e9c9f65d9b
       </div>
     </div>
   </div>

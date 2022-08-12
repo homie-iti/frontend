@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { UnitscrudModule } from './unitscrud/unitscrud.module';
-import { AdminModule } from './admin/admin.module';
+
 
 
 export function tokenGetter() {
@@ -33,7 +33,6 @@ export function tokenGetter() {
     SharedModule,
     UnitsModule,
     UserModule,
-    AdminModule,
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule.forRoot({

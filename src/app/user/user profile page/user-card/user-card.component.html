@@ -8,7 +8,9 @@
       <h5 class="card-title colorCon2">{{ userInfo.fullName }}</h5>
       <p class="card-text colorCon2">
         Cairo,Egypt<br />
-        <span class="text-warning">Last seen {{ userInfo.updatedAt }}</span>
+        <span class="text-warning"
+          >Last seen {{ userInfo.updatedAt | date }}</span
+        >
       </p>
     </div>
     <ul class="list-group list-group-flush text-start">
@@ -24,7 +26,7 @@
       </li>
       <li class="list-group-item border-0">
         <span class="fw-bold colorCon2">Member since:&nbsp;</span><br />{{
-          userInfo.createdAt
+          userInfo.createdAt | date
         }}
       </li>
       <li class="list-group-item border-0">

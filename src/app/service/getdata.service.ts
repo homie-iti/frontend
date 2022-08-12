@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Agent } from '../_models/agent';
 import { HelpQuestions } from '../_models/help-questions';
+import { Landlord } from '../_models/landlord';
 import { Unitreviews } from '../_models/unitreview';
 import { Units } from '../_models/units';
+import { User } from '../_models/user';
 
 @Injectable({
   providedIn: 'root',
@@ -46,7 +49,10 @@ export class GetdataService {
   }
 
   addQuestion(question: any) {
-    return this.http.post<HelpQuestions>(this.url + '/' + 'help-questions', question);
+    return this.http.post<HelpQuestions>(
+      this.url + '/' + 'help-questions',
+      question
+    );
   }
 
   deletQuestion(endpoint: string) {
@@ -77,8 +83,32 @@ export class GetdataService {
   addAmount(userId: any, balance: any) {
     return this.http.put<any>(
       `https://homie-iti.herokuapp.com/users/${userId}`,
-      {balance}
+      { balance }
     );
+  }
+
+  updateUserData(endpoint: string, id: string, user: User) {
+    return this.http.put<User>(this.url + endpoint + id, user);
+  }
+
+  updateUserImage(endpoint: string, id: string, image: any) {
+    return this.http.put<User>(this.url + endpoint + id, image);
+  }
+
+  addLandlord(endpoint: string, data: any) {
+    return this.http.post<Landlord>(this.url + endpoint, data);
+  }
+
+  deleteLandlord(endpoint: string, id: any) {
+    return this.http.delete<Landlord>(this.url + endpoint + id);
+  }
+
+  addAgent(endpoint: string, data: any) {
+    return this.http.post<any>(this.url + endpoint, data);
+  }
+
+  deleteAgent(endpoint: string, id: any) {
+    return this.http.delete<Agent>(this.url + endpoint + id);
   }
   constructor(private http: HttpClient) {}
 }

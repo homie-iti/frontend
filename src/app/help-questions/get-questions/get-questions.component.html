@@ -1,26 +1,27 @@
 
-<div class="help">
+<div class="help  ">
        <h1>Frequently Asked Questions</h1>
-       <div class="contanier">
-           <div class="row  ">
+       <div class="getHelp ms-5 my-5">
+       <div class="contanier  ">
+           <div class="row   ">
                   <div class="col-lg-10 col-md-10 col-sm-10">
                             
-                    <div class="accordion" id="accordionExample" *ngFor="let items of questions">
-                        <div class="accordion-item">
-                          <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              {{items.question}}
+                    <div class="accordion " id="accordionExample" *ngFor="let items of questions">
+                        <div class="accordion-item" *ngIf="items.userId">
+                          <h2 class="accordion-header" > 
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"  [attr.data-bs-target]="'#element'+items._id" aria-expanded="false" aria-controls="collapseOne">
+                              <img src={{items.userId.image}}> &nbsp; &nbsp; {{items.question}}
                             </button>
                           </h2>
-                          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div  [id]="'element'+items._id" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
-                                 {{items.answer}} {{items.userId}}
+                                 {{items.answer}} 
                                  
                             </div>
-                             <div>
+                             <!-- <div>
                                 {{items.userId.fullName}}
-                                <img src={{items.userId.image}}>
-                            </div>
+                              
+                            </div> -->
                           </div>
                         </div>
                   
@@ -30,7 +31,7 @@
 
            </div>
        </div>
-
+      </div>
 </div>
 
 

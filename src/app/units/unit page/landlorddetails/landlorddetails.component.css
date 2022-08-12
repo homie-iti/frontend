@@ -9,3 +9,21 @@
 .colorCon2 {
   color: var(--hover-font-color);
 }
+
+button{
+  background-color:var(--addresses-color);
+  margin: 5px;
+  color: antiquewhite;
+  border-color: antiquewhite;
+}
+button:hover{
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(124, 105, 57);
+}
+button:focus{
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(124, 105, 57);
+  box-shadow: 0 0px 5px 0 rgba(117, 100, 74, 0.2);
+}

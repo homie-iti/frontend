@@ -1,0 +1,30 @@
+img{
+    height: 400px;
+    
+}
+
+h1,h2{
+   color: rgb(158, 97, 4); 
+   font-family: 'Architects Daughter', cursive;
+
+}
+p{
+    color: rgba(131, 85, 1, 0.897);
+    font-family: 'Righteous', cursive;
+}
+
+
+.container404{
+text-align: center;
+font-family: 'Righteous', cursive;
+
+
+}
+
+a{
+background-color:rgba(104, 67, 0, 0.897);
+border: none ;
+color: white;
+margin-bottom: 40px;
+}
+

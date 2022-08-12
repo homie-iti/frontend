@@ -1,6 +1,6 @@
 .review {
   border-radius: 10px;
-  background-color: rgba(81, 50, 50, 0.514);
+  background-color: rgba(62, 60, 56, 0.276);
 }
 
 .agentReview {
@@ -11,4 +11,27 @@
 .agentReview:hover {
   box-shadow: 3px 3px 3px white;
   transition: all 1s;
+}
+
+button{
+  background-color:var(--addresses-color);
+  margin: 5px;
+  color: antiquewhite;
+  border-color: antiquewhite;
+}
+button:hover{
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(124, 105, 57);
+  border-color: antiquewhite;
+}
+button:focus{
+  background-color: transparent;
+  border-color: transparent;
+  color: rgb(124, 105, 57);
+  box-shadow: 0 0px 5px 0 rgba(117, 100, 74, 0.2);
+}
+textarea:focus{
+  border-color: transparent;
+  box-shadow: 0 0px 5px 0 rgba(117, 100, 74, 0.2);
 }

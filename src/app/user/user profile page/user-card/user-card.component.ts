@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-user-card',
   templateUrl: './user-card.component.html',
@@ -7,7 +8,19 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 })
 export class UserCardComponent implements OnInit {
   faCheck = faCheck;
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor( private user:AuthService) {}
+   userInfo:any
+   userId=this.user.getUser()?._id
+  ngOnInit(): void {
+
+      this.userInfo=this.user.getUser()
+
+      console.log(this.userInfo)
+      console.log(this.userId)
+
+    
+  
+
+  }
 }

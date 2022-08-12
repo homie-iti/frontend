@@ -1,0 +1,91 @@
+<form [formGroup]="myform" class="container main">
+  <div class="py-2">
+    <label for="name" class="form-label">name on Card</label>
+    <input type="text" class="form-control" id="name" aria-describedby="bathroomsHelp" formControlName="nameonCard" />
+
+    <div id="nameHelp" class="form-text text-danger" *ngIf="
+        myform.controls.nameonCard.touched && myform.controls.nameonCard.invalid
+      ">
+      <div *ngIf="myform.controls.nameonCard.errors?.['required']">
+        Enter card Name
+      </div>
+    </div>
+  </div>
+
+  <div class="py-2">
+    <label for="cardNumber" class="form-label">card Number</label>
+    <input type="number" min="0" class="form-control" id="bathrooms" aria-describedby="bathroomsHelp"
+      formControlName="cardNumber" />
+
+    <div id="cardNumberHelp" class="form-text text-danger" *ngIf="
+        myform.controls.cardNumber.touched && myform.controls.cardNumber.invalid
+      ">
+      <div *ngIf="myform.controls.cardNumber.errors?.['required']">
+        Enter card Number
+      </div>
+    </div>
+  </div>
+
+
+  <div class="d-flex justify-content-evenly py-2">
+    <div>
+      <label for="months" class="form-label">months</label>
+      <input type="number" class="form-control" id="months" aria-describedby="monthsHelp" formControlName="months" />
+
+      <div id="monthsHelp" class="form-text text-danger"
+        *ngIf="myform.controls.months.touched && myform.controls.months.invalid">
+        <div *ngIf="myform.controls.months.errors?.['required']">
+          Enter card months
+        </div>
+      </div>
+
+    </div>
+
+    <div>
+      <label for="years" class="form-label">Years</label>
+      <input type="number" class="form-control" id="years" aria-describedby="yearsHelp" formControlName="years" />
+
+      <div id="yearsHelp" class="form-text text-danger"
+        *ngIf="myform.controls.years.touched && myform.controls.years.invalid">
+        <div *ngIf="myform.controls.years.errors?.['required']">
+          Enter card years
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <label for="cvv" class="form-label">cvv</label>
+    <input type="text" class="form-control" id="cvv" aria-describedby="cvvHelp" formControlName="cvv" />
+
+    <div id="securtiyCodeHelp" class="form-text text-danger"
+      *ngIf="myform.controls.cvv.touched && myform.controls.cvv.invalid">
+      <div *ngIf="myform.controls.cvv.errors?.['required']">
+        Enter card text
+      </div>
+      <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
+        max length is 3
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <label for="amount" class="form-label">amount</label>
+    <input type="text" class="form-control" id="amount" aria-describedby="amountHelp" formControlName="amount" />
+
+    <div id="amountHelp" class="form-text text-danger"
+      *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid">
+      <div *ngIf="myform.controls.amount.errors?.['required']">
+        Enter card text
+      </div>
+      <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
+        max length is 3
+
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <button class="btn btn-primary my-3">Next</button>
+  </div>
+</form>

@@ -16,6 +16,8 @@ import { SignUpData } from '../_models/signUp/sign-up-data';
 export class AuthService {
   private authInfo: AuthInfo = { isLoggedIn: false };
 
+  jwtHelper: any;
+
   // private url: string = 'http://localhost:8080';
   private url: string = 'https://homie-iti.herokuapp.com';
 
@@ -61,9 +63,13 @@ export class AuthService {
     return this.authInfo;
   }
 
-  setUser(user: User) {
+  setUser(user: any) {
+    console.log(user);
+
     this.authInfo.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
   }
+
   getUser() {
     return this.authInfo.user;
   }
@@ -76,17 +82,30 @@ export class AuthService {
     return this.authInfo.token;
   }
   getDecodedToken(): { id: string; role: string; exp: number; iat: number } {
-    return this.jwtHelper.decodeToken(this.jwtHelper.tokenGetter());
+    return this.jwtHelper.decodeToken(this.getLocalStorageToken());
   }
 
-  removeToken() {
-    return localStorage.removeItem('token');
+  getLocalStorageToken() {
+    return localStorage.getItem('token');
+  }
+  removeLocalStorageToken() {
+    localStorage.removeItem('token');
+  }
+
+  getLocalStorageUser() {
+    return JSON.parse(localStorage.getItem('user') || '{}');
+  }
+  removeLocalStorageUser() {
+    localStorage.removeItem('user');
+  }
+
+  isExpired(token: string | null) {
+    return this.jwtHelper.isTokenExpired(token);
   }
 
   isLoggedIn() {
     return this.authInfo.isLoggedIn;
   }
-
   setLoggedIn(isLoggedIn: boolean) {
     this.authInfo.isLoggedIn = isLoggedIn;
     if (isLoggedIn) return;
@@ -96,7 +115,14 @@ export class AuthService {
 
   constructor(
     private http: HttpClient,
-    private router: Router,
-    private jwtHelper: JwtHelperService
-  ) {}
+    private router: Router // private jwtHelper: JwtHelperService
+  ) {
+    this.jwtHelper = new JwtHelperService();
+    const storedToken = this.getLocalStorageToken();
+    if (!this.isExpired(storedToken)) {
+      this.setToken(storedToken as string);
+      this.setLoggedIn(true);
+      this.setUser(this.getLocalStorageUser());
+    }
+  }
 }

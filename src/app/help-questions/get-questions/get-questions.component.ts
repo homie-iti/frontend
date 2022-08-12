@@ -14,9 +14,9 @@ export class GetQuestionsComponent implements OnInit {
 
   ngOnInit(): void {
     this.helpService.gethelpQuestions(`/help-questions`).subscribe((a) => {
-      this.questions = a.results;
+      this.questions = a.results; 
         // if ()
-      // console.log(a.results.userId);
+       console.log(a.results.userId);
       
       // console.log(a.questions[0].allowedGender);
       console.log(this.questions);

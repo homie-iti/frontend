@@ -28,7 +28,9 @@ export class GetdataService {
   getUnitDetails(endpoint: string) {
     return this.http.get<any>(this.url + endpoint);
   }
-
+  gethelpQuestions(endpoint: string) {
+    return this.http.get<any>(this.url + endpoint);
+  }
   getUserDetails(id: string) {
     return this.http.get<any>(this.url + `/users/` + id);
   }
@@ -73,22 +75,21 @@ export class GetdataService {
     return this.http.post<any>('https://homie-iti.herokuapp.com/units', unit);
   }
 
-  postFavorite(favorite: any) {
+  postFavorite(favorite: any, userId: any) {
     return this.http.post<any>(
-      'https://homie-iti.herokuapp.com/users/b6fd2b6c4d37aaddcb4abe2e/favorites',
+      this.url + '/users/' + userId + '/favorites/',
       favorite
     );
   }
-  deleteFavorite(id: any) {
+  deleteFavorite(id: any, userId: any) {
     return this.http.delete<any>(
-      'https://homie-iti.herokuapp.com/users/b6fd2b6c4d37aaddcb4abe2e/favorites/' +
-        id
+      this.url + '/users/' + userId + '/favorites/' + id
     );
   }
 
-  updateUnit(unit: {}) {
+  updateUnit(id:any,unit: {}) {
     return this.http.put<any>(
-      'https://homie-iti.herokuapp.com/units/c0ecfa717176997fb6b52e9c',
+      `https://homie-iti.herokuapp.com/units/${id}`,
       unit
     );
   }

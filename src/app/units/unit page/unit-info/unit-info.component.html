@@ -1,90 +1,90 @@
-<div>
-  <div class="container my-4">
+<div class=" style m-5 p-5">
+  <div class="container style2  my-4">
     <h2>Address </h2>
   </div>
-  <div class="d-flex flex-wrap justify-content-evenly">
+  <div class="d-flex  flex-wrap justify-content-evenly">
     <div class="d-flex">
-      <fa-icon [icon]="faBuilding" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faBuilding" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Building Number : {{unitAddress.buildingNumber}}
+      <div class="my-3 mx-3">
+       {{unitAddress.buildingNumber}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faRoad" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faRoad" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Street Name : {{unitAddress.streetName}}
+      <div class="my-3 mx-3">
+       {{unitAddress.streetName}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faCity" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faCity" class="py-1 my-1">
       </fa-icon>
-      <div class="my-5 mx-3">
-        City : {{unitAddress.city}}
+      <div class="my-3 mx-3">
+        {{unitAddress.city}}
       </div>
     </div>
   </div>
 
 
-  <div class="container my-4">
+  <div class="container style2 my-4">
     <h2>Unit Details</h2>
   </div>
   <div class="d-flex flex-wrap justify-content-evenly">
 
     <div class="d-flex">
-      <fa-icon [icon]="faFlorinSign" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faFlorinSign" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Floor Number : {{unitdetails.floor}}
+      <div class="my-3 mx-3">
+        {{unitdetails.floor}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faBath" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faBath" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Bathroom : {{unitdetails.bathrooms}}
+      <div class="my-3 mx-3">
+        {{unitdetails.bathrooms}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faPersonBooth" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faPersonBooth" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Rooms : {{unitdetails.rooms}}
+      <div class="my-3 mx-3">
+       {{unitdetails.rooms}}
       </div>
     </div>
   </div>
 
-  <div class="container my-4">
+  <div class="container style2 my-4">
     <h2>Amenities</h2>
   </div>
   <div class="d-flex flex-wrap justify-content-evenly">
 
     <div class="d-flex">
-      <fa-icon [icon]="faHouse" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faHouse" class="py-1 my-1">
       </fa-icon>
-      <div class="my-5 mx-3">
-        Estate Type : {{estateType}}
+      <div class="my-3 mx-3">
+     {{estateType}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faHouseCircleExclamation" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faHouseCircleExclamation" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Available : {{isAvailable?"Yes":"No"}}
+      <div class="my-3 mx-3">
+         {{isAvailable?"Yes":"No"}}
       </div>
     </div>
 
     <div class="d-flex">
-      <fa-icon [icon]="faPaw" class="py-1 my-1" style="font-size: 70px; color: rgb(254, 104, 104);">
+      <fa-icon [icon]="faPaw" class="py-1 my-1" >
       </fa-icon>
-      <div class="my-5 mx-3">
-        Pet Allow : {{isPetsAllowed?"Yes":"No"}}
+      <div class="my-3 mx-3">
+         {{isPetsAllowed?"Yes":"No"}}
       </div>
     </div>
   </div>

@@ -1,6 +1,18 @@
-<app-unit-gallery class="m-5"></app-unit-gallery>
+
+<app-unit-gallery></app-unit-gallery>
 <div class="d-flex flex-wrap justify-content-evenly my-5">
+
   <app-unit-description class="col-9 col-md-6 col-lg-6"></app-unit-description>
-  <app-landlorddetails></app-landlorddetails>
+  <div class="contanier">
+    <div class="row d-flex  flex-column justify-content-center  align-items-center ">
+     
+        <app-landlorddetails></app-landlorddetails>
+        
+      <button routerLink="/editUnit/{{id}}">Edit Unit</button>
+   
+      
+    </div>
+  </div>
+
 </div>
 <app-unit-review></app-unit-review>

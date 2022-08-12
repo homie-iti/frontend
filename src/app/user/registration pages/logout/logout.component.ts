@@ -13,7 +13,8 @@ export class LogoutComponent implements OnInit {
   logout(event: MouseEvent) {
     event.preventDefault();
     this.router.navigateByUrl('/login');
-    this.authService.removeToken();
+    this.authService.removeLocalStorageToken();
+    this.authService.setLoggedIn(false);
   }
 
   ngOnInit(): void {}

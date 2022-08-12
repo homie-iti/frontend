@@ -335,6 +335,7 @@
               middlename.invalid ||
               middlename.invalid ||
               password.invalid ||
+              confirmpassword.invalid ||
               emailAddress.invalid ||
               password.invalid ||
               phone.invalid ||
@@ -343,6 +344,11 @@
           >
             Sign Up
           </button>
+          <div *ngIf="isSingUpHasError">
+            <h2 class="form-text text-danger">
+              sign up has error, check inputs again
+            </h2>
+          </div>
         </div>
       </div>
     </form>

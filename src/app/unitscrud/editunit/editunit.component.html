@@ -1,11 +1,11 @@
 <!-- <div class="d-felx justify-content-center align-items-center"> -->
 <div class="container sign my-5">
-            <div class="row text-center"><h1>Update Unit</h1> </div>
+  <div class="row text-center"><h1>Update Unit</h1></div>
   <div class="row my-2">
     <div class="col-lg-12 col-sm-12">
-    <form [formGroup]="myform" *ngIf="this.myform">
-      <div formGroupName="unit">
-        <!-- <div class="col-xl-6">
+      <form [formGroup]="myform" *ngIf="this.myform">
+        <div formGroupName="unit">
+          <!-- <div class="col-xl-6">
             <label for="landlordid" class="form-label">LandLord Id</label>
             <input
               type="text"
@@ -26,129 +26,135 @@
               formControlName="cityId"
             />
           </div> -->
-      <div class="container my-2 ">
-        <div class="row my-2 d-felx justify-content-center align-items-center">
-        <!-- <div formGroupName="unitInfo "> -->
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="rooms" class="form-label">Rooms</label>
-            <input
-              type="number"
-              min="0"
-              class="form-control"
-              id="rooms"
-              aria-describedby="roomsHelp"
-              formControlName="rooms"
-            />
-          </div>
+          <div class="container my-2">
+            <div formGroupName="unitInfo">
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
+              >
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="rooms" class="form-label">Rooms</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="rooms"
+                    aria-describedby="roomsHelp"
+                    formControlName="rooms"
+                  />
+                </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="bathrooms" class="form-label">Bathrooms</label>
-            <input
-              type="number"
-              min="0"
-              class="form-control"
-              id="bathrooms"
-              aria-describedby="bathroomsHelp"
-              formControlName="bathrooms"
-            />
-          </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="bathrooms" class="form-label">Bathrooms</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="bathrooms"
+                    aria-describedby="bathroomsHelp"
+                    formControlName="bathrooms"
+                  />
+                </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="floor" class="form-label">Floor</label>
-            <input
-              type="number"
-              min="0"
-              class="form-control"
-              id="floor"
-              aria-describedby="floorHelp"
-              formControlName="floor"
-            />
-          </div>
-        </div>
-      <!-- </div> -->
-    
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="floor" class="form-label">Floor</label>
+                  <input
+                    type="number"
+                    min="0"
+                    class="form-control"
+                    id="floor"
+                    aria-describedby="floorHelp"
+                    formControlName="floor"
+                  />
+                </div>
+              </div>
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
+              >
+                <div class="col-xl-12">
+                  <label for="description" class="form-label"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    aria-describedby="descriptionHelp"
+                    formControlName="description"
+                  />
+                </div>
+              </div>
+            </div>
 
-    
-      <div class="row my-2 d-felx justify-content-center align-items-center">
-        <!-- <div formGroupName="address " > -->
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="city" class="form-label">city Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="city"
-              aria-describedby="cityHelp"
-              formControlName="city"
-            />
-          </div>
-       
+            <div formGroupName="address">
+              <div
+                class="row my-2 d-felx justify-content-center align-items-center"
+              >
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="city" class="form-label">city Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="city"
+                    aria-describedby="cityHelp"
+                    formControlName="city"
+                  />
+                </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="buildingNumber" class="form-label"
-              >Building Number</label
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="buildingNumber" class="form-label"
+                    >Building Number</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="buildingNumber"
+                    aria-describedby="buildingNumberHelp"
+                    formControlName="buildingNumber"
+                  />
+                </div>
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                  <label for="streetName" class="form-label">street Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="streetName"
+                    aria-describedby="streetNameHelp"
+                    formControlName="streetName"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
             >
-            <input
-              type="number"
-              class="form-control"
-              id="buildingNumber"
-              aria-describedby="buildingNumberHelp"
-              formControlName="buildingNumber"
-            />
-          </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <label for="dailyPrice" class="form-label"> Daily Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="dailyPrice"
+                  aria-describedby="dailyPriceHelp"
+                  formControlName="dailyPrice"
+                />
+              </div>
 
-          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-            <label for="streetName" class="form-label">street Name</label>
-            <input
-              type="text"
-              class="form-control"
-              id="streetName"
-              aria-describedby="streetNameHelp"
-              formControlName="streetName"
-            />
-          </div>
-        </div>
-           <!-- </div> -->
-        
-        
-         
-            <div class="row my-2 d-felx justify-content-center align-items-center">
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-          <label for="dailyPrice" class="form-label"> Daily Price</label>
-          <input
-            type="number"
-            class="form-control"
-            id="dailyPrice"
-            aria-describedby="dailyPriceHelp"
-            formControlName="dailyPrice"
-          />
-        </div>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                <label for="Residents" class="form-label"
+                  >Number Of Residents</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Residents"
+                  aria-describedby="ResidentsHelp"
+                  formControlName="numberOfResidents"
+                />
+              </div>
+            </div>
 
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-          <label for="Residents" class="form-label">Number Of Residents</label>
-          <input
-            type="number"
-            class="form-control"
-            id="Residents"
-            aria-describedby="ResidentsHelp"
-            formControlName="numberOfResidents"
-          />
-        </div>
-      </div>
-   
-      <div class="row my-2 d-felx justify-content-center align-items-center">
-        <div class="col-xl-12">
-          <label for="description" class="form-label">Description</label>
-          <input
-            type="text"
-            class="form-control"
-            id="description"
-            aria-describedby="descriptionHelp"
-            formControlName="description"
-          />
-        </div>
-      </div>
-     
-        <!-- <p>Allowed Gender</p>
+            <!-- <p>Allowed Gender</p>
         <div class="form-check">
           <input
             class="form-check-input"
@@ -169,95 +175,101 @@
           />
           <label class="form-check-label" for="female"> Female </label>
         </div> -->
-        <hr>
-        <div class="row my-2 d-felx justify-content-center align-items-center">
-  <div class="col-lg-6 col-sm-12">
-        <p>check Availablity</p>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-            formControlName="isAvailable"
-          />
-          <label class="form-check-label" for="flexCheckDefault">
-            is Available ?
-          </label>
-        </div>
-      </div>
-        
-      <div class="col-lg-6 col-sm-12">
+            <hr />
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
+            >
+              <div class="col-lg-6 col-sm-12">
+                <p>check Availablity</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                    formControlName="isAvailable"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    is Available ?
+                  </label>
+                </div>
+              </div>
 
-        <p>check pets allowence</p>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            value=""
-            id="flexCheckDefault"
-            formControlName="isPetsAllowed"
-          />
-          <label class="form-check-label" for="flexCheckDefault">
-            is Pets Allowed?
-          </label>
+              <div class="col-lg-6 col-sm-12">
+                <p>check pets allowence</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id="flexCheckDefault"
+                    formControlName="isPetsAllowed"
+                  />
+                  <label class="form-check-label" for="flexCheckDefault">
+                    is Pets Allowed?
+                  </label>
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div
+              class="row my-2 d-felx justify-content-center align-items-center"
+            >
+              <div class="col-lg-12">
+                <p>estate Type</p>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="stuido"
+                    value="studio"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="studio"> studio </label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="sharedroom"
+                    value="shared-room"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="sharedroom">
+                    shared room</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="singleroom"
+                    value="single-room"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="singleroom">
+                    single room</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    id="apartment"
+                    value="apartment"
+                    formControlName="estateType"
+                  />
+                  <label class="form-check-label" for="apartment"
+                    >Apartment
+                  </label>
+                </div>
+              </div>
+            </div>
+            <button class="btn my-2" (click)="save()">Update</button>
+          </div>
         </div>
-        </div>
-        </div>
-      <hr>
-        <div class="row my-2 d-felx justify-content-center align-items-center">
-          <div class="col-lg-12">
-        <p>estate Type</p>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="stuido"
-            value="studio"
-            formControlName="estateType"
-          />
-          <label class="form-check-label" for="studio"> studio </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="sharedroom"
-            value="shared-room"
-            formControlName="estateType"
-          />
-          <label class="form-check-label" for="sharedroom"> shared room</label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="singleroom"
-            value="single-room"
-            formControlName="estateType"
-          />
-          <label class="form-check-label" for="singleroom"> single room</label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            id="apartment"
-            value="apartment"
-            formControlName="estateType"
-          />
-          <label class="form-check-label" for="apartment">Apartment </label>
-        </div>
-        </div>
-
-    
-      </div>
-      <button class="btn my-2 " (click)="save()">Update</button>
-      </div>
+      </form>
     </div>
-    </form>
- 
   </div>
-</div>
 </div>
 <!-- </div> -->

@@ -1,7 +1,9 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { faStar, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/service/auth.service';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { AuthInfo } from 'src/app/_models/auth';
 import { Unitreviews } from 'src/app/_models/unitreview';
 
 @Component({
@@ -14,21 +16,21 @@ export class UnitReviewComponent implements OnInit {
   unitid: any;
   agentId: any;
   unitrev: any;
+  authInfo!: AuthInfo;
 
   constructor(
+    private auth: AuthService,
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
+
+  userId = this.auth.getUser()?._id;
+
   id: any = this.activate.snapshot.params['id'];
   unitComment: any;
   commentdetails: any;
 
-  comment: Unitreviews = new Unitreviews(
-    'b6fd2b6c4d37aaddcb4abe2e',
-    this.id,
-    0,
-    ''
-  );
+  comment: Unitreviews = new Unitreviews(this.userId, this.id, 1, '');
 
   addComment(review: any) {
     console.log(review.value);
@@ -62,6 +64,8 @@ export class UnitReviewComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    console.log(this.userId);
     this.getAllComments();
+    this.authInfo = this.auth.getAuthInfo();
   }
 }

@@ -15,10 +15,11 @@ export class RatingComponent implements OnInit {
   sum: any;
   result = 0;
   average: any;
+  fixedAverage: any;
 
   constructor(
     private activate: ActivatedRoute,
-    private unitser: GetdataService
+    private unitSer: GetdataService
   ) {}
 
   id: any = this.activate.snapshot.params['id'];
@@ -28,13 +29,17 @@ export class RatingComponent implements OnInit {
     this.sum = this.rate.forEach((i) => {
       this.result += i;
     });
-    console.log(this.result);
-    this.average = this.result / length;
-    console.log(this.average);
+    if (length === 0) {
+      this.average = 0;
+    } else {
+      this.average = this.result / length;
+      this.fixedAverage = this.average.toFixed(1);
+      console.log(this.fixedAverage);
+    }
   }
 
-  getrating() {
-    this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
+  getRating() {
+    this.unitSer.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.rate = a.reviews.ratings;
       this.getAvr();
       console.log(this.average);
@@ -42,6 +47,6 @@ export class RatingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getrating();
+    this.getRating();
   }
 }

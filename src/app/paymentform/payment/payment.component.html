@@ -54,7 +54,7 @@
       <div id="securtiyCodeHelp" class="form-text text-danger"
         *ngIf="myform.controls.cvv.touched && myform.controls.cvv.invalid">
         <div *ngIf="myform.controls.cvv.errors?.['required']">
-          Enter card text
+          Enter card Cvv
         </div>
         <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
           max length is 3
@@ -68,7 +68,7 @@
       <div id="amountHelp" class="form-text text-danger"
         *ngIf="myform.controls.amount.touched && myform.controls.amount.invalid">
         <div *ngIf="myform.controls.amount.errors?.['required']">
-          Enter card text
+          Enter amount
         </div>
         <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
           max length is 3

@@ -70,31 +70,24 @@ a:hover {
   width: 50%;
   color: var(--main-font-color);
 }
-
+.card:hover .overlay {
+  opacity: 1;
+}
 
 .overlay {
-  background-color: rgba(34, 33, 33, 0.379);
+  /* background-color: rgba(20, 20, 20, 0.228); */
   /* text-align: center; */
-  transition: all 0.2s 0.1s ease-in;
+  /* transition: all 0.2s 0.1s ease-in; */
   bottom: 23.22vh;
   border-radius: 3px;
   opacity: 0;
-  top: 0;
-  right: 0;
-  left:0;
+  top: 5px;
+  right: 5px;
   font-size: 30px;
   cursor: pointer;
   color: rgba(243, 237, 237, 0.811);
 }
-.card:hover .overlay {
-  opacity: 1;
-}
-.social-iner{
-  position: absolute;
-  right:0;
-  top:3;
- 
-}
+
 fa-icon.active {
   color: rgb(179, 38, 38);
 }

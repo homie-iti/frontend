@@ -17,16 +17,16 @@ export class UserProfileComponent implements OnInit {
   ) {}
 
   id: string = this.route.snapshot.params['id'];
-  user: User = { _id: '' };
-  updateUserForm!: FormGroup;
+  user: User = {};
+  editUserForm!: FormGroup;
   file: any;
 
-  get userValues() {
-    return this.updateUserForm.controls;
-  }
+  // get userValues() {
+  //   return this.editUserForm.controls;
+  // }
 
   log() {
-    console.log(this.updateUserForm.controls);
+    console.log(this.editUserForm.controls);
   }
 
   updateUser(data: any) {
@@ -35,7 +35,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe((data) => {
         this.updateUserImage();
         console.log(data);
-        this.router.navigateByUrl(`/users/245da67a8f05b55aa6f20c73`);
+        this.router.navigateByUrl(`/users/${this.id}`);
       });
   }
 
@@ -55,7 +55,7 @@ export class UserProfileComponent implements OnInit {
         });
     }
   }
- 
+
   landlordUnits: [] = [];
   _id = this.id;
   landlordData = { _id: this._id, landlordUnits: this.landlordUnits };
@@ -81,17 +81,13 @@ export class UserProfileComponent implements OnInit {
   changeAgent(event: any) {
     console.log(event.target.checked);
     if (event.target.checked == true) {
-      this.userService
-        .addAgent('/agents', this.agentData)
-        .subscribe((data) => {
-          console.log(data);
-        });
+      this.userService.addAgent('/agents', this.agentData).subscribe((data) => {
+        console.log(data);
+      });
     } else if (event.target.checked == false) {
-      this.userService
-        .deleteLandlord('/agents/', this.id)
-        .subscribe((data) => {
-          console.log(data);
-        });
+      this.userService.deleteLandlord('/agents/', this.id).subscribe((data) => {
+        console.log(data);
+      });
     }
   }
 
@@ -99,7 +95,7 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserDetails(this.id).subscribe((userData) => {
       console.log(userData);
       this.user = userData;
-      this.updateUserForm = new FormGroup({
+      this.editUserForm = new FormGroup({
         fullName: new FormControl(userData.fullName, [
           Validators.required,
           Validators.minLength(3),

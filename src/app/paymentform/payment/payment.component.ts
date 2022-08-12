@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { GetdataService } from 'src/app/service/getdata.service';
 
@@ -14,7 +15,11 @@ import { GetdataService } from 'src/app/service/getdata.service';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
-  constructor(private auth: AuthService, private unitser: GetdataService) {}
+  constructor(
+    private auth: AuthService,
+    private unitser: GetdataService,
+    private router: Router
+  ) {}
 
   myform = new FormGroup({
     cardNumber: new FormControl(null, Validators.required),
@@ -45,6 +50,7 @@ export class PaymentComponent implements OnInit {
           ...this.user,
           balance: this.userBalance + this.myform.controls['amount'].value,
         });
+        this.router.navigateByUrl('/balance');
       });
   }
 

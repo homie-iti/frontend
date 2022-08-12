@@ -30,15 +30,12 @@
   <div class="d-flex flex-wrap" *ngFor="let item of favoriteUnit">>
     <div class="card overflow-hidden position-relative m-3 col-9 col-sm-9 col-lg-3 col-md-5" *ngFor="let i of item.favoriteUnits
     ">
-      <div>
+     
+    
         <img src="{{ i.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
-          style="position: relative" />
-
-      </div>
-      <div class="overlay position-absolute">
+         />
+          <div class="overlay position-absolute">
         <fa-icon [icon]="faHeart" class="faIcon" style="color: rgb(87, 28, 28);" (click)="onClick(i._id)"> </fa-icon>
-
-
       </div>
 
       <div class="card-body">

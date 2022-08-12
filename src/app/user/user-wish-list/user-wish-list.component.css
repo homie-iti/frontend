@@ -46,7 +46,7 @@ fa-icon {
 }
 
 .card {
-  width: 20rem;
+  /* width: 20rem; */
 
   background-color: rgba(155, 134, 109, 0.4);
   transition: all 0.5s 0.3s ease-in-out;
@@ -71,14 +71,12 @@ a:hover {
   width: 50%;
   color: var(--main-font-color);
 }
-.card:hover .overlay {
-  opacity: 1;
-}
+
 
 .overlay {
-  /* background-color: rgba(20, 20, 20, 0.228); */
+  background-color: rgba(49, 49, 49, 0.493);
   /* text-align: center; */
-  /* transition: all 0.2s 0.1s ease-in; */
+  transition: all 0.2s 0.1s ease-in;
   bottom: 23.22vh;
   border-radius: 3px;
   opacity: 0;
@@ -87,6 +85,11 @@ a:hover {
   font-size: 30px;
   cursor: pointer;
   color: rgba(243, 237, 237, 0.811);
+}
+
+.card:hover .overlay {
+  opacity: 1;
+
 }
 
 fa-icon.active {

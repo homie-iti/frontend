@@ -110,5 +110,20 @@ export class GetdataService {
   deleteAgent(endpoint: string, id: any) {
     return this.http.delete<Agent>(this.url + endpoint + id);
   }
+
+  forgetPassword( email: {}) {
+    return this.http.put<any>(
+      `https://homie-iti.herokuapp.com/forgetPassword`,
+      email
+    );
+  }
+
+
+  resetPassword( password: {}) {
+    return this.http.put<any>(
+      `https://homie-iti.herokuapp.com/resetPassword`,
+      password
+    );
+  }
   constructor(private http: HttpClient) {}
 }

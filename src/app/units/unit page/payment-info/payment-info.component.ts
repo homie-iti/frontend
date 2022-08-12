@@ -14,7 +14,7 @@ export class PaymentInfoComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
-    private authService: AuthService
+    public authService: AuthService
   ) {}
 
   chosenDate!: { startDate: Dayjs; endDate: Dayjs };

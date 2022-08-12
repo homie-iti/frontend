@@ -1,4 +1,4 @@
-<div class="card text-center m-4 card-outline">
+<div class="card text-center m-4 card-outline" *ngIf="authService.isLoggedIn()">
   <div *ngIf="!isLoading && isAvailable" class="card-body">
     <p>Renting Info</p>
     <div *ngIf="unitAvailable">

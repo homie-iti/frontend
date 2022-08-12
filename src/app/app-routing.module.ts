@@ -69,6 +69,10 @@ const routes: Routes = [
     path: 'editUnit',
     component: EditunitComponent,
   },
+  {
+    path: 'edit-user/:id',
+    component: UserProfileComponent,
+  },
 
   {
     path: 'admin',

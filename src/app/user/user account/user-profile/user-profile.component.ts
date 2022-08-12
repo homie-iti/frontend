@@ -35,7 +35,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe((data) => {
         this.updateUserImage();
         console.log(data);
-        this.router.navigateByUrl(`/users/${this.id}`);
+        this.router.navigateByUrl("/profile-example");
       });
   }
 

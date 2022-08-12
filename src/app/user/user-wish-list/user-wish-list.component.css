@@ -74,19 +74,30 @@ a:hover {
 
 
 .overlay {
-  background-color: rgba(49, 49, 49, 0.493);
+  background-color: rgba(34, 33, 33, 0.379);
   /* text-align: center; */
   transition: all 0.2s 0.1s ease-in;
   bottom: 23.22vh;
   border-radius: 3px;
   opacity: 0;
-  top: 5px;
-  right: 5px;
+  top: 0;
+  right: 0;
+  left:0;
   font-size: 30px;
   cursor: pointer;
   color: rgba(243, 237, 237, 0.811);
 }
 
+.social-iner {
+  position: absolute;
+  right: 2px;
+  top:3px;
+ 
+}
+/* fa-icon{
+  
+ 
+} */
 .card:hover .overlay {
   opacity: 1;
 

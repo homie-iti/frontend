@@ -43,15 +43,22 @@ export class PaymentComponent implements OnInit {
         this.userId,
         this.userBalance + this.myform.controls['amount'].value
       )
-      .subscribe((a) => {
-        console.log(this.userId);
-        console.log(a);
-        this.auth.setUser({
-          ...this.user,
-          balance: this.userBalance + this.myform.controls['amount'].value,
-        });
-        this.router.navigateByUrl('/balance');
-      });
+      .subscribe(
+        (a) => {
+          console.log(this.userId);
+          console.log(a);
+          this.auth.setUser({
+            ...this.user,
+            balance: this.userBalance + this.myform.controls['amount'].value,
+          });
+          this.router.navigateByUrl('/balance');
+        },
+        (error) => {
+          if (error) {
+            this.router.navigateByUrl('/notfound');
+          }
+        }
+      );
   }
 
   ngOnInit(): void {}

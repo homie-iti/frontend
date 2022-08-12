@@ -22,3 +22,18 @@ p {
   text-align: center;
   font-size: larger;
 }
+
+button {
+  background-color: var(--addresses-color);
+  border-radius: 10px;
+}
+
+.btnStyle {
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnStyle:hover {
+  color: rgb(249, 242, 223);
+  color: var(--main-font-color);
+  background-color: var(--main-background-color);
+}

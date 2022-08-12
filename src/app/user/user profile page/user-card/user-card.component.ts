@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/service/auth.service';
 @Component({
   selector: 'app-user-card',
@@ -8,6 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class UserCardComponent implements OnInit, OnChanges {
   faCheck = faCheck;
+  faPlus = faPlus;
 
   constructor(private user: AuthService) {}
   ngOnChanges(changes: SimpleChanges): void {

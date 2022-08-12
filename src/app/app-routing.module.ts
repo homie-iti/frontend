@@ -58,7 +58,7 @@ const routes: Routes = [
     component: ContactUsComponent,
   },
   {
-    path: 'help-question',
+    path: 'help-questions',
     component: HelpQuestionsComponent,
   },
   {

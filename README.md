@@ -55,7 +55,12 @@ A unit can be a whole apartment or just a room and you can filter the units to m
       - payment form module : contain the way to payment get way in Homie website
         - payment components:
           - payment 
-      
+      - help-question module :
+        - help-question components:
+          - get all help question 
+          - add help question
+          - edit help question
+          - delete help question 
       - shared module : contain shared  
       - units module : contain all units page & unit page & unit listing
         - units components:
@@ -102,6 +107,43 @@ A unit can be a whole apartment or just a room and you can filter the units to m
 
 
 
+## Screen shot
+- home page ==>
+![home page](https://i.postimg.cc/28Pq4jd6/Whats-App-Image-2022-08-12-at-5-15-51-PM.jpg)
+-
+- all units ==>
+![all units](https://i.postimg.cc/t4TrV55y/Whats-App-Image-2022-08-12-at-5-17-46-PM.jpg)
+-
+- one unit ==>
+![one  unit](https://i.postimg.cc/13rqsh63/Whats-App-Image-2022-08-12-at-5-28-37-PM.jpg)
+-
+- Sign Up ==>
+![Sign up ](https://i.postimg.cc/2yWPBxF2/Whats-App-Image-2022-08-12-at-5-33-31-PM.jpg)
+-
+- login ==>
+![login](https://i.postimg.cc/wTZQrpzy/Whats-App-Image-2022-08-12-at-5-34-16-PM.jpg)
+-
+-  contact us ==>
+![ contact us](https://i.postimg.cc/q7HKycVg/Whats-App-Image-2022-08-12-at-5-43-46-PM.jpg)
+-
+-  about us ==>
+![about us ](https://i.postimg.cc/VL4Xy0CV/Whats-App-Image-2022-08-12-at-5-41-57-PM.jpg)
+-
+- help question ==>
+![help question](https://i.postimg.cc/P5SxrmXB/Whats-App-Image-2022-08-12-at-5-42-13-PM-1.jpg)
+
+## Features
+
+- filter units by ==>  gender type , estate type , price range , pets allowed
+- search => cityName and find units in them 
+- user => can be (landlord or agent)
+- Admin :
+   - user ==> add , delete , update ,get all 
+   - unit ==> add ,delete , update , get all 
+   - city ==> add , delete , update , get all
+   - review ==> add ,delete , update , get all
+   - contract ==> add , delete , update , get all
+   - help question ==> add ,delete , update , get all
 
 
 
@@ -132,3 +174,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+

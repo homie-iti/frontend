@@ -1,37 +1,47 @@
 <div class="container colorContetnt my-5">
   <div class="card text-center m-4 card-outline">
     <div class="text-center pt-4">
-      <img src="https://i.ibb.co/VmnhzZv/default-user-icon.png" width="120" />
+      <img
+        [src]="
+          userInfo.image[0] === 'h'
+            ? userInfo.image
+            : 'https://homie-iti.herokuapp.com/' +
+              userInfo.image.split('/').slice(1).join('/')
+        "
+        width="120"
+      />
     </div>
 
     <div class="card-body">
       <h5 class="card-title colorCon2">{{ userInfo.fullName }}</h5>
       <p class="card-text colorCon2">
         Cairo,Egypt<br />
-        <span class="text-warning">Last seen {{ userInfo.updatedAt | date }}</span>
+        <span class="text-warning"
+          >Last seen {{ userInfo.updatedAt | date }}</span
+        >
       </p>
     </div>
     <ul class="list-group list-group-flush text-start">
       <li class="list-group-item border-0">
         <span class="fw-bold colorCon2">Gender:&nbsp;</span><br />{{
-        userInfo.gender
+          userInfo.gender
         }}
       </li>
       <li class="list-group-item border-0">
         <span class="fw-bold colorCon2">Age:&nbsp;</span><br />{{
-        userInfo.age
+          userInfo.age
         }}
       </li>
       <li class="list-group-item border-0">
         <span class="fw-bold colorCon2">Member since:&nbsp;</span><br />{{
-        userInfo.createdAt | date
+          userInfo.createdAt | date
         }}
       </li>
       <li class="list-group-item border-0">
         <span class="fw-bold colorCon2">Charge:&nbsp;</span><br />{{
-        userInfo.balance
+          userInfo.balance
         }}
-        <button class="btn" style="border: none;">
+        <button class="btn" style="border: none">
           <fa-icon [icon]="faPlus" routerLink="/payment"></fa-icon>
         </button>
       </li>
@@ -41,12 +51,15 @@
       </li>
     </ul>
     <div class="card-body text-center">
-      <a href="#" class="card-link text-warning py-1">Contact with this user</a><br />
+      <a href="#" class="card-link text-warning py-1">Contact with this user</a
+      ><br />
       <a href="#" class="card-link text-warning">Report this user</a>
     </div>
   </div>
-  <div class="col-lg-8 col-sm-3 ms-5 colorContetnt btn btn-outline-secondary fw-bold"
-    routerLink="/edit-user/{{ userInfo._id }}">
+  <div
+    class="col-lg-8 col-sm-3 ms-5 colorContetnt btn btn-outline-secondary fw-bold"
+    routerLink="/edit-user/{{ userInfo._id }}"
+  >
     Update your profile
   </div>
 </div>

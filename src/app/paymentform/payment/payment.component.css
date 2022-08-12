@@ -20,6 +20,21 @@ input[type="number"] {
   background-color: var(--section-color);
   text-transform: capitalize;
 }
+
+button {
+  background-color: var(--addresses-color);
+}
+
+.btnStyle {
+  font-size: 20px;
+  font-weight: bold;
+}
+.btnStyle:hover {
+  color: rgb(249, 242, 223);
+  color: var(--main-font-color);
+  background-color: var(--main-background-color);
+}
+
 /*
 .main > div > input {
   margin-left: 3em;

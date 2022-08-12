@@ -35,4 +35,7 @@ img{
   .accordion-item{
     background-color: rgba(255, 255, 255, 0.235) !important;
   }
+  .accordion-body{
+    width:777.662px;
+  }
  

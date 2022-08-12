@@ -60,10 +60,16 @@ export class GetdataService {
     );
   }
 
-  updateUnit(id:any,unit: {}) {
+  updateUnit(id: any, unit: {}) {
     return this.http.put<any>(
       `https://homie-iti.herokuapp.com/units/${id}`,
       unit
+    );
+  }
+  addAmount(userId: any, balance: any) {
+    return this.http.put<any>(
+      `https://homie-iti.herokuapp.com/users/${userId}`,
+      {balance}
     );
   }
   constructor(private http: HttpClient) {}

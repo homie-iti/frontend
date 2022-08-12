@@ -18,6 +18,7 @@ import { EditunitComponent } from './unitscrud/editunit/editunit.component';
 import { ActivationPageComponent } from './user/registration pages/activation-page/activation-page.component';
 import { NotfoundComponent } from './notfound/notfound/notfound.component';
 import { PaymentComponent } from './paymentform/payment/payment.component';
+import { UserBalanceComponent } from './user/user profile page/user-balance/user-balance.component';
 
 const routes: Routes = [
   {
@@ -89,7 +90,10 @@ const routes: Routes = [
     path: 'notFound',
     component: NotfoundComponent,
   },
-
+  {
+    path: 'balance',
+    component: UserBalanceComponent,
+  },
   {
     path: 'admin',
     loadChildren: () =>

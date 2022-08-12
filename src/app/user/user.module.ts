@@ -16,6 +16,7 @@ import { NewpasswordComponent } from './registration pages/newpassword/newpasswo
 import { AppRoutingModule } from '../app-routing.module';
 import { LogoutComponent } from './registration pages/logout/logout.component';
 import { ActivationPageComponent } from './registration pages/activation-page/activation-page.component';
+import { UserBalanceComponent } from './user profile page/user-balance/user-balance.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ActivationPageComponent } from './registration pages/activation-page/ac
     NewpasswordComponent,
     LogoutComponent,
     ActivationPageComponent,
+    UserBalanceComponent,
   ],
   imports: [
     CommonModule,

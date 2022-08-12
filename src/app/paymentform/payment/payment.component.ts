@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { AuthService } from 'src/app/service/auth.service';
+import { GetdataService } from 'src/app/service/getdata.service';
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +14,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./payment.component.css'],
 })
 export class PaymentComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private unitser: GetdataService) {}
 
   myform = new FormGroup({
     cardNumber: new FormControl(null, Validators.required),
@@ -26,12 +27,26 @@ export class PaymentComponent implements OnInit {
     amount: new FormControl(null, Validators.required),
   });
 
-  userBalance = this.auth.getUser().balance;
-  addAmount(amount: any) {
-    console.log(amount.value);
+  user = this.auth.getUser();
+  userId = this.auth.getUser()?._id;
+  userBalance = this.auth.getUser()?.balance;
+  addAmount() {
+    console.log(this.myform.controls['amount'].value);
+
+    this.unitser
+      .addAmount(
+        this.userId,
+        this.userBalance + this.myform.controls['amount'].value
+      )
+      .subscribe((a) => {
+        console.log(this.userId);
+        console.log(a);
+        this.auth.setUser({
+          ...this.user,
+          balance: this.userBalance + this.myform.controls['amount'].value,
+        });
+      });
   }
 
-  ngOnInit(): void {
-    // console.log(this.userBalance);
-  }
+  ngOnInit(): void {}
 }

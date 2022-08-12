@@ -29,6 +29,7 @@ import { LogoutComponent } from './registration pages/logout/logout.component';
     ForgetpasswordComponent,
     NewpasswordComponent,
     LogoutComponent,
+    UserProfileComponent,
   ],
   imports: [
     CommonModule,

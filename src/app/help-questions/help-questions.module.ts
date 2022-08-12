@@ -20,7 +20,8 @@ import { AddHelpQuestionComponent } from './add-help-question/add-help-question.
   ],
   exports: [
     HelpQuestionsComponent,
-    GetQuestionsComponent
+    GetQuestionsComponent,
+    AddHelpQuestionComponent
   ]
 })
 export class HelpQuestionsModule { }

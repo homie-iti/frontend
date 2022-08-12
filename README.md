@@ -1,10 +1,11 @@
 
+
 # Homie 
 
-Homie is an online rental accommodation platform for young professionals and international students who came to Egypt looking for apartment.
-We allow users to rent a unit as agents and they are also allowed to rent their units as landlords.
+Angular frontend for HOMIE: an online rental accommodation platform for young professionals and international students who came to Egypt looking for apartment. We allow users to rent a unit as agents and they are also allowed to rent their units as landlords. A unit can be a whole apartment or just a room and you can filter the units to match what you want in a very specific way.
+This repository is a part of our ITI graduation project. We are interns in the MEARN track and our project is built using Angular, MongoDB, Express and NodeJS. You can find all project repos here.
 
-A unit can be a whole apartment or just a room and you can filter the units to match what you want in a very specific way.
+
 
 ## Source Code Organization
 - *src*: root of the source code
@@ -107,6 +108,38 @@ A unit can be a whole apartment or just a room and you can filter the units to m
 
 
 
+## Prerequisites
+
+- angular v4 or higher.
+- npm v6 or higher.
+- bootstrap v5 or higher.
+- fontAwosome.
+- NgxPaginationModule.
+- NgxSpinnerModule
+
+## Instructions
+- Clone the project
+  
+  ```bash
+   git clonehttps://github.com/homie-iti/frontend.git
+```
+
+
+- Go to the project directory
+
+ ```bash
+   cd frontend
+```
+
+
+- Install dependencies
+
+ ```bash
+    npm install
+```
+
+  
+
 ## Screen shot
 - home page ==>
 ![home page](https://i.postimg.cc/28Pq4jd6/Whats-App-Image-2022-08-12-at-5-15-51-PM.jpg)
@@ -150,7 +183,6 @@ A unit can be a whole apartment or just a room and you can filter the units to m
 - favorite list for every user
 
 
-
 ## Color Reference
 
 | Color             | Hex                                                                |
@@ -163,6 +195,25 @@ A unit can be a whole apartment or just a room and you can filter the units to m
 |   --color-search | ![rgb(225, 216, 205)](https://via.placeholder.com/10/e1d8cd?text=+) rgb(225, 216, 205) |
 |  --section-color| ![rgba(177, 163, 145, 0.459)](https://via.placeholder.com/10/B1A591?text=+)rgba(177, 163, 145, 0.459) |
 
+
+
+
+
+
+## Authors
+
+- [@safiaElnakhal](https://github.com/safia-elnakhal)
+- [@radwaAhmed](https://github.com/Radkillua)
+- [@mostafaHussien](https://github.com/EngMostafaHussien)
+- [@MaryamRagab](https://github.com/MaryamRagab)
+- [@mahomudSamy](https://github.com/ibnsamy96)
+
+
+## Used By
+
+This project is used by the following companies:
+
+-clients 
 
 
 

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
 import { GetdataService } from '../../../service/getdata.service';
+import { ImagesManagementService } from '../../../service/images-management.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
 import { faChainSlash } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private getdataService: GetdataService
+    private getdataService: GetdataService,
+    private imagesManagementService: ImagesManagementService
   ) {}
 
   loginForm = new FormGroup({
@@ -102,4 +104,35 @@ export class LoginComponent implements OnInit {
       this.doesLoginHasError = false;
     });
   }
+
+  selectedFile!: ImageSnippet;
+
+  upload(imageInput: any) {
+    // console.log(event.target.value);
+    // this.imagesManagementService.addUserAvatar('123', event.target.value);
+
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      this.imagesManagementService
+        .addUserAvatar('62f6bcc41a7878eaa1fe0b38', this.selectedFile.file)
+        .subscribe(
+          (res: any) => {
+            console.log(res);
+          },
+          (err: any) => {
+            console.log(err);
+          }
+        );
+    });
+
+    reader.readAsDataURL(file);
+  }
+}
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
 }

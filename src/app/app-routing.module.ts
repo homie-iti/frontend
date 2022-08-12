@@ -19,6 +19,8 @@ import { ActivationPageComponent } from './user/registration pages/activation-pa
 import { NotfoundComponent } from './notfound/notfound/notfound.component';
 import { PaymentComponent } from './paymentform/payment/payment.component';
 import { UserBalanceComponent } from './user/user profile page/user-balance/user-balance.component';
+import { ForgetpasswordComponent } from './user/registration pages/forgetpassword/forgetpassword.component';
+import { NewpasswordComponent } from './user/registration pages/newpassword/newpassword.component';
 
 const routes: Routes = [
   {
@@ -98,6 +100,16 @@ const routes: Routes = [
     path: 'balance',
     component: UserBalanceComponent,
   },
+  {
+    path: 'forgetPassword',
+    component: ForgetpasswordComponent,
+  },
+  {
+    path: 'resetPassword',
+    component: NewpasswordComponent,
+  },
+
+ 
   {
     path: 'admin',
     loadChildren: () =>

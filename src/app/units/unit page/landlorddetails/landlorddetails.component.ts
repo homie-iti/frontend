@@ -10,12 +10,13 @@ import { GetdataService } from 'src/app/service/getdata.service';
 })
 export class LandlorddetailsComponent implements OnInit {
   constructor(
-    private auth: AuthService,
+    public auth: AuthService,
     private activate: ActivatedRoute,
     private unitser: GetdataService
   ) {}
   id: any = this.activate.snapshot.params['id'];
   unitLandlord: any = '';
+  isLoading = true;
 
   userId = this.auth.getUser()?._id;
 
@@ -27,6 +28,8 @@ export class LandlorddetailsComponent implements OnInit {
 
       this.unitLandlord = a.landlordId;
       this.isAvailable = a.isAvailable;
+
+      this.isLoading = false;
 
       console.log(this.unitLandlord);
     });

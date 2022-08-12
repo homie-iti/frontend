@@ -21,6 +21,7 @@ export class PaymentInfoComponent implements OnInit {
   unitAvailable = false;
   availabilityErrorMessage: undefined | string;
   @Input() isAvailable!: boolean;
+  @Input() landlordId!: any;
   isLoading = true;
 
   ngOnInit(): void {

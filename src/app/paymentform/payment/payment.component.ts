@@ -14,7 +14,8 @@ export class PaymentComponent implements OnInit {
   myform=new FormGroup({
     cardNumber:new FormControl(null,Validators.required),
     nameonCard:new FormControl(null,Validators.required),
-    expireDate:new FormControl(null,Validators.required),
+    months:new FormControl(null,Validators.required),
+    years:new FormControl(null,Validators.required),
     text:new FormControl(null, { validators:[
       Validators.required, 
       Validators.maxLength(3)

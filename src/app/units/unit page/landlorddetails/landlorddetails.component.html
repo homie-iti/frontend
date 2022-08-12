@@ -13,9 +13,9 @@
         Full Name : {{ unitLandlord.fullName }}
       </h5>
       <p class="card-text colorCon2">Phone number : {{ unitLandlord.phone }}</p>
-      <button class="btn ">Contact us</button>
+      <button class="btn">Contact us</button>
     </div>
   </div>
 
-  <app-payment-info></app-payment-info>
+  <app-payment-info [isAvailable]="isAvailable"></app-payment-info>
 </div>

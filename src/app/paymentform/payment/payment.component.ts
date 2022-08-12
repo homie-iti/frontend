@@ -32,6 +32,6 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.userBalance);
+    // console.log(this.userBalance);
   }
 }

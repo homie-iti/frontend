@@ -144,6 +144,12 @@ A unit can be a whole apartment or just a room and you can filter the units to m
    - review ==> add ,delete , update , get all
    - contract ==> add , delete , update , get all
    - help question ==> add ,delete , update , get all
+- account activetion
+- forget and reset password 
+- check avaliablity
+- favorite list for every user
+
+
 
 ## Color Reference
 

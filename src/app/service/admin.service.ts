@@ -31,6 +31,19 @@ export class AdminService {
   addCity(endpoint: string, city: City) {
     return this.http.post<City>(this.url + endpoint, city);
   }
+
+  addContract(endpoint: string, contract: Contract) {
+    return this.http.post<Contract>(this.url + endpoint, contract);
+  }
+
+  addReview(endpoint: string, review: Unitreviews) {
+    return this.http.post<Contract>(this.url + endpoint, review);
+  }
+
+  addHelpQuestion(endpoint: string, question: HelpQuestions) {
+    return this.http.post<Contract>(this.url, question);
+  }
+
   uploadUnitCover(endpoint: string, image: any) {
     return this.http.post(this.url + endpoint, image);
   }

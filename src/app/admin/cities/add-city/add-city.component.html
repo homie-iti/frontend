@@ -1,5 +1,44 @@
-<div>
-    <form>
-        
-    </form>
+<div class="container col-6 mt-5">
+  <form [formGroup]="cityForm">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter city name"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Cover*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cover"
+        placeholder="Enter city cover"
+        formControlName="cover"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Units*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cover"
+        placeholder="Enter your email"
+        formControlName="units"
+      />
+    </div>
+    <div class="mb-3">
+      <button
+        class="btn btn-primary"
+        (click)="save()"
+        [disabled]="!cityForm.valid"
+      >
+        Add City
+      </button>
+    </div>
+  </form>
 </div>

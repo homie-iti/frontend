@@ -16,7 +16,7 @@ export class PaymentComponent implements OnInit {
     nameonCard:new FormControl(null,Validators.required),
     months:new FormControl(null,Validators.required),
     years:new FormControl(null,Validators.required),
-    text:new FormControl(null, { validators:[
+    cvv:new FormControl(null, { validators:[
       Validators.required, 
       Validators.maxLength(3)
     ]}),

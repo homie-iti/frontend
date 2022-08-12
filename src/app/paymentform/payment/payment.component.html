@@ -89,24 +89,24 @@
   </div>
 
   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-    <label for="text" class="form-label">text input</label>
+    <label for="cvv" class="form-label">cvv</label>
     <input
       type="text"
       class="form-control"
-      id="text"
-      aria-describedby="textHelp"
-      formControlName="text"
+      id="cvv"
+      aria-describedby="cvvHelp"
+      formControlName="cvv"
     />
 
     <div
-      id="securtiyCodeHelp"
+      id="cvvHelp"
       class="form-text text-danger"
-      *ngIf="myform.controls.text.touched && myform.controls.text.invalid"
+      *ngIf="myform.controls.cvv.touched && myform.controls.cvv.invalid"
     >
-      <div *ngIf="myform.controls.text.errors?.['required']">
+      <div *ngIf="myform.controls.cvv.errors?.['required']">
         Enter card text
       </div>
-      <div *ngIf="myform.controls.text.errors?.['maxlength']">
+      <div *ngIf="myform.controls.cvv.errors?.['maxlength']">
         max length is 3
       </div>
     </div>

@@ -10,6 +10,7 @@ import { GetAllUnitsComponent } from './units/get-all-units/get-all-units.compon
 import { GetAllCitiesComponent } from './cities/get-all-cities/get-all-cities.component';
 import { GetAllReviewsComponent } from './reviews/get-all-reviews/get-all-reviews.component';
 import { GetAllHelpQuestionsComponent } from './helpquestions/get-all-help-questions/get-all-help-questions.component';
+import { AddUnitComponent } from './units/add-unit/add-unit.component';
 
 const routes: Routes = [
   {
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path: 'add-user',
     component: AddUserComponent,
+  },
+  {
+    path: 'add-unit',
+    component: AddUnitComponent,
   },
   {
     path: 'edit-user/:id',

@@ -47,24 +47,43 @@
   </div>
 
   <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-    <label for="expireDate" class="form-label">expire Date</label>
+    <label for="months" class="form-label">months</label>
     <input
-      type="date"
+      type="number"
       class="form-control"
-      id="expireDate"
-      aria-describedby="expireDateHelp"
-      formControlName="expireDate"
+      id="months"
+      aria-describedby="monthsHelp"
+      formControlName="months"
     />
 
     <div
-      id="expireDateHelp"
+      id="monthsHelp"
       class="form-text text-danger"
-      *ngIf="
-        myform.controls.expireDate.touched && myform.controls.expireDate.invalid
-      "
+      *ngIf="myform.controls.months.touched && myform.controls.months.invalid"
     >
-      <div *ngIf="myform.controls.expireDate.errors?.['required']">
-        Enter card expireDate
+      <div *ngIf="myform.controls.months.errors?.['required']">
+        Enter card months
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+    <label for="years" class="form-label">Years</label>
+    <input
+      type="number"
+      class="form-control"
+      id="years"
+      aria-describedby="yearsHelp"
+      formControlName="years"
+    />
+
+    <div
+      id="yearsHelp"
+      class="form-text text-danger"
+      *ngIf="myform.controls.years.touched && myform.controls.years.invalid"
+    >
+      <div *ngIf="myform.controls.years.errors?.['required']">
+        Enter card years
       </div>
     </div>
   </div>

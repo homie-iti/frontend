@@ -48,7 +48,7 @@ export class GetdataService {
     return this.http.delete('https://homie-iti.herokuapp.com' + endpoint);
   }
 
-  addQuestion(question: any) {
+  addQuestion(question: {}) {
     return this.http.post<HelpQuestions>(
       this.url + '/' + 'help-questions',
       question

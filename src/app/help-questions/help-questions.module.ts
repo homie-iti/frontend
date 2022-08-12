@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HelpQuestionsComponent } from './help-questions.page';
@@ -16,7 +16,7 @@ import { AddHelpQuestionComponent } from './add-help-question/add-help-question.
     AddHelpQuestionComponent
   ],
   imports: [
-    CommonModule,RouterModule,AppRoutingModule,FormsModule
+    CommonModule,RouterModule,AppRoutingModule,FormsModule,ReactiveFormsModule
   ],
   exports: [
     HelpQuestionsComponent,

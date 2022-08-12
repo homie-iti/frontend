@@ -1,33 +1,11 @@
-<!-- 
-<section class="ms-5">
-    <div class="d-flex flex-column col-md-12 col-lg-9">
-      <div class="review p-2 px-4">
-        <div class="d-flex flex-row mt-4 mb-4" *ngIf="authInfo.isLoggedIn">
-          <textarea class="form-control mx-2" #review placeholder="Add comment"></textarea>
-          <button class="btn  mx-2" type="button" (click)="addComment(review)">Comment</button>
-        </div>
-        <div class="mt-2">
-          <div class="agentReview d-flex flex-row align-items-center my-2" *ngFor="let item of unitComment">
-            <div class="col col-3 text-center">
-              <img class="img-fluid img-responsive rounded-circle mr-2" src="{{item.agentId._id.image}}" width="80" />
-              <p class="mr-2">{{ item.agentId._id.fullName }}</p>
-            </div>
-            <div class="d-flex col col-8 flex-wrap justify-content-evenly ">
-              <div class="col-9 py-3 my-4">
-                {{ item.comment }}
-              </div>
-              <div class=" my-5" *ngIf="authInfo.isLoggedIn">
-                <button class="btn  col-2" style="width:75px; height: 3em;" (click)="deleteComment(item._id)"
-                  *ngIf="item.agentId._id._id === userId">
-                  Delete </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<form [formGroup]="helpForm">
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="text" formControlName="question" class="form-control" id="exampleInputPassword1">
     </div>
-  </section> -->
+ 
+    <button type="submit"  (click)="save()" class="btn btn-primary">Submit</button>
+ 
 
-
-
-  
+</form>

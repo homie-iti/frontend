@@ -145,6 +145,20 @@ A unit can be a whole apartment or just a room and you can filter the units to m
    - contract ==> add , delete , update , get all
    - help question ==> add ,delete , update , get all
 
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| --bg-lightGray | ![#cfc2b3](https://via.placeholder.com/10/cfc2b3?text=+) #cfc2b3 |
+|  --main-font-color | ![#28210c)](https://via.placeholder.com/10/28210c?text=+) rgb(34, 56, 63) |
+| --hover-font-color | ![#988042](https://via.placeholder.com/10/988042?text=+) #988042 |
+| --main-background-color | ![rgba(234, 209, 179, 0.265)](https://via.placeholder.com/10/ead1b3?text=+)rgba(234, 209, 179, 0.265) |
+|    --addresses-color | ![rgb(155, 134, 109)](https://via.placeholder.com/10/9b866d?text=+) rgb(34, 56, 63) |
+|   --color-search | ![rgb(225, 216, 205)](https://via.placeholder.com/10/e1d8cd?text=+) rgb(225, 216, 205) |
+|  --section-color| ![rgba(177, 163, 145, 0.459)](https://via.placeholder.com/10/B1A591?text=+)rgba(177, 163, 145, 0.459) |
+
+
+
 
 ## HomieFrontend
 

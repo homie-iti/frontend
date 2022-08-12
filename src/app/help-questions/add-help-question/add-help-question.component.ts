@@ -10,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddHelpQuestionComponent implements OnInit {
   userID: any;
+  isLogged: any;
   
   constructor(private authSer:AuthService, private addSer:GetdataService) { }
   helpForm = new FormGroup({
@@ -30,7 +31,9 @@ export class AddHelpQuestionComponent implements OnInit {
 
   ngOnInit(): void {
     this.userID = this.authSer.getUser()._id;
+
     console.log(this.userID);
+    this.isLogged = this.authSer.getAuthInfo().isLoggedIn;
     
   }
 

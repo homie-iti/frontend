@@ -36,9 +36,9 @@ import { ActivationPageComponent } from './registration pages/activation-page/ac
   imports: [
     CommonModule,
     FormsModule,
-    ReactiveFormsModule,
     FontAwesomeModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   exports: [
     UserCardComponent,

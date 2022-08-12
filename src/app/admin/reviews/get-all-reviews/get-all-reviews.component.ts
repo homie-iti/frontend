@@ -20,7 +20,7 @@ export class GetAllReviewsComponent implements OnInit {
   ngOnInit(): void {
     this.adminService.getAll('reviews').subscribe((reviewsData) => {
       console.log(reviewsData);
-      this.reviews = reviewsData;
+      this.reviews = reviewsData.splice(0,50);
     });
   }
 }

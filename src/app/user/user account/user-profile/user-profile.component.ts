@@ -25,9 +25,9 @@ export class UserProfileComponent implements OnInit {
   //   return this.editUserForm.controls;
   // }
 
-  log() {
-    console.log(this.editUserForm.controls);
-  }
+  // log() {
+  //   console.log(this.editUserForm.controls);
+  // }
 
   updateUser(data: any) {
     this.userService
@@ -114,15 +114,16 @@ export class UserProfileComponent implements OnInit {
         //   Validators.required,
         // ]),
         gender: new FormControl(userData.gender, [Validators.required]),
-        address: new FormGroup({
-          city: new FormControl(userData.address.city, [Validators.required]),
-          streetName: new FormControl(userData.address.streetName, [
-            Validators.required,
-          ]),
-          buildingNumber: new FormControl(userData.address.buildingNumber, [
-            Validators.required,
-          ]),
-        }),
+        // image: new FormControl(userData.image, [Validators.required]),
+        // address: new FormGroup({
+        //   city: new FormControl(userData.address.city, [Validators.required]),
+        //   streetName: new FormControl(userData.address.streetName, [
+        //     Validators.required,
+        //   ]),
+        //   buildingNumber: new FormControl(userData.address.buildingNumber, [
+        //     Validators.required,
+        //   ]),
+        // }),
         balance: new FormControl(userData.balance, [Validators.required]),
         isAgent: new FormControl(userData.isAgent),
         isLandlord: new FormControl(userData.isLandlord),

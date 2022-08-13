@@ -34,7 +34,7 @@
             >payment</a
           >
         </li>
-     
+
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
           <a
             class="nav-link"
@@ -43,7 +43,7 @@
             >User Profile</a
           >
         </li>
-      
+
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
           <a
             class="nav-link"
@@ -54,26 +54,23 @@
           >
         </li>
        -->
-       
-       <li class="nav-item">
-        <a
-          class="nav-link"
-          routerLinkActive="active"
-          [routerLink]="['/contact-us']"
-          >Contact Us</a
-        > 
-      </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            [routerLink]="['/contact-us']"
+            >Contact Us</a
+          >
+        </li>
         <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active"
             [routerLink]="['/about-us']"
             >About Us</a
-          > 
+          >
         </li>
-
-
-       
       </ul>
       <!-- <form class="d-flex pt-2" role="search"> -->
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -98,8 +95,17 @@
           >
         </li>
 
-        <li class="nav-item dropdown" *ngIf="authInfo.isLoggedIn">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li
+          class="nav-item dropdown"
+          *ngIf="authInfo.isLoggedIn && !authService.isAdmin()"
+        >
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Account
           </a>
           <ul class="dropdown-menu">
@@ -112,7 +118,7 @@
               >
             </li>
 
-             <li class="nav-item">
+            <li class="nav-item">
               <a
                 class="nav-link"
                 routerLinkActive="active"
@@ -141,7 +147,10 @@
             </li>
           </ul>
         </li>
-        <li class="nav-item dropdown">
+        <li
+          class="nav-item dropdown"
+          *ngIf="authInfo.isLoggedIn && authService.isAdmin()"
+        >
           <a
             class="nav-link dropdown-toggle"
             id="navbarDropdown"

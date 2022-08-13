@@ -14,9 +14,10 @@ export class NavbarComponent implements OnInit {
 
   authInfo!: AuthInfo;
 
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {
     this.authInfo = this.authService.getAuthInfo();
+    console.log(this.authInfo);
   }
 }

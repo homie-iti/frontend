@@ -1,8 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { GetdataService } from '../../../service/getdata.service';
 import { ImagesManagementService } from '../../../service/images-management.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
 import { faChainSlash } from '@fortawesome/free-solid-svg-icons';
 // import { bootstrap } from 'bootstrap/dist/js/bootstrap.js';

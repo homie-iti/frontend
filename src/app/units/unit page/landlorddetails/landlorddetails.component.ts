@@ -21,6 +21,7 @@ export class LandlorddetailsComponent implements OnInit {
   userId = this.auth.getUser()?._id;
 
   isAvailable!: boolean;
+  dailyPrice = 0;
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
@@ -28,6 +29,7 @@ export class LandlorddetailsComponent implements OnInit {
 
       this.unitLandlord = a.landlordId;
       this.isAvailable = a.isAvailable;
+      this.dailyPrice = a.dailyPrice;
 
       this.isLoading = false;
 

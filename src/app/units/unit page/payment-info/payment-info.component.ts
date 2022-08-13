@@ -24,7 +24,9 @@ export class PaymentInfoComponent implements OnInit {
   availabilityErrorMessage: undefined | string;
   @Input() isAvailable!: boolean;
   @Input() landlordId!: any;
+  @Input() dailyPrice!: any;
   isLoading = true;
+  daysCount: number = 0;
 
   isRented = false;
   isRentingError = false;
@@ -50,6 +52,9 @@ export class PaymentInfoComponent implements OnInit {
   }
 
   checkAvailability() {
+    this.daysCount =
+      this.chosenDate.endDate.diff(this.chosenDate.startDate, 'day') + 1;
+
     if (!this.isAvailable) {
       this.unitAvailable = false;
       return;
@@ -109,15 +114,13 @@ export class PaymentInfoComponent implements OnInit {
 
     const formattedStartDate = this.chosenDate.startDate.toDate();
     const formattedEndDate = this.chosenDate.endDate.toDate();
-    const daysCount =
-      this.chosenDate.endDate.diff(this.chosenDate.startDate, 'day') + 1;
 
     const unitId = this.route.snapshot.params['id'];
     const bookingObject = {
       id: this.authService.getUser()._id,
       rentalStart: formattedStartDate,
       rentalEnd: formattedEndDate,
-      days: daysCount,
+      days: this.daysCount,
       paymentMethod: 'paypal',
       state: 'active',
     };

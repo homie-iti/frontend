@@ -5,6 +5,10 @@
   <div *ngIf="!isLoading && isAvailable" class="card-body">
     <p>Renting Info</p>
     <div *ngIf="unitAvailable && !isRented">
+      <p>Daily rent: {{ dailyPrice }}$</p>
+      <p>Number of days: {{ daysCount }}</p>
+      <hr />
+      <p>Total:{{ daysCount * dailyPrice }}$</p>
       <button class="btn btn-outline-primary" (click)="rentUnit()">
         Rent Unit
       </button>

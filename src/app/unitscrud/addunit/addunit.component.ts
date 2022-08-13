@@ -32,7 +32,10 @@ export class AddunitComponent implements OnInit {
 
       unitInfo: new FormGroup({
         description: new FormControl('', {
-          validators: [Validators.required, Validators.pattern('[a-zA-Z ]*')],
+          validators: [
+            Validators.required,
+            Validators.pattern('[a-zA-Z0-9 ]*'),
+          ],
         }),
         rooms: new FormControl(0, { validators: [Validators.required] }),
         bathrooms: new FormControl(0, { validators: [Validators.required] }),
@@ -45,7 +48,10 @@ export class AddunitComponent implements OnInit {
           validators: [Validators.required],
         }),
         streetName: new FormControl('', {
-          validators: [Validators.required, Validators.pattern('^[a-z0-9s]+')],
+          validators: [
+            Validators.required,
+            Validators.pattern('^[a-zA-Z0-9 ]+'),
+          ],
         }),
       }),
     }),

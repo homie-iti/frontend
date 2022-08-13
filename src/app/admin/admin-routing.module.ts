@@ -15,6 +15,10 @@ import { AddCityComponent } from './cities/add-city/add-city.component';
 import { AddContractComponent } from './contracts/add-contract/add-contract.component';
 import { GetAllAdminsComponent } from './admins/get-all-admins/get-all-admins.component';
 import { AddAdminComponent } from './admins/add-admin/add-admin.component';
+import { AddHelpQuestionComponent } from './helpquestions/add-help-question/add-help-question.component';
+import { AddReviewComponent } from './reviews/add-review/add-review.component';
+import { AdminLoginComponent } from './admins/admin-login/admin-login.component';
+import { AdminProfileComponent } from './admins/admin-profile/admin-profile.component';
 
 const routes: Routes = [
   {
@@ -72,7 +76,11 @@ const routes: Routes = [
   },
   {
     path: 'add-review',
-    component: AddContractComponent,
+    component: AddReviewComponent,
+  },
+  {
+    path: 'add-helpQuestion',
+    component: AddHelpQuestionComponent,
   },
   {
     path: 'add-admin',
@@ -81,6 +89,14 @@ const routes: Routes = [
   {
     path: 'edit-user/:id',
     component: EditUserComponent,
+  },
+  {
+    path: 'login',
+    component: AdminLoginComponent,
+  },
+  {
+    path: 'profile',
+    component: AdminProfileComponent,
   },
 ];
 

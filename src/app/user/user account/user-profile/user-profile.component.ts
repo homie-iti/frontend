@@ -16,6 +16,7 @@ export class UserProfileComponent implements OnInit {
     private userService: GetdataService,
     private route: ActivatedRoute,
     private imagesManagementService: ImagesManagementService,
+    // private getdataService: GetdataService,
     private authService: AuthService,
     private router: Router
   ) {}
@@ -155,11 +156,22 @@ export class UserProfileComponent implements OnInit {
           },
           (err: any) => {
             console.log(err);
+          },
+          () => {
+            this.reFetchUser();
           }
         );
     });
 
     reader.readAsDataURL(file);
+  }
+
+  reFetchUser() {
+    this.userService
+      .getUserDetails(this.authService.getUser()._id)
+      .subscribe((user) => {
+        this.authService.setUser(user);
+      });
   }
 }
 

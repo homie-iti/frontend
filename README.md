@@ -1,7 +1,7 @@
-# Homie
+# Homie - Angular Frontend
 
-Angular frontend for HOMIE: an online rental accommodation platform for young professionals and international students who came to Egypt looking for apartment. We allow users to rent a unit as agents and they are also allowed to rent their units as landlords. A unit can be a whole apartment or just a room and you can filter the units to match what you want in a very specific way.
-This repository is a part of our ITI graduation project. We are interns in the MEARN track and our project is built using Angular, MongoDB, Express and NodeJS. You can find all project repos here.
+Angular frontend for [HOMIE](https://homie-iti.vercel.app/): an online rental accommodation platform for young professionals and international students who came to Egypt looking for apartment. We allow users to rent a unit as agents and they are also allowed to rent their units as landlords. A unit can be a whole apartment or just a room and you can filter the units to match what you want in a very specific way.  
+**This repository is a part of our ITI graduation project. We are interns in the MEARN track and our project is built using Angular, MongoDB, Express and NodeJS. You can find all project repos [here](https://github.com/homie-iti).**
 
 ## Source Code Organization
 

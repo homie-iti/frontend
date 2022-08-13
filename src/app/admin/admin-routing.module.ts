@@ -13,6 +13,8 @@ import { GetAllHelpQuestionsComponent } from './helpquestions/get-all-help-quest
 import { AddUnitComponent } from './units/add-unit/add-unit.component';
 import { AddCityComponent } from './cities/add-city/add-city.component';
 import { AddContractComponent } from './contracts/add-contract/add-contract.component';
+import { GetAllAdminsComponent } from './admins/get-all-admins/get-all-admins.component';
+import { AddAdminComponent } from './admins/add-admin/add-admin.component';
 
 const routes: Routes = [
   {
@@ -45,6 +47,10 @@ const routes: Routes = [
     component: GetAllHelpQuestionsComponent,
   },
   {
+    path: 'all-admins',
+    component: GetAllAdminsComponent,
+  },
+  {
     path: 'users/:id',
     component: GetSingleUserComponent,
   },
@@ -67,6 +73,10 @@ const routes: Routes = [
   {
     path: 'add-review',
     component: AddContractComponent,
+  },
+  {
+    path: 'add-admin',
+    component: AddAdminComponent,
   },
   {
     path: 'edit-user/:id',

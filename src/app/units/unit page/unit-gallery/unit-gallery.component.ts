@@ -32,7 +32,11 @@ export class UnitGalleryComponent implements OnInit {
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
       this.unitDetails = a.images;
-      this.coverSrc = a.cover;
+      this.coverSrc =
+        a.cover[0] === 'h'
+          ? a.cover
+          : 'https://homie-iti.herokuapp.com/' +
+            a.cover.split('/').slice(1).join('/');
       this.dailyPrice = a.dailyPrice;
 
       // console.log(this.unitDetails);

@@ -1,65 +1,116 @@
-<div class="d-flex flex-wrap " *ngIf="this.transfer.filteredUnits">
-  <div class=" card  m-3 col-6 col-sm-9 col-lg-3 col-md-5" *ngFor="
+<div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits">
+  <div
+    class="card m-3 col-6 col-sm-9 col-lg-3 col-md-5"
+    *ngFor="
       let item of this.transfer.filteredUnits
         | paginate: { itemsPerPage: 24, currentPage: page }
-    ">
+    "
+  >
     <div>
-      <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
-        style="position: relative" />
+      <img
+        [src]="
+          item.cover[0] === 'h'
+            ? item.cover
+            : 'https://homie-iti.herokuapp.com/' +
+              item.cover.split('/').slice(1).join('/')
+        "
+        class="d-block card-img-top card-border"
+        id="opImg"
+        alt="..."
+        style="position: relative"
+      />
       <div class="overlay position-absolute">
-        <fa-icon [icon]="faHeart" class="faIcon" *ngIf="authInfo.isLoggedIn" [class.active]="checkId(item._id)"
-          (click)="onClick(item._id)">
+        <fa-icon
+          [icon]="faHeart"
+          class="faIcon"
+          *ngIf="authInfo.isLoggedIn"
+          [class.active]="checkId(item._id)"
+          (click)="onClick(item._id)"
+        >
         </fa-icon>
       </div>
     </div>
-    <div class="card-body ">
-      <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
+    <div class="card-body">
+      <a
+        routerLink="/unit/{{ item._id }}"
+        routerLinkActive="router-link-active"
+      >
         {{ item.estateType }}
       </a>
 
-      <hr>
+      <hr />
       <p>
-
-        <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
-        <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
-
+        <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{
+          item.allowedGender
+        }}
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{
+          item.isPetsAllowed ? "Yes" : "No"
+        }}
       </p>
-      <hr>
-      <fa-icon [icon]=" faDollarSign" class="faIcon "> </fa-icon> &nbsp; <span class="stylSpan"> {{ item.dailyPrice
-        }}/month</span><br />
+      <hr />
+      <fa-icon [icon]="faDollarSign" class="faIcon"> </fa-icon> &nbsp;
+      <span class="stylSpan"> {{ item.dailyPrice }}/month</span><br />
     </div>
   </div>
 </div>
-<div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits.length < 1">
-  <div class="card overflow-hidden position-relative m-3 col-9 col-sm-9 col-lg-3 col-md-5" *ngFor="
-      let item of units | paginate: { itemsPerPage: 24, currentPage: page }
-    ">
-    <div>
-      <img src="{{ item.cover }}" class="d-block card-img-top card-border" id="opImg" alt="..."
-        style="position: relative" />
 
+<div class="d-flex flex-wrap" *ngIf="this.transfer.filteredUnits.length < 1">
+  <div
+    class="card overflow-hidden position-relative m-3 col-9 col-sm-9 col-lg-3 col-md-5"
+    *ngFor="
+      let item of units | paginate: { itemsPerPage: 24, currentPage: page }
+    "
+  >
+    <div>
+      <img
+        [src]="
+          item.cover[0] === 'h'
+            ? item.cover
+            : 'https://homie-iti.herokuapp.com/' +
+              item.cover.split('/').slice(1).join('/')
+        "
+        class="d-block card-img-top card-border"
+        id="opImg"
+        alt="..."
+        style="position: relative"
+      />
     </div>
     <div class="overlay position-absolute">
-      <fa-icon [icon]="faHeart" class="faIcon" *ngIf="authInfo.isLoggedIn" [class.active]="checkId(item._id)"
-        (click)="onClick(item._id)">
+      <fa-icon
+        [icon]="faHeart"
+        class="faIcon"
+        *ngIf="authInfo.isLoggedIn"
+        [class.active]="checkId(item._id)"
+        (click)="onClick(item._id)"
+      >
       </fa-icon>
     </div>
 
     <div class="card-body">
-      <a routerLink="/unit/{{ item._id }}" routerLinkActive="router-link-active">
+      <a
+        routerLink="/unit/{{ item._id }}"
+        routerLinkActive="router-link-active"
+      >
         {{ item.estateType }}
       </a>
-      <hr>
+      <hr />
       <p>
-
-        <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{ item.allowedGender }} &nbsp; &nbsp; &nbsp; &nbsp;
-        <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{ item.isPetsAllowed ? "Yes" : "No" }}
-
+        <fa-icon [icon]="faUser" class="faIcon"> </fa-icon> &nbsp;{{
+          item.allowedGender
+        }}
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <fa-icon [icon]="faPaw" class="faIcon"> </fa-icon> &nbsp;{{
+          item.isPetsAllowed ? "Yes" : "No"
+        }}
       </p>
-      <hr>
-      <fa-icon [icon]=" faDollarSign" class="faIcon "> </fa-icon> &nbsp; <span class="stylSpan"> {{ item.dailyPrice
-        }}/month</span><br />
+      <hr />
+      <fa-icon [icon]="faDollarSign" class="faIcon"> </fa-icon> &nbsp;
+      <span class="stylSpan"> {{ item.dailyPrice }}/month</span><br />
     </div>
   </div>
 </div>
-<pagination-controls class="text-center" (pageChange)="page = $event"></pagination-controls>
+<pagination-controls
+  class="text-center"
+  (pageChange)="page = $event"
+></pagination-controls>

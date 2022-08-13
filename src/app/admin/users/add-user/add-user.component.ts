@@ -55,7 +55,7 @@ export class AddUserComponent implements OnInit {
         this.users.splice(0, 0, user);
         // this.router.navigateByUrl('users?page=2');
 
-        this.router.navigateByUrl('users/' + res.id);
+        this.router.navigateByUrl('admin/all-users/' + res.id);
       },
     });
   }

@@ -125,5 +125,9 @@ export class GetdataService {
       password
     );
   }
+
+  deleteUnit( id: any) {
+    return this.http.delete<any>(`https://homie-iti.herokuapp.com/units/${id}`);
+  }
   constructor(private http: HttpClient) {}
 }

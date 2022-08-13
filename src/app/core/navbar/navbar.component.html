@@ -26,7 +26,7 @@
             >Home</a
           >
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active"
@@ -34,14 +34,7 @@
             >payment</a
           >
         </li>
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            [routerLink]="['/addCity']"
-            >add unit</a
-          >
-        </li>
+     
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
           <a
             class="nav-link"
@@ -60,13 +53,93 @@
             Wish List</a
           >
         </li>
+       -->
+       
+       <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLinkActive="active"
+          [routerLink]="['/contact-us']"
+          >Contact Us</a
+        > 
+      </li>
         <li class="nav-item">
           <a
             class="nav-link"
             routerLinkActive="active"
             [routerLink]="['/about-us']"
             >About Us</a
+          > 
+        </li>
+
+
+       
+      </ul>
+      <!-- <form class="d-flex pt-2" role="search"> -->
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            aria-current="page"
+            [routerLink]="['/login']"
+            >LOGIN &nbsp; &nbsp; |</a
           >
+        </li>
+
+        <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
+          <a
+            class="nav-link"
+            routerLinkActive="active"
+            aria-current="page"
+            [routerLink]="['/signup']"
+          >
+            SIGNUP</a
+          >
+        </li>
+
+        <li class="nav-item dropdown" *ngIf="authInfo.isLoggedIn">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Account
+          </a>
+          <ul class="dropdown-menu">
+            <li class="nav-item" *ngIf="authInfo.isLoggedIn">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/profile-example']"
+                >User Profile</a
+              >
+            </li>
+
+             <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/addCity']"
+                >add unit</a
+              >
+            </li>
+            <!--
+            <li><hr class="dropdown-divider"></li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/payment']"
+                >payment</a
+              >
+            </li> -->
+            <li class="nav-item" *ngIf="authInfo.isLoggedIn">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                [routerLink]="['/user-wish-list']"
+              >
+                Wish List</a
+              >
+            </li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a
@@ -127,40 +200,7 @@
             </li>
           </ul>
         </li>
-      </ul>
-      <!-- <form class="d-flex pt-2" role="search"> -->
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/login']"
-            >LOGIN &nbsp; &nbsp; |</a
-          >
-        </li>
 
-        <li class="nav-item" *ngIf="!authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/signup']"
-          >
-            SIGNUP</a
-          >
-        </li>
-
-        <li class="nav-item" *ngIf="authInfo.isLoggedIn">
-          <a
-            class="nav-link"
-            routerLinkActive="active"
-            aria-current="page"
-            [routerLink]="['/profile']"
-          >
-            ACCOUNT</a
-          >
-        </li>
         <li class="nav-item" *ngIf="authInfo.isLoggedIn">
           <app-logout></app-logout>
         </li>

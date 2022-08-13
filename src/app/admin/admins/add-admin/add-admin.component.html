@@ -1,0 +1,143 @@
+<div
+  class="container mt-5 col-4"
+  [formGroup]="adminForm"
+  (ngSubmit)="addAdmin(adminForm.value)"
+>
+  <form>
+    <div class="mb-3">
+      <label for="name" class="form-label">FullName*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Enter your name"
+        formControlName="fullName"
+        (change)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="adminValues['fullName'].touched && adminValues['fullName'].invalid"
+      >
+        <div *ngIf="adminValues['fullName'].errors?.['required']">
+          fullName is required
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email*</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        formControlName="email"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="adminValues['email'].touched && adminValues['email'].invalid"
+      >
+        <div *ngIf="adminValues['email'].errors?.['required']">
+          email is required
+        </div>
+        <div *ngIf="adminValues['email'].errors?.['email']">
+          Please enter a valid email
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password*</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Enter strong password"
+        (blur)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="adminValues['password'].touched && adminValues['password'].invalid"
+      >
+        <div *ngIf="adminValues['password'].errors?.['required']">
+          password is required
+        </div>
+        <div *ngIf="adminValues['password'].errors?.['minlength']">
+          password minlength is
+          {{adminValues['password'].errors?.['minlength'].requiredLength}}... you
+          entered {{adminValues['password'].errors?.['minlength'].actualLength}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">Age*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        placeholder="Enter your age"
+        formControlName="age"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="adminValues['age'].touched && adminValues['age'].invalid"
+      >
+        <div *ngIf="adminValues['age'].errors?.['required']">
+          age is required
+        </div>
+        <div *ngIf="adminValues['age'].errors?.['min']">
+          minimum age is
+          {{adminValues['age'].errors?.['min'].min}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">Phone*</label>
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="Enter your phone number"
+        formControlName="phone"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="adminValues['phone'].touched && adminValues['phone'].invalid"
+      >
+        <div *ngIf="adminValues['phone'].errors?.['required']">
+          Phone Number is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="nationalId" class="form-label">nationalId*</label>
+      <input
+        type="number"
+        class="form-control"
+        id="nationalId"
+        placeholder="Enter your nationalId number"
+        formControlName="national_id"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          adminValues['national_id'].touched && adminValues['national_id'].invalid
+        "
+      >
+        <div *ngIf="adminValues['national_id'].errors?.['required']">
+          NationalId Number is required
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="adminForm.invalid"
+      >
+        Add
+      </button>
+    </div>
+  </form>
+</div>

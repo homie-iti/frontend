@@ -24,6 +24,8 @@ import { EditReviewComponent } from './reviews/edit-review/edit-review.component
 import { GetAllCitiesComponent } from './cities/get-all-cities/get-all-cities.component';
 import { GetAllAdminsComponent } from './admins/get-all-admins/get-all-admins.component';
 import { AddAdminComponent } from './admins/add-admin/add-admin.component';
+import { AdminLoginComponent } from './admins/admin-login/admin-login.component';
+import { AdminProfileComponent } from './admins/admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { AddAdminComponent } from './admins/add-admin/add-admin.component';
     GetAllCitiesComponent,
     GetAllAdminsComponent,
     AddAdminComponent,
+    AdminLoginComponent,
+    AdminProfileComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule, AdminRoutingModule],
   exports: [

@@ -1,0 +1,70 @@
+<div
+  class="container mt-5 col-4"
+  [formGroup]="adminLoginForm"
+  (ngSubmit)="loginAdmin(adminLoginForm.value)"
+>
+  <form>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email*</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter your email"
+        formControlName="email"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          adminLoginValues['email'].touched && adminLoginValues['email'].invalid
+        "
+      >
+        <div *ngIf="adminLoginValues['email'].errors?.['required']">
+          email is required
+        </div>
+        <div *ngIf="adminLoginValues['email'].errors?.['email']">
+          Please enter a valid email
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password*</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+        placeholder="Enter strong password"
+        (blur)="log()"
+      />
+      <div
+        class="errors d-flex"
+        *ngIf="
+          adminLoginValues['password'].touched &&
+          adminLoginValues['password'].invalid
+        "
+      >
+        <div *ngIf="adminLoginValues['password'].errors?.['required']">
+          password is required
+        </div>
+        <div *ngIf="adminLoginValues['password'].errors?.['minlength']">
+          password minlength is
+          {{adminLoginValues['password'].errors?.['minlength'].requiredLength
+
+          }}... you entered
+          {{adminLoginValues['password'].errors?.['minlength'].actualLength}}
+        </div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="adminLoginForm.invalid"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>

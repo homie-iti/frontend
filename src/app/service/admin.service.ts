@@ -21,12 +21,20 @@ export class AdminService {
     return this.http.get<User>(this.url + endpoint + id);
   }
 
+  getAdminById(endpoint: string, id: any) {
+    return this.http.get<Admin>(this.url + endpoint + id);
+  }
+
   addUser(endpoint: string, user: User) {
     return this.http.post<User>(this.url + endpoint, user);
   }
 
   addAdmin(endpoint: string, admin: Admin) {
-    return this.http.post<User>(this.url + endpoint, admin);
+    return this.http.post<Admin>(this.url + endpoint, admin);
+  }
+
+  loginAdmin(endpoint: string, adminData: Admin) {
+    return this.http.post<Admin>(this.url + endpoint, adminData);
   }
 
   addUnit(endpoint: string, unit: Units, image?: any) {
@@ -46,7 +54,7 @@ export class AdminService {
   }
 
   addHelpQuestion(endpoint: string, question: HelpQuestions) {
-    return this.http.post<Contract>(this.url, question);
+    return this.http.post<Contract>(this.url + endpoint, question);
   }
 
   uploadUnitCover(endpoint: string, image: any) {

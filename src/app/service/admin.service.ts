@@ -6,6 +6,7 @@ import { HelpQuestions } from '../_models/help-questions';
 import { Units } from '../_models/units';
 import { User } from '../_models/user';
 import { Unitreviews } from '../_models/unitreview';
+import { Admin } from '../_models/admin';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +23,10 @@ export class AdminService {
 
   addUser(endpoint: string, user: User) {
     return this.http.post<User>(this.url + endpoint, user);
+  }
+
+  addAdmin(endpoint: string, admin: Admin) {
+    return this.http.post<User>(this.url + endpoint, admin);
   }
 
   addUnit(endpoint: string, unit: Units, image?: any) {
@@ -54,6 +59,10 @@ export class AdminService {
 
   deleteUser(endpoint: string, id: any) {
     return this.http.delete<User>(this.url + endpoint + id);
+  }
+
+  deleteAdmin(endpoint: string, id: any) {
+    return this.http.delete<Admin>(this.url + endpoint + id);
   }
 
   deleteContract(contractId: string, unitId: string) {

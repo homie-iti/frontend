@@ -21,6 +21,12 @@
         class="col-md-6 col-xl-5 col-lg-6 col-sm-12 formContainer text-center has-validation"
       >
         <h1 class="my-3 hStyle">Login</h1>
+        <p *ngIf="activationMessage">
+          Your account is activated successfully 🎉
+        </p>
+        <p *ngIf="!isAccountActivated">
+          Your account isn't activated yet, check your email or contact support.
+        </p>
         <div class="row mb-3">
           <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">

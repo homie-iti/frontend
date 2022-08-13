@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from '../../../service/auth.service';
 import { GetdataService } from '../../../service/getdata.service';
 import { ImagesManagementService } from '../../../service/images-management.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormControl, FormGroup, FormRecord, Validators } from '@angular/forms';
 import { faChainSlash } from '@fortawesome/free-solid-svg-icons';
 // import { bootstrap } from 'bootstrap/dist/js/bootstrap.js';
@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
+    private route: ActivatedRoute,
     private getdataService: GetdataService,
     private imagesManagementService: ImagesManagementService
   ) {}
@@ -36,10 +37,14 @@ export class LoginComponent implements OnInit {
   // };
 
   doesLoginHasError = false;
+  activationMessage = false;
+  isAccountActivated = true;
   doesFormHasInvalidData: { email?: any; password?: any } = {};
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) this.router.navigateByUrl('/home');
+    if (this.route.snapshot.queryParams['status'])
+      this.activationMessage = true;
 
     // this.loginForm = new FormGroup({
     //   email: new FormControl(null),
@@ -85,7 +90,6 @@ export class LoginComponent implements OnInit {
       )
       .subscribe({
         next: (loginInfo) => {
-          this.authService.setLoggedIn(true);
           this.authService.setToken(loginInfo.token as string);
           this.retrieveLoggedUserInfo(this.authService.getDecodedToken().id);
         },
@@ -99,9 +103,16 @@ export class LoginComponent implements OnInit {
   retrieveLoggedUserInfo(id: string) {
     this.getdataService.getUserDetails(id).subscribe((user) => {
       console.log(user);
-      this.authService.setUser(user);
-      this.router.navigateByUrl('/');
-      this.doesLoginHasError = false;
+      if (!user.isAccountActivated) {
+        this.isAccountActivated = false;
+        this.authService.removeLocalStorageToken();
+        this.authService.setLoggedIn(false);
+      } else {
+        this.authService.setUser(user);
+        this.authService.setLoggedIn(true);
+        this.router.navigateByUrl('/');
+        this.doesLoginHasError = false;
+      }
     });
   }
 }

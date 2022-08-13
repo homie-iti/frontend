@@ -13,11 +13,22 @@
         <div class="row">
           <div class="mb-5">
             <div class="user-image">
-              <img src="{{ user.image }}" height="140" class="rounded-4" />
+              <img
+                [src]="
+                  user && user.image[0] === 'h'
+                    ? user.image
+                    : 'https://homie-iti.herokuapp.com/' +
+                      user.image.split('/').slice(1).join('/')
+                "
+                height="140"
+                class="rounded-4"
+              />
               <label>
                 <input
+                  #imageInput
                   type="file"
-                  (change)="onImageSelected($event)"
+                  accept="image/*"
+                  (change)="upload(imageInput)"
                   name="image"
                   style="display: none"
                 />
@@ -28,11 +39,11 @@
         </div>
         <div class="row col-lg-9">
           <div class="col-md-6 mb-5">
-            <label for="name" class="form-label">Name</label>
+            <label for="fullName" class="form-label">Name</label>
             <input
               type="text"
               class="form-control"
-              id="name"
+              id="fullName"
               formControlName="fullName"
               placeholder="Enter your full name"
             />
@@ -50,6 +61,14 @@
               >
                 fullName minlength is
                 {{editUserForm.controls['fullName'].errors?.['minlength'].requiredLength
+
+
+
+
+
+
+
+
 
 
                 }}... you entered
@@ -122,7 +141,7 @@
           </div>
         </div>
 
-        <div class="row col-lg-9">
+        <!-- <div class="row col-lg-9">
           <div class="col-md-12 mb-5">
             <label for="balance" class="form-label">Balance</label>
             <input
@@ -143,7 +162,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- <div class="row d-felx align-items-center col-lg-9 mb-1">
           <label for="name" class="form-label">Address</label>

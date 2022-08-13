@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { User } from 'src/app/_models/user';
+import { ImagesManagementService } from '../../../service/images-management.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -13,11 +14,12 @@ export class UserProfileComponent implements OnInit {
   constructor(
     private userService: GetdataService,
     private route: ActivatedRoute,
+    private imagesManagementService: ImagesManagementService,
     private router: Router
   ) {}
 
   id: string = this.route.snapshot.params['id'];
-  user: User = {};
+  user: User | any = {};
   editUserForm!: FormGroup;
   file: any;
 
@@ -35,7 +37,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe((data) => {
         this.updateUserImage();
         console.log(data);
-        this.router.navigateByUrl("/profile-example");
+        this.router.navigateByUrl('/profile-example');
       });
   }
 
@@ -124,10 +126,41 @@ export class UserProfileComponent implements OnInit {
         //     Validators.required,
         //   ]),
         // }),
-        balance: new FormControl(userData.balance, [Validators.required]),
+        // balance: new FormControl(userData.balance, [Validators.required]),
         isAgent: new FormControl(userData.isAgent),
         isLandlord: new FormControl(userData.isLandlord),
       });
     });
   }
+
+  selectedFile!: ImageSnippet;
+
+  upload(imageInput: any) {
+    // console.log(event.target.value);
+    // this.imagesManagementService.addUserAvatar('123', event.target.value);
+
+    const file: File = imageInput.files[0];
+    const reader = new FileReader();
+
+    reader.addEventListener('load', (event: any) => {
+      this.selectedFile = new ImageSnippet(event.target.result, file);
+
+      this.imagesManagementService
+        .addUserAvatar('62f6bcc41a7878eaa1fe0b38', this.selectedFile.file)
+        .subscribe(
+          (res: any) => {
+            console.log(res);
+          },
+          (err: any) => {
+            console.log(err);
+          }
+        );
+    });
+
+    reader.readAsDataURL(file);
+  }
+}
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) {}
 }

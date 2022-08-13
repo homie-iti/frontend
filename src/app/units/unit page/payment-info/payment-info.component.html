@@ -4,13 +4,24 @@
 >
   <div *ngIf="!isLoading && isAvailable" class="card-body">
     <p>Renting Info</p>
-    <div *ngIf="unitAvailable">
+    <div *ngIf="unitAvailable && !isRented">
       <button class="btn btn-outline-primary" (click)="rentUnit()">
         Rent Unit
       </button>
     </div>
 
-    <div *ngIf="!unitAvailable">
+    <div *ngIf="isRented" class="my-3">
+      <p>
+        Your contract info is sent to unit owner. Wait for a message from us or
+        him.
+      </p>
+    </div>
+
+    <div *ngIf="isRentingError" class="my-3">
+      <p>Error happened, refresh the page and try again.</p>
+    </div>
+
+    <div *ngIf="!unitAvailable && !isRented">
       <input
         type="text"
         placeholder="enter specified period"

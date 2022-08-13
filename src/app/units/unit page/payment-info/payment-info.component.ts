@@ -3,6 +3,7 @@ import { Dayjs } from 'dayjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../../../service/auth.service';
+import { GetdataService } from '../../../service/getdata.service';
 
 @Component({
   selector: 'app-payment-info',
@@ -13,6 +14,7 @@ export class PaymentInfoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private getdataService: GetdataService,
     private http: HttpClient,
     public authService: AuthService
   ) {}
@@ -23,6 +25,9 @@ export class PaymentInfoComponent implements OnInit {
   @Input() isAvailable!: boolean;
   @Input() landlordId!: any;
   isLoading = true;
+
+  isRented = false;
+  isRentingError = false;
 
   ngOnInit(): void {
     // console.log({
@@ -122,8 +127,24 @@ export class PaymentInfoComponent implements OnInit {
         'https://homie-iti.herokuapp.com/book-unit/' + unitId,
         bookingObject
       )
-      .subscribe((data) => {
-        console.log(data);
+      .subscribe({
+        next: (data) => {
+          this.isRented = true;
+          this.updateUser();
+          console.log(data);
+        },
+        error: (error) => {
+          this.isRentingError = true;
+          console.log(error);
+        },
+      });
+  }
+
+  updateUser() {
+    this.getdataService
+      .getUserDetails(this.authService.getUser()._id)
+      .subscribe((user) => {
+        this.authService.setUser(user);
       });
   }
 }

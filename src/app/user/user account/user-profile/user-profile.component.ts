@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
 import { User } from 'src/app/_models/user';
 import { ImagesManagementService } from '../../../service/images-management.service';
+import { AuthService } from '../../../service/auth.service';
 
 @Component({
   selector: 'app-user-profile',
@@ -15,6 +16,7 @@ export class UserProfileComponent implements OnInit {
     private userService: GetdataService,
     private route: ActivatedRoute,
     private imagesManagementService: ImagesManagementService,
+    private authService: AuthService,
     private router: Router
   ) {}
 
@@ -146,7 +148,7 @@ export class UserProfileComponent implements OnInit {
       this.selectedFile = new ImageSnippet(event.target.result, file);
 
       this.imagesManagementService
-        .addUserAvatar('62f6bcc41a7878eaa1fe0b38', this.selectedFile.file)
+        .addUserAvatar(this.authService.getUser()._id, this.selectedFile.file)
         .subscribe(
           (res: any) => {
             console.log(res);

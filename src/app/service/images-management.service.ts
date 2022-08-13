@@ -21,4 +21,15 @@ export class ImagesManagementService {
       formData
     );
   }
+
+  addUnitCover(unitId: string, image: File) {
+    const formData = new FormData();
+
+    formData.append('cover', image);
+
+    return this.http.post(
+      'https://homie-iti.herokuapp.com/units/cover/' + unitId,
+      formData
+    );
+  }
 }

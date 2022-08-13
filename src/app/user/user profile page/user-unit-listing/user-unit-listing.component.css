@@ -15,3 +15,19 @@
     background-color: rgba(118, 110, 89, 0.153);
   }
  
+  img{
+    width: 100%;
+  }
+
+  hr{
+    font-size: 5px;
+    color: rgb(61, 47, 22);
+    width: 100%;
+  }
+  .cad{
+    transition: all 0.2s 0.1s ease-in-out;
+  }
+  .cad:hover img{
+    transform: scale(1.1);
+
+  }

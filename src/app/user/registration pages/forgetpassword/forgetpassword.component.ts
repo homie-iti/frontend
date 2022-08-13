@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 import { GetdataService } from 'src/app/service/getdata.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { GetdataService } from 'src/app/service/getdata.service';
 })
 export class ForgetpasswordComponent implements OnInit {
 
-  constructor(private data:GetdataService) { }
+  constructor(private data:GetdataService, private route:Router) { }
 
   myform=new FormGroup({
     email:new FormControl(null, {validators:[
@@ -19,12 +20,26 @@ export class ForgetpasswordComponent implements OnInit {
     )
   })
 
+  doesEmailHasError:boolean=false
 
   send(){
+    if(this.myform.value.email)
+    
       console.log(this.myform.value)
-      this.data.forgetPassword(this.myform.value).subscribe((a) => {
-        if(a)
-        console.log('upadated', a);
+      this.data.forgetPassword(this.myform.value).subscribe({
+        next: (a) => {
+          console.log(a)
+          this.route.navigateByUrl('/resetPassword');
+  
+        },
+        error: (error) => {
+         if(error){
+          console.log(error)
+          this.doesEmailHasError=true
+         } 
+         
+          
+        },
       });
   }
 

@@ -1,11 +1,18 @@
-<form [formGroup]="helpForm">
+
+  <div class="password " *ngIf="isLogged">
+    <div class="container m-5 forget  ">
+      <div class="row ">
+  <form [formGroup]="helpForm">
 
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <label for="exampleInputPassword1" class="form-label">Add Question</label>
       <input type="text" formControlName="question" class="form-control" id="exampleInputPassword1">
     </div>
  
-    <button type="submit"  (click)="save()" class="btn btn-primary">Submit</button>
+    <button type="submit"  (click)="save()" class="btn ">Submit</button>
  
 
 </form>
+</div>
+</div>
+</div>

@@ -3,10 +3,22 @@
   background-color: rgba(118, 110, 89, 0.153);
 }
 
-.colorContetnt{
+/* .colorContetnt{
 
   color:var(--main-font-color);
-}
-.colorCon2{
+} */
+/* .colorCon2{
   color:var(--hover-font-color);
+} */
+
+.stylebtn{
+  background-color:rgba(72, 66, 52, 0.66) ;
+  color: rgba(255, 239, 220, 0.836);
+
+
+}
+.stylebtn:hover{
+  border: solid 1px rgb(96, 88, 69);
+  background-color:rgba(66, 62, 52, 0.457) ;
+  color: var( --main-font-color);
 }

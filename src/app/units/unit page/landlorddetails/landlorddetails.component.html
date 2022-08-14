@@ -1,4 +1,4 @@
-<div class="container colorContetnt h-75">
+<div class="container colorContetnt h-75" style="max-width: 400px">
   <div class="card text-center m-4 card-outline" style="min-width: 250px">
     <div *ngIf="!isLoading" class="text-center pt-4">
       <img
@@ -14,10 +14,12 @@
 
     <div *ngIf="!isLoading" class="card-body">
       <h5 class="card-title colorCon2">
-        Full Name : {{ unitLandlord.fullName }}
+        {{ unitLandlord.fullName }}
       </h5>
-      <p class="card-text colorCon2">Phone number : {{ unitLandlord.phone }}</p>
-      <button class="btn">Contact us</button>
+      <p class="card-text colorCon2">{{ unitLandlord.email }}</p>
+      <a [href]="'tel:' + unitLandlord.phone" class="btn">
+        <fa-icon [icon]="faWhatsapp" style="font-size: 20px"></fa-icon> Whatsapp
+      </a>
     </div>
 
     <div *ngIf="isLoading" class="my-3 d-flex justify-content-center">

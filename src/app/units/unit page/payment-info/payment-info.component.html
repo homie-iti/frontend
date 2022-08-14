@@ -3,21 +3,56 @@
   *ngIf="authService.isLoggedIn() && authService.getUser()._id !== landlordId"
 >
   <div *ngIf="!isLoading && isAvailable" class="card-body">
-    <p>Renting Info</p>
-    <div *ngIf="unitAvailable && !isRented">
-      <p>Daily rent: {{ dailyPrice }}$</p>
-      <p>Number of days: {{ daysCount }}</p>
+    <div
+      *ngIf="
+        unitAvailable &&
+        !isRented &&
+        !isUnitProposedByAgent &&
+        !isUnitActiveNowByAgent
+      "
+    >
+      <div
+        class="colorCon2 py-1 d-flex mb-2"
+        style="font-size: 20px; margin: auto; width: 90%"
+      >
+        <div
+          (click)="unitAvailable = false"
+          class="px-2 rounded-2"
+          style="background-color: rgba(10, 200, 30, 0.1); cursor: pointer"
+        >
+          <fa-icon [icon]="faChevronLeft" class="flex-grow-0"></fa-icon>
+        </div>
+        <span class="fw-bold flex-grow-1">Contract Info</span>
+      </div>
+      <p class="mb-0">Daily rent: {{ dailyPrice }}$</p>
+      <p class="mb-0">Number of days: {{ daysCount }}</p>
       <hr />
-      <p>Total:{{ daysCount * dailyPrice }}$</p>
-      <button class="btn btn-outline-primary" (click)="rentUnit()">
+      <p>Total: {{ daysCount * dailyPrice }}$</p>
+      <p *ngIf="!isBalanceEnough">
+        Your balance isn't enough, check your balance in
+        <a routerLink="/user/profile">your profile</a> and try again.
+      </p>
+      <button
+        *ngIf="isBalanceEnough"
+        class="btn btn-outline-primary"
+        (click)="rentUnit()"
+      >
         Rent Unit
       </button>
     </div>
 
-    <div *ngIf="isRented" class="my-3">
+    <div *ngIf="isRented || isUnitProposedByAgent" class="my-3">
       <p>
-        Your contract info is sent to unit owner. Wait for a message from us or
-        him.
+        Your contract info is sent to unit owner so its state changed to be
+        proposed. Wait for a message from us or him.
+      </p>
+    </div>
+
+    <div *ngIf="isUnitActiveNowByAgent" class="my-3">
+      <p>
+        Your contract is in the active state, you can't rent this unit again
+        until the end of your period at
+        {{ activeRentEnd | date: "dd MMMM YYYY" }}
       </p>
     </div>
 
@@ -25,7 +60,14 @@
       <p>Error happened, refresh the page and try again.</p>
     </div>
 
-    <div *ngIf="!unitAvailable && !isRented">
+    <div
+      *ngIf="
+        !unitAvailable &&
+        !isRented &&
+        !isUnitProposedByAgent &&
+        !isUnitActiveNowByAgent
+      "
+    >
       <input
         type="text"
         placeholder="enter specified period"
@@ -33,11 +75,22 @@
         [(ngModel)]="chosenDate"
         class="form-control"
       />
-      <!-- <h5 class="card-title colorCon2">Full Name : Samy</h5>
-    <p class="card-text colorCon2">Phone number : sd</p> -->
+      <p *ngIf="noDateSelectedError" class="copyright-text">
+        Choose a date to check
+      </p>
+      <p *ngIf="activeContractWithError" class="copyright-text">
+        Unit isn't available from
+        {{ activeContractWithError.rentalStart | date }} to
+        {{ activeContractWithError.rentalEnd | date }}
+      </p>
+      <p *ngIf="isChosenDayBeforeTodayError" class="copyright-text">
+        Choose renting range that starts at least with tomorrow's date to give
+        the owner some time to think about your proposal
+      </p>
+      <!-- <h5 class="card-title colorCon2">Full Name : Samy</h5>-->
       <!-- <button class="btn btn-outline-primary">Call</button>
     <button class="btn btn-outline-primary">Whatsapp</button> -->
-      <button class="btn my-3" (click)="checkAvailability()">
+      <button class="btn mt-3" (click)="checkAvailability()">
         Check Availability
       </button>
     </div>

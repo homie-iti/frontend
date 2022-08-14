@@ -13,10 +13,12 @@ export class NavbarComponent implements OnInit {
   faHouseLaptop = faHouseLaptop;
 
   authInfo!: AuthInfo;
+  admin: any;
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
     this.authInfo = this.authService.getAuthInfo();
+    
   }
 }

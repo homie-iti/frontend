@@ -40,7 +40,7 @@ export class UserProfileComponent implements OnInit {
       .subscribe((data) => {
         this.updateUserImage();
         console.log(data);
-        this.router.navigateByUrl('/profile-example');
+        this.router.navigateByUrl('/user/profile');
       });
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { GetdataService } from 'src/app/service/getdata.service';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-landlorddetails',
@@ -21,6 +22,8 @@ export class LandlorddetailsComponent implements OnInit {
   userId = this.auth.getUser()?._id;
 
   isAvailable!: boolean;
+  dailyPrice = 0;
+  faWhatsapp = faWhatsapp;
 
   ngOnInit(): void {
     this.unitser.getUnitDetails(`/units/${this.id}`).subscribe((a) => {
@@ -28,6 +31,7 @@ export class LandlorddetailsComponent implements OnInit {
 
       this.unitLandlord = a.landlordId;
       this.isAvailable = a.isAvailable;
+      this.dailyPrice = a.dailyPrice;
 
       this.isLoading = false;
 

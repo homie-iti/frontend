@@ -95,7 +95,7 @@ export class EditunitComponent implements OnInit {
             streetName: new FormControl(a.address.streetName, {
               validators: [
                 Validators.required,
-                Validators.pattern('^[a-z0-9s]+'),
+                Validators.pattern('^[a-zA-Z0-9 ]+'),
               ],
             }),
           }),

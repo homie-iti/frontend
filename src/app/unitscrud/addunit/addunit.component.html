@@ -321,7 +321,7 @@
                 myform.controls.unit.controls.isAvailable.invalid
               "
             >
-              Avaliable is required
+              Available is required
             </div>
           </div>
           <div class="form-check">
@@ -343,7 +343,7 @@
                 myform.controls.unit.controls.isAvailable.invalid
               "
             >
-              Avaliable is required
+              Available is required
             </div>
           </div>
 
@@ -365,7 +365,7 @@
                 myform.controls.unit.controls.isPetsAllowed.invalid
               "
             >
-              Pets allowence is required
+              Pets allowance is required
             </div>
           </div>
           <div class="form-check">
@@ -385,7 +385,7 @@
                 myform.controls.unit.controls.isPetsAllowed.invalid
               "
             >
-              Pets allowence is required
+              Pets allowance is required
             </div>
           </div>
 
@@ -394,7 +394,7 @@
             <input
               class="form-check-input"
               type="radio"
-              id="stuido"
+              id="studio"
               value="studio"
               formControlName="estateType"
             />
@@ -800,7 +800,7 @@
               class="row my-2 d-felx justify-content-center align-items-center"
             >
               <div class="col-lg-4 col-sm-12">
-                <p>Is Available ?</p>
+                <p class="m-0">Availability</p>
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -820,7 +820,7 @@
                       myform.controls.unit.controls.isAvailable.invalid
                     "
                   >
-                    Avaliable is required
+                    Available is required
                   </div>
                 </div>
                 <div class="form-check">
@@ -842,13 +842,13 @@
                       myform.controls.unit.controls.isAvailable.invalid
                     "
                   >
-                    Avaliable is required
+                    Available is required
                   </div>
                 </div>
               </div>
 
               <div class="col-lg-4 col-sm-12">
-                <p>Pets Allowed</p>
+                <p class="m-0">Pets Allowance</p>
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -857,9 +857,7 @@
                     value="true"
                     formControlName="isPetsAllowed"
                   />
-                  <label class="form-check-label" for="pets">
-                    pets Allowed
-                  </label>
+                  <label class="form-check-label" for="pets"> Allowed </label>
                   <div
                     id="petsHelp"
                     class="form-text text-danger"
@@ -868,7 +866,7 @@
                       myform.controls.unit.controls.isPetsAllowed.invalid
                     "
                   >
-                    Pets allowence is required
+                    Pets allowance is required
                   </div>
                 </div>
                 <div class="form-check">
@@ -880,7 +878,7 @@
                     formControlName="isPetsAllowed"
                   />
                   <label class="form-check-label" for="noPets">
-                    pets not Allowed</label
+                    Not Allowed</label
                   >
                   <div
                     id="noPetsHelp"
@@ -890,12 +888,12 @@
                       myform.controls.unit.controls.isPetsAllowed.invalid
                     "
                   >
-                    Pets allowence is required
+                    Pets allowance is required
                   </div>
                 </div>
               </div>
               <div class="col-lg-4 col-sm-12">
-                <p>Allowed Gender</p>
+                <p class="m-0">Gender Allowance</p>
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -904,7 +902,7 @@
                     value="male"
                     formControlName="allowedGender"
                   />
-                  <label class="form-check-label" for="male"> male </label>
+                  <label class="form-check-label" for="male"> Male </label>
                   <div
                     id="maleHelp"
                     class="form-text text-danger"
@@ -964,16 +962,16 @@
               class="row my-2 d-felx justify-content-center align-items-center"
             >
               <div class="col-lg-12">
-                <p>estate Type</p>
+                <p class="m-0">Unit Type</p>
                 <div class="form-check">
                   <input
                     class="form-check-input"
                     type="radio"
-                    id="stuido"
+                    id="studio"
                     value="studio"
                     formControlName="estateType"
                   />
-                  <label class="form-check-label" for="studio"> studio </label>
+                  <label class="form-check-label" for="studio"> Studio </label>
                   <div
                     id="studioHelp"
                     class="form-text text-danger"
@@ -994,7 +992,7 @@
                     formControlName="estateType"
                   />
                   <label class="form-check-label" for="sharedroom">
-                    shared room</label
+                    Shared Room</label
                   >
                   <div
                     id="sharedroomHelp"
@@ -1016,7 +1014,7 @@
                     formControlName="estateType"
                   />
                   <label class="form-check-label" for="singleroom">
-                    single room</label
+                    Single Room</label
                   >
                   <div
                     id="singleroomHelp"
@@ -1053,7 +1051,11 @@
                 </div>
               </div>
             </div>
-            <button class="btn" (click)="save()" [disabled]="!myform.valid">
+            <button
+              class="btn mt-4"
+              (click)="save()"
+              [disabled]="!myform.valid"
+            >
               Add Unit
             </button>
           </div>

@@ -29,30 +29,6 @@ const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path: 'activation',
-    component: ActivationPageComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'unit/:id',
-    component: UnitPageComponent,
-  },
-  {
-    path: 'profile-example',
-    component: UserComponent,
-  },
-  {
-    path: 'user-settings-example',
-    component: UserProfileComponent,
-  },
-  {
-    path: 'user-wish-list',
-    component: UserWishListComponent,
-  },
-  {
     path: 'about-us',
     component: AboutUsComponent,
   },
@@ -65,56 +41,78 @@ const routes: Routes = [
     component: HelpQuestionsComponent,
   },
   {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'login/forget-password',
+    component: ForgetpasswordComponent,
+  },
+  {
+    path: 'login/reset-password',
+    component: NewpasswordComponent,
+  },
+  {
     path: 'signup',
     component: SignUpComponent,
+  },
+  {
+    path: 'signup/activation',
+    component: ActivationPageComponent,
   },
   {
     path: 'logout',
     component: LogoutComponent,
   },
   {
-    path: 'units/:id',
-    component: UnitsComponent,
+    path: 'user/profile',
+    component: UserComponent,
   },
   {
-    path: 'addCity',
-    component: AddunitComponent,
-  },
-  {
-    path: 'editUnit/:id',
-    component: EditunitComponent,
-  },
-  {
-    path: 'payment',
-    component: PaymentComponent,
-  },
-  {
-    path: 'notFound',
-    component: NotfoundComponent,
-  },
-  {
-    path: 'edit-user/:id',
+    path: 'user/settings',
     component: UserProfileComponent,
   },
   {
-    path: 'balance',
+    path: 'user/wishlist',
+    component: UserWishListComponent,
+  },
+  {
+    path: 'user/add-balance',
+    component: PaymentComponent,
+  },
+  {
+    path: 'user/add-balance/success',
     component: UserBalanceComponent,
   },
   {
-    path: 'forgetPassword',
-    component: ForgetpasswordComponent,
+    path: 'user/:id/edit',
+    component: UserProfileComponent,
   },
   {
-    path: 'resetPassword',
-    component: NewpasswordComponent,
+    path: 'city/:id',
+    component: UnitsComponent,
   },
-
- 
+  {
+    path: 'unit/new',
+    component: AddunitComponent,
+  },
+  {
+    path: 'unit/:id',
+    component: UnitPageComponent,
+  },
+  {
+    path: 'unit/:id/edit',
+    component: EditunitComponent,
+  },
   {
     path: 'admin',
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },
+  // {
+  //   path: 'notFound',
+  //   component: NotfoundComponent,
+  // },
   {
     path: '**',
     component: NotfoundComponent,
@@ -122,7 +120,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes ,{scrollPositionRestoration: 'enabled'})],
+  imports: [
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

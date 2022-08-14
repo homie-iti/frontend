@@ -77,6 +77,7 @@ export class AuthService {
   setToken(token: string) {
     this.authInfo.token = token;
     localStorage.setItem('token', token);
+    this.authInfo.role = this.getDecodedToken().role;
   }
   getToken() {
     return this.authInfo.token;
@@ -101,6 +102,10 @@ export class AuthService {
 
   isExpired(token: string | null) {
     return this.jwtHelper.isTokenExpired(token);
+  }
+
+  isAdmin() {
+    return this.authInfo.role === 'Admin';
   }
 
   isLoggedIn() {

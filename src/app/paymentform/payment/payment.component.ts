@@ -51,7 +51,7 @@ export class PaymentComponent implements OnInit {
             ...this.user,
             balance: this.userBalance + this.myform.controls['amount'].value,
           });
-          this.router.navigateByUrl('/balance');
+          this.router.navigateByUrl('/user/add-balance/success');
         },
         (error) => {
           if (error) {

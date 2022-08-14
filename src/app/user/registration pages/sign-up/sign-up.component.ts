@@ -97,22 +97,19 @@ export class SignUpComponent implements OnInit {
     }
   }
 
-  isSingUpHasError:boolean=false
+  isSingUpHasError: boolean = false;
   save() {
     console.log(this.user);
     this.authService.addUser(this.user).subscribe({
       next: (a) => {
-        console.log(a)
-        this.router.navigateByUrl('/activation');
-
+        console.log(a);
+        this.router.navigateByUrl('/signup/activation');
       },
       error: (error) => {
-       if(error){
-        console.log(error)
-        this.isSingUpHasError=true
-       } 
-       
-        
+        if (error) {
+          console.log(error);
+          this.isSingUpHasError = true;
+        }
       },
     });
   }

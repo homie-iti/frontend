@@ -42,7 +42,7 @@
           userInfo.balance
         }}
         <button class="btn" style="border: none">
-          <fa-icon [icon]="faPlus" routerLink="/payment"></fa-icon>
+          <fa-icon [icon]="faPlus" routerLink="/user/add-balance"></fa-icon>
         </button>
       </li>
       <li class="list-group-item border-0">
@@ -58,7 +58,7 @@
   </div>
   <div
     class="col-lg-8 col-sm-3 ms-5 btn stylebtn"
-    routerLink="/edit-user/{{ userInfo._id }}"
+    routerLink="/user/{{ userInfo._id }}/edit"
   >
     Update your profile
   </div>

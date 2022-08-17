@@ -45,7 +45,7 @@ export class RatingComponent implements OnInit {
       console.log(this.average);
     });
   }
-
+  //edit
   ngOnInit(): void {
     this.getRating();
   }

@@ -38,9 +38,6 @@ export class UnitReviewComponent implements OnInit {
     this.unitrev = this.comment.comment;
     this.unitid = this.id;
 
-    // this.agentId = this.comment.agentId;
-    // this.rate = this.comment.rating;
-
     this.unitser.addComment(this.comment).subscribe((a) => {
       this.getAllComments();
       console.log(a);

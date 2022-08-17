@@ -59,7 +59,7 @@ export class UnitReviewComponent implements OnInit {
       console.log(this.unitComment);
     });
   }
-
+  //edit
   ngOnInit(): void {
     console.log(this.userId);
     this.getAllComments();
